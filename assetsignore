@@ -1,0 +1,9 @@
+# Cloudflare bunları web sitesi olarak yayınlamasın
+.git
+.wrangler
+wrangler.jsonc
+index (4).html
+index (7).html
+i18n (1).js
+i18n (2).js
+odd-test (1).html
