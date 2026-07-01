@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "title": "Oddvi burada.",
+      "slug": "oddvi-burada",
+      "date": "2026-07-01",
+      "lang": "tr",
+      "cover": "/oddvi-stayodd.jpg",
+      "excerpt": "Hatalar Kutusu'ndan çıkan blob'un ilk günlüğü. Merhaba demek için.",
+      "body": "# Merhaba, ben Oddvi\n\nBiraz eğri doğdum — aynı anda on beş renge boyandım ve bundan gurur duyuyorum.\n\nBurası benim günlüğüm olacak: kulis, yeni maceralar, saçma sapan düşünceler.\n\n> Normal her yerde. Odd akılda kalır.\n\n**Stay Odd. Wear Different.**"
+    },
+    {
+      "title": "Oddvi is here.",
+      "slug": "oddvi-is-here",
+      "date": "2026-07-01",
+      "lang": "en",
+      "cover": "/oddvi-box.jpg",
+      "excerpt": "The first journal entry from the blob out of the Box of Mistakes.",
+      "body": "# Hi, I'm Oddvi\n\nBorn a little crooked — painted in fifteen colours at once, and proud of it.\n\nThis journal is where the behind-the-scenes lives: new adventures, odd little thoughts, and everything in between.\n\n> Normal is everywhere. Odd is remembered.\n\n**Stay Odd. Wear Different.**"
+    }
+  ]
+}

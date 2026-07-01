@@ -1,0 +1,56 @@
+media:
+  input: uploads
+  output: /uploads
+  extensions: [png, jpg, jpeg, webp, gif]
+
+content:
+  - name: blog
+    label: Blog (Oddverse Journal)
+    type: file
+    path: blog.json
+    fields:
+      - name: posts
+        label: Posts
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: slug, label: "Slug (URL id, e.g. oddvi-is-here)", type: string }
+          - { name: date, label: Date, type: date, required: true }
+          - name: lang
+            label: Language
+            type: select
+            default: tr
+            options:
+              values: [en, tr, de, fr, hu]
+          - { name: cover, label: Cover image, type: image }
+          - { name: excerpt, label: Short summary, type: text }
+          - { name: body, label: Body, type: rich-text }
+
+  - name: gallery
+    label: Gallery (A day in the life)
+    type: file
+    path: gallery.json
+    fields:
+      - name: items
+        label: Photos
+        type: object
+        list:
+          collapsible:
+            summary: "{fields.en}"
+        fields:
+          - { name: image, label: Photo, type: image, required: true }
+          - { name: en, label: "Caption — English", type: string }
+          - { name: tr, label: "Caption — Türkçe", type: string }
+          - { name: de, label: "Caption — Deutsch", type: string }
+          - { name: fr, label: "Caption — Français", type: string }
+          - { name: hu, label: "Caption — Magyar", type: string }
+
+  - name: site
+    label: Home images (hero / meet / story)
+    type: file
+    path: site.json
+    fields:
+      - { name: hero, label: "Hero image (top of page)", type: image }
+      - { name: meet, label: "Meet Oddvi image", type: image }
+      - { name: story, label: "Story image", type: image }

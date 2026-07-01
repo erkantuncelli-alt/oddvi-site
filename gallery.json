@@ -1,0 +1,196 @@
+{
+  "items": [
+    {
+      "image": "/oddvi-skate.jpg",
+      "en": "Commuting. Sort of.",
+      "tr": "İşe gidiş. Sayılır.",
+      "de": "Pendeln. Irgendwie.",
+      "fr": "Les trajets. En quelque sorte.",
+      "hu": "Ingázás. Olyasmi."
+    },
+    {
+      "image": "/oddvi-office.jpg",
+      "en": "Surviving the 9-to-5.",
+      "tr": "9-6 mesaisinden sağ çıkmak.",
+      "de": "Den 9-to-5-Job überleben.",
+      "fr": "Survivre au métro-boulot.",
+      "hu": "Túlélni a kilenc-ötöt."
+    },
+    {
+      "image": "/oddvi-fridge.jpg",
+      "en": "It's a midnight snack situation.",
+      "tr": "Gece atıştırması durumu.",
+      "de": "Eine Mitternachtssnack-Lage.",
+      "fr": "Une affaire de grignotage nocturne.",
+      "hu": "Éjféli nasi-helyzet."
+    },
+    {
+      "image": "/oddvi-party.jpg",
+      "en": "The last one dancing.",
+      "tr": "Pistteki son kişi.",
+      "de": "Der Letzte auf der Tanzfläche.",
+      "fr": "Le dernier sur la piste.",
+      "hu": "Az utolsó a táncparketten."
+    },
+    {
+      "image": "/oddvi-detective.jpg",
+      "en": "Investigating a suspicious pickle.",
+      "tr": "Şüpheli turşuyu soruşturuyor.",
+      "de": "Ermittelt gegen eine verdächtige Gurke.",
+      "fr": "Enquête sur un cornichon suspect.",
+      "hu": "Egy gyanús uborkát nyomoz."
+    },
+    {
+      "image": "/oddvi-forest.jpg",
+      "en": "Definitely not lost.",
+      "tr": "Kesinlikle kaybolmadı.",
+      "de": "Definitiv nicht verirrt.",
+      "fr": "Pas perdu du tout.",
+      "hu": "Egyáltalán nem tévedt el."
+    },
+    {
+      "image": "/oddvi-watch.jpg",
+      "en": "The clock's always a little wrong.",
+      "tr": "Saat hep birkaç dakika yanlış.",
+      "de": "Die Uhr geht immer ein bisschen falsch.",
+      "fr": "L'horloge est toujours un peu fausse.",
+      "hu": "Az óra mindig kicsit rosszul jár."
+    },
+    {
+      "image": "/oddvi-cafe.jpg",
+      "en": "Oat milk, no notes.",
+      "tr": "Yulaf sütü, itirazsız.",
+      "de": "Hafermilch, keine Diskussion.",
+      "fr": "Lait d'avoine, sans discuter.",
+      "hu": "Zabtej, vita nélkül."
+    },
+    {
+      "image": "/oddvi-balloons.jpg",
+      "en": "Big day. Low energy.",
+      "tr": "Büyük gün. Düşük enerji.",
+      "de": "Großer Tag. Wenig Energie.",
+      "fr": "Grand jour. Peu d'énergie.",
+      "hu": "Nagy nap. Kevés energia."
+    },
+    {
+      "image": "/oddvi-cozy.jpg",
+      "en": "Professional relaxer.",
+      "tr": "Profesyonel tembellik.",
+      "de": "Profi im Entspannen.",
+      "fr": "Relaxation professionnelle.",
+      "hu": "Profi lazító."
+    },
+    {
+      "image": "/oddvi-pizza.jpg",
+      "en": "Round two.",
+      "tr": "İkinci raunt.",
+      "de": "Zweite Runde.",
+      "fr": "Deuxième round.",
+      "hu": "Második kör."
+    },
+    {
+      "image": "/oddvi-garden.jpg",
+      "en": "One flower. That's enough.",
+      "tr": "Tek bir çiçek. Bu kadarı yeter.",
+      "de": "Eine Blume. Das reicht.",
+      "fr": "Une fleur. Ça suffit.",
+      "hu": "Egy virág. Ennyi elég."
+    },
+    {
+      "image": "/oddvi-istanbul.jpg",
+      "en": "Platform 1. Wrong train, probably.",
+      "tr": "1. Peron. Yanlış tren, muhtemelen.",
+      "de": "Gleis 1. Wohl der falsche Zug.",
+      "fr": "Quai 1. Mauvais train, sûrement.",
+      "hu": "1-es vágány. Rossz vonat, valószínűleg."
+    },
+    {
+      "image": "/oddvi-stayodd.jpg",
+      "en": "Stay odd. Obviously.",
+      "tr": "Tuhaf kal. Belli ki.",
+      "de": "Stay odd. Logisch.",
+      "fr": "Stay odd. Évidemment.",
+      "hu": "Maradj odd. Nyilván."
+    },
+    {
+      "image": "/oddvi-normal.jpg",
+      "en": "Normal is boring.",
+      "tr": "Normal sıkıcı.",
+      "de": "Normal ist langweilig.",
+      "fr": "Le normal, c'est ennuyeux.",
+      "hu": "A normális unalmas."
+    },
+    {
+      "image": "/oddvi-oddparty.jpg",
+      "en": "Odd party. BYO weird.",
+      "tr": "Odd parti. Tuhaflığını getir.",
+      "de": "Odd-Party. Weirdness mitbringen.",
+      "fr": "Odd party. Ramène ton grain de folie.",
+      "hu": "Odd buli. Hozd a furaságod."
+    },
+    {
+      "image": "/oddvi-ukulele.jpg",
+      "en": "Writing a song no one requested.",
+      "tr": "Kimsenin istemediği bir şarkı yazıyor.",
+      "de": "Schreibt ein Lied, das keiner wollte.",
+      "fr": "Écrit une chanson que personne n'a demandée.",
+      "hu": "Olyan dalt ír, amit senki sem kért."
+    },
+    {
+      "image": "/oddvi-mic.jpg",
+      "en": "Open mic, zero rehearsal.",
+      "tr": "Açık mikrofon, sıfır prova.",
+      "de": "Open Mic, null Proben.",
+      "fr": "Scène ouverte, zéro répétition.",
+      "hu": "Nyílt mikrofon, nulla próba."
+    },
+    {
+      "image": "/oddvi-receipt.jpg",
+      "en": "Reading the receipt. Regretting.",
+      "tr": "Fişi okuyor. Pişman oluyor.",
+      "de": "Liest den Kassenzettel. Bereut.",
+      "fr": "Lit le ticket. Le regrette.",
+      "hu": "Olvassa a blokkot. Megbánja."
+    },
+    {
+      "image": "/oddvi-freedom.jpg",
+      "en": "5PM. Freedom time.",
+      "tr": "17:00. Özgürlük vakti.",
+      "de": "17 Uhr. Feierabend.",
+      "fr": "17 h. L'heure de la liberté.",
+      "hu": "17 óra. A szabadság ideje."
+    },
+    {
+      "image": "/oddvi-baking.jpg",
+      "en": "Step 4: call for pizza.",
+      "tr": "4. adım: pizza söyle.",
+      "de": "Schritt 4: Pizza bestellen.",
+      "fr": "Étape 4 : commander une pizza.",
+      "hu": "4. lépés: rendelj pizzát."
+    },
+    {
+      "image": "/oddvi-library.jpg",
+      "en": "Three books deep, finishing none.",
+      "tr": "Üç kitaba dalmış, birini bitirmiyor.",
+      "de": "Drei Bücher offen, keins zu Ende.",
+      "fr": "Trois livres entamés, aucun fini.",
+      "hu": "Három könyv félbehagyva."
+    },
+    {
+      "image": "/oddvi-veggies.jpg",
+      "en": "Eating healthy. Allegedly.",
+      "tr": "Sağlıklı besleniyor. Sözde.",
+      "de": "Isst gesund. Angeblich.",
+      "fr": "Mange sainement. Soi-disant.",
+      "hu": "Egészségesen eszik. Állítólag."
+    },
+    {
+      "image": "/oddvi-orb.jpg",
+      "en": "Consulting the orb.",
+      "tr": "Küreye danışıyor.",
+      "de": "Befragt die Kugel.",
+      "fr": "Consulte la boule.",
+      "hu": "Megkérdezi a gömböt."
+    }
+  ]
+}
