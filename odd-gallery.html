@@ -50,6 +50,23 @@
   @media(max-width:980px){.grid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:680px){.grid{grid-template-columns:repeat(2,1fr);gap:14px}}
   .card{position:relative;border-radius:14px;overflow:hidden;background:var(--card);aspect-ratio:4/5;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .2s ease,box-shadow .2s ease;cursor:pointer}
+  .card-share{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:9px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;font-size:16px;box-shadow:2px 2px 0 var(--ink);opacity:.92;z-index:3;transition:transform .12s,box-shadow .12s}
+  .card-share:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+
+  #oddStreakWrap{position:fixed;right:18px;bottom:18px;z-index:60}
+  #oddStreakBtn{display:flex;align-items:center;gap:7px;background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:999px;padding:10px 15px;font-family:var(--font-disp);font-weight:800;font-size:15px;cursor:pointer;box-shadow:4px 4px 0 var(--red);transition:transform .12s,box-shadow .12s}
+  #oddStreakBtn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--red)}
+  .os-emoji{font-size:18px}
+  #oddStreakPop{position:fixed;right:18px;bottom:80px;width:250px;background:var(--card);border:3px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:22px 18px 18px;text-align:center;display:none;z-index:61}
+  #oddStreakPop.open{display:block}
+  #oddStreakClose{position:absolute;top:6px;right:10px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink)}
+  .os-emoji-big{font-size:36px}
+  .os-title{font-family:var(--font-disp);font-weight:800;font-size:16px;margin-top:6px}
+  .os-sub{font-size:13px;opacity:.75;margin-top:6px}
+  .os-share{margin-top:14px;background:var(--red);color:#fff;border:2.5px solid var(--ink);border-radius:10px;padding:9px 14px;font-weight:700;font-size:13px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+  @media(max-width:680px){#oddStreakWrap{right:12px;bottom:12px}#oddStreakPop{right:12px;width:210px}}
+
+  .lb-share{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;border:2.5px solid #fff;border-radius:999px;padding:11px 20px;font-family:var(--font-disp);font-weight:800;font-size:14px;cursor:pointer;box-shadow:3px 3px 0 rgba(0,0,0,.5)}
   .card:nth-child(3n+1){transform:rotate(-1.6deg)}
   .card:nth-child(3n+2){transform:rotate(1.4deg)}
   .card:nth-child(3n){transform:rotate(-.6deg)}
@@ -93,6 +110,7 @@
 <div class="lb" id="lb">
   <button class="lb-close" id="lbClose">&times;</button>
   <img id="lbImg" src="" alt="" />
+  <button class="lb-share" id="lbShare">&#8599; Share</button>
   <div class="lb-cap" id="lbCap"></div>
 </div>
 
@@ -102,11 +120,34 @@
   </div>
 </footer>
 
+<script src="streak.js"></script>
+<script src="share.js"></script>
 <script>
   (function(){
     function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+    function slugOf(imgPath){ var m = imgPath.match(/([^\/]+)\.[a-zA-Z0-9]+$/); return m ? m[1] : ''; }
     var grid = document.getElementById('fullGrid');
-    var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap'), lbClose = document.getElementById('lbClose');
+    var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap'), lbClose = document.getElementById('lbClose'), lbShare = document.getElementById('lbShare');
+    var currentItem = null;
+
+    function openLightbox(it){
+      currentItem = it;
+      lbImg.src = encodeURI(it.image);
+      lbImg.alt = it.en || '';
+      lbCap.textContent = it.en || '';
+      lb.classList.add('open');
+      var slug = slugOf(it.image);
+      var url = new URL(location.href);
+      url.searchParams.set('img', slug);
+      history.replaceState(null, '', url.toString());
+    }
+
+    function closeLightbox(){
+      lb.classList.remove('open');
+      var url = new URL(location.href);
+      url.searchParams.delete('img');
+      history.replaceState(null, '', url.toString());
+    }
 
     fetch('/gallery.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{items:[]};})
@@ -114,23 +155,46 @@
         var items = (d && d.items) ? d.items : [];
         grid.innerHTML = items.map(function(it,i){
           var cap = it.en || '';
-          return '<figure class="card" data-idx="'+i+'"><img src="'+esc(encodeURI(it.image))+'" alt="'+esc(cap)+'" loading="lazy"><figcaption>'+esc(cap)+'</figcaption></figure>';
+          var slug = slugOf(it.image);
+          return '<figure class="card" data-idx="'+i+'" data-slug="'+esc(slug)+'">'+
+            '<img src="'+esc(encodeURI(it.image))+'" alt="'+esc(cap)+'" loading="lazy">'+
+            '<button class="card-share" aria-label="Share" title="Share">&#8599;</button>'+
+            '<figcaption>'+esc(cap)+'</figcaption></figure>';
         }).join('');
+
         grid.querySelectorAll('.card').forEach(function(card){
           card.addEventListener('click', function(){
-            var it = items[+card.getAttribute('data-idx')];
-            lbImg.src = encodeURI(it.image);
-            lbImg.alt = it.en || '';
-            lbCap.textContent = it.en || '';
-            lb.classList.add('open');
+            openLightbox(items[+card.getAttribute('data-idx')]);
           });
         });
+        grid.querySelectorAll('.card-share').forEach(function(btn){
+          btn.addEventListener('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            var card = btn.closest('.card');
+            var it = items[+card.getAttribute('data-idx')];
+            var deepUrl = location.origin + '/odd-gallery.html?img=' + encodeURIComponent(card.getAttribute('data-slug'));
+            if (window.OddShare) window.OddShare.shareImage(it.image, it.en, deepUrl);
+          });
+        });
+
+        /* Deep link: ?img=slug otomatik açar */
+        var wanted = new URLSearchParams(location.search).get('img');
+        if (wanted) {
+          var match = items.find(function(it){ return slugOf(it.image) === wanted; });
+          if (match) openLightbox(match);
+        }
       })
       .catch(function(){ grid.innerHTML = '<p>Could not load the gallery right now.</p>'; });
 
-    lbClose.addEventListener('click', function(){ lb.classList.remove('open'); });
-    lb.addEventListener('click', function(e){ if(e.target===lb) lb.classList.remove('open'); });
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') lb.classList.remove('open'); });
+    lbClose.addEventListener('click', closeLightbox);
+    lb.addEventListener('click', function(e){ if(e.target===lb) closeLightbox(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+    lbShare.addEventListener('click', function(){
+      if (!currentItem || !window.OddShare) return;
+      var slug = slugOf(currentItem.image);
+      var deepUrl = location.origin + '/odd-gallery.html?img=' + encodeURIComponent(slug);
+      window.OddShare.shareImage(currentItem.image, currentItem.en, deepUrl);
+    });
   })();
 </script>
 
