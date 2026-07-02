@@ -1,7 +1,7 @@
 media:
   input: uploads
   output: /uploads
-  extensions: [png, jpg, jpeg, webp, gif]
+  extensions: [png, jpg, jpeg, webp, gif, mp4, webm]
 
 content:
   - name: blog
@@ -54,3 +54,18 @@ content:
       - { name: hero, label: "Hero image (top of page)", type: image }
       - { name: meet, label: "Meet Oddvi image", type: image }
       - { name: story, label: "Story image", type: image }
+
+  - name: videos
+    label: Videos (Reels)
+    type: file
+    path: videos.json
+    fields:
+      - name: videos
+        label: Clips
+        type: object
+        list:
+          collapsible:
+            summary: "{fields.caption}"
+        fields:
+          - { name: video, label: "Video file (mp4)", type: file, required: true }
+          - { name: caption, label: "Caption (optional)", type: string }
