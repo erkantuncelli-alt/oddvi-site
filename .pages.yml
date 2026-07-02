@@ -28,7 +28,7 @@ content:
           - { name: body, label: Body, type: rich-text }
 
   - name: gallery
-    label: Gallery (A day in the life)
+    label: Odd Gallery (stickers & scenes)
     type: file
     path: gallery.json
     fields:

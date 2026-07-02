@@ -132,6 +132,13 @@
   .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
   @media(max-width:980px){.grid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:680px){.grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+  .carousel-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:14px;margin:0 -24px;padding-inline:24px}
+  .carousel-wrap::-webkit-scrollbar{height:10px}
+  .carousel-wrap::-webkit-scrollbar-thumb{background:var(--ink);border-radius:999px}
+  .carousel{display:flex;gap:20px}
+  .carousel .card{flex:0 0 220px;scroll-snap-align:start;transform:none!important}
+  .carousel .card:hover{transform:translateY(-5px)!important}
+  .gal-more{display:flex;justify-content:center;margin-top:34px}
   .card{position:relative;border-radius:14px;overflow:hidden;background:var(--card);aspect-ratio:4/5;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .2s ease,box-shadow .2s ease}
   .card:nth-child(3n+1){transform:rotate(-1.6deg)}
   .card:nth-child(3n+2){transform:rotate(1.4deg)}
@@ -199,6 +206,7 @@
       <a href="#meet" class="txt" data-i18n="nav.meet">Meet Oddvi</a>
       <a href="#story" class="txt" data-i18n="nav.story">The Story</a>
       <a href="blog.html" class="txt">Journal</a>
+      <a href="odd-gallery.html" class="txt" data-i18n="nav.gallery">Gallery</a>
       <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
       <a href="odd-test.html" class="nav-cta" data-i18n="nav.test">What's your Odd?</a>
     </nav>
@@ -221,7 +229,7 @@
       <span class="blob b1"></span>
       <span class="blob b2"></span>
       <div class="frame" id="heroFrame">
-        <img id="imgHero" src="oddvi-yoyo.jpg" alt="Oddvi waving in a city alley while playing with a yo-yo" width="1031" height="1280" fetchpriority="high" />
+        <img id="imgHero" src="/uploads/What's your Odd.jpeg" alt="Oddvi — What's your Odd?" width="1031" height="1280" fetchpriority="high" />
       </div>
       <div class="sticker">BE A<br>LITTLE<br>ODD</div>
       <div class="sticker s2" aria-hidden="true">100%<br>ODD</div>
@@ -235,7 +243,7 @@
 <section id="meet" class="meet">
   <div class="wrap meet-grid">
     <div class="meet-img">
-      <img id="imgMeet" src="oddvi-garden.jpg" alt="Oddvi standing in a garden, gently reaching toward a single tulip" loading="lazy" />
+      <img id="imgMeet" src="/uploads/oddvi09logo-selam_yaramaz.png" alt="Meet Oddvi" loading="lazy" />
     </div>
     <div>
       <span class="kicker" data-i18n="meet.kicker">Chapter One</span>
@@ -264,7 +272,7 @@
         <p data-i18n="story.p3">A child reached in, pulled it out, and laughed.</p>
       </div>
       <div class="story-img">
-        <img id="imgStory" src="oddvi-box.jpg" alt="Oddvi holding a mysterious box in a spotlight" loading="lazy" />
+        <img id="imgStory" src="/uploads/Oddvi'sflair.png" alt="The Oddvi story" loading="lazy" />
       </div>
     </div>
     <p class="pullquote" data-i18n="story.quote">You're not a mistake. You're what's remembered.</p>
@@ -281,7 +289,8 @@
       </div>
       <p data-i18n="gal.intro">Oddvi does everything you do — just a little bit weirder.</p>
     </div>
-    <div class="grid" id="galGrid"></div>
+    <div class="carousel-wrap"><div class="grid carousel" id="galGrid"></div></div>
+    <div class="gal-more"><a href="odd-gallery.html" class="btn btn-primary" data-i18n="gal.cta">See the full gallery →</a></div>
   </div>
 </section>
 
@@ -367,7 +376,8 @@
     function render(){
       var grid=document.getElementById('galGrid'); if(!grid) return;
       var l=curLang();
-      grid.innerHTML = GAL.map(function(it){
+      var subset = GAL.slice(0,12);
+      grid.innerHTML = subset.map(function(it){
         var cap = it[l] || it.en || '';
         return '<figure class="card"><img src="'+esc(encodeURI(it.image))+'" alt="'+esc(cap)+'" loading="lazy"><figcaption>'+esc(cap)+'</figcaption></figure>';
       }).join('');

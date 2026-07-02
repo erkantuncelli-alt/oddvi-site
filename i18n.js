@@ -10,7 +10,7 @@ window.I18N = (function () {
 
   const dict = {
   en:{
-    'nav.meet':"Meet Oddvi",'nav.story':"The Story",'nav.test':"What's your Odd?",
+    'nav.meet':"Meet Oddvi",'nav.story':"The Story",'nav.gallery':"Gallery",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Coming soon · @theoddvi",
     'hero.btnPrimary':"Take the Odd test →",'hero.btnGhost':"See Oddvi in action ↓",
     'hero.lead':"Meet Oddvi — born a little crooked, painted in fifteen colours at once, and proud of it. The face of Pardon My Odd, for people who'd rather be odd than ordinary.",
@@ -24,7 +24,7 @@ window.I18N = (function () {
     'story.p3':"A child reached in, pulled it out, and laughed — the first real laugh Plainville had heard in years. Everyone said the same thing: “How… odd.” And it winked its small eye and answered: Pardon my odd.",
     'story.quote':"You're not a mistake. You're what's remembered.",
     'gal.kicker':"A day in the life",'gal.h2':"Ordinary days.<br>Oddly lived.",
-    'gal.intro':"Oddvi does everything you do — commuting, snacking, surviving meetings — just a little bit weirder.",
+    'gal.intro':"Oddvi does everything you do — commuting, snacking, surviving meetings — just a little bit weirder.",'gal.cta':"See the full gallery →",
     'cap.skate':"Commuting. Sort of.",'cap.office':"Surviving the 9-to-5.",'cap.fridge':"It's a midnight snack situation.",'cap.party':"The last one dancing.",'cap.detective':"Investigating a suspicious pickle.",'cap.forest':"Definitely not lost.",'cap.watch':"The clock's always a little wrong.",'cap.cafe':"Oat milk, no notes.",'cap.balloons':"Big day. Low energy.",'cap.cozy':"Professional relaxer.",'cap.pizza':"Round two.",'cap.garden':"One flower. That's enough.",
     'man.quote':"Normal is everywhere.<br>Odd is <em>remembered</em>.",'man.sub':"Stay Odd. — The Oddvi Manifesto",
     'sign.kicker':"Almost here",'sign.h2':"Come with me.",'sign.p':"Leave your email and I'll find you the moment Pardon My Odd lands. No spam — just Oddvi.",
@@ -32,7 +32,7 @@ window.I18N = (function () {
     'foot.follow':"Follow the blob:"
   },
   tr:{
-    'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.test':"What's your Odd?",
+    'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.gallery':"Galeri",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Çok yakında · @theoddvi",
     'hero.btnPrimary':"Odd testini çöz →",'hero.btnGhost':"Oddvi'yi iş başında gör ↓",
     'hero.lead':"Oddvi'yle tanış — biraz eğri doğdu, aynı anda on beş renge boyandı ve bundan gurur duyuyor. Pardon My Odd'ın yüzü; normal olmaktansa tuhaf olmayı seçenler için.",
@@ -46,7 +46,7 @@ window.I18N = (function () {
     'story.p3':"Bir çocuk elini daldırdı, onu çıkardı ve güldü — Düzgünşehir'in yıllardır duymadığı ilk gerçek kahkaha. Bakan herkes aynı şeyi dedi: “Ne kadar… odd.” O da küçük gözünü kırpıp cevap verdi: Pardon my odd.",
     'story.quote':"Sen hata değilsin. Sen akılda kalansın.",
     'gal.kicker':"Bir günün içinden",'gal.h2':"Sıradan günler.<br>Tuhafça yaşanmış.",
-    'gal.intro':"Oddvi senin yaptığın her şeyi yapar — işe gitmek, atıştırmak, toplantılardan sağ çıkmak — sadece biraz daha tuhafça.",
+    'gal.intro':"Oddvi senin yaptığın her şeyi yapar — işe gitmek, atıştırmak, toplantılardan sağ çıkmak — sadece biraz daha tuhafça.",'gal.cta':"Galerinin tamamını gör →",
     'cap.skate':"İşe gidiş. Sayılır.",'cap.office':"9-6 mesaisinden sağ çıkmak.",'cap.fridge':"Gece atıştırması durumu.",'cap.party':"Pistteki son kişi.",'cap.detective':"Şüpheli turşuyu soruşturuyor.",'cap.forest':"Kesinlikle kaybolmadı.",'cap.watch':"Saat hep birkaç dakika yanlış.",'cap.cafe':"Yulaf sütü, itirazsız.",'cap.balloons':"Büyük gün. Düşük enerji.",'cap.cozy':"Profesyonel tembellik.",'cap.pizza':"İkinci raunt.",'cap.garden':"Tek bir çiçek. Bu kadarı yeter.",
     'man.quote':"Normal her yerde.<br>Odd <em>akılda kalır</em>.",'man.sub':"Stay Odd. — Oddvi Manifestosu",
     'sign.kicker':"Neredeyse burada",'sign.h2':"Gel, benimle.",'sign.p':"E-postanı bırak, Pardon My Odd çıktığı an seni bulayım. Spam yok — sadece Oddvi.",
