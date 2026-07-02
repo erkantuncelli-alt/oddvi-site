@@ -41,6 +41,11 @@
 
   /* NAV */
   header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .odd-meter{position:sticky;top:75px;z-index:49;height:22px;display:flex;font-family:var(--font-disp);font-weight:800;font-size:11px;letter-spacing:.03em;border-bottom:3px solid var(--ink);overflow:hidden}
+  .odd-meter .om-normal,.odd-meter .om-odd{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;transition:width .08s linear}
+  .odd-meter .om-normal{background:#b9b6ad;color:#141414}
+  .odd-meter .om-odd{background:var(--red);color:#fff}
+  @media(max-width:680px){.odd-meter{font-size:9.5px;height:18px}.odd-meter .om-normal,.odd-meter .om-odd{letter-spacing:0}}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;letter-spacing:-.01em;text-decoration:none;display:inline-block;transform:rotate(-3deg)}
   .nav-links{display:flex;align-items:center;gap:20px;font-weight:600;font-size:15px}
@@ -228,6 +233,11 @@
     </nav>
   </div>
 </header>
+
+<div class="odd-meter" id="oddMeter" aria-hidden="true">
+  <div class="om-normal" id="omNormal" style="width:100%">NORMAL</div>
+  <div class="om-odd" id="omOdd" style="width:0%"></div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -431,6 +441,24 @@
           if(el && map[id]) el.src = encodeURI(map[id]);
         });
       }).catch(function(){});
+  })();
+
+  /* Odd Meter — sayfada indikçe NORMAL küçülür, ODD büyür */
+  (function(){
+    var normalEl = document.getElementById('omNormal'), oddEl = document.getElementById('omOdd');
+    if(!normalEl || !oddEl) return;
+    function update(){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = max > 0 ? Math.round((window.scrollY / max) * 100) : 0;
+      pct = Math.max(0, Math.min(100, pct));
+      normalEl.style.width = (100 - pct) + '%';
+      oddEl.style.width = pct + '%';
+      normalEl.textContent = (100 - pct) >= 12 ? ('NORMAL ' + (100 - pct) + '%') : '';
+      oddEl.textContent = pct >= 12 ? ('ODD ' + pct + '%') : '';
+    }
+    update();
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
   })();
 
   /* Mobil menü aç/kapa */
