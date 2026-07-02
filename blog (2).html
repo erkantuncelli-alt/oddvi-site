@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oddverse Journal — Oddvi</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="description" content="Field notes from a slightly crooked world. The Oddvi journal." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  :root{
+    --ink:#141414;
+    --paper:#fff8f0;
+    --paper-2:#f7eddd;
+    --card:#ffffff;
+    --red:#ff3366;
+    --red-deep:#e21b54;
+    --teal:#1ec8c8;
+    --yellow:#ffc93c;
+    --yellow-deep:#f5b400;
+    --grape:#845ec2;
+    --tang:#ff7a45;
+    --mint:#e7fbf0;
+    --line: color-mix(in srgb, var(--ink) 14%, transparent);
+    --font-disp:"Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:"Inter", system-ui, sans-serif;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;text-decoration:none;letter-spacing:-.01em;display:inline-block;transform:rotate(-3deg)}
+  .nav-links{display:flex;align-items:center;gap:20px;font-weight:600;font-size:15px}
+  .nav-links a.txt{text-decoration:none;opacity:.75;transition:opacity .2s,transform .2s}
+  .nav-links a.txt:hover{opacity:1;transform:rotate(-2deg)}
+  .nav-cta{background:var(--red);color:#fff;padding:9px 16px;border-radius:12px;font-weight:700;font-size:14px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s;text-decoration:none}
+  .nav-cta:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .nav-toggle{display:none;background:var(--ink);color:#fff;border:2.5px solid var(--ink);border-radius:10px;width:44px;height:40px;font-size:20px;cursor:pointer;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink)}
+  @media(max-width:760px){
+    .nav-toggle{display:inline-flex}
+    .nav-links{position:absolute;top:72px;left:0;right:0;background:var(--paper);border-bottom:3px solid var(--ink);flex-direction:column;align-items:flex-start;gap:18px;padding:22px 24px;display:none}
+    .nav-links.open{display:flex}
+    .nav-links a.txt{font-size:19px;opacity:1}
+    .nav-cta{align-self:flex-start}
+  }
+
+  .lang-switch{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
+  .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
+  .lang-btn:focus-visible{outline:none;opacity:1}
+  .lang-btn[aria-pressed="true"]{opacity:1;transform:translateY(-1px) rotate(-2deg);box-shadow:3px 3px 0 var(--ink)}
+  .lang-btn[data-lang="en"]{background:#ff3366}
+  .lang-btn[data-lang="tr"]{background:#1ec8c8}
+  .lang-btn[data-lang="de"]{background:#f5b400;color:#141414}
+  .lang-btn[data-lang="fr"]{background:#845ec2}
+  .lang-btn[data-lang="hu"]{background:#ff7a45}
+
+  .hero{padding:64px 0 30px}
+  .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 12px;border-radius:8px;transform:rotate(-2deg)}
+  .jtitle{font-family:var(--font-disp);font-weight:800;font-size:clamp(40px,7.4vw,72px);line-height:1;letter-spacing:-.03em;margin:16px 0 14px}
+  .jtitle .pop{display:inline-block;background:var(--teal);color:var(--ink);padding:0 .08em;border:3px solid var(--ink);border-radius:10px;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--ink)}
+  .jsub{font-size:clamp(16px,2.2vw,20px);opacity:.78;max-width:560px;font-weight:500}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;padding:26px 0 90px}
+  .post-card{background:var(--card);border:3px solid var(--ink);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;box-shadow:6px 6px 0 var(--ink);transition:transform .2s,box-shadow .2s}
+  .post-card:nth-child(odd){transform:rotate(-1.2deg)}
+  .post-card:nth-child(even){transform:rotate(1.2deg)}
+  .post-card:hover{transform:rotate(0) translateY(-4px);box-shadow:9px 9px 0 var(--ink)}
+  .post-card .cov{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-bottom:3px solid var(--ink)}
+  .post-card .cov img{width:100%;height:100%;object-fit:cover;display:block}
+  .post-card .body{padding:20px 22px 24px}
+  .post-card .date{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red-deep)}
+  .post-card h3{font-family:var(--font-disp);font-weight:800;font-size:23px;line-height:1.12;margin:8px 0 8px;letter-spacing:-.01em}
+  .post-card p{font-size:15px;opacity:.75}
+  .post-card .read{margin-top:14px;font-weight:700;font-size:14px;color:var(--red-deep)}
+
+  .empty{padding:40px 0 120px;font-size:18px;opacity:.7;font-weight:500}
+
+  /* single post */
+  .article{max-width:720px;margin:0 auto;padding:40px 0 100px}
+  .backlink{display:inline-block;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none;margin-bottom:26px;background:var(--yellow);border:2.5px solid var(--ink);border-radius:10px;padding:8px 14px;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+  .backlink:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .article .cov{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--red);margin-bottom:28px}
+  .article .cov img{width:100%;display:block}
+  .article .date{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red-deep)}
+  .article h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(30px,5vw,48px);line-height:1.04;letter-spacing:-.02em;margin:10px 0 26px}
+  .prose{font-size:17px;line-height:1.72}
+  .prose h1,.prose h2,.prose h3{font-family:var(--font-disp);letter-spacing:-.01em;margin:30px 0 12px;line-height:1.2}
+  .prose h1{font-size:30px}.prose h2{font-size:25px}.prose h3{font-size:20px}
+  .prose p{margin:0 0 18px}
+  .prose a{color:var(--red-deep);text-decoration:underline}
+  .prose ul,.prose ol{margin:0 0 18px 22px}
+  .prose li{margin:6px 0}
+  .prose img{max-width:100%;border-radius:14px;border:3px solid var(--ink);margin:18px 0}
+  .prose blockquote{border:3px solid var(--ink);background:var(--yellow);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:16px 20px;margin:24px 0;font-family:var(--font-disp);font-size:22px}
+  .prose strong{font-weight:600}
+
+  footer{border-top:3px solid var(--ink);padding:40px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:500}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="index.html" class="logo">ODDVI</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+      <nav class="nav-links">
+        <a href="index.html#meet" class="txt">Meet Oddvi</a>
+        <a href="index.html#story" class="txt">The Story</a>
+        <a href="blog.html" class="txt">Journal</a>
+        <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
+        <a href="odd-test.html" class="nav-cta">What's your Odd?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- LIST VIEW -->
+    <section id="listView">
+      <div class="hero">
+        <span class="kicker" id="jkicker">Oddverse</span>
+        <h1 class="jtitle" id="jtitle">Oddverse <span class="pop">Journal</span></h1>
+        <p class="jsub" id="jsub">Field notes from a slightly crooked world.</p>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden></p>
+    </section>
+
+    <!-- ARTICLE VIEW -->
+    <article class="article" id="articleView" hidden>
+      <a href="#" class="backlink" id="backlink">← Back to Journal</a>
+      <div class="cov" id="artCov" hidden></div>
+      <div class="date" id="artDate"></div>
+      <h1 id="artTitle"></h1>
+      <div class="prose" id="artBody"></div>
+    </article>
+  </main>
+
+  <footer class="wrap">
+    <span>© Pardon My Odd</span>
+    <span>Follow the blob: <a href="https://instagram.com/theoddvi" style="color:var(--red-deep)">@theoddvi</a></span>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    (function(){
+      var t=document.querySelector('.nav-toggle'), nl=document.querySelector('.nav-links');
+      if(!t||!nl) return;
+      t.addEventListener('click',function(){var o=nl.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');t.setAttribute('aria-expanded','false');});});
+    })();
+  </script>
+  <script>
+  (function(){
+    // Blog chrome strings per language (page-specific; brand slogans stay English)
+    var T = {
+      en:{kicker:"Oddverse",title:'Oddverse <span class="pop">Journal</span>',sub:"Field notes from a slightly crooked world.",back:"\u2190 Back to Journal",empty:"No entries yet. Come back soon.",read:"Read \u2192"},
+      tr:{kicker:"Oddverse",title:'Oddverse <span class="pop">G\u00fcnl\u00fc\u011f\u00fc</span>',sub:"Biraz e\u011fri bir d\u00fcnyadan notlar.",back:"\u2190 G\u00fcnl\u00fc\u011fe d\u00f6n",empty:"Hen\u00fcz yaz\u0131 yok. Yak\u0131nda burada.",read:"Oku \u2192"},
+      de:{kicker:"Oddverse",title:'Oddverse <span class="pop">Journal</span>',sub:"Notizen aus einer leicht schiefen Welt.",back:"\u2190 Zur\u00fcck zum Journal",empty:"Noch keine Eintr\u00e4ge. Bald mehr.",read:"Lesen \u2192"},
+      fr:{kicker:"Oddverse",title:'Journal <span class="pop">Oddverse</span>',sub:"Notes d'un monde un peu de travers.",back:"\u2190 Retour au journal",empty:"Pas encore d'articles. \u00c0 bient\u00f4t.",read:"Lire \u2192"},
+      hu:{kicker:"Oddverse",title:'Oddverse <span class="pop">Napl\u00f3</span>',sub:"Jegyzetek egy kiss\u00e9 g\u00f6rbe vil\u00e1gb\u00f3l.",back:"\u2190 Vissza a napl\u00f3hoz",empty:"M\u00e9g nincs bejegyz\u00e9s. Hamarosan.",read:"Olvasd \u2192"}
+    };
+    var LANGS = ["en","tr","de","fr","hu"];
+    var posts = [];
+
+    function lang(){
+      var l = document.documentElement.lang || localStorage.getItem("oddvi_lang") || "en";
+      return T[l] ? l : "en";
+    }
+    function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+    function fmtDate(d,l){
+      try{ return new Date(d).toLocaleDateString(l,{year:"numeric",month:"short",day:"numeric"}); }
+      catch(e){ return d||""; }
+    }
+    function slugOf(p,i){ return (p.slug && String(p.slug).trim()) ? String(p.slug).trim() : ("post-"+i); }
+
+    // posts relevant to current language: matching lang, else (if none) show all
+    function visiblePosts(l){
+      var m = posts.filter(function(p){ return (p.lang||"").toLowerCase() === l; });
+      return m.length ? m : posts.slice();
+    }
+
+    function renderList(){
+      var l = lang(), t = T[l];
+      document.getElementById("jkicker").textContent = t.kicker;
+      document.getElementById("jtitle").innerHTML = t.title;
+      document.getElementById("jsub").textContent = t.sub;
+      document.getElementById("backlink").textContent = t.back;
+
+      var vis = visiblePosts(l).slice().sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
+      var grid = document.getElementById("grid"), empty = document.getElementById("empty");
+      if(!vis.length){
+        grid.innerHTML = ""; empty.textContent = t.empty; empty.hidden = false; return;
+      }
+      empty.hidden = true;
+      grid.innerHTML = vis.map(function(p){
+        var i = posts.indexOf(p), s = slugOf(p,i);
+        var cov = p.cover ? '<div class="cov"><img src="'+esc(p.cover)+'" alt="'+esc(p.title)+'" loading="lazy"></div>' : "";
+        return '<a class="post-card" href="#'+encodeURIComponent(s)+'">'+cov+
+          '<div class="body"><div class="date">'+esc(fmtDate(p.date,l))+'</div>'+
+          '<h3>'+esc(p.title)+'</h3>'+
+          (p.excerpt?'<p>'+esc(p.excerpt)+'</p>':"")+
+          '<div class="read">'+t.read+'</div></div></a>';
+      }).join("");
+    }
+
+    function renderArticle(p){
+      var l = lang(), t = T[l];
+      document.getElementById("backlink").textContent = t.back;
+      var cov = document.getElementById("artCov");
+      if(p.cover){ cov.innerHTML = '<img src="'+esc(p.cover)+'" alt="'+esc(p.title)+'">'; cov.hidden = false; }
+      else { cov.hidden = true; }
+      document.getElementById("artDate").textContent = fmtDate(p.date,l);
+      document.getElementById("artTitle").textContent = p.title || "";
+      var body = p.body || "";
+      var html = (window.marked ? marked.parse(body) : esc(body).replace(/\n/g,"<br>"));
+      document.getElementById("artBody").innerHTML = html;
+    }
+
+    function route(){
+      var hash = decodeURIComponent((location.hash||"").replace(/^#/,"")).trim();
+      var listView = document.getElementById("listView");
+      var articleView = document.getElementById("articleView");
+      var found = null;
+      if(hash){
+        for(var i=0;i<posts.length;i++){ if(slugOf(posts[i],i)===hash){ found = posts[i]; break; } }
+      }
+      if(found){
+        listView.hidden = true; articleView.hidden = false;
+        renderArticle(found); window.scrollTo(0,0);
+      } else {
+        articleView.hidden = true; listView.hidden = false;
+        renderList();
+      }
+    }
+
+    function load(){
+      fetch("/blog.json?t="+Date.now())
+        .then(function(r){ return r.ok ? r.json() : {posts:[]}; })
+        .then(function(data){ posts = (data && data.posts) ? data.posts : []; route(); })
+        .catch(function(){ posts = []; route(); });
+    }
+
+    window.addEventListener("hashchange", route);
+    window.addEventListener("oddvi:lang", function(){ route(); });
+    document.getElementById("backlink").addEventListener("click", function(e){
+      e.preventDefault(); location.hash = "";
+    });
+
+    if(document.readyState === "loading"){
+      document.addEventListener("DOMContentLoaded", load);
+    } else { load(); }
+  })();
+  </script>
+</body>
+</html>
