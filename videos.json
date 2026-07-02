@@ -1,5 +1,12 @@
 {
   "videos": [
-    { "video": "/oddvi-anim-1.mp4", "caption": "Odd loop #1" }
+    {
+      "video": "/oddvi-anim-1.mp4",
+      "caption": "Odd loop #1"
+    },
+    {
+      "video": "/uploads/Oddvivideo01.mp4",
+      "caption": "Odd loop #2"
+    }
   ]
 }
