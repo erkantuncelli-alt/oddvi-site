@@ -539,6 +539,306 @@
           "food"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/study-oddvi.jpg",
+      "en": "Study Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/mountain-oddvi-summit.jpg",
+      "en": "Mountain Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-climb-different.jpg",
+      "en": "Climb Different",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/fashion-oddvi.jpg",
+      "en": "Fashion Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fashion"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/sail-different.jpg",
+      "en": "Sail Different",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/love-oddvi.jpg",
+      "en": "Love Oddvi",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/dad-oddvi.jpg",
+      "en": "Dad Oddvi",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/mom-oddvi.jpg",
+      "en": "Mom Oddvi",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/doctor-oddvi.jpg",
+      "en": "Doctor Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/big-boss-oddvi.jpg",
+      "en": "Big Boss Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/boss-oddvi-desk.jpg",
+      "en": "Boss Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/ceo-of-odd.jpg",
+      "en": "CEO Of Odd",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/chef-oddvi.jpg",
+      "en": "Chef Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/surf-oddly.jpg",
+      "en": "Surf Oddly",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fitness"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/ski-oddly.jpg",
+      "en": "Ski Oddly",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fitness"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/permanent-vacation-vibes.jpg",
+      "en": "Permanent Vacation Vibes",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/night-owl-artist.jpg",
+      "en": "Night Owl Artist",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "art-creativity"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/redundant-reminder-sender.jpg",
+      "en": "Redundant Reminder Sender",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "roast-a-friend"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/karaoke-king.jpg",
+      "en": "Karaoke King",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/relentless-google-er.jpg",
+      "en": "Relentless Google-er",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
     }
   ]
 }
