@@ -40,6 +40,16 @@
   .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;letter-spacing:-.01em;text-decoration:none;display:inline-block;transform:rotate(-3deg)}
   .back{font-weight:700;font-size:14px;text-decoration:none;opacity:.75;display:inline-flex;align-items:center;gap:6px}
   .back:hover{opacity:1}
+  .lang-switch{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
+  .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
+  .lang-btn:focus-visible{outline:none;opacity:1}
+  .lang-btn[aria-pressed="true"]{opacity:1;transform:translateY(-1px) rotate(-2deg);box-shadow:3px 3px 0 var(--ink)}
+  .lang-btn[data-lang="en"]{background:#ff3366}
+  .lang-btn[data-lang="tr"]{background:#1ec8c8}
+  .lang-btn[data-lang="de"]{background:#f5b400;color:#141414}
+  .lang-btn[data-lang="fr"]{background:#845ec2}
+  .lang-btn[data-lang="hu"]{background:#ff7a45}
 
   .ghead{padding:56px 0 30px;text-align:center}
   .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 12px;border-radius:8px;transform:rotate(-2deg)}
@@ -105,57 +115,60 @@
 <header>
   <div class="wrap nav">
     <a href="index.html" class="logo">ODDVI</a>
-    <a href="index.html" class="back">← Back home</a>
+    <div style="display:flex;align-items:center;gap:18px">
+      <a href="index.html" class="back" data-i18n="og.back">← Back home</a>
+      <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
+    </div>
   </div>
 </header>
 
 <div class="ghead wrap">
-  <span class="kicker">The full set</span>
-  <h1 class="h2">The Odd Gallery.</h1>
-  <p>Every sticker, every scene, every little bit of odd — all in one place. Tap any card to see it bigger.</p>
+  <span class="kicker" data-i18n="og.kicker">The full set</span>
+  <h1 class="h2" data-i18n="og.h1">The Odd Gallery.</h1>
+  <p data-i18n="og.intro">Every sticker, every scene, every little bit of odd — all in one place. Tap any card to see it bigger.</p>
 </div>
 
 <div class="wrap filters">
   <div class="filter-group" data-group="mood">
-    <span class="filter-label">Your mood</span>
+    <span class="filter-label" data-i18n="og.filter.mood">Your mood</span>
     <div class="filter-chips">
-      <button class="chip active" data-value="all">All</button>
-      <button class="chip" data-value="chaotic">Chaotic</button>
-      <button class="chip" data-value="chill">Chill</button>
-      <button class="chip" data-value="dramatic">Dramatic</button>
-      <button class="chip" data-value="petty">Petty</button>
-      <button class="chip" data-value="sarcastic">Sarcastic</button>
-      <button class="chip" data-value="wholesome">Wholesome</button>
-      <button class="chip" data-value="confident">Confident</button>
+      <button class="chip active" data-value="all" data-i18n="og.chip.all">All</button>
+      <button class="chip" data-value="chaotic" data-i18n="og.tag.chaotic">Chaotic</button>
+      <button class="chip" data-value="chill" data-i18n="og.tag.chill">Chill</button>
+      <button class="chip" data-value="dramatic" data-i18n="og.tag.dramatic">Dramatic</button>
+      <button class="chip" data-value="petty" data-i18n="og.tag.petty">Petty</button>
+      <button class="chip" data-value="sarcastic" data-i18n="og.tag.sarcastic">Sarcastic</button>
+      <button class="chip" data-value="wholesome" data-i18n="og.tag.wholesome">Wholesome</button>
+      <button class="chip" data-value="confident" data-i18n="og.tag.confident">Confident</button>
     </div>
   </div>
   <div class="filter-group" data-group="occasion">
-    <span class="filter-label">The joke</span>
+    <span class="filter-label" data-i18n="og.filter.occasion">The joke</span>
     <div class="filter-chips">
-      <button class="chip active" data-value="all">All</button>
-      <button class="chip" data-value="roast-a-friend">Roast a friend</button>
-      <button class="chip" data-value="group-chat">Group chat</button>
-      <button class="chip" data-value="work-meeting">Work meeting</button>
-      <button class="chip" data-value="self-deprecating">Self-deprecating</button>
-      <button class="chip" data-value="motivational">Motivational</button>
-      <button class="chip" data-value="throwback">Throwback</button>
+      <button class="chip active" data-value="all" data-i18n="og.chip.all">All</button>
+      <button class="chip" data-value="roast-a-friend" data-i18n="og.tag.roast-a-friend">Roast a friend</button>
+      <button class="chip" data-value="group-chat" data-i18n="og.tag.group-chat">Group chat</button>
+      <button class="chip" data-value="work-meeting" data-i18n="og.tag.work-meeting">Work meeting</button>
+      <button class="chip" data-value="self-deprecating" data-i18n="og.tag.self-deprecating">Self-deprecating</button>
+      <button class="chip" data-value="motivational" data-i18n="og.tag.motivational">Motivational</button>
+      <button class="chip" data-value="throwback" data-i18n="og.tag.throwback">Throwback</button>
     </div>
   </div>
   <div class="filter-group" data-group="domain">
-    <span class="filter-label">Who it's for</span>
+    <span class="filter-label" data-i18n="og.filter.domain">Who it's for</span>
     <div class="filter-chips">
-      <button class="chip active" data-value="all">All</button>
-      <button class="chip" data-value="fashion">Fashion</button>
-      <button class="chip" data-value="food">Food</button>
-      <button class="chip" data-value="fitness">Fitness</button>
-      <button class="chip" data-value="home">Home</button>
-      <button class="chip" data-value="work-office">Work &amp; Office</button>
-      <button class="chip" data-value="social-life">Social Life</button>
-      <button class="chip" data-value="travel">Travel</button>
-      <button class="chip" data-value="art-creativity">Art &amp; Creativity</button>
-      <button class="chip" data-value="nature">Nature</button>
-      <button class="chip" data-value="tech">Tech</button>
-      <button class="chip" data-value="mystery-brand">Mystery</button>
+      <button class="chip active" data-value="all" data-i18n="og.chip.all">All</button>
+      <button class="chip" data-value="fashion" data-i18n="og.tag.fashion">Fashion</button>
+      <button class="chip" data-value="food" data-i18n="og.tag.food">Food</button>
+      <button class="chip" data-value="fitness" data-i18n="og.tag.fitness">Fitness</button>
+      <button class="chip" data-value="home" data-i18n="og.tag.home">Home</button>
+      <button class="chip" data-value="work-office" data-i18n="og.tag.work-office">Work &amp; Office</button>
+      <button class="chip" data-value="social-life" data-i18n="og.tag.social-life">Social Life</button>
+      <button class="chip" data-value="travel" data-i18n="og.tag.travel">Travel</button>
+      <button class="chip" data-value="art-creativity" data-i18n="og.tag.art-creativity">Art &amp; Creativity</button>
+      <button class="chip" data-value="nature" data-i18n="og.tag.nature">Nature</button>
+      <button class="chip" data-value="tech" data-i18n="og.tag.tech">Tech</button>
+      <button class="chip" data-value="mystery-brand" data-i18n="og.tag.mystery-brand">Mystery</button>
     </div>
   </div>
   <p class="filter-count" id="filterCount"></p>
@@ -168,7 +181,7 @@
 <div class="lb" id="lb">
   <button class="lb-close" id="lbClose">&times;</button>
   <img id="lbImg" src="" alt="" />
-  <button class="lb-share" id="lbShare">&#8599; Share</button>
+  <button class="lb-share" id="lbShare" data-i18n="og.share">&#8599; Share</button>
   <div class="lb-cap" id="lbCap"></div>
 </div>
 
@@ -178,6 +191,7 @@
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="streak.js"></script>
 <script src="share.js"></script>
 <script>
@@ -221,9 +235,11 @@
           var moods = (t.mood||[]).join(' ');
           var occasions = (t.occasion||[]).join(' ');
           var domains = (t.domain||[]).join(' ');
+          var l = document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';
+          var dShare = ((window.I18N && window.I18N.dict[l]) || {})['og.share'] || 'Share';
           return '<figure class="card" data-idx="'+i+'" data-slug="'+esc(slug)+'" data-mood="'+esc(moods)+'" data-occasion="'+esc(occasions)+'" data-domain="'+esc(domains)+'">'+
             '<img src="'+esc(encodeURI(it.image))+'" alt="'+esc(cap)+'" loading="lazy">'+
-            '<button class="card-share" aria-label="Share" title="Share">&#8599;</button>'+
+            '<button class="card-share" aria-label="Share" title="'+esc(dShare)+'">&#8599;</button>'+
             '<figcaption>'+esc(cap)+'</figcaption></figure>';
         }).join('');
 
@@ -268,7 +284,12 @@
         if (ok) visible++;
       });
       var countEl = document.getElementById('filterCount');
-      if (countEl) countEl.textContent = visible + (visible === 1 ? ' odd found' : ' odds found');
+      if (countEl) {
+        var l = document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';
+        var d = (window.I18N && window.I18N.dict[l]) || {};
+        var tpl = (visible === 1 ? d['og.count.one'] : d['og.count.other']) || (visible + (visible === 1 ? ' odd found' : ' odds found'));
+        countEl.textContent = tpl.replace('{n}', visible);
+      }
     }
 
     document.querySelectorAll('.filter-group').forEach(function(group){
@@ -281,6 +302,13 @@
           applyFilters();
         });
       });
+    });
+
+    window.addEventListener('oddvi:lang', applyFilters);
+    window.addEventListener('oddvi:lang', function(){
+      var l = document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';
+      var dShare = ((window.I18N && window.I18N.dict[l]) || {})['og.share'] || 'Share';
+      grid.querySelectorAll('.card-share').forEach(function(btn){ btn.title = dShare; });
     });
 
     lbClose.addEventListener('click', closeLightbox);
