@@ -338,10 +338,10 @@
 <!-- MOTION / REELS -->
 <section id="motion">
   <div class="wrap">
-    <span class="kicker">Oddvi in motion</span>
+    <span class="kicker" data-i18n="mot.kicker">Oddvi in motion</span>
     <div class="mot-head">
-      <h2 class="h2">Steal these for your reels.</h2>
-      <p>Download it, post it, tag <a class="social-icon sm" href="https://instagram.com/theoddvi" target="_blank" rel="noopener" aria-label="Instagram" style="vertical-align:middle;margin:0 2px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a> <b>@theoddvi</b>. That's the whole vibe. Sessiz oynar — sesi açmak için videoya dokun.</p>
+      <h2 class="h2" data-i18n="mot.h2">Steal these for your reels.</h2>
+      <p><span data-i18n="mot.p1">Download it, post it, tag</span> <a class="social-icon sm" href="https://instagram.com/theoddvi" target="_blank" rel="noopener" aria-label="Instagram" style="vertical-align:middle;margin:0 2px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a> <b>@theoddvi</b>. <span data-i18n="mot.p2">That's the whole vibe. Plays muted — tap the video to unmute.</span></p>
     </div>
     <div class="reels" id="reels"></div>
   </div>
@@ -557,7 +557,7 @@
         }
         if(navigator.share){ await navigator.share({title:'Oddvi', text:txt, url:location.origin}); return; }
         await navigator.clipboard.writeText(location.origin);
-        alert('Link kopyaland\u0131 \u2014 reels\u2019ine ekleyip @theoddvi\u2019yi etiketle!');
+        alert(D['mot.copied']||'Link copied — add it to your reel and tag @theoddvi!');
       }catch(e){}
     }
 
@@ -566,10 +566,10 @@
         var src=encodeURI(v.video||'');
         return '<figure class="reel" data-src="'+esc(src)+'">'+
           '<video src="'+esc(src)+'" muted loop playsinline preload="metadata"></video>'+
-          '<span class="snd">\uD83D\uDD07 ses i\u00e7in dokun</span>'+
+          '<span class="snd">\uD83D\uDD07 '+esc(D['mot.tap']||'Tap for sound')+'</span>'+
           '<div class="tools">'+
-            '<a class="tool" href="'+esc(src)+'" download title="\u0130ndir">\u2B07</a>'+
-            '<button class="tool sh" title="Payla\u015f">\u2197</button>'+
+            '<a class="tool" href="'+esc(src)+'" download title="'+esc(D['mot.download']||'Download')+'">\u2B07</a>'+
+            '<button class="tool sh" title="'+esc(D['mot.share']||'Share')+'">\u2197</button>'+
           '</div>'+
           '<span class="tag">@theoddvi</span>'+
         '</figure>';
