@@ -92,13 +92,21 @@
   .hero-figure{position:relative;perspective:1000px;transform:rotate(-2.5deg)}
   @media(max-width:900px){.hero-figure{transform:none}}
   .hero-figure .frame{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);border:4px solid var(--ink);box-shadow:14px 14px 0 var(--red);will-change:transform;transition:transform .15s ease-out}
-  .hero-figure img{width:100%;height:auto;aspect-ratio:1031/1280;object-fit:cover}
+  .hero-figure img,.hero-figure video{width:100%;height:auto;aspect-ratio:1031/1280;object-fit:cover;display:block}
   .blob{position:absolute;width:150px;height:150px;background:var(--teal);border-radius:50%;border:3px solid var(--ink);z-index:-1}
   .blob.b1{top:-24px;left:-28px}
   .blob.b2{bottom:-34px;right:-24px;width:110px;height:110px;background:var(--yellow)}
-  .sticker{position:absolute;right:-18px;top:24px;background:var(--yellow);color:var(--ink);font-family:var(--font-disp);font-weight:800;font-size:14px;padding:14px;border-radius:50%;width:94px;height:94px;display:grid;place-items:center;text-align:center;line-height:1.05;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transform:rotate(10deg)}
-  .sticker.s2{right:auto;top:auto;left:-22px;bottom:-22px;background:var(--red);color:#fff;width:78px;height:78px;font-size:13px;transform:rotate(-12deg)}
+  .sticker{position:absolute;right:-18px;top:24px;background:var(--yellow);color:var(--ink);font-family:var(--font-disp);font-weight:800;font-size:14px;padding:14px;border-radius:50%;width:94px;height:94px;display:grid;place-items:center;text-align:center;line-height:1.05;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);animation:floatS1 3.4s ease-in-out infinite}
+  .sticker.s2{right:auto;top:auto;left:-22px;bottom:-22px;background:var(--red);color:#fff;width:78px;height:78px;font-size:13px;animation:floatS2 3.9s ease-in-out infinite .3s}
+  @keyframes floatS1{0%,100%{transform:rotate(10deg) translateY(0)}50%{transform:rotate(10deg) translateY(-9px)}}
+  @keyframes floatS2{0%,100%{transform:rotate(-12deg) translateY(0)}50%{transform:rotate(-12deg) translateY(-11px)}}
   @media(max-width:900px){.sticker{display:none}}
+
+  @keyframes heroTextIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes heroFigIn{from{opacity:0;transform:rotate(-2.5deg) translateY(34px) scale(.97)}to{opacity:1;transform:rotate(-2.5deg) translateY(0) scale(1)}}
+  .hero-grid>div:first-child{animation:heroTextIn .7s cubic-bezier(.16,1,.3,1) both}
+  .hero-figure{animation:heroFigIn .85s cubic-bezier(.16,1,.3,1) .12s both}
+  @media(prefers-reduced-motion: reduce){.sticker,.hero-figure,.hero-grid>div:first-child{animation:none!important}}
 
   .marquee{background:var(--ink);color:var(--paper);padding:16px 0;overflow:hidden;white-space:nowrap;margin-top:34px;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(-1deg) scale(1.03)}
   .marquee span{font-family:var(--font-disp);font-weight:800;font-size:clamp(20px,3vw,30px);letter-spacing:.01em;display:inline-block;animation:scroll 26s linear infinite}
@@ -269,10 +277,20 @@
       <span class="blob b1"></span>
       <span class="blob b2"></span>
       <div class="frame" id="heroFrame">
-        <img id="imgHero" src="/uploads/What's your Odd.jpeg" alt="Oddvi — What's your Odd?" width="1031" height="1280" fetchpriority="high" />
+        <video id="imgHero" autoplay muted loop playsinline poster="/uploads/What's your Odd.jpeg" width="1031" height="1280" aria-label="Oddvi animasyonu">
+          <source src="/oddvi-anim-1.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="sticker">BE A<br>LITTLE<br>ODD</div>
-      <div class="sticker s2" aria-hidden="true">100%<br>ODD</div>
+      <div class="sticker s2" aria-hidden="true" id="miniFace">
+        <svg viewBox="0 0 78 78" width="58" height="58">
+          <circle cx="26" cy="35" r="11" fill="#fff8f0"/>
+          <circle cx="52" cy="35" r="11" fill="#fff8f0"/>
+          <circle id="miniPupilL" cx="26" cy="35" r="5" fill="#141414"/>
+          <circle id="miniPupilR" cx="52" cy="35" r="5" fill="#141414"/>
+          <path d="M16,54 Q39,64 62,54" stroke="#fff8f0" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
   </div>
 
@@ -419,6 +437,26 @@
     fig.addEventListener('mouseleave', ()=>{ frame.style.transform=''; });
   })();
 
+  /* Mini rozet gözleri imleci takip eder */
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var pupilL=document.getElementById('miniPupilL'), pupilR=document.getElementById('miniPupilR');
+    if(!pupilL || !pupilR) return;
+    var svg=pupilL.closest('svg');
+    function moveEyes(clientX, clientY){
+      var r=svg.getBoundingClientRect();
+      var cx=r.left+r.width/2, cy=r.top+r.height/2;
+      var dx=clientX-cx, dy=clientY-cy;
+      var dist=Math.sqrt(dx*dx+dy*dy)||1;
+      var offX=(dx/dist)*Math.min(3.2, dist*0.05);
+      var offY=(dy/dist)*Math.min(3.2, dist*0.05);
+      pupilL.setAttribute('cx', 26+offX); pupilL.setAttribute('cy', 35+offY);
+      pupilR.setAttribute('cx', 52+offX); pupilR.setAttribute('cy', 35+offY);
+    }
+    window.addEventListener('mousemove', function(e){ moveEyes(e.clientX, e.clientY); }, {passive:true});
+    window.addEventListener('touchmove', function(e){ var t=e.touches[0]; if(t) moveEyes(t.clientX, t.clientY); }, {passive:true});
+  })();
+
   /* Email — gerçek n8n webhook'una POST atar */
   (function(){
     const WEBHOOK_URL = 'https://tuzwzs6k.rpcld.app/webhook/oddvi-signup';
@@ -499,7 +537,7 @@
       .then(function(r){return r.ok?r.json():null;})
       .then(function(s){
         if(!s) return;
-        var map={imgHero:s.hero, imgMeet:s.meet, imgStory:s.story};
+        var map={imgMeet:s.meet, imgStory:s.story};
         Object.keys(map).forEach(function(id){
           var el=document.getElementById(id);
           if(el && map[id]) el.src = encodeURI(map[id]);
