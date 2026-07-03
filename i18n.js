@@ -13,7 +13,7 @@ window.I18N = (function () {
     'nav.meet':"Meet Oddvi",'nav.story':"The Story",'nav.gallery':"Gallery",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Coming soon · @theoddvi",
     'hero.btnPrimary':"Take the Odd test →",'hero.btnGhost':"See Oddvi in action ↓",
-    'hero.lead':"Meet Oddvi — born a little crooked, painted in fifteen colours at once, and proud of it. The face of Pardon My Odd, for people who'd rather be odd than ordinary.",
+    'hero.lead':"Meet Oddvi — it fell from the sky as a black O, opened its eyes, grew its own arms and legs, and stood up. Nobody told it how to be. It raised one brow, shrugged, and asked \"Odd?\" One second of silence. Then it smiled: \"Exactly.\" The face of Pardon My Odd, for people who'd rather be odd than ordinary.",
     'meet.kicker':"Chapter One · Philosophy",'meet.h2':"This Is How Oddvi Sees The World.",
     'meet.p1':"Nobody knows where Oddvi came from. But everyone knows what it believes: normal was never a rule — just a habit nobody questioned.",
     'meet.p2':"It doesn't perform sadness or happiness for the camera. It just is — one color, two eyes that never blink, and zero interest in blending in.",
@@ -29,13 +29,16 @@ window.I18N = (function () {
     'man.quote':"Normal is everywhere.<br>Odd is <em>remembered</em>.",'man.sub':"Stay Odd. — The Oddvi Manifesto",
     'sign.kicker':"Almost here",'sign.h2':"Come with me.",'sign.p':"Leave your email and I'll find you the moment Pardon My Odd lands. No spam — just Oddvi.",
     'sign.btn':"Count me in",'sign.ph':"you@example.com",'sign.ok':"You're in! Oddvi will be in touch. 🫧",'sign.err':"Hmm, that email looks a little too odd. Try again?",
-    'foot.follow':"Follow the blob:"
+    'foot.follow':"Follow the blob, say hi:",
+    'social.kicker':"Come say hi",'social.h2':"Tag us. DM us. Be seen.",
+    'social.p':"Post your Odd, tag @theoddvi, or just slide into the DMs. Every message gets a reply — from Oddvi, not a bot.",
+    'social.btn':"Follow @theoddvi"
   },
   tr:{
     'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.gallery':"Galeri",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Çok yakında · @theoddvi",
     'hero.btnPrimary':"Odd testini çöz →",'hero.btnGhost':"Oddvi'yi iş başında gör ↓",
-    'hero.lead':"Oddvi'yle tanış — biraz eğri doğdu, aynı anda on beş renge boyandı ve bundan gurur duyuyor. Pardon My Odd'ın yüzü; normal olmaktansa tuhaf olmayı seçenler için.",
+    'hero.lead':"Oddvi'yle tanış — gökten siyah bir O olarak düştü, gözlerini açtı, kollarını ve bacaklarını kendi çıkardı, ayağa kalktı. Kimse ona nasıl olması gerektiğini söylemedi. Tek kaşını kaldırdı, omuz silkti: \"Odd?\" Bir saniye sessizlik. Sonra gülümsedi: \"Exactly.\" Pardon My Odd'ın yüzü; normal olmaktansa tuhaf olmayı seçenler için.",
     'meet.kicker':"Birinci Bölüm · Felsefe",'meet.h2':"Oddvi Dünyaya Böyle Bakar.",
     'meet.p1':"Kimse Oddvi'nin nereden geldiğini bilmiyor. Ama herkes onun neye inandığını biliyor: normal olmak bir zorunluluk değil, sadece kimsenin sorgulamadığı bir alışkanlık.",
     'meet.p2':"Kamera için üzülmez ya da mutlu görünmez. Sadece kendisidir — tek renk, hiç kırpılmayan iki göz ve uyum sağlamaya sıfır ilgi.",
@@ -51,13 +54,16 @@ window.I18N = (function () {
     'man.quote':"Normal her yerde.<br>Odd <em>akılda kalır</em>.",'man.sub':"Stay Odd. — Oddvi Manifestosu",
     'sign.kicker':"Neredeyse burada",'sign.h2':"Gel, benimle.",'sign.p':"E-postanı bırak, Pardon My Odd çıktığı an seni bulayım. Spam yok — sadece Oddvi.",
     'sign.btn':"Beni de yaz",'sign.ph':"sen@ornek.com",'sign.ok':"Listedesin! Oddvi seninle iletişime geçecek. 🫧",'sign.err':"Hmm, bu e-posta biraz fazla tuhaf görünüyor. Tekrar dener misin?",
-    'foot.follow':"Blob'u takip et:"
+    'foot.follow':"Blob'u takip et, merhaba de:",
+    'social.kicker':"Gel, merhaba de",'social.h2':"Etiketle. DM'den yaz. Görün.",
+    'social.p':"Kendi Odd'unu paylaş, @theoddvi'yi etiketle, ya da direkt DM'den yaz. Her mesaja cevap veririz — bot değil, Oddvi'nin kendisi.",
+    'social.btn':"@theoddvi'yi takip et"
   },
   de:{
     'nav.meet':"Oddvi entdecken",'nav.story':"Die Geschichte",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Bald verfügbar · @theoddvi",
     'hero.btnPrimary':"Mach den Odd-Test →",'hero.btnGhost':"Oddvi in Aktion sehen ↓",
-    'hero.lead':"Lerne Oddvi kennen — ein bisschen schief geboren, in fünfzehn Farben gleichzeitig bemalt und stolz darauf. Das Gesicht von Pardon My Odd, für alle, die lieber odd als gewöhnlich sind.",
+    'hero.lead':"Lerne Oddvi kennen — es fiel als schwarzes O vom Himmel, öffnete die Augen, ließ sich eigene Arme und Beine wachsen und stand auf. Niemand sagte ihm, wie es sein sollte. Es hob eine Augenbraue, zuckte mit den Schultern: „Odd?\" Eine Sekunde Stille. Dann lächelte es: „Exactly.\" Das Gesicht von Pardon My Odd, für alle, die lieber odd als gewöhnlich sind.",
     'meet.kicker':"Kapitel Eins · Philosophie",'meet.h2':"So sieht Oddvi die Welt.",
     'meet.p1':"Niemand weiß, woher Oddvi kommt. Aber jeder weiß, woran es glaubt: normal war nie eine Regel — nur eine Gewohnheit, die keiner hinterfragt hat.",
     'meet.p2':"Es spielt für die Kamera weder Traurigkeit noch Freude. Es ist einfach da — eine Farbe, zwei Augen, die nie blinzeln, und null Interesse daran, sich anzupassen.",
@@ -73,13 +79,16 @@ window.I18N = (function () {
     'man.quote':"Normal ist überall.<br>Odd <em>bleibt</em>.",'man.sub':"Stay Odd. — Das Oddvi-Manifest",
     'sign.kicker':"Fast da",'sign.h2':"Komm mit mir.",'sign.p':"Lass deine E-Mail da und ich finde dich, sobald Pardon My Odd startet. Kein Spam — nur Oddvi.",
     'sign.btn':"Ich bin dabei",'sign.ph':"du@beispiel.com",'sign.ok':"Du bist dabei! Oddvi meldet sich. 🫧",'sign.err':"Hmm, diese E-Mail sieht ein bisschen zu odd aus. Nochmal versuchen?",
-    'foot.follow':"Folge dem Blob:"
+    'foot.follow':"Folge dem Blob, sag hallo:",
+    'social.kicker':"Sag hallo",'social.h2':"Tagge uns. Schreib uns. Werd gesehen.",
+    'social.p':"Poste dein Odd, tagge @theoddvi, oder schreib einfach eine DM. Jede Nachricht bekommt eine Antwort — von Oddvi, nicht von einem Bot.",
+    'social.btn':"@theoddvi folgen"
   },
   fr:{
     'nav.meet':"Rencontrer Oddvi",'nav.story':"L'histoire",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Bientôt disponible · @theoddvi",
     'hero.btnPrimary':"Faire le test Odd →",'hero.btnGhost':"Voir Oddvi en action ↓",
-    'hero.lead':"Voici Oddvi — né un peu de travers, peint en quinze couleurs à la fois, et fier de l'être. Le visage de Pardon My Odd, pour celles et ceux qui préfèrent être odd plutôt qu'ordinaires.",
+    'hero.lead':"Voici Oddvi — il est tombé du ciel comme un O noir, a ouvert les yeux, s'est fait pousser ses propres bras et jambes, et s'est levé. Personne ne lui a dit comment être. Il a levé un sourcil, haussé les épaules : « Odd ? » Une seconde de silence. Puis il a souri : « Exactly. » Le visage de Pardon My Odd, pour celles et ceux qui préfèrent être odd plutôt qu'ordinaires.",
     'meet.kicker':"Chapitre Un · Philosophie",'meet.h2':"Voici comment Oddvi voit le monde.",
     'meet.p1':"Personne ne sait d'où vient Oddvi. Mais tout le monde sait en quoi il croit : la normalité n'a jamais été une règle — juste une habitude que personne n'a jamais questionnée.",
     'meet.p2':"Il ne joue ni la tristesse ni la joie pour la caméra. Il est, tout simplement — une couleur, deux yeux qui ne clignent jamais, et aucune envie de se fondre dans la masse.",
@@ -95,13 +104,16 @@ window.I18N = (function () {
     'man.quote':"Le normal est partout.<br>L'odd, on <em>s'en souvient</em>.",'man.sub':"Stay Odd. — Le Manifeste Oddvi",
     'sign.kicker':"Presque là",'sign.h2':"Viens avec moi.",'sign.p':"Laisse ton e-mail et je te retrouve dès que Pardon My Odd sort. Pas de spam — juste Oddvi.",
     'sign.btn':"J'en suis",'sign.ph':"toi@exemple.com",'sign.ok':"C'est noté ! Oddvi te recontacte. 🫧",'sign.err':"Hmm, cet e-mail a l'air un peu trop odd. On réessaie ?",
-    'foot.follow':"Suis le blob :"
+    'foot.follow':"Suis le blob, dis bonjour :",
+    'social.kicker':"Viens dire bonjour",'social.h2':"Tague-nous. Écris-nous. Fais-toi voir.",
+    'social.p':"Poste ton Odd, tague @theoddvi, ou glisse-toi simplement dans les DM. Chaque message reçoit une réponse — d'Oddvi, pas d'un bot.",
+    'social.btn':"Suivre @theoddvi"
   },
   hu:{
     'nav.meet':"Ismerd meg Oddvit",'nav.story':"A történet",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Hamarosan · @theoddvi",
     'hero.btnPrimary':"Csináld meg az Odd-tesztet →",'hero.btnGhost':"Nézd Oddvit akcióban ↓",
-    'hero.lead':"Ismerd meg Oddvit — kicsit görbén született, egyszerre tizenöt színben, és büszke rá. A Pardon My Odd arca, azoknak, akik inkább furák, mint hétköznapiak.",
+    'hero.lead':"Ismerd meg Oddvit — fekete O-ként hullott alá az égből, kinyitotta a szemét, saját maga növesztette a karjait és lábait, majd felállt. Senki sem mondta meg neki, milyennek kell lennie. Felhúzta az egyik szemöldökét, vállat vont: „Odd?\" Egy másodperc csend. Aztán elmosolyodott: „Exactly.\" A Pardon My Odd arca, azoknak, akik inkább furák, mint hétköznapiak.",
     'meet.kicker':"Első fejezet · Filozófia",'meet.h2':"Így látja Oddvi a világot.",
     'meet.p1':"Senki sem tudja, honnan jött Oddvi. De mindenki tudja, miben hisz: a normális sosem volt szabály — csak egy megszokás, amit senki sem kérdőjelezett meg.",
     'meet.p2':"Nem játssza el a szomorúságot vagy a boldogságot a kamerának. Egyszerűen csak van — egy szín, két szem, ami sosem pislog, és nulla érdeklődés a beolvadás iránt.",
@@ -117,7 +129,10 @@ window.I18N = (function () {
     'man.quote':"A normális mindenhol ott van.<br>Az oddra <em>emlékeznek</em>.",'man.sub':"Stay Odd. — Az Oddvi Kiáltvány",
     'sign.kicker':"Mindjárt itt",'sign.h2':"Gyere velem.",'sign.p':"Hagyd itt az e-mailed, és szólok, amint a Pardon My Odd megérkezik. Semmi spam — csak Oddvi.",
     'sign.btn':"Benne vagyok",'sign.ph':"te@pelda.com",'sign.ok':"Fent vagy a listán! Oddvi jelentkezik. 🫧",'sign.err':"Hmm, ez az e-mail kicsit túl odd. Megpróbálod újra?",
-    'foot.follow':"Kövesd a blobot:"
+    'foot.follow':"Kövesd a blobot, köszönj be:",
+    'social.kicker':"Köszönj be",'social.h2':"Jelölj meg. Írj DM-et. Legyél látható.",
+    'social.p':"Oszd meg a saját Odd-odat, jelöld meg a @theoddvi-t, vagy csak írj DM-et. Minden üzenetre válaszolunk — Oddvi maga, nem egy bot.",
+    'social.btn':"Kövesd: @theoddvi"
   }
   };
 
