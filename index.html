@@ -276,7 +276,7 @@
     </div>
   </div>
 
-  <div class="wrap"><div class="marquee"><span>NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;</span></div></div>
+  <div class="wrap"><div class="marquee"><span data-i18n-html="marquee.text">NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;</span></div></div>
 </section>
 
 <!-- MEET -->
@@ -601,7 +601,13 @@
 
     fetch('/videos.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{videos:[]};})
-      .then(function(d){ var v=(d&&d.videos)?d.videos:[]; if(v.length){ build(v); } else if(section){ section.style.display='none'; } })
+      .then(function(d){
+        var v=(d&&d.videos)?d.videos:[];
+        if(v.length){
+          build(v);
+          window.addEventListener('oddvi:lang', function(){ build(v); });
+        } else if(section){ section.style.display='none'; }
+      })
       .catch(function(){ if(section){ section.style.display='none'; } });
   })();
 </script>
