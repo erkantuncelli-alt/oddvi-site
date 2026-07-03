@@ -2,271 +2,1008 @@
   "items": [
     {
       "image": "/uploads/oddgallery/beyond-trends-1.jpg",
-      "en": "Beyond Trends"
+      "en": "Beyond Trends",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fashion"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/finals-week-stay-odd.jpg",
-      "en": "Stay Odd Through Finals Week"
+      "en": "Stay Odd Through Finals Week",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/fashion-freestyle.jpg",
-      "en": "Fashion Freestyle"
+      "en": "Fashion Freestyle",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fashion"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/everyone-focuses-i-sing.jpg",
-      "en": "Everyone Focuses, I Sing"
+      "en": "Everyone Focuses, I Sing",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/dragon-walk.jpg",
-      "en": "Dragon Walk"
+      "en": "Dragon Walk",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/something-odd-is-coming.jpg",
-      "en": "Something Odd Is Coming"
+      "en": "Something Odd Is Coming",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/aliens-next-door.jpg",
-      "en": "Aliens Next Door"
+      "en": "Aliens Next Door",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/everyone-moves-i-groove.jpg",
-      "en": "Everyone Moves, I Groove"
+      "en": "Everyone Moves, I Groove",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/alerts-off-peace-on.jpg",
-      "en": "Alerts Off, Peace On"
+      "en": "Alerts Off, Peace On",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/pizza-slice-reversed.jpg",
-      "en": "Pizza Slice Reversed"
+      "en": "Pizza Slice Reversed",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/everyone-repeats-i-dance.jpg",
-      "en": "Everyone Repeats, I Dance"
+      "en": "Everyone Repeats, I Dance",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/odd-surprises-await.jpg",
-      "en": "Odd Surprises Await"
+      "en": "Odd Surprises Await",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/flip-sweet-tooth-v1.jpg",
-      "en": "Flip Sweet Tooth"
+      "en": "Flip Sweet Tooth",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/modern-rings-retro-blings.jpg",
-      "en": "Modern Rings, Retro Blings"
+      "en": "Modern Rings, Retro Blings",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/odd-isnt-wrong-same-is-boring.jpg",
-      "en": "Odd Isn't Wrong. Same Is Boring."
+      "en": "Odd Isn't Wrong. Same Is Boring.",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/paris-selfie-peace.jpg",
-      "en": "Same City, Different Angle"
+      "en": "Same City, Different Angle",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/wrong-turn-right-direction.jpg",
-      "en": "Every Sign Points Somewhere"
+      "en": "Every Sign Points Somewhere",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/flip-sweet-tooth-v2.jpg",
-      "en": "Flip Sweet Tooth"
+      "en": "Flip Sweet Tooth",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/the-book-of-oddities.jpg",
-      "en": "Writing The Book Of Oddities"
+      "en": "Writing The Book Of Oddities",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "art-creativity"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/why-blend-in.jpg",
-      "en": "Why Blend In?"
+      "en": "Why Blend In?",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/garden-wave-hello.jpg",
-      "en": "Blooming, Allegedly"
+      "en": "Blooming, Allegedly",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/zen-amid-chaos.jpg",
-      "en": "Chaos Outside, Calm Inside"
+      "en": "Chaos Outside, Calm Inside",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/i-call-it-abstract.jpg",
-      "en": "I Call It Abstract"
+      "en": "I Call It Abstract",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "art-creativity"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/too-odd-to-filter.jpg",
-      "en": "Too Odd To Filter"
+      "en": "Too Odd To Filter",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/found-normal-returned-it.jpg",
-      "en": "Found Normal. Returned It."
+      "en": "Found Normal. Returned It.",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "roast-a-friend"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/sip-happens.jpg",
-      "en": "Sip Happens"
+      "en": "Sip Happens",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/proud-rock-collection.jpg",
-      "en": "Proud Of This Pile"
+      "en": "Proud Of This Pile",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/oops-made-art-again.jpg",
-      "en": "Oops! Made Art Again"
+      "en": "Oops! Made Art Again",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "art-creativity"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/you-missed-a-spot.jpg",
-      "en": "You Missed A Spot"
+      "en": "You Missed A Spot",
+      "tags": {
+        "mood": [
+          "petty"
+        ],
+        "occasion": [
+          "roast-a-friend"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/how-oddvi-was-born.jpg",
-      "en": "How Oddvi Was Born"
+      "en": "How Oddvi Was Born",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/coming-soon-teaser.jpg",
-      "en": "Coming Soon"
+      "en": "Coming Soon",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/weightlifting-philosopher.jpg",
-      "en": "Weightlifting Philosopher"
+      "en": "Weightlifting Philosopher",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fitness"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/plant-whisperer.jpg",
-      "en": "Plant Whisperer"
+      "en": "Plant Whisperer",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/last-minute-canceller.jpg",
-      "en": "The Last-Minute Canceller"
+      "en": "The Last-Minute Canceller",
+      "tags": {
+        "mood": [
+          "petty"
+        ],
+        "occasion": [
+          "roast-a-friend"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/head-in-the-clouds.jpg",
-      "en": "Head In The Clouds"
+      "en": "Head In The Clouds",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/midnight-snacker.jpg",
-      "en": "Midnight Snacker"
+      "en": "Midnight Snacker",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/study-oddvi.jpg",
-      "en": "Study Oddvi"
+      "en": "Study Oddvi",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/mountain-oddvi-summit.jpg",
-      "en": "Mountain Oddvi"
+      "en": "Mountain Oddvi",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/oddvi-climb-different.jpg",
-      "en": "Climb Different"
+      "en": "Climb Different",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fitness"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/fashion-oddvi.jpg",
-      "en": "Fashion Oddvi"
+      "en": "Fashion Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fashion"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/sail-different.jpg",
-      "en": "Sail Different"
+      "en": "Sail Different",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/love-oddvi.jpg",
-      "en": "Love Oddvi"
+      "en": "Love Oddvi",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/dad-oddvi.jpg",
-      "en": "Dad Oddvi"
+      "en": "Dad Oddvi",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/mom-oddvi.jpg",
-      "en": "Mom Oddvi"
+      "en": "Mom Oddvi",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/doctor-oddvi.jpg",
-      "en": "Doctor Oddvi"
+      "en": "Doctor Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/big-boss-oddvi.jpg",
-      "en": "Big Boss Oddvi"
+      "en": "Big Boss Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/boss-oddvi-desk.jpg",
-      "en": "Boss Oddvi"
+      "en": "Boss Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/ceo-of-odd.jpg",
-      "en": "CEO Of Odd"
+      "en": "CEO Of Odd",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/chef-oddvi.jpg",
-      "en": "Chef Oddvi"
+      "en": "Chef Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/surf-oddly.jpg",
-      "en": "Surf Oddly"
+      "en": "Surf Oddly",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/ski-oddly.jpg",
-      "en": "Ski Oddly"
+      "en": "Ski Oddly",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/permanent-vacation-vibes.jpg",
-      "en": "Permanent Vacation Vibes"
+      "en": "Permanent Vacation Vibes",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/night-owl-artist.jpg",
-      "en": "Night Owl Artist"
+      "en": "Night Owl Artist",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "art-creativity"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/redundant-reminder-sender.jpg",
-      "en": "Redundant Reminder Sender"
+      "en": "Redundant Reminder Sender",
+      "tags": {
+        "mood": [
+          "petty"
+        ],
+        "occasion": [
+          "roast-a-friend"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/karaoke-king.jpg",
-      "en": "Karaoke King"
+      "en": "Karaoke King",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/relentless-google-er.jpg",
-      "en": "Relentless Google-er"
+      "en": "Relentless Google-er",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/everyone-oddvi-party.jpg",
-      "en": "Everyone At The Party, Oddvi At The Party"
+      "en": "Everyone At The Party, Oddvi At The Party",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/odd-voice-memo-recorder.jpg",
-      "en": "Odd Voice Memo Recorder"
+      "en": "Odd Voice Memo Recorder",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/normal-is-boring-wear-odd-cook.jpg",
-      "en": "Normal Is Boring. Wear Odd."
+      "en": "Normal Is Boring. Wear Odd.",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/normal-is-boring-wear-odd-office.jpg",
-      "en": "Normal Is Boring. Wear Odd."
+      "en": "Normal Is Boring. Wear Odd.",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/keep-the-odd-inside.jpg",
-      "en": "Keep The Odd Inside"
+      "en": "Keep The Odd Inside",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fashion"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/odd-from-the-bottom-up.jpg",
-      "en": "Odd From The Bottom Up"
+      "en": "Odd From The Bottom Up",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/comfortably-weird.jpg",
-      "en": "Comfortably Weird"
+      "en": "Comfortably Weird",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/wear-your-weird.jpg",
-      "en": "Wear Your Weird"
+      "en": "Wear Your Weird",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/life-exe-stopped-working.jpg",
-      "en": "Life.exe Has Stopped Working"
+      "en": "Life.exe Has Stopped Working",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/ceo-of-overthinking-inc.jpg",
-      "en": "CEO Of Overthinking Inc."
+      "en": "CEO Of Overthinking Inc.",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     },
     {
       "image": "/uploads/oddgallery/existential-crisis-loading.jpg",
-      "en": "Existential Crisis Loading"
+      "en": "Existential Crisis Loading",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "art-creativity"
+        ]
+      }
     }
   ]
 }
