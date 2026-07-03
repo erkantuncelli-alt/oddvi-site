@@ -377,6 +377,7 @@
     <p data-i18n="sign.p">Leave your email and I'll find you the moment Pardon My Odd lands.</p>
     <div class="form">
       <input id="email" type="email" data-i18n-ph="sign.ph" placeholder="you@example.com" aria-label="Email" />
+      <input id="website" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
       <button class="btn btn-primary" id="joinBtn" data-i18n="sign.btn">Count me in</button>
     </div>
     <div class="form-msg" id="formMsg" role="status"></div>
@@ -418,13 +419,44 @@
     fig.addEventListener('mouseleave', ()=>{ frame.style.transform=''; });
   })();
 
-  /* Email (client-side; n8n webhook'u ileride) */
+  /* Email — gerçek n8n webhook'una POST atar */
   (function(){
-    const btn=document.getElementById('joinBtn'), input=document.getElementById('email'), msg=document.getElementById('formMsg');
-    btn.addEventListener('click', ()=>{
-      const email=input.value.trim();
+    const WEBHOOK_URL = 'https://tuzwzs6k.rpcld.app/webhook/oddvi-signup';
+    const btn=document.getElementById('joinBtn'), input=document.getElementById('email'),
+          honeypot=document.getElementById('website'), msg=document.getElementById('formMsg');
+    function curLang(){return document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';}
+    let sending = false;
+    btn.addEventListener('click', async ()=>{
+      if (sending) return;
+      const email = input.value.trim();
+      if (honeypot && honeypot.value) { return; } /* bot doldurdu, sessizce çık */
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ msg.textContent = D['sign.err']||"Try again?"; return; }
-      msg.textContent = D['sign.ok']||"You're in!"; input.value="";
+
+      sending = true;
+      const originalLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '…';
+      msg.textContent = '';
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, lang: curLang() })
+        });
+        if (res.ok) {
+          msg.textContent = D['sign.ok']||"You're in!";
+          input.value = "";
+        } else {
+          msg.textContent = D['sign.err']||"Try again?";
+        }
+      } catch (e) {
+        msg.textContent = D['sign.err']||"Try again?";
+      } finally {
+        sending = false;
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
     });
   })();
 
