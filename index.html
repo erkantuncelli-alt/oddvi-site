@@ -102,12 +102,14 @@
   @media(max-width:900px){.hero-capsules{height:280px;max-width:400px;margin-inline:auto}}
   .hero-cap-col{display:flex;flex-direction:column;gap:14px}
   .capsule{
-    --clip:polygon(12% 0%,88% 0%,100% 10%,100% 58%,90% 68%,64% 68%,58% 100%,50% 72%,42% 100%,36% 68%,10% 68%,0% 58%,0% 10%);
+    --clip:polygon(14% 0%,86% 0%,96% 4%,100% 12%,100% 78%,96% 85%,90% 88%,80% 80%,70% 74%,60% 71%,50% 70%,40% 71%,30% 74%,20% 80%,10% 88%,4% 85%,0% 78%,0% 12%,4% 4%);
     position:relative;padding:5px;overflow:hidden;
     clip-path:var(--clip);background:var(--red);
     animation:capFloat 4s ease-in-out infinite
   }
   .capsule img,.capsule video{width:100%;height:100%;object-fit:cover;display:block;clip-path:var(--clip)}
+  .cap-band{position:absolute;top:5px;left:5px;right:5px;height:15%;background:var(--ink);z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .cap-band span{color:#fff8f0;font-family:var(--font-disp);font-weight:800;font-size:7.5px;letter-spacing:.03em;white-space:nowrap}
   .hero-cap-col:nth-child(1) .capsule:nth-child(1){background:var(--red)}
   .hero-cap-col:nth-child(1) .capsule:nth-child(2){background:var(--yellow-deep)}
   .hero-cap-col:nth-child(2) .capsule:nth-child(1){background:var(--teal)}
@@ -309,12 +311,13 @@
         </div>
         <div class="hero-capsules" id="heroFig">
           <div class="hero-cap-col">
-            <div class="capsule" style="flex:1.3"><img id="capA" alt="" loading="lazy" /></div>
-            <div class="capsule alt" style="flex:1"><img id="capB" alt="" loading="lazy" /></div>
+            <div class="capsule" style="flex:1.3"><div class="cap-band"><span>PARDON MY ODD</span></div><img id="capA" alt="" loading="lazy" /></div>
+            <div class="capsule alt" style="flex:1"><div class="cap-band"><span>PARDON MY ODD</span></div><img id="capB" alt="" loading="lazy" /></div>
           </div>
           <div class="hero-cap-col">
-            <div class="capsule alt" style="flex:1"><img id="capC" alt="" loading="lazy" /></div>
+            <div class="capsule alt" style="flex:1"><div class="cap-band"><span>PARDON MY ODD</span></div><img id="capC" alt="" loading="lazy" /></div>
             <div class="capsule" style="flex:1.3" id="heroFrame">
+              <div class="cap-band"><span>PARDON MY ODD</span></div>
               <video autoplay muted loop playsinline poster="/uploads/What's your Odd.jpeg" aria-label="Oddvi animasyonu">
                 <source src="/oddvi-anim-1.mp4" type="video/mp4" />
               </video>
