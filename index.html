@@ -98,31 +98,9 @@
   .btn-hero-ghost{background:transparent;color:#fff;border-color:var(--night-line);box-shadow:5px 5px 0 var(--night-line)}
   .btn-hero-ghost:hover{box-shadow:2px 2px 0 var(--night-line)}
 
-  .hero-capsules{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:360px;align-items:center;justify-items:center}
+  .hero-capsules{display:flex;align-items:center;justify-content:center;height:360px}
+  .hero-capsules img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
   @media(max-width:900px){.hero-capsules{height:300px;max-width:400px;margin-inline:auto}}
-  .product-tile{animation:capFloat 4s ease-in-out infinite}
-  .product-tile img{width:100%;height:100%;object-fit:cover;display:block}
-  .product-tile.p2{animation-delay:.5s;animation-duration:4.5s}
-  /* Garment frame: the outline/shape is a fixed, never-distorted frame (aspect-ratio
-     locked to the source PNG canvas + mask-size:contain). The .fabric photo inside is
-     the only thing that gets scaled/cropped (object-fit:cover) and can be re-centered
-     per-instance via the --focal custom property so the product stays legible under
-     whatever part of the garment cutout shows it. Same pattern is reusable anywhere
-     else on the site (e.g. gallery product cards) — just reuse these classes. */
-  .boxer-product,.tshirt-product{position:relative;width:100%;max-width:100%;max-height:100%}
-  .boxer-product{aspect-ratio:1490/1291;animation:capFloat 4.5s ease-in-out infinite .5s}
-  .tshirt-product{aspect-ratio:1720/1670;animation:capFloat 4.3s ease-in-out infinite .2s}
-  .boxer-product img,.tshirt-product img{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .boxer-product .fabric,.tshirt-product .fabric{object-fit:cover;object-position:var(--focal,50% 50%)}
-  .boxer-product .outline,.tshirt-product .outline{object-fit:contain;pointer-events:none}
-  .boxer-product .fabric{mask-image:url(/uploads/products/layers/boxer-shape-mask.png);-webkit-mask-image:url(/uploads/products/layers/boxer-shape-mask.png);mask-size:contain;-webkit-mask-size:contain;mask-position:center;-webkit-mask-position:center;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
-  .tshirt-product .fabric{mask-image:url(/uploads/products/layers/tshirt-shape-mask.png);-webkit-mask-image:url(/uploads/products/layers/tshirt-shape-mask.png);mask-size:contain;-webkit-mask-size:contain;mask-position:center;-webkit-mask-position:center;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
-  .garment{position:relative;display:flex;align-items:center;justify-content:center;animation:capFloat 4.2s ease-in-out infinite .9s}
-  .garment svg{width:100%;height:100%}
-  .video-tile{animation:capFloat 4.6s ease-in-out infinite .3s}
-  .video-tile video{width:100%;height:100%;object-fit:cover;display:block}
-  @keyframes capFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  @media(prefers-reduced-motion: reduce){.garment,.video-tile,.product-tile{animation:none!important}}
 
   @keyframes heroTextIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
   @keyframes heroFigIn{from{opacity:0;transform:translateY(34px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
@@ -330,23 +308,7 @@
           </div>
         </div>
         <div class="hero-capsules" id="heroFig">
-          <div class="boxer-product" title="Wear Your Weird">
-            <img class="fabric" style="--focal:50% 78%" src="/uploads/oddgallery/wear-your-weird.jpg" alt="Oddvi boxer — Wear Your Weird" />
-            <img class="outline" src="/uploads/products/layers/boxer-shape-outline.png" alt="" />
-          </div>
-          <div class="tshirt-product" title="Odd Surprises Await">
-            <img class="fabric" style="--focal:50% 75%" src="/uploads/oddgallery/odd-surprises-await.jpg" alt="Oddvi t-shirt — Odd Surprises Await" />
-            <img class="outline" src="/uploads/products/layers/tshirt-shape-outline.png" alt="" />
-          </div>
-          <div class="boxer-product" title="Why Blend In">
-            <img class="fabric" style="--focal:50% 22%" src="/uploads/oddgallery/why-blend-in.jpg" alt="Oddvi boxer — Why Blend In" />
-            <img class="outline" src="/uploads/products/layers/boxer-shape-outline.png" alt="" />
-          </div>
-          <div class="video-tile" id="heroFrame">
-            <video autoplay muted loop playsinline poster="/uploads/What's your Odd.jpeg" aria-label="Oddvi animasyonu">
-              <source src="/oddvi-anim-1.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <img id="heroFrame" src="/uploads/oddvi-hero-thumbsup.png" alt="Oddvi — What's your Odd?" />
         </div>
       </div>
     </div>
