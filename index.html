@@ -183,7 +183,8 @@
   #motion{background:var(--tang);color:var(--ink);border-bottom:3px solid var(--ink)}
   .mot-head{margin:16px 0 34px;max-width:60ch}
   .mot-head p{font-size:18px;margin-top:12px;font-weight:500}
-  .reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+  .reels{display:flex;gap:22px}
+  .reels .reel{flex:0 0 240px;scroll-snap-align:start}
   .reel{position:relative;border:3px solid var(--ink);border-radius:16px;overflow:hidden;background:#000;box-shadow:5px 5px 0 var(--ink);aspect-ratio:1/1;transition:transform .2s,box-shadow .2s}
   .reel:nth-child(odd){transform:rotate(-1.4deg)}
   .reel:nth-child(even){transform:rotate(1.4deg)}
@@ -338,8 +339,9 @@
     <div class="mot-head">
       <h2 class="h2" data-i18n="mot.h2">Steal these for your reels.</h2>
       <p><span data-i18n="mot.p1">Download it, post it, tag</span> <a class="social-icon sm" href="https://instagram.com/theoddvi" target="_blank" rel="noopener" aria-label="Instagram" style="vertical-align:middle;margin:0 2px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a> <b>@theoddvi</b>. <span data-i18n="mot.p2">That's the whole vibe. Plays muted — tap the video to unmute.</span></p>
+      <p style="margin-top:8px"><a href="#shareOdd" data-i18n="mot.shareLink" style="color:var(--red);font-weight:700;text-decoration:underline">Got your own Odd moment? Share it below ↓</a></p>
     </div>
-    <div class="reels" id="reels"></div>
+    <div class="carousel-wrap"><div class="reels" id="reels"></div></div>
     <div class="gal-more"><a href="motion.html" class="btn btn-primary" data-i18n="home.motion.cta">See all the moves →</a></div>
   </div>
 </section>
@@ -723,7 +725,7 @@
     fetch('/videos.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{videos:[]};})
       .then(function(d){
-        var v=((d&&d.videos)?d.videos:[]).slice(0,3);
+        var v=((d&&d.videos)?d.videos:[]).slice().reverse().slice(0,8);
         if(v.length){
           build(v);
           window.addEventListener('oddvi:lang', function(){ build(v); });
