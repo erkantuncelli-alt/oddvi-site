@@ -107,6 +107,10 @@
   .boxer-product img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   .boxer-product .fabric{mask-image:url(/uploads/products/layers/boxer-mask-v2.png);-webkit-mask-image:url(/uploads/products/layers/boxer-mask-v2.png);mask-size:cover;-webkit-mask-size:cover;mask-position:center;-webkit-mask-position:center;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
   .boxer-product .shadow,.boxer-product .waistband,.boxer-product .outline{pointer-events:none}
+  .tshirt-product{position:relative;width:100%;height:100%;animation:capFloat 4.3s ease-in-out infinite .2s}
+  .tshirt-product img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .tshirt-product .fabric{mask-image:url(/uploads/products/layers/tshirt-mask.png);-webkit-mask-image:url(/uploads/products/layers/tshirt-mask.png);mask-size:cover;-webkit-mask-size:cover;mask-position:center;-webkit-mask-position:center;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
+  .tshirt-product .shadow,.tshirt-product .collar,.tshirt-product .outline{pointer-events:none}
   .garment{position:relative;display:flex;align-items:center;justify-content:center;animation:capFloat 4.2s ease-in-out infinite .9s}
   .garment svg{width:100%;height:100%}
   .video-tile{animation:capFloat 4.6s ease-in-out infinite .3s}
@@ -305,24 +309,23 @@
           </div>
         </div>
         <div class="hero-capsules" id="heroFig">
-          <div class="product-tile">
-            <img src="/uploads/products/tshirt-why-blend-in.jpg" alt="Oddvi t-shirt — Why Blend In" loading="lazy" />
-          </div>
           <div class="boxer-product" title="Wear Your Weird">
             <img class="fabric" src="/uploads/oddgallery/wear-your-weird.jpg" alt="Oddvi boxer — Wear Your Weird" />
             <img class="shadow" src="/uploads/products/layers/boxer-shadow-v2.png" alt="" />
             <img class="waistband" src="/uploads/products/layers/boxer-waistband-v2.png" alt="" />
             <img class="outline" src="/uploads/products/layers/boxer-outline-v2.png" alt="" />
           </div>
-          <div class="garment" title="Hoodie">
-            <svg viewBox="0 0 100 110" aria-label="Oddvi hoodie">
-              <defs><clipPath id="clipHoodie"><rect x="30" y="50" width="40" height="34" rx="6"/></clipPath></defs>
-              <path d="M38,22 Q50,4 62,22" fill="none" stroke="var(--ink)" stroke-width="3"/>
-              <path d="M30,26 L40,18 L60,18 L70,26 L92,40 L82,56 L68,48 L68,104 L32,104 L32,48 L18,56 L8,40 Z" fill="var(--teal)" stroke="var(--ink)" stroke-width="3"/>
-              <image id="capC" x="30" y="50" width="40" height="34" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipHoodie)" />
-              <rect x="30" y="50" width="40" height="34" rx="6" fill="none" stroke="var(--ink)" stroke-width="2"/>
-              <path d="M40,84 L60,84 L60,98" fill="none" stroke="var(--ink)" stroke-width="2"/>
-            </svg>
+          <div class="tshirt-product" title="Odd Surprises Await">
+            <img class="fabric" src="/uploads/oddgallery/odd-surprises-await.jpg" alt="Oddvi t-shirt — Odd Surprises Await" />
+            <img class="shadow" src="/uploads/products/layers/tshirt-shadow.png" alt="" />
+            <img class="collar" src="/uploads/products/layers/tshirt-collar.png" alt="" />
+            <img class="outline" src="/uploads/products/layers/tshirt-outline.png" alt="" />
+          </div>
+          <div class="boxer-product" title="Why Blend In">
+            <img class="fabric" src="/uploads/oddgallery/why-blend-in.jpg" alt="Oddvi boxer — Why Blend In" />
+            <img class="shadow" src="/uploads/products/layers/boxer-shadow-v2.png" alt="" />
+            <img class="waistband" src="/uploads/products/layers/boxer-waistband-v2.png" alt="" />
+            <img class="outline" src="/uploads/products/layers/boxer-outline-v2.png" alt="" />
           </div>
           <div class="video-tile" id="heroFrame">
             <video autoplay muted loop playsinline poster="/uploads/What's your Odd.jpeg" aria-label="Oddvi animasyonu">
@@ -433,22 +436,6 @@
       frame.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg) translateZ(0)`;
     });
     fig.addEventListener('mouseleave', ()=>{ frame.style.transform=''; });
-  })();
-
-  /* Hoodie siluetine galeriden rastgele 1 görsel (SVG <image> href) */
-  (function(){
-    var capC=document.getElementById('capC');
-    if(!capC) return;
-    fetch('/gallery.json?t='+Date.now())
-      .then(function(r){return r.ok?r.json():{items:[]};})
-      .then(function(d){
-        var items=(d&&d.items)?d.items:[];
-        if(!items.length) return;
-        var pick=items[Math.floor(Math.random()*items.length)];
-        capC.setAttribute('href', encodeURI(pick.image));
-        var svg=capC.closest('svg');
-        if(svg){ var t=document.createElementNS('http://www.w3.org/2000/svg','title'); t.textContent=pick.en||''; svg.insertBefore(t, svg.firstChild); }
-      }).catch(function(){});
   })();
 
   /* Email — gerçek n8n webhook'una POST atar */
