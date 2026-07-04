@@ -3,5 +3,8 @@
   "compatibility_date": "2025-06-01",
   "assets": {
     "directory": "."
-  }
+  },
+  "routes": [
+    { "pattern": "theoddvi.com", "custom_domain": true }
+  ]
 }
