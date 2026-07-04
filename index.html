@@ -100,14 +100,15 @@
 
   .hero-capsules{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:360px}
   @media(max-width:900px){.hero-capsules{height:300px;max-width:400px;margin-inline:auto}}
-  .garment{position:relative;display:flex;align-items:center;justify-content:center;animation:capFloat 4s ease-in-out infinite}
-  .garment:nth-child(2){animation-delay:.5s;animation-duration:4.5s}
-  .garment:nth-child(3){animation-delay:.9s;animation-duration:4.2s}
+  .product-tile{border-radius:20px;overflow:hidden;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--red);animation:capFloat 4s ease-in-out infinite}
+  .product-tile img{width:100%;height:100%;object-fit:cover;display:block}
+  .product-tile.p2{box-shadow:5px 5px 0 var(--yellow-deep);animation-delay:.5s;animation-duration:4.5s}
+  .garment{position:relative;display:flex;align-items:center;justify-content:center;animation:capFloat 4.2s ease-in-out infinite .9s}
   .garment svg{width:100%;height:100%}
   .video-tile{border-radius:20px;overflow:hidden;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--grape);animation:capFloat 4.6s ease-in-out infinite .3s}
   .video-tile video{width:100%;height:100%;object-fit:cover;display:block}
   @keyframes capFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  @media(prefers-reduced-motion: reduce){.garment,.video-tile{animation:none!important}}
+  @media(prefers-reduced-motion: reduce){.garment,.video-tile,.product-tile{animation:none!important}}
 
   @keyframes heroTextIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
   @keyframes heroFigIn{from{opacity:0;transform:translateY(34px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
@@ -300,23 +301,11 @@
           </div>
         </div>
         <div class="hero-capsules" id="heroFig">
-          <div class="garment" title="T-shirt">
-            <svg viewBox="0 0 100 100" aria-label="Oddvi t-shirt">
-              <defs><clipPath id="clipShirt"><rect x="32" y="40" width="36" height="36" rx="6"/></clipPath></defs>
-              <path d="M35,8 L45,2 L55,2 L65,8 L88,20 L80,38 L66,30 L66,96 L34,96 L34,30 L20,38 L12,20 Z" fill="var(--red)" stroke="var(--ink)" stroke-width="3"/>
-              <image id="capA" x="32" y="40" width="36" height="36" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipShirt)" />
-              <rect x="32" y="40" width="36" height="36" rx="6" fill="none" stroke="var(--ink)" stroke-width="2"/>
-            </svg>
+          <div class="product-tile">
+            <img src="/uploads/products/tshirt-why-blend-in.jpg" alt="Oddvi t-shirt — Why Blend In" loading="lazy" />
           </div>
-          <div class="garment" title="Boxer">
-            <svg viewBox="0 0 140 90" aria-label="Oddvi boxer">
-              <defs><clipPath id="clipBoxer"><rect x="35" y="26" width="70" height="38" rx="6"/></clipPath></defs>
-              <path d="M15,18 Q15,6 27,6 L113,6 Q125,6 125,18 L125,55 Q125,68 108,69 L86,69 L74,86 L68,72 L62,86 L50,69 L28,69 Q15,68 15,55 Z" fill="var(--yellow-deep)" stroke="var(--ink)" stroke-width="3"/>
-              <rect x="15" y="6" width="110" height="15" fill="var(--ink)"/>
-              <text x="70" y="16" text-anchor="middle" fill="#fff8f0" font-size="6.5" font-weight="800" font-family="Bricolage Grotesque, sans-serif" letter-spacing=".5">PARDON MY ODD</text>
-              <image id="capB" x="35" y="26" width="70" height="38" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipBoxer)" />
-              <rect x="35" y="26" width="70" height="38" rx="6" fill="none" stroke="var(--ink)" stroke-width="2"/>
-            </svg>
+          <div class="product-tile p2">
+            <img src="/uploads/products/boxer-wear-your-weird.jpg" alt="Oddvi boxer — Wear Your Weird" loading="lazy" />
           </div>
           <div class="garment" title="Hoodie">
             <svg viewBox="0 0 100 110" aria-label="Oddvi hoodie">
@@ -439,23 +428,19 @@
     fig.addEventListener('mouseleave', ()=>{ frame.style.transform=''; });
   })();
 
-  /* Hero ürün siluetleri — galeriden rastgele 3 görsel (SVG <image> href) */
+  /* Hoodie siluetine galeriden rastgele 1 görsel (SVG <image> href) */
   (function(){
-    var capA=document.getElementById('capA'), capB=document.getElementById('capB'), capC=document.getElementById('capC');
-    if(!capA) return;
+    var capC=document.getElementById('capC');
+    if(!capC) return;
     fetch('/gallery.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{items:[]};})
       .then(function(d){
-        var items=(d&&d.items)?d.items.slice():[];
-        for(var i=items.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var tmp=items[i]; items[i]=items[j]; items[j]=tmp; }
-        var picks=items.slice(0,3);
-        [capA,capB,capC].forEach(function(el,i){
-          if(el && picks[i]){
-            el.setAttribute('href', encodeURI(picks[i].image));
-            var svg=el.closest('svg');
-            if(svg){ var t=document.createElementNS('http://www.w3.org/2000/svg','title'); t.textContent=picks[i].en||''; svg.insertBefore(t, svg.firstChild); }
-          }
-        });
+        var items=(d&&d.items)?d.items:[];
+        if(!items.length) return;
+        var pick=items[Math.floor(Math.random()*items.length)];
+        capC.setAttribute('href', encodeURI(pick.image));
+        var svg=capC.closest('svg');
+        if(svg){ var t=document.createElementNS('http://www.w3.org/2000/svg','title'); t.textContent=pick.en||''; svg.insertBefore(t, svg.firstChild); }
       }).catch(function(){});
   })();
 
