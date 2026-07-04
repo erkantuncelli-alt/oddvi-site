@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Story — Oddvi</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="description" content="Meet Oddvi and the legend of where it came from." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --ink:#141414; --paper:#fff8f0; --paper-2:#f7eddd; --card:#ffffff;
+    --red:#ff3366; --red-deep:#e21b54;
+    --teal:#1ec8c8; --yellow:#ffc93c; --grape:#845ec2;
+    --radius:20px;
+    --font-disp:"Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:"Inter", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:24px}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  section{padding:80px 0}
+
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;letter-spacing:-.01em;text-decoration:none;display:inline-block;transform:rotate(-3deg)}
+  .back{font-weight:700;font-size:14px;text-decoration:none;opacity:.75;display:inline-flex;align-items:center;gap:6px}
+  .back:hover{opacity:1}
+  .lang-switch{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
+  .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
+  .lang-btn:focus-visible{outline:none;opacity:1}
+  .lang-btn[aria-pressed="true"]{opacity:1;transform:translateY(-1px) rotate(-2deg);box-shadow:3px 3px 0 var(--ink)}
+  .lang-btn[data-lang="en"]{background:#ff3366}
+  .lang-btn[data-lang="tr"]{background:#1ec8c8}
+  .lang-btn[data-lang="de"]{background:#f5b400;color:#141414}
+  .lang-btn[data-lang="fr"]{background:#845ec2}
+  .lang-btn[data-lang="hu"]{background:#ff7a45}
+
+  .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 12px;border-radius:8px;transform:rotate(-2deg)}
+  .h2{font-family:var(--font-disp);font-weight:800;font-size:clamp(34px,5.6vw,62px);line-height:1;letter-spacing:-.03em;margin-top:18px}
+
+  .manifesto{background:var(--red);color:#fff;text-align:center;overflow:hidden;border-bottom:3px solid var(--ink);padding-top:60px}
+  .manifesto .big-o{font-family:var(--font-disp);font-weight:800;font-size:clamp(110px,24vw,280px);line-height:.8;color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.55);margin-bottom:-30px}
+  .manifesto blockquote{font-family:var(--font-disp);font-weight:800;font-size:clamp(28px,4.6vw,54px);line-height:1.08;letter-spacing:-.02em;max-width:18ch;margin:0 auto}
+  .manifesto p.sub{margin-top:20px;font-weight:700;opacity:.9}
+
+  .meet{background:var(--teal);color:var(--ink);border-bottom:3px solid var(--ink)}
+  .meet-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+  @media(max-width:900px){.meet-grid{grid-template-columns:1fr}}
+  .meet-img{border-radius:var(--radius);overflow:hidden;background:var(--card);border:4px solid var(--ink);box-shadow:12px 12px 0 var(--ink);transform:rotate(2deg)}
+  .meet-img img{width:100%;aspect-ratio:1031/1280;object-fit:cover}
+  .meet p{font-size:18px;margin-top:18px;max-width:46ch;font-weight:500}
+  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .chips li{background:var(--card);border:2.5px solid var(--ink);padding:8px 15px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:3px 3px 0 var(--ink)}
+
+  .story{background:var(--yellow);color:var(--ink);border-bottom:3px solid var(--ink)}
+  .story-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  @media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+  .story p{font-size:18px;margin-top:18px;max-width:52ch;font-weight:500}
+  .story-img{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);border:4px solid var(--ink);box-shadow:12px 12px 0 var(--grape);transform:rotate(-2deg)}
+  .story-img img{width:100%;aspect-ratio:1031/1280;object-fit:cover}
+  .pullquote{font-family:var(--font-disp);font-weight:800;font-size:clamp(26px,4.2vw,44px);line-height:1.1;letter-spacing:-.02em;text-align:center;max-width:20ch;margin:56px auto 0;color:var(--ink);background:var(--card);border:3px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:24px 30px;transform:rotate(-1.5deg)}
+
+  footer{padding:40px 0;background:var(--ink);color:var(--paper);text-align:center;font-size:14px}
+  footer a{font-weight:700;text-decoration:none;color:var(--red-deep)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">ODDVI</a>
+    <div style="display:flex;align-items:center;gap:18px">
+      <a href="index.html" class="back" data-i18n="og.back">← Back home</a>
+      <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
+    </div>
+  </div>
+</header>
+
+<section class="manifesto">
+  <div class="wrap">
+    <div class="big-o">O</div>
+    <blockquote data-i18n-html="man.quote">Normal is everywhere.<br>Odd is <em>remembered</em>.</blockquote>
+    <p class="sub" data-i18n="man.sub">Stay Odd. — The Oddvi Manifesto</p>
+  </div>
+</section>
+
+<section id="meet" class="meet">
+  <div class="wrap meet-grid">
+    <div class="meet-img">
+      <img id="imgMeet" src="/uploads/oddvi09logo-selam_yaramaz.png" alt="Meet Oddvi" loading="lazy" />
+    </div>
+    <div>
+      <span class="kicker" data-i18n="meet.kicker">Chapter One · Philosophy</span>
+      <h2 class="h2" data-i18n="meet.h2">This Is How Oddvi Sees The World.</h2>
+      <p data-i18n="meet.p1">Nobody knows where Oddvi came from. But everyone knows what it believes: normal was never a rule — just a habit nobody questioned.</p>
+      <p data-i18n="meet.p2">It doesn't perform sadness or happiness for the camera. It just is — one color, two eyes that never blink, and zero interest in blending in.</p>
+      <ul class="chips">
+        <li data-i18n="meet.c1">Stay odd.</li>
+        <li data-i18n="meet.c2">Normal is a rumor.</li>
+        <li data-i18n="meet.c3">Blend in, disappear.</li>
+        <li data-i18n="meet.c4">The mouth lies. The eyes don't.</li>
+        <li data-i18n="meet.c5">You don't ask permission to be yourself.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="story" class="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div>
+        <span class="kicker" data-i18n="story.kicker">The Legend</span>
+        <h2 class="h2" data-i18n="story.h2">Nobody Knows Where Oddvi Came From.</h2>
+        <p data-i18n="story.p1">Some say it fell from a star, in the one hour of the night when nobody was looking. Some believe the wind carried it in, straight into the middle of a bored little street.</p>
+        <p data-i18n="story.p2">Others claim it escaped from a child's drawing before the ink even dried. Some say Oddvi never came from anywhere at all — because belonging was never really the point.</p>
+        <p data-i18n="story.p3">But everyone agrees on one thing: Oddvi shows up the moment someone dares to be themselves.</p>
+      </div>
+      <div class="story-img">
+        <img id="imgStory" src="/uploads/Oddvi'sflair.png" alt="The Oddvi story" loading="lazy" />
+      </div>
+    </div>
+    <p class="pullquote" data-i18n="story.quote">Where it came from doesn't matter. When it shows up does.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="https://instagram.com/theoddvi" target="_blank" rel="noopener">@theoddvi</a> — Stay Odd.
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="streak.js"></script>
+<script>
+  (function(){
+    fetch('/site.json?t='+Date.now())
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(s){
+        if(!s) return;
+        var map={imgMeet:s.meet, imgStory:s.story};
+        Object.keys(map).forEach(function(id){
+          var el=document.getElementById(id);
+          if(el && map[id]) el.src = encodeURI(map[id]);
+        });
+      }).catch(function(){});
+  })();
+</script>
+</body>
+</html>

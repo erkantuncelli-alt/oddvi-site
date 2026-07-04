@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oddvi in Motion — Oddvi</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="description" content="Every Oddvi reel in one place — download, post, tag @theoddvi." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --ink:#141414; --paper:#fff8f0; --card:#ffffff;
+    --red:#ff3366; --red-deep:#e21b54;
+    --radius:20px;
+    --font-disp:"Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:"Inter", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:24px}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;letter-spacing:-.01em;text-decoration:none;display:inline-block;transform:rotate(-3deg)}
+  .back{font-weight:700;font-size:14px;text-decoration:none;opacity:.75;display:inline-flex;align-items:center;gap:6px}
+  .back:hover{opacity:1}
+  .lang-switch{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
+  .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
+  .lang-btn:focus-visible{outline:none;opacity:1}
+  .lang-btn[aria-pressed="true"]{opacity:1;transform:translateY(-1px) rotate(-2deg);box-shadow:3px 3px 0 var(--ink)}
+  .lang-btn[data-lang="en"]{background:#ff3366}
+  .lang-btn[data-lang="tr"]{background:#1ec8c8}
+  .lang-btn[data-lang="de"]{background:#f5b400;color:#141414}
+  .lang-btn[data-lang="fr"]{background:#845ec2}
+  .lang-btn[data-lang="hu"]{background:#ff7a45}
+
+  .ghead{padding:56px 0 20px}
+  .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 12px;border-radius:8px;transform:rotate(-2deg)}
+  .h2{font-family:var(--font-disp);font-weight:800;font-size:clamp(34px,6vw,58px);line-height:1;letter-spacing:-.03em;margin-top:18px}
+  .ghead p{opacity:.78;max-width:60ch;margin-top:16px;font-weight:500;font-size:17px}
+
+  .reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;padding:36px 0 70px}
+  .reel{position:relative;border:3px solid var(--ink);border-radius:16px;overflow:hidden;background:#000;box-shadow:5px 5px 0 var(--ink);aspect-ratio:1/1;transition:transform .2s,box-shadow .2s}
+  .reel:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--ink)}
+  .reel video{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
+  .reel .tools{position:absolute;top:10px;right:10px;display:flex;gap:8px}
+  .reel .tool{width:40px;height:40px;border-radius:10px;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:2px 2px 0 var(--ink);font-size:16px;text-decoration:none;transition:transform .12s,box-shadow .12s}
+  .reel .tool:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+  .reel .tag{position:absolute;left:10px;bottom:10px;background:var(--ink);color:#fff;font-family:var(--font-disp);font-weight:800;font-size:12px;padding:5px 10px;border-radius:8px}
+  .reel .snd{position:absolute;left:10px;top:10px;background:var(--paper);border:2px solid var(--ink);font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;pointer-events:none}
+
+  footer{padding:40px 0;background:var(--ink);color:var(--paper);text-align:center;font-size:14px}
+  footer a{font-weight:700;text-decoration:none;color:var(--red-deep)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">ODDVI</a>
+    <div style="display:flex;align-items:center;gap:18px">
+      <a href="index.html" class="back" data-i18n="og.back">← Back home</a>
+      <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
+    </div>
+  </div>
+</header>
+
+<div class="ghead wrap">
+  <span class="kicker" data-i18n="mot.kicker">Oddvi in motion</span>
+  <h1 class="h2" data-i18n="mot.h2">Steal these for your reels.</h1>
+  <p><span data-i18n="mot.p1">Download it, post it, tag</span> <a href="https://instagram.com/theoddvi" target="_blank" rel="noopener"><b>@theoddvi</b></a>. <span data-i18n="mot.p2">That's the whole vibe. Plays muted — tap the video to unmute.</span></p>
+</div>
+
+<div class="wrap">
+  <div class="reels" id="reels"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="https://instagram.com/theoddvi" target="_blank" rel="noopener">@theoddvi</a> — Stay Odd.
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="streak.js"></script>
+<script>
+  (function(){
+    var wrap=document.getElementById('reels'); if(!wrap) return;
+    function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+    function D(){ return (window.I18N && window.I18N.dict[document.documentElement.lang||'en']) || {}; }
+
+    async function shareReel(url){
+      var abs = new URL(url, location.origin).href;
+      var txt = '@theoddvi #StayOdd';
+      try{
+        if(navigator.canShare){
+          try{
+            var resp = await fetch(abs); var blob = await resp.blob();
+            var file = new File([blob], 'oddvi.mp4', {type: blob.type||'video/mp4'});
+            if(navigator.canShare({files:[file]})){ await navigator.share({files:[file], text:txt}); return; }
+          }catch(_){}
+        }
+        if(navigator.share){ await navigator.share({title:'Oddvi', text:txt, url:location.origin}); return; }
+        await navigator.clipboard.writeText(location.origin);
+        alert(D()['mot.copied']||'Link copied — add it to your reel and tag @theoddvi!');
+      }catch(e){}
+    }
+
+    function build(vids){
+      var t = D();
+      wrap.innerHTML = vids.map(function(v){
+        var src=encodeURI(v.video||'');
+        return '<figure class="reel" data-src="'+esc(src)+'">'+
+          '<video src="'+esc(src)+'" muted loop playsinline preload="metadata"></video>'+
+          '<span class="snd">\uD83D\uDD07 '+esc(t['mot.tap']||'Tap for sound')+'</span>'+
+          '<div class="tools">'+
+            '<a class="tool" href="'+esc(src)+'" download title="'+esc(t['mot.download']||'Download')+'">\u2B07</a>'+
+            '<button class="tool sh" title="'+esc(t['mot.share']||'Share')+'">\u2197</button>'+
+          '</div>'+
+          '<span class="tag">@theoddvi</span>'+
+        '</figure>';
+      }).join('');
+
+      var reels = wrap.querySelectorAll('.reel');
+      reels.forEach(function(fig){
+        var video=fig.querySelector('video'), snd=fig.querySelector('.snd');
+        video.addEventListener('click', function(){
+          video.muted=!video.muted;
+          if(!video.muted){ video.play().catch(function(){}); snd.style.display='none'; }
+          else { snd.style.display=''; }
+        });
+        fig.querySelector('.sh').addEventListener('click', function(){ shareReel(fig.getAttribute('data-src')); });
+      });
+
+      if('IntersectionObserver' in window){
+        var io=new IntersectionObserver(function(entries){
+          entries.forEach(function(en){
+            var vid=en.target.querySelector('video');
+            if(en.isIntersecting){ vid.play().catch(function(){}); } else { vid.pause(); }
+          });
+        }, {threshold:0.4});
+        reels.forEach(function(fig){ io.observe(fig); });
+      } else {
+        reels.forEach(function(fig){ fig.querySelector('video').play().catch(function(){}); });
+      }
+    }
+
+    fetch('/videos.json?t='+Date.now())
+      .then(function(r){return r.ok?r.json():{videos:[]};})
+      .then(function(d){
+        var v=(d&&d.videos)?d.videos:[];
+        build(v);
+        window.addEventListener('oddvi:lang', function(){ build(v); });
+      })
+      .catch(function(){ wrap.innerHTML = '<p>Could not load the reels right now.</p>'; });
+  })();
+</script>
+</body>
+</html>
