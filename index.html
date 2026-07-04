@@ -244,6 +244,12 @@
   .odd-form textarea{width:100%;padding:16px 18px;border-radius:14px;font-size:16px;font-family:var(--font-body);border:3px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:4px 4px 0 var(--ink);resize:vertical;min-height:90px}
   .odd-form textarea:focus,.odd-form .odd-name:focus{outline:none}
   .odd-form .odd-name{width:100%;margin-top:12px;padding:13px 18px;border-radius:12px;font-size:15px;font-family:var(--font-body);border:3px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+  .odd-photo-label{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:10px 16px;border-radius:12px;border:3px solid var(--ink);background:var(--card);font-weight:700;font-size:14px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+  .odd-photo-label:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+  .odd-photo-preview{position:relative;display:inline-flex;margin-top:12px}
+  .odd-photo-preview img{max-width:140px;max-height:140px;border-radius:10px;border:3px solid var(--ink);display:block;object-fit:cover}
+  .odd-photo-preview button{position:absolute;top:-10px;right:-10px;width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);background:var(--card);cursor:pointer;font-weight:800;line-height:1}
+  .odd-entry img{width:100%;border-radius:10px;margin-top:8px;display:block}
   .odd-share .form-msg{color:var(--ink);text-align:center}
   .odd-feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:44px;text-align:left}
   .odd-card{border:3px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);background:var(--card);padding:20px;display:flex;flex-direction:column;gap:12px;transition:transform .2s ease,box-shadow .2s ease}
@@ -407,6 +413,15 @@
       <input id="oddTopic" type="text" class="odd-name" maxlength="60" data-i18n-ph="share.topicPh" placeholder="Give it a title..." />
       <textarea id="oddMsg" maxlength="180" data-i18n-ph="share.ph" placeholder="I always..."></textarea>
       <input id="oddName" type="text" class="odd-name" maxlength="40" data-i18n-ph="share.namePh" placeholder="Your name (optional)" />
+      <label class="odd-photo-label" for="oddPhoto">
+        <input id="oddPhoto" type="file" accept="image/*" style="display:none" />
+        <span data-i18n="share.photoBtn">📷 Add a photo (optional)</span>
+      </label>
+      <div id="oddPhotoPreview" class="odd-photo-preview" style="display:none">
+        <img id="oddPhotoImg" alt="" />
+        <button type="button" id="oddPhotoRemove" aria-label="Remove photo">✕</button>
+      </div>
+      <div class="form-msg" id="oddPhotoMsg" role="status" style="min-height:0"></div>
       <input id="oddWebsite" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
       <button class="btn btn-primary" id="oddShareBtn" data-i18n="share.btn" style="margin-top:14px">Share it</button>
       <div class="form-msg" id="oddShareMsg" role="status"></div>
@@ -510,10 +525,53 @@
     const WEBHOOK_URL = 'https://tuzwzs6k.rpcld.app/webhook/oddvi-share-odd';
     const btn=document.getElementById('oddShareBtn'), msgEl=document.getElementById('oddMsg'),
           topicEl=document.getElementById('oddTopic'), nameEl=document.getElementById('oddName'),
-          honeypot=document.getElementById('oddWebsite'), statusEl=document.getElementById('oddShareMsg');
+          honeypot=document.getElementById('oddWebsite'), statusEl=document.getElementById('oddShareMsg'),
+          photoInput=document.getElementById('oddPhoto'), photoPreview=document.getElementById('oddPhotoPreview'),
+          photoImg=document.getElementById('oddPhotoImg'), photoRemove=document.getElementById('oddPhotoRemove'),
+          photoMsg=document.getElementById('oddPhotoMsg');
     if(!btn) return;
     function curLang(){return document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';}
     let sending = false;
+    let photoDataUrl = null;
+
+    function resetPhoto(){
+      photoDataUrl = null;
+      if(photoInput) photoInput.value = '';
+      if(photoPreview) photoPreview.style.display = 'none';
+      if(photoMsg) photoMsg.textContent = '';
+    }
+
+    if (photoInput) {
+      photoInput.addEventListener('change', function(){
+        const file = photoInput.files && photoInput.files[0];
+        if(!file) return;
+        if(!file.type.startsWith('image/')){ photoMsg.textContent = D['share.photoErr']||"That doesn't look like an image."; photoInput.value=''; return; }
+        if(file.size > 10*1024*1024){ photoMsg.textContent = D['share.photoTooBig']||"That photo's a bit too big (max 10MB)."; photoInput.value=''; return; }
+        photoMsg.textContent = '';
+        const reader = new FileReader();
+        reader.onload = function(e){
+          const imgEl = new Image();
+          imgEl.onload = function(){
+            const maxDim = 1000;
+            let w = imgEl.width, h = imgEl.height;
+            if (w > maxDim || h > maxDim) {
+              const scale = maxDim / Math.max(w,h);
+              w = Math.round(w*scale); h = Math.round(h*scale);
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w; canvas.height = h;
+            canvas.getContext('2d').drawImage(imgEl, 0, 0, w, h);
+            photoDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+            photoImg.src = photoDataUrl;
+            photoPreview.style.display = 'inline-flex';
+          };
+          imgEl.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+    if (photoRemove) photoRemove.addEventListener('click', resetPhoto);
+
     btn.addEventListener('click', async ()=>{
       if (sending) return;
       const message = msgEl.value.trim(), name = nameEl.value.trim(), topic = topicEl.value.trim();
@@ -528,11 +586,11 @@
         const res = await fetch(WEBHOOK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ topic: topic, message: message, name: name, lang: curLang() })
+          body: JSON.stringify({ topic: topic, message: message, name: name, lang: curLang(), photo: photoDataUrl || undefined })
         });
         if (res.ok) {
           statusEl.textContent = D['share.ok']||"Thanks — we'll take a look!";
-          msgEl.value = ""; nameEl.value = ""; topicEl.value = "";
+          msgEl.value = ""; nameEl.value = ""; topicEl.value = ""; resetPhoto();
         } else {
           statusEl.textContent = D['share.err']||"Try again?";
         }
@@ -563,7 +621,8 @@
       var groups = groupByTopic(ODDS);
       feed.innerHTML = groups.slice(0,12).map(function(g){
         var entries = g.entries.map(function(it){
-          return '<div class="odd-entry"><p>'+esc(it.message)+'</p><span class="who">'+esc(it.name||'Anonymous Odd')+'</span></div>';
+          var photo = it.photo ? '<img src="'+esc(it.photo)+'" alt="" loading="lazy" />' : '';
+          return '<div class="odd-entry"><p>'+esc(it.message)+'</p>'+photo+'<span class="who">'+esc(it.name||'Anonymous Odd')+'</span></div>';
         }).join('');
         return '<div class="odd-card"><h3 class="odd-topic">'+esc(g.topic)+'</h3>'+entries+'</div>';
       }).join('');

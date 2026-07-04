@@ -70,6 +70,7 @@ content:
           - { name: topic, label: "Topic / title", type: string, required: true }
           - { name: message, label: Message, type: text, required: true }
           - { name: name, label: "Name (optional)", type: string }
+          - { name: photo, label: "Photo (optional)", type: image }
           - { name: date, label: Date, type: date }
 
   - name: videos
