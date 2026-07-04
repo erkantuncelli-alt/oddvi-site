@@ -45,7 +45,11 @@ window.I18N = (function () {
     'foot.follow':"Follow the blob, say hi:",
     'social.kicker':"Come say hi",'social.h2':"Tag us. DM us. Be seen.",
     'social.p':"Post your Odd, tag @theoddvi, or just slide into the DMs. Every message gets a reply — from Oddvi, not a bot.",
-    'social.btn':"Follow @theoddvi"
+    'social.btn':"Follow @theoddvi",
+    'share.kicker':"Your turn",'share.h2':"Share Your Odd.",
+    'share.p':"Tell us the weird little thing that makes you, you. We read every one — the best get featured right here.",
+    'share.ph':"I always...",'share.topicPh':"Give it a title...",'share.namePh':"Your name (optional)",'share.btn':"Share it",
+    'share.ok':"Thanks — we'll take a look!",'share.err':"Try again?",'share.empty':"Be the first to share yours.",
   },
   tr:{
     'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.gallery':"Galeri",'nav.test':"What's your Odd?",
@@ -83,7 +87,11 @@ window.I18N = (function () {
     'foot.follow':"Blob'u takip et, merhaba de:",
     'social.kicker':"Gel, merhaba de",'social.h2':"Etiketle. DM'den yaz. Görün.",
     'social.p':"Kendi Odd'unu paylaş, @theoddvi'yi etiketle, ya da direkt DM'den yaz. Her mesaja cevap veririz — bot değil, Oddvi'nin kendisi.",
-    'social.btn':"@theoddvi'yi takip et"
+    'social.btn':"@theoddvi'yi takip et",
+    'share.kicker':"Sıra sende",'share.h2':"Kendi Odd'unu Paylaş.",
+    'share.p':"Seni sen yapan o tuhaf küçük şeyi anlat. Hepsini okuyoruz — en iyilerini burada paylaşacağız.",
+    'share.ph':"Ben hep...",'share.topicPh':"Bir başlık ver...",'share.namePh':"Adın (opsiyonel)",'share.btn':"Paylaş",
+    'share.ok':"Teşekkürler — göz atacağız!",'share.err':"Tekrar dener misin?",'share.empty':"İlk paylaşan sen ol.",
   },
   de:{
     'nav.meet':"Oddvi entdecken",'nav.story':"Die Geschichte",'nav.test':"What's your Odd?",
@@ -121,7 +129,11 @@ window.I18N = (function () {
     'foot.follow':"Folge dem Blob, sag hallo:",
     'social.kicker':"Sag hallo",'social.h2':"Tagge uns. Schreib uns. Werd gesehen.",
     'social.p':"Poste dein Odd, tagge @theoddvi, oder schreib einfach eine DM. Jede Nachricht bekommt eine Antwort — von Oddvi, nicht von einem Bot.",
-    'social.btn':"@theoddvi folgen"
+    'social.btn':"@theoddvi folgen",
+    'share.kicker':"Du bist dran",'share.h2':"Teile Dein Odd.",
+    'share.p':"Erzähl uns die schrullige Kleinigkeit, die dich zu dir macht. Wir lesen jede einzelne — die besten zeigen wir hier.",
+    'share.ph':"Ich mache immer...",'share.topicPh':"Gib ihm einen Titel...",'share.namePh':"Dein Name (optional)",'share.btn':"Teilen",
+    'share.ok':"Danke — wir schauen's uns an!",'share.err':"Nochmal versuchen?",'share.empty':"Sei die/der Erste, die/der teilt.",
   },
   fr:{
     'nav.meet':"Rencontrer Oddvi",'nav.story':"L'histoire",'nav.test':"What's your Odd?",
@@ -159,7 +171,11 @@ window.I18N = (function () {
     'foot.follow':"Suis le blob, dis bonjour :",
     'social.kicker':"Viens dire bonjour",'social.h2':"Tague-nous. Écris-nous. Fais-toi voir.",
     'social.p':"Poste ton Odd, tague @theoddvi, ou glisse-toi simplement dans les DM. Chaque message reçoit une réponse — d'Oddvi, pas d'un bot.",
-    'social.btn':"Suivre @theoddvi"
+    'social.btn':"Suivre @theoddvi",
+    'share.kicker':"À toi de jouer",'share.h2':"Partage Ton Odd.",
+    'share.p':"Raconte-nous le petit truc bizarre qui fait de toi, toi. On lit tout — les meilleurs seront mis en avant ici.",
+    'share.ph':"Je fais toujours...",'share.topicPh':"Donne-lui un titre...",'share.namePh':"Ton prénom (optionnel)",'share.btn':"Partager",
+    'share.ok':"Merci — on va y jeter un œil !",'share.err':"Réessayer ?",'share.empty':"Sois le premier à partager.",
   },
   hu:{
     'nav.meet':"Ismerd meg Oddvit",'nav.story':"A történet",'nav.test':"What's your Odd?",
@@ -197,7 +213,11 @@ window.I18N = (function () {
     'foot.follow':"Kövesd a blobot, köszönj be:",
     'social.kicker':"Köszönj be",'social.h2':"Jelölj meg. Írj DM-et. Legyél látható.",
     'social.p':"Oszd meg a saját Odd-odat, jelöld meg a @theoddvi-t, vagy csak írj DM-et. Minden üzenetre válaszolunk — Oddvi maga, nem egy bot.",
-    'social.btn':"Kövesd: @theoddvi"
+    'social.btn':"Kövesd: @theoddvi",
+    'share.kicker':"Te jössz",'share.h2':"Oszd Meg A Te Oddod.",
+    'share.p':"Mondd el azt a fura kis dolgot, ami tényleg te vagy. Mindet elolvassuk — a legjobbakat itt mutatjuk be.",
+    'share.ph':"Mindig...",'share.topicPh':"Adj neki egy címet...",'share.namePh':"A neved (opcionális)",'share.btn':"Megosztás",
+    'share.ok':"Köszi — megnézzük!",'share.err':"Próbáld újra?",'share.empty':"Legyél te az első, aki megosztja.",
   }
   };
 

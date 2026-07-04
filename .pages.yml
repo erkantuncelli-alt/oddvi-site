@@ -55,6 +55,23 @@ content:
       - { name: meet, label: "Meet Oddvi image", type: image }
       - { name: story, label: "Story image", type: image }
 
+  - name: odds
+    label: "Share Your Odd (community messages)"
+    type: file
+    path: odds.json
+    fields:
+      - name: items
+        label: Shared Odds
+        type: object
+        list:
+          collapsible:
+            summary: "{fields.message}"
+        fields:
+          - { name: topic, label: "Topic / title", type: string, required: true }
+          - { name: message, label: Message, type: text, required: true }
+          - { name: name, label: "Name (optional)", type: string }
+          - { name: date, label: Date, type: date }
+
   - name: videos
     label: Videos (Reels)
     type: file

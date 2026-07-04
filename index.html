@@ -237,6 +237,24 @@
   .signup .btn-primary:hover{background:var(--yellow-deep)}
   .form-msg{margin-top:20px;font-weight:700;min-height:24px;color:#fff}
 
+  /* SHARE YOUR ODD */
+  .odd-share{background:var(--paper);text-align:center}
+  .odd-share p{max-width:460px;margin:0 auto 32px;font-size:18px;font-weight:500;opacity:.85}
+  .odd-form{max-width:520px;margin:0 auto;text-align:left}
+  .odd-form textarea{width:100%;padding:16px 18px;border-radius:14px;font-size:16px;font-family:var(--font-body);border:3px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:4px 4px 0 var(--ink);resize:vertical;min-height:90px}
+  .odd-form textarea:focus,.odd-form .odd-name:focus{outline:none}
+  .odd-form .odd-name{width:100%;margin-top:12px;padding:13px 18px;border-radius:12px;font-size:15px;font-family:var(--font-body);border:3px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+  .odd-share .form-msg{color:var(--ink);text-align:center}
+  .odd-feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:44px;text-align:left}
+  .odd-card{border:3px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);background:var(--card);padding:20px;display:flex;flex-direction:column;gap:12px;transition:transform .2s ease,box-shadow .2s ease}
+  .odd-card:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+  .odd-topic{margin:0 0 4px;font-family:var(--font-disp);font-size:18px;font-weight:800}
+  .odd-entry{padding-top:10px;border-top:2px solid var(--ink-10,rgba(20,20,20,.12))}
+  .odd-entry:first-of-type{padding-top:0;border-top:none}
+  .odd-card p{margin:0;font-weight:700;line-height:1.45;font-size:16px}
+  .odd-card .who{font-size:13px;font-weight:700;opacity:.6;text-transform:uppercase;letter-spacing:.03em}
+  .odd-feed-empty{opacity:.6;font-weight:600;grid-column:1/-1;text-align:center}
+
   footer{padding:48px 0;background:var(--ink);color:var(--paper);border-top:3px solid var(--ink)}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px}
   .foot a{text-decoration:none;font-weight:700}
@@ -380,6 +398,23 @@
   </div>
 </section>
 
+<section id="shareOdd" class="odd-share">
+  <div class="wrap">
+    <span class="kicker" data-i18n="share.kicker">Your turn</span>
+    <h2 class="h2" data-i18n="share.h2">Share Your Odd.</h2>
+    <p data-i18n="share.p">Tell us the weird little thing that makes you, you. We read every one — the best get featured right here.</p>
+    <div class="odd-form">
+      <input id="oddTopic" type="text" class="odd-name" maxlength="60" data-i18n-ph="share.topicPh" placeholder="Give it a title..." />
+      <textarea id="oddMsg" maxlength="180" data-i18n-ph="share.ph" placeholder="I always..."></textarea>
+      <input id="oddName" type="text" class="odd-name" maxlength="40" data-i18n-ph="share.namePh" placeholder="Your name (optional)" />
+      <input id="oddWebsite" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+      <button class="btn btn-primary" id="oddShareBtn" data-i18n="share.btn" style="margin-top:14px">Share it</button>
+      <div class="form-msg" id="oddShareMsg" role="status"></div>
+    </div>
+    <div class="odd-feed" id="oddFeed"></div>
+  </div>
+</section>
+
 <section id="join" class="signup">
   <div class="wrap">
     <span class="kicker" data-i18n="sign.kicker">Almost here</span>
@@ -468,6 +503,75 @@
         btn.textContent = originalLabel;
       }
     });
+  })();
+
+  /* Share Your Odd — n8n webhook'una POST atar (moderasyon sonrası odds.json'a eklenir) */
+  (function(){
+    const WEBHOOK_URL = 'https://tuzwzs6k.rpcld.app/webhook/oddvi-share-odd';
+    const btn=document.getElementById('oddShareBtn'), msgEl=document.getElementById('oddMsg'),
+          topicEl=document.getElementById('oddTopic'), nameEl=document.getElementById('oddName'),
+          honeypot=document.getElementById('oddWebsite'), statusEl=document.getElementById('oddShareMsg');
+    if(!btn) return;
+    function curLang(){return document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';}
+    let sending = false;
+    btn.addEventListener('click', async ()=>{
+      if (sending) return;
+      const message = msgEl.value.trim(), name = nameEl.value.trim(), topic = topicEl.value.trim();
+      if (honeypot && honeypot.value) { return; }
+      if(!topic || !message){ statusEl.textContent = D['share.err']||"Try again?"; return; }
+
+      sending = true;
+      const originalLabel = btn.textContent;
+      btn.disabled = true; btn.textContent = '…'; statusEl.textContent = '';
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic: topic, message: message, name: name, lang: curLang() })
+        });
+        if (res.ok) {
+          statusEl.textContent = D['share.ok']||"Thanks — we'll take a look!";
+          msgEl.value = ""; nameEl.value = ""; topicEl.value = "";
+        } else {
+          statusEl.textContent = D['share.err']||"Try again?";
+        }
+      } catch (e) {
+        statusEl.textContent = D['share.err']||"Try again?";
+      } finally {
+        sending = false; btn.disabled = false; btn.textContent = originalLabel;
+      }
+    });
+  })();
+
+  /* Odd feed — onaylanmış paylaşımlar odds.json'dan render edilir, konu başlığına göre gruplanır */
+  (function(){
+    var ODDS = [];
+    function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+    function groupByTopic(items){
+      var map = {}, order = [];
+      items.forEach(function(it){
+        var key = (it.topic||'').trim().toLowerCase() || '(untitled)';
+        if(!map[key]){ map[key] = {topic: it.topic || '', entries: []}; order.push(key); }
+        map[key].entries.push(it);
+      });
+      return order.map(function(k){ return map[k]; });
+    }
+    function render(){
+      var feed=document.getElementById('oddFeed'); if(!feed) return;
+      if(!ODDS.length){ feed.innerHTML = '<p class="odd-feed-empty" data-i18n="share.empty">Be the first to share yours.</p>'; return; }
+      var groups = groupByTopic(ODDS);
+      feed.innerHTML = groups.slice(0,12).map(function(g){
+        var entries = g.entries.map(function(it){
+          return '<div class="odd-entry"><p>'+esc(it.message)+'</p><span class="who">'+esc(it.name||'Anonymous Odd')+'</span></div>';
+        }).join('');
+        return '<div class="odd-card"><h3 class="odd-topic">'+esc(g.topic)+'</h3>'+entries+'</div>';
+      }).join('');
+    }
+    fetch('/odds.json?t='+Date.now())
+      .then(function(r){return r.ok?r.json():{items:[]};})
+      .then(function(d){ ODDS = (d.items||[]).slice().reverse(); render(); })
+      .catch(function(){ render(); });
   })();
 
   /* Gallery — CMS'ten (gallery.json) render edilir */
