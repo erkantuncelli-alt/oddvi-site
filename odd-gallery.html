@@ -204,11 +204,14 @@
     var allItems = [];
     var active = { mood: 'all', occasion: 'all', domain: 'all' };
 
+    function curLang(){ return document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en'; }
+
     function openLightbox(it){
       currentItem = it;
+      var cap = it[curLang()] || it.en || '';
       lbImg.src = encodeURI(it.image);
-      lbImg.alt = it.en || '';
-      lbCap.textContent = it.en || '';
+      lbImg.alt = cap;
+      lbCap.textContent = cap;
       lb.classList.add('open');
       var slug = slugOf(it.image);
       var url = new URL(location.href);
@@ -229,13 +232,13 @@
         var items = (d && d.items) ? d.items : [];
         allItems = items;
         grid.innerHTML = items.map(function(it,i){
-          var cap = it.en || '';
+          var l = curLang();
+          var cap = it[l] || it.en || '';
           var slug = slugOf(it.image);
           var t = it.tags || {};
           var moods = (t.mood||[]).join(' ');
           var occasions = (t.occasion||[]).join(' ');
           var domains = (t.domain||[]).join(' ');
-          var l = document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';
           var dShare = ((window.I18N && window.I18N.dict[l]) || {})['og.share'] || 'Share';
           return '<figure class="card" data-idx="'+i+'" data-slug="'+esc(slug)+'" data-mood="'+esc(moods)+'" data-occasion="'+esc(occasions)+'" data-domain="'+esc(domains)+'">'+
             '<img src="'+esc(encodeURI(it.image))+'" alt="'+esc(cap)+'" loading="lazy">'+
@@ -254,7 +257,7 @@
             var card = btn.closest('.card');
             var it = items[+card.getAttribute('data-idx')];
             var deepUrl = location.origin + '/odd-gallery.html?img=' + encodeURIComponent(card.getAttribute('data-slug'));
-            if (window.OddShare) window.OddShare.shareImage(it.image, it.en, deepUrl);
+            if (window.OddShare) window.OddShare.shareImage(it.image, it[curLang()] || it.en, deepUrl);
           });
         });
 

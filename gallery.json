@@ -1004,6 +1004,25 @@
           "art-creativity"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/dr-odd-will-see-you-now.jpg",
+      "en": "Dr. Odd Will See You Now",
+      "tr": "Doktor Odd Sizi Bekliyor",
+      "de": "Dr. Odd Empfängt Sie Jetzt",
+      "fr": "Dr Odd Va Vous Recevoir",
+      "hu": "Doktor Odd Most Fogadja Önt",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
     }
   ]
 }
