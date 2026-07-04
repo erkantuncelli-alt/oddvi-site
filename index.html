@@ -11,7 +11,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Baloo+2:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <style>
   :root{
@@ -30,7 +30,10 @@
     --line: color-mix(in srgb, var(--ink) 14%, transparent);
     --radius:20px;
     --font-disp:"Bricolage Grotesque", system-ui, sans-serif;
+    --font-fun:"Baloo 2", system-ui, sans-serif;
     --font-body:"Inter", system-ui, sans-serif;
+    --night:#1a1d29;
+    --night-line:#3a3f52;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -73,13 +76,16 @@
   }
 
   /* HERO */
-  .hero{padding:60px 0 30px;position:relative}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
-  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;text-align:center;gap:30px}}
+  .hero{padding:50px 0 30px;position:relative}
+  .hero-card{background:var(--night);border-radius:28px;padding:46px 42px;position:relative;overflow:hidden;border:3px solid var(--ink)}
+  @media(max-width:680px){.hero-card{padding:32px 22px;border-radius:22px}}
+  .hero-star{position:absolute;background:#fff;border-radius:50%;opacity:.55}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;position:relative}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;text-align:center;gap:32px}}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--yellow);color:var(--ink);padding:7px 15px;border-radius:999px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg)}
-  h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(48px,8.6vw,104px);line-height:.9;letter-spacing:-.035em;margin:24px 0 20px}
-  .hl{display:inline-block;background:var(--teal);color:var(--ink);padding:0 .08em;border:3px solid var(--ink);border-radius:10px;transform:rotate(-3deg);box-shadow:5px 5px 0 var(--ink)}
-  .lead{font-size:clamp(17px,2.2vw,21px);max-width:470px;opacity:.85;font-weight:500}
+  h1{font-family:var(--font-fun);color:#fff;font-weight:800;font-size:clamp(46px,8vw,96px);line-height:1;letter-spacing:-.01em;margin:24px 0 20px}
+  .hl{display:inline-block;background:var(--red);color:#fff;padding:0 .12em;border-radius:14px 4px 14px 4px;transform:rotate(-2deg)}
+  .lead{font-size:clamp(16px,2vw,19px);max-width:440px;color:#9aa0b4;font-weight:500}
   @media(max-width:900px){.lead{margin-inline:auto}}
   .hero-actions{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
   @media(max-width:900px){.hero-actions{justify-content:center}}
@@ -88,25 +94,23 @@
   .btn-primary{background:var(--red);color:#fff}
   .btn-primary:hover{background:var(--red-deep)}
   .btn-ghost{background:var(--card);color:var(--ink)}
+  .btn-hero-ghost{background:transparent;color:#fff;border-color:var(--night-line);box-shadow:5px 5px 0 var(--night-line)}
+  .btn-hero-ghost:hover{box-shadow:2px 2px 0 var(--night-line)}
 
-  .hero-figure{position:relative;perspective:1000px;transform:rotate(-2.5deg)}
-  @media(max-width:900px){.hero-figure{transform:none}}
-  .hero-figure .frame{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);border:4px solid var(--ink);box-shadow:14px 14px 0 var(--red);will-change:transform;transition:transform .15s ease-out}
-  .hero-figure img,.hero-figure video{width:100%;height:auto;aspect-ratio:1031/1280;object-fit:cover;display:block}
-  .blob{position:absolute;width:150px;height:150px;background:var(--teal);border-radius:50%;border:3px solid var(--ink);z-index:-1}
-  .blob.b1{top:-24px;left:-28px}
-  .blob.b2{bottom:-34px;right:-24px;width:110px;height:110px;background:var(--yellow)}
-  .sticker{position:absolute;right:-18px;top:24px;background:var(--yellow);color:var(--ink);font-family:var(--font-disp);font-weight:800;font-size:14px;padding:14px;border-radius:50%;width:94px;height:94px;display:grid;place-items:center;text-align:center;line-height:1.05;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);animation:floatS1 3.4s ease-in-out infinite}
-  .sticker.s2{right:auto;top:auto;left:-22px;bottom:-22px;background:var(--red);color:#fff;width:78px;height:78px;font-size:13px;animation:floatS2 3.9s ease-in-out infinite .3s}
-  @keyframes floatS1{0%,100%{transform:rotate(10deg) translateY(0)}50%{transform:rotate(10deg) translateY(-9px)}}
-  @keyframes floatS2{0%,100%{transform:rotate(-12deg) translateY(0)}50%{transform:rotate(-12deg) translateY(-11px)}}
-  @media(max-width:900px){.sticker{display:none}}
+  .hero-capsules{display:grid;grid-template-columns:1fr 1fr;gap:14px;height:360px}
+  @media(max-width:900px){.hero-capsules{height:280px;max-width:400px;margin-inline:auto}}
+  .hero-cap-col{display:flex;flex-direction:column;gap:14px}
+  .capsule{border-radius:55px 14px 55px 14px;overflow:hidden;position:relative;border:3px solid rgba(255,255,255,.14);background:var(--paper-2);animation:capFloat 4s ease-in-out infinite}
+  .capsule.alt{border-radius:14px 55px 14px 55px;animation-delay:.6s;animation-duration:4.6s}
+  .capsule img,.capsule video{width:100%;height:100%;object-fit:cover;display:block}
+  @keyframes capFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @media(prefers-reduced-motion: reduce){.capsule{animation:none!important}}
 
   @keyframes heroTextIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes heroFigIn{from{opacity:0;transform:rotate(-2.5deg) translateY(34px) scale(.97)}to{opacity:1;transform:rotate(-2.5deg) translateY(0) scale(1)}}
+  @keyframes heroFigIn{from{opacity:0;transform:translateY(34px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
   .hero-grid>div:first-child{animation:heroTextIn .7s cubic-bezier(.16,1,.3,1) both}
-  .hero-figure{animation:heroFigIn .85s cubic-bezier(.16,1,.3,1) .12s both}
-  @media(prefers-reduced-motion: reduce){.sticker,.hero-figure,.hero-grid>div:first-child{animation:none!important}}
+  .hero-capsules{animation:heroFigIn .85s cubic-bezier(.16,1,.3,1) .12s both}
+  @media(prefers-reduced-motion: reduce){.hero-capsules,.hero-grid>div:first-child{animation:none!important}}
 
   .marquee{background:var(--ink);color:var(--paper);padding:16px 0;overflow:hidden;white-space:nowrap;margin-top:34px;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(-1deg) scale(1.03)}
   .marquee span{font-family:var(--font-disp);font-weight:800;font-size:clamp(20px,3vw,30px);letter-spacing:.01em;display:inline-block;animation:scroll 26s linear infinite}
@@ -264,33 +268,36 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow"><a class="social-icon sm" href="https://instagram.com/theoddvi" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a>&nbsp;<span data-i18n="hero.eyebrow">Coming soon · @theoddvi</span></span>
-      <h1>What's your <span class="hl">Odd</span>?</h1>
-      <p class="lead" data-i18n="hero.lead">Meet Oddvi — born a little crooked, painted in fifteen colours at once, and proud of it.</p>
-      <div class="hero-actions">
-        <a href="odd-test.html" class="btn btn-primary" data-i18n="hero.btnPrimary">Take the Odd test →</a>
-        <a href="#life" class="btn btn-ghost" data-i18n="hero.btnGhost">See Oddvi in action ↓</a>
-      </div>
-    </div>
-    <div class="hero-figure" id="heroFig">
-      <span class="blob b1"></span>
-      <span class="blob b2"></span>
-      <div class="frame" id="heroFrame">
-        <video id="imgHero" autoplay muted loop playsinline poster="/uploads/What's your Odd.jpeg" width="1031" height="1280" aria-label="Oddvi animasyonu">
-          <source src="/oddvi-anim-1.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="sticker">BE A<br>LITTLE<br>ODD</div>
-      <div class="sticker s2" aria-hidden="true" id="miniFace">
-        <svg viewBox="0 0 78 78" width="58" height="58">
-          <circle cx="26" cy="35" r="11" fill="#fff8f0"/>
-          <circle cx="52" cy="35" r="11" fill="#fff8f0"/>
-          <circle id="miniPupilL" cx="26" cy="35" r="5" fill="#141414"/>
-          <circle id="miniPupilR" cx="52" cy="35" r="5" fill="#141414"/>
-          <path d="M16,54 Q39,64 62,54" stroke="#fff8f0" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-        </svg>
+  <div class="wrap">
+    <div class="hero-card">
+      <span class="hero-star" style="width:3px;height:3px;top:24px;left:60px"></span>
+      <span class="hero-star" style="width:2px;height:2px;top:64px;left:130px"></span>
+      <span class="hero-star" style="width:3px;height:3px;top:34px;right:90px"></span>
+      <span class="hero-star" style="width:2px;height:2px;top:100px;left:280px"></span>
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><a class="social-icon sm" href="https://instagram.com/theoddvi" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a>&nbsp;<span data-i18n="hero.eyebrow">Coming soon · @theoddvi</span></span>
+          <h1>What's your <span class="hl">Odd</span>?</h1>
+          <p class="lead" data-i18n="hero.lead">Meet Oddvi — born a little crooked, painted in fifteen colours at once, and proud of it.</p>
+          <div class="hero-actions">
+            <a href="odd-test.html" class="btn btn-primary" data-i18n="hero.btnPrimary">Take the Odd test →</a>
+            <a href="#life" class="btn btn-hero-ghost" data-i18n="hero.btnGhost">See Oddvi in action ↓</a>
+          </div>
+        </div>
+        <div class="hero-capsules" id="heroFig">
+          <div class="hero-cap-col">
+            <div class="capsule" style="flex:1.3"><img id="capA" alt="" loading="lazy" /></div>
+            <div class="capsule alt" style="flex:1"><img id="capB" alt="" loading="lazy" /></div>
+          </div>
+          <div class="hero-cap-col">
+            <div class="capsule alt" style="flex:1"><img id="capC" alt="" loading="lazy" /></div>
+            <div class="capsule" style="flex:1.3" id="heroFrame">
+              <video autoplay muted loop playsinline poster="/uploads/What's your Odd.jpeg" aria-label="Oddvi animasyonu">
+                <source src="/oddvi-anim-1.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -396,24 +403,20 @@
     fig.addEventListener('mouseleave', ()=>{ frame.style.transform=''; });
   })();
 
-  /* Mini rozet gözleri imleci takip eder */
+  /* Hero kapsülleri — galeriden rastgele 3 görsel */
   (function(){
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var pupilL=document.getElementById('miniPupilL'), pupilR=document.getElementById('miniPupilR');
-    if(!pupilL || !pupilR) return;
-    var svg=pupilL.closest('svg');
-    function moveEyes(clientX, clientY){
-      var r=svg.getBoundingClientRect();
-      var cx=r.left+r.width/2, cy=r.top+r.height/2;
-      var dx=clientX-cx, dy=clientY-cy;
-      var dist=Math.sqrt(dx*dx+dy*dy)||1;
-      var offX=(dx/dist)*Math.min(3.2, dist*0.05);
-      var offY=(dy/dist)*Math.min(3.2, dist*0.05);
-      pupilL.setAttribute('cx', 26+offX); pupilL.setAttribute('cy', 35+offY);
-      pupilR.setAttribute('cx', 52+offX); pupilR.setAttribute('cy', 35+offY);
-    }
-    window.addEventListener('mousemove', function(e){ moveEyes(e.clientX, e.clientY); }, {passive:true});
-    window.addEventListener('touchmove', function(e){ var t=e.touches[0]; if(t) moveEyes(t.clientX, t.clientY); }, {passive:true});
+    var capA=document.getElementById('capA'), capB=document.getElementById('capB'), capC=document.getElementById('capC');
+    if(!capA) return;
+    fetch('/gallery.json?t='+Date.now())
+      .then(function(r){return r.ok?r.json():{items:[]};})
+      .then(function(d){
+        var items=(d&&d.items)?d.items.slice():[];
+        for(var i=items.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var tmp=items[i]; items[i]=items[j]; items[j]=tmp; }
+        var picks=items.slice(0,3);
+        [capA,capB,capC].forEach(function(el,i){
+          if(el && picks[i]){ el.src=encodeURI(picks[i].image); el.alt=picks[i].en||''; }
+        });
+      }).catch(function(){});
   })();
 
   /* Email — gerçek n8n webhook'una POST atar */
