@@ -246,6 +246,12 @@
   .odd-photo-preview img{max-width:140px;max-height:140px;border-radius:10px;border:3px solid var(--ink);display:block;object-fit:cover}
   .odd-photo-preview button{position:absolute;top:-10px;right:-10px;width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);background:var(--card);cursor:pointer;font-weight:800;line-height:1}
   .odd-entry img{width:100%;border-radius:10px;margin-top:8px;display:block}
+  .odd-entry-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+  .odd-like{display:inline-flex;align-items:center;gap:5px;border:2px solid var(--ink);background:var(--paper);border-radius:999px;padding:5px 11px;font-weight:700;font-size:13px;cursor:pointer;transition:transform .12s}
+  .odd-like:hover:not(:disabled){transform:scale(1.06)}
+  .odd-like:disabled{cursor:default;opacity:.7}
+  .odd-like.liked{background:#ffe3ea;border-color:var(--red)}
+  .odd-like-heart{font-size:14px}
   .odd-share .form-msg{color:var(--ink);text-align:center}
   .odd-feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:44px;text-align:left}
   .odd-card{border:3px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);background:var(--card);padding:20px;display:flex;flex-direction:column;gap:12px;transition:transform .2s ease,box-shadow .2s ease}
@@ -617,6 +623,11 @@
   (function(){
     var ODDS = [];
     function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+    function oddId(it){
+      var s = (it.topic||'')+'|'+(it.message||''), h = 0;
+      for (var i=0;i<s.length;i++){ h = ((h<<5)-h + s.charCodeAt(i))|0; }
+      return 'o'+Math.abs(h).toString(36);
+    }
     function groupByTopic(items){
       var map = {}, order = [];
       items.forEach(function(it){
@@ -632,12 +643,58 @@
       var groups = groupByTopic(ODDS);
       feed.innerHTML = groups.slice(0,12).map(function(g){
         var entries = g.entries.map(function(it){
+          var id = oddId(it);
           var photo = it.photo ? '<img src="'+esc(it.photo)+'" alt="" loading="lazy" />' : '';
-          return '<div class="odd-entry"><p>'+esc(it.message)+'</p>'+photo+'<span class="who">'+esc(it.name||'Anonymous Odd')+'</span></div>';
+          var liked = localStorage.getItem('oddvi_liked_'+id) === '1';
+          return '<div class="odd-entry" data-odd-id="'+id+'"><p>'+esc(it.message)+'</p>'+photo+
+                 '<div class="odd-entry-foot"><span class="who">'+esc(it.name||'Anonymous Odd')+'</span>'+
+                 '<button class="odd-like'+(liked?' liked':'')+'" data-id="'+id+'" aria-label="Like">'+
+                 '<span class="odd-like-heart">'+(liked?'❤️':'🤍')+'</span><span class="odd-like-count">–</span></button></div>'+
+                 '</div>';
         }).join('');
         return '<div class="odd-card"><h3 class="odd-topic">'+esc(g.topic)+'</h3>'+entries+'</div>';
       }).join('');
+      loadLikeCounts();
     }
+    function loadLikeCounts(){
+      var buttons = document.querySelectorAll('.odd-like');
+      var ids = Array.prototype.map.call(buttons, function(b){ return b.getAttribute('data-id'); });
+      if(!ids.length) return;
+      fetch('/api/likes?ids='+encodeURIComponent(ids.join(',')))
+        .then(function(r){ return r.ok ? r.json() : {}; })
+        .then(function(counts){
+          buttons.forEach(function(b){
+            var id = b.getAttribute('data-id');
+            b.querySelector('.odd-like-count').textContent = counts[id] || 0;
+          });
+        })
+        .catch(function(){
+          buttons.forEach(function(b){ b.querySelector('.odd-like-count').textContent = 0; });
+        });
+    }
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest && e.target.closest('.odd-like');
+      if(!btn) return;
+      var id = btn.getAttribute('data-id');
+      if(localStorage.getItem('oddvi_liked_'+id) === '1') return; // already liked on this device
+      btn.disabled = true;
+      fetch('/api/like', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({id:id})
+      })
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(d){
+          if(d && typeof d.likes === 'number'){
+            btn.querySelector('.odd-like-count').textContent = d.likes;
+            btn.querySelector('.odd-like-heart').textContent = '❤️';
+            btn.classList.add('liked');
+            localStorage.setItem('oddvi_liked_'+id, '1');
+          }
+          btn.disabled = false;
+        })
+        .catch(function(){ btn.disabled = false; });
+    });
     fetch('/odds.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{items:[]};})
       .then(function(d){ ODDS = (d.items||[]).slice().reverse(); render(); })
