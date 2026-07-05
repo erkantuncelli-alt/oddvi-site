@@ -413,6 +413,7 @@
     <span class="kicker" data-i18n="share.kicker">Your turn</span>
     <h2 class="h2" data-i18n="share.h2">Share Your Odd.</h2>
     <p data-i18n="share.p">Tell us the weird little thing that makes you, you. We read every one — the best get featured right here.</p>
+    <p class="odd-stat-line" id="oddShareCount" style="font-size:13px;opacity:.6;font-weight:600;margin-top:-16px;margin-bottom:20px"></p>
     <div class="odd-form">
       <input id="oddTopic" type="text" class="odd-name" maxlength="60" data-i18n-ph="share.topicPh" placeholder="Give it a title..." />
       <textarea id="oddMsg" maxlength="180" data-i18n-ph="share.ph" placeholder="I always..."></textarea>
@@ -711,7 +712,14 @@
     });
     fetch('/odds.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{items:[]};})
-      .then(function(d){ ODDS = (d.items||[]).slice().reverse(); render(); })
+      .then(function(d){
+        ODDS = (d.items||[]).slice().reverse(); render();
+        var countEl = document.getElementById('oddShareCount');
+        if(countEl && ODDS.length){
+          var tmpl = D['share.countLine'] || '{n} Odds shared so far';
+          countEl.textContent = tmpl.replace('{n}', ODDS.length);
+        }
+      })
       .catch(function(){ render(); });
   })();
 

@@ -54,7 +54,9 @@ window.I18N = (function () {
     'share.seeAll':"See every Odd, ranked by likes →",
     'wall.kicker':"The Wall of Odd",'wall.h2':"Ranked By Likes.",'wall.sub':"Every shared Odd, most-liked first.",
     'wall.empty':"Nothing here yet — be the first to share.",'wall.back':"← Back home",
+    'wall.topSharersTitle':"Top Sharers",
     'share.photoBtn':"📷 Add a photo (optional)",'share.photoErr':"That doesn't look like an image.",'share.photoTooBig':"That photo's a bit too big (max 10MB).",
+    'share.countLine':"{n} Odds shared so far",
     'share.consent':"I confirm this is mine to share (including any photo) and I'm okay with it being shown publicly on the Oddvi site and social media.",
     'share.consentErr':"Please confirm the checkbox first.",
     'share.takedown':"Want something you shared taken down? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">DM us</a> and we'll remove it.",
@@ -104,7 +106,9 @@ window.I18N = (function () {
     'share.seeAll':"Tüm Odd'ları, beğeniye göre sıralı gör →",
     'wall.kicker':"Odd Duvarı",'wall.h2':"Beğeniye Göre Sıralı.",'wall.sub':"Paylaşılan tüm Odd'lar, en çok beğenilen önde.",
     'wall.empty':"Henüz burada bir şey yok — ilk paylaşan sen ol.",'wall.back':"← Ana sayfaya dön",
+    'wall.topSharersTitle':"En Çok Paylaşım Yapanlar",
     'share.photoBtn':"📷 Fotoğraf ekle (opsiyonel)",'share.photoErr':"Bu bir görsel dosyası gibi durmuyor.",'share.photoTooBig':"Bu fotoğraf biraz büyük (en fazla 10MB).",
+    'share.countLine':"Şimdiye kadar {n} Odd paylaşıldı",
     'share.consent':"Bunun paylaşma hakkım olan bir içerik olduğunu (fotoğraf dahil) onaylıyorum ve Oddvi sitesinde/sosyal medyasında herkese açık gösterilmesini kabul ediyorum.",
     'share.consentErr':"Önce kutucuğu onaylar mısın?",
     'share.takedown':"Paylaştığın bir şeyi kaldırmamızı mı istiyorsun? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Bize DM at</a>, kaldıralım.",
@@ -154,7 +158,9 @@ window.I18N = (function () {
     'share.seeAll':"Alle Odds ansehen, nach Likes sortiert →",
     'wall.kicker':"Die Odd-Wand",'wall.h2':"Nach Likes Sortiert.",'wall.sub':"Alle geteilten Odds, die beliebtesten zuerst.",
     'wall.empty':"Hier ist noch nichts — sei die/der Erste, die/der teilt.",'wall.back':"← Zurück zur Startseite",
+    'wall.topSharersTitle':"Top-Teiler",
     'share.photoBtn':"📷 Foto hinzufügen (optional)",'share.photoErr':"Das sieht nicht nach einem Bild aus.",'share.photoTooBig':"Das Foto ist etwas zu groß (max. 10MB).",
+    'share.countLine':"Bisher {n} Odds geteilt",
     'share.consent':"Ich bestätige, dass ich das Recht habe, dies zu teilen (inklusive Foto), und bin damit einverstanden, dass es öffentlich auf der Oddvi-Seite und in sozialen Medien gezeigt wird.",
     'share.consentErr':"Bitte bestätige zuerst das Kästchen.",
     'share.takedown':"Möchtest du, dass wir etwas entfernen, das du geteilt hast? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Schreib uns</a>, wir nehmen es raus.",
@@ -204,7 +210,9 @@ window.I18N = (function () {
     'share.seeAll':"Voir tous les Odd, classés par likes →",
     'wall.kicker':"Le Mur des Odd",'wall.h2':"Classés Par Likes.",'wall.sub':"Tous les Odd partagés, les plus aimés en premier.",
     'wall.empty':"Rien ici pour l'instant — sois le premier à partager.",'wall.back':"← Retour à l'accueil",
+    'wall.topSharersTitle':"Meilleurs Partageurs",
     'share.photoBtn':"📷 Ajouter une photo (optionnel)",'share.photoErr':"Ça ne ressemble pas à une image.",'share.photoTooBig':"Cette photo est un peu trop grande (max 10 Mo).",
+    'share.countLine':"{n} Odds partagés jusqu'ici",
     'share.consent':"Je confirme que j'ai le droit de partager ceci (photo incluse) et j'accepte que ce soit montré publiquement sur le site Oddvi et les réseaux sociaux.",
     'share.consentErr':"Merci de confirmer la case d'abord.",
     'share.takedown':"Tu veux qu'on retire quelque chose que tu as partagé ? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Envoie-nous un DM</a>, on s'en occupe.",
@@ -254,7 +262,9 @@ window.I18N = (function () {
     'share.seeAll':"Nézd meg az összes Oddot, like szerint →",
     'wall.kicker':"Az Odd Fal",'wall.h2':"Like Szerint Rangsorolva.",'wall.sub':"Minden megosztott Odd, a legnépszerűbb elöl.",
     'wall.empty':"Még nincs itt semmi — legyél te az első, aki megosztja.",'wall.back':"← Vissza a főoldalra",
+    'wall.topSharersTitle':"Legaktívabb Megosztók",
     'share.photoBtn':"📷 Fotó hozzáadása (opcionális)",'share.photoErr':"Ez nem néz ki képnek.",'share.photoTooBig':"Ez a fotó egy kicsit nagy (max 10MB).",
+    'share.countLine':"Eddig {n} Odd lett megosztva",
     'share.consent':"Megerősítem, hogy jogom van ezt megosztani (a fotót is beleértve), és elfogadom, hogy nyilvánosan megjelenik az Oddvi oldalán és a közösségi médiában.",
     'share.consentErr':"Kérjük, először pipáld ki a jelölőnégyzetet.",
     'share.takedown':"Szeretnéd, hogy eltávolítsunk valamit, amit megosztottál? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Írj nekünk DM-ben</a>, és eltávolítjuk.",
@@ -311,7 +321,7 @@ window.I18N = (function () {
    ============================================================ */
 window.I18N.quiz = {
  en:{
-  ui:{home:"← Back home",eyebrow:"The Oddvi Test",intro:"Ten quick questions. One very specific kind of weird at the end — plus a wallpaper, a profile picture and your own Odd card to keep.",start:"Start the test →",qcount:"Question {n} of {total}",back:"← Back",youAre:"You are…",dlTitle:"Take your Odd with you",dlHint:"Three free downloads, made just for your result.",dlWallpaper:"Phone wallpaper",dlProfile:"Profile picture",dlCard:"Odd card",download:"Download",building:"Building…",blocked:"Preview blocked here — works on the live site",retake:"↺ Retake the test",updates:"Get launch updates →"},
+  ui:{home:"← Back home",eyebrow:"The Oddvi Test",intro:"Ten quick questions. One very specific kind of weird at the end — plus a wallpaper, a profile picture and your own Odd card to keep.",start:"Start the test →",qcount:"Question {n} of {total}",back:"← Back",youAre:"You are…",dlTitle:"Take your Odd with you",dlHint:"Three free downloads, made just for your result.",dlWallpaper:"Phone wallpaper",dlProfile:"Profile picture",dlCard:"Odd card",download:"Download",share:"Share",building:"Building…",blocked:"Preview blocked here — works on the live site",retake:"↺ Retake the test",updates:"Get launch updates →",statLine:"{n} people have taken this test so far"},
   q:[
    {t:"It's the weekend. The plan is…",o:[["Get cozy at home and do gloriously nothing","dreamer"],["Go somewhere I've never been","explorer"],["Disappear into nature","zen"],["Out with friends till sunrise","nightowl"]]},
    {t:"Your ideal kind of night?",o:[["Somewhere loud and late","nightowl"],["Making something with my hands","creative"],["Stargazing in total quiet","dreamer"],["Doing something I probably shouldn't","rebel"]]},
@@ -334,7 +344,7 @@ window.I18N.quiz = {
   }
  },
  tr:{
-  ui:{home:"← Ana sayfa",eyebrow:"Oddvi Testi",intro:"On kısa soru. Sonunda sana çok özel bir tuhaflık türü — üstüne saklaman için bir duvar kağıdı, profil resmi ve kendi Odd kartın.",start:"Teste başla →",qcount:"Soru {n} / {total}",back:"← Geri",youAre:"Sen…",dlTitle:"Odd'unu yanına al",dlHint:"Sonucuna özel üç ücretsiz indirme.",dlWallpaper:"Telefon duvar kağıdı",dlProfile:"Profil resmi",dlCard:"Odd kartı",download:"İndir",building:"Hazırlanıyor…",blocked:"Önizlemede kısıtlı — canlı sitede çalışır",retake:"↺ Testi tekrar çöz",updates:"Lansman haberlerini al →"},
+  ui:{home:"← Ana sayfa",eyebrow:"Oddvi Testi",intro:"On kısa soru. Sonunda sana çok özel bir tuhaflık türü — üstüne saklaman için bir duvar kağıdı, profil resmi ve kendi Odd kartın.",start:"Teste başla →",qcount:"Soru {n} / {total}",back:"← Geri",youAre:"Sen…",dlTitle:"Odd'unu yanına al",dlHint:"Sonucuna özel üç ücretsiz indirme.",dlWallpaper:"Telefon duvar kağıdı",dlProfile:"Profil resmi",dlCard:"Odd kartı",download:"İndir",share:"Paylaş",building:"Hazırlanıyor…",blocked:"Önizlemede kısıtlı — canlı sitede çalışır",retake:"↺ Testi tekrar çöz",updates:"Lansman haberlerini al →",statLine:"Şimdiye kadar {n} kişi bu testi çözdü"},
   q:[
    {t:"Hafta sonu. Plan ne?",o:[["Evde kıvrılıp şahane bir hiçlik yapmak","dreamer"],["Hiç gitmediğim bir yere gitmek","explorer"],["Doğada kaybolmak","zen"],["Arkadaşlarla gün doğana kadar dışarıda","nightowl"]]},
    {t:"İdeal gecen nasıl?",o:[["Gürültülü ve geç bir yerde","nightowl"],["Elimle bir şey yaparken","creative"],["Tam sessizlikte yıldızları izlerken","dreamer"],["Yapmamam gereken bir şeyi yaparken","rebel"]]},
@@ -357,7 +367,7 @@ window.I18N.quiz = {
   }
  },
  de:{
-  ui:{home:"← Zur Startseite",eyebrow:"Der Oddvi-Test",intro:"Zehn kurze Fragen. Am Ende eine ganz bestimmte Art von seltsam — plus ein Wallpaper, ein Profilbild und deine eigene Odd-Karte.",start:"Test starten →",qcount:"Frage {n} von {total}",back:"← Zurück",youAre:"Du bist…",dlTitle:"Nimm dein Odd mit",dlHint:"Drei kostenlose Downloads, nur für dein Ergebnis.",dlWallpaper:"Handy-Wallpaper",dlProfile:"Profilbild",dlCard:"Odd-Karte",download:"Herunterladen",building:"Wird erstellt…",blocked:"Vorschau hier eingeschränkt — funktioniert auf der Live-Seite",retake:"↺ Test wiederholen",updates:"Launch-Updates erhalten →"},
+  ui:{home:"← Zur Startseite",eyebrow:"Der Oddvi-Test",intro:"Zehn kurze Fragen. Am Ende eine ganz bestimmte Art von seltsam — plus ein Wallpaper, ein Profilbild und deine eigene Odd-Karte.",start:"Test starten →",qcount:"Frage {n} von {total}",back:"← Zurück",youAre:"Du bist…",dlTitle:"Nimm dein Odd mit",dlHint:"Drei kostenlose Downloads, nur für dein Ergebnis.",dlWallpaper:"Handy-Wallpaper",dlProfile:"Profilbild",dlCard:"Odd-Karte",download:"Herunterladen",share:"Teilen",building:"Wird erstellt…",blocked:"Vorschau hier eingeschränkt — funktioniert auf der Live-Seite",retake:"↺ Test wiederholen",updates:"Launch-Updates erhalten →",statLine:"Bisher haben {n} Leute diesen Test gemacht"},
   q:[
    {t:"Wochenende. Der Plan?",o:[["Es mir zu Hause gemütlich machen und herrlich nichts tun","dreamer"],["Irgendwohin, wo ich noch nie war","explorer"],["In der Natur verschwinden","zen"],["Mit Freunden bis Sonnenaufgang unterwegs","nightowl"]]},
    {t:"Deine ideale Nacht?",o:[["Irgendwo laut und spät","nightowl"],["Etwas mit den Händen machen","creative"],["Sterne gucken in völliger Stille","dreamer"],["Etwas tun, das ich wohl nicht sollte","rebel"]]},
@@ -380,7 +390,7 @@ window.I18N.quiz = {
   }
  },
  fr:{
-  ui:{home:"← Accueil",eyebrow:"Le test Oddvi",intro:"Dix questions rapides. Une forme de bizarrerie bien précise à la fin — plus un fond d'écran, une photo de profil et ta propre carte Odd.",start:"Commencer le test →",qcount:"Question {n} sur {total}",back:"← Retour",youAre:"Tu es…",dlTitle:"Emporte ton Odd",dlHint:"Trois téléchargements gratuits, faits pour ton résultat.",dlWallpaper:"Fond d'écran",dlProfile:"Photo de profil",dlCard:"Carte Odd",download:"Télécharger",building:"Création…",blocked:"Aperçu limité ici — fonctionne sur le site en ligne",retake:"↺ Refaire le test",updates:"Recevoir les actus du lancement →"},
+  ui:{home:"← Accueil",eyebrow:"Le test Oddvi",intro:"Dix questions rapides. Une forme de bizarrerie bien précise à la fin — plus un fond d'écran, une photo de profil et ta propre carte Odd.",start:"Commencer le test →",qcount:"Question {n} sur {total}",back:"← Retour",youAre:"Tu es…",dlTitle:"Emporte ton Odd",dlHint:"Trois téléchargements gratuits, faits pour ton résultat.",dlWallpaper:"Fond d'écran",dlProfile:"Photo de profil",dlCard:"Carte Odd",download:"Télécharger",share:"Partager",building:"Création…",blocked:"Aperçu limité ici — fonctionne sur le site en ligne",retake:"↺ Refaire le test",updates:"Recevoir les actus du lancement →",statLine:"{n} personnes ont déjà fait ce test"},
   q:[
    {t:"C'est le week-end. Le programme ?",o:[["Rester au chaud chez moi et ne rien faire, divinement","dreamer"],["Aller quelque part où je ne suis jamais allé","explorer"],["Disparaître dans la nature","zen"],["Dehors avec des amis jusqu'au lever du soleil","nightowl"]]},
    {t:"Ta nuit idéale ?",o:[["Quelque part, fort et tard","nightowl"],["Fabriquer quelque chose de mes mains","creative"],["Regarder les étoiles dans le silence total","dreamer"],["Faire un truc que je ne devrais sans doute pas","rebel"]]},
@@ -403,7 +413,7 @@ window.I18N.quiz = {
   }
  },
  hu:{
-  ui:{home:"← Főoldal",eyebrow:"Az Oddvi-teszt",intro:"Tíz gyors kérdés. A végén egy nagyon konkrét furaság — plusz egy háttérkép, egy profilkép és a saját Odd-kártyád.",start:"Teszt indítása →",qcount:"{n}. kérdés / {total}",back:"← Vissza",youAre:"Te…",dlTitle:"Vidd magaddal az Oddod",dlHint:"Három ingyenes letöltés, kifejezetten az eredményedhez.",dlWallpaper:"Telefon háttérkép",dlProfile:"Profilkép",dlCard:"Odd-kártya",download:"Letöltés",building:"Készül…",blocked:"Az előnézet itt korlátozott — az élő oldalon működik",retake:"↺ Teszt újra",updates:"Hírek a megjelenésről →"},
+  ui:{home:"← Főoldal",eyebrow:"Az Oddvi-teszt",intro:"Tíz gyors kérdés. A végén egy nagyon konkrét furaság — plusz egy háttérkép, egy profilkép és a saját Odd-kártyád.",start:"Teszt indítása →",qcount:"{n}. kérdés / {total}",back:"← Vissza",youAre:"Te…",dlTitle:"Vidd magaddal az Oddod",dlHint:"Három ingyenes letöltés, kifejezetten az eredményedhez.",dlWallpaper:"Telefon háttérkép",dlProfile:"Profilkép",dlCard:"Odd-kártya",download:"Letöltés",share:"Megosztás",building:"Készül…",blocked:"Az előnézet itt korlátozott — az élő oldalon működik",retake:"↺ Teszt újra",updates:"Hírek a megjelenésről →",statLine:"Eddig {n} ember csinálta meg ezt a tesztet"},
   q:[
    {t:"Hétvége. Mi a terv?",o:[["Otthon összegömbölyödni és isteni semmittevés","dreamer"],["Elmenni valahova, ahol még sosem jártam","explorer"],["Eltűnni a természetben","zen"],["Barátokkal kint napfelkeltéig","nightowl"]]},
    {t:"Az ideális estéd?",o:[["Valahol hangosan és későig","nightowl"],["Kézzel csinálni valamit","creative"],["Csillagokat nézni teljes csendben","dreamer"],["Valami olyat csinálni, amit valószínűleg nem kéne","rebel"]]},

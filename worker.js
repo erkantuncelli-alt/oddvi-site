@@ -34,9 +34,45 @@ export default {
       return handleGetLikes(url, env);
     }
 
+    if (url.pathname === '/api/stat' && request.method === 'POST') {
+      return handleStat(request, env);
+    }
+
+    if (url.pathname === '/api/stats' && request.method === 'GET') {
+      return handleGetStats(url, env);
+    }
+
     return env.ASSETS.fetch(request);
   }
 };
+
+async function handleStat(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch (e) {
+    return json({ error: 'bad json' }, 400);
+  }
+  const name = body && body.name ? String(body.name).slice(0, 60) : null;
+  if (!name) return json({ error: 'missing name' }, 400);
+
+  const key = 'stat:' + name;
+  const current = parseInt((await env.LIKES.get(key)) || '0', 10) || 0;
+  const next = current + 1;
+  await env.LIKES.put(key, String(next));
+  return json({ name, count: next });
+}
+
+async function handleGetStats(url, env) {
+  const namesParam = url.searchParams.get('names') || '';
+  const names = namesParam.split(',').map(s => s.trim()).filter(Boolean).slice(0, 50);
+  const result = {};
+  await Promise.all(names.map(async (name) => {
+    const v = await env.LIKES.get('stat:' + name);
+    result[name] = parseInt(v || '0', 10) || 0;
+  }));
+  return json(result);
+}
 
 async function handleLike(request, env) {
   let body;

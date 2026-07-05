@@ -65,6 +65,13 @@
   .wall-like.liked{background:#ffe3ea;border-color:var(--red)}
   .wall-empty{opacity:.65;font-weight:600;padding:40px 0}
 
+  .top-sharers{margin-top:0;padding:26px 0 6px}
+  .top-sharers h2{font-family:var(--font-disp);font-weight:800;font-size:20px;margin-bottom:16px}
+  .top-sharers-list{display:flex;gap:14px;flex-wrap:wrap}
+  .sharer-chip{display:inline-flex;align-items:center;gap:8px;border:2.5px solid var(--ink);border-radius:999px;padding:8px 16px;background:var(--card);font-weight:700;font-size:14px;box-shadow:3px 3px 0 var(--ink)}
+  .sharer-chip .rank{font-family:var(--font-disp);font-weight:800;color:var(--red)}
+  .sharer-chip .count{opacity:.55;font-weight:600;font-size:12px}
+
   footer{padding:40px 0;background:var(--ink);color:var(--paper);text-align:center;font-size:14px}
   footer a{font-weight:700;text-decoration:none;color:var(--red-deep)}
 
@@ -102,6 +109,7 @@
 </div>
 
 <div class="wrap">
+  <div class="top-sharers" id="topSharers"></div>
   <div class="wall-grid" id="wallGrid"></div>
 </div>
 
@@ -164,10 +172,29 @@
         .catch(function(){ btn.disabled = false; });
     });
 
+    function renderTopSharers(items){
+      var el = document.getElementById('topSharers'); if(!el) return;
+      var counts = {};
+      items.forEach(function(it){
+        var name = (it.name||'').trim();
+        if(!name) return;
+        counts[name] = (counts[name]||0) + 1;
+      });
+      var top = Object.keys(counts).map(function(n){ return {name:n, count:counts[n]}; })
+        .sort(function(a,b){ return b.count - a.count; }).slice(0,5);
+      if(!top.length){ el.innerHTML = ''; return; }
+      var title = D()['wall.topSharersTitle'] || 'Top Sharers';
+      el.innerHTML = '<h2>'+esc(title)+'</h2><div class="top-sharers-list">'+
+        top.map(function(t,i){
+          return '<span class="sharer-chip"><span class="rank">#'+(i+1)+'</span> '+esc(t.name)+' <span class="count">'+t.count+'</span></span>';
+        }).join('')+'</div>';
+    }
+
     fetch('/odds.json?t='+Date.now())
       .then(function(r){ return r.ok ? r.json() : {items:[]}; })
       .then(function(d){
         var items = (d.items||[]).map(function(it){ it._id = oddId(it); return it; });
+        renderTopSharers(items);
         if(!items.length){ render(items, {}); return; }
         var ids = items.map(function(it){ return it._id; });
         fetch('/api/likes?ids='+encodeURIComponent(ids.join(',')))

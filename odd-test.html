@@ -125,6 +125,7 @@
     <p id="introText">Ten quick questions…</p>
     <div class="odds-preview" id="oddsPreview"></div>
     <button class="btn btn-primary" id="startBtn">Start the test →</button>
+    <p class="odd-stat-line" id="testStatLine" style="margin-top:16px;font-size:13px;opacity:.65;font-weight:600"></p>
   </section>
 
   <!-- QUIZ -->
@@ -190,7 +191,19 @@ function renderStatic(){
   $("#dlHint").textContent=u.dlHint||"";
   $("#restartBtn").textContent=u.retake||"↺";
   $("#updatesLink").textContent=u.updates||"→";
+  renderStatLine();
 }
+let testStatCount=null;
+function renderStatLine(){
+  const el=$("#testStatLine"); if(!el) return;
+  if(testStatCount==null){ el.textContent=""; return; }
+  const tmpl=QZ().ui.statLine||"{n} people have taken this test so far";
+  el.textContent=tmpl.replace("{n}", testStatCount.toLocaleString());
+}
+fetch('/api/stats?names=test_completed')
+  .then(r=>r.ok?r.json():{})
+  .then(d=>{ testStatCount = d.test_completed || 0; renderStatLine(); })
+  .catch(()=>{});
 function renderPreview(){
   const r=QZ().r;
   $("#oddsPreview").innerHTML=PRIORITY.map(k=>{
@@ -229,6 +242,10 @@ function finish(){
   const t={};PRIORITY.forEach(k=>t[k]=0);
   state.picks.forEach(k=>{if(t[k]!=null)t[k]++;});
   let best=PRIORITY[0];PRIORITY.forEach(k=>{if(t[k]>t[best])best=k;});
+  fetch('/api/stat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name:'test_completed'})})
+    .then(r=>r.ok?r.json():null)
+    .then(d=>{ if(d && typeof d.count==='number'){ testStatCount=d.count; } })
+    .catch(()=>{});
   showResult(best);
 }
 
@@ -260,9 +277,23 @@ async function showResult(key){
     let url="";try{url=cv.toDataURL("image/png");}catch(e){url="";}
     const el=document.createElement("div");el.className="dl";
     el.innerHTML=`<div class="thumb">${url?`<img src="${url}" alt="${f.label}">`:`<span>${u.blocked||""}</span>`}</div><div class="name">${f.label||""}</div>`;
+    const actions=document.createElement("div");actions.style.cssText="display:flex;gap:8px;justify-content:center;flex-wrap:wrap";
     const btn=document.createElement("a");btn.className="btn btn-yellow";btn.textContent=u.download||"Download";
     if(url){btn.href=url;btn.download=f.file;}else{btn.href="#";btn.onclick=e=>e.preventDefault();}
-    el.appendChild(btn);grid.appendChild(el);
+    actions.appendChild(btn);
+    if(url && navigator.canShare){
+      cv.toBlob(blob=>{
+        if(!blob) return;
+        const file=new File([blob], f.file, {type:"image/png"});
+        if(navigator.canShare({files:[file]})){
+          const shareBtn=document.createElement("button");shareBtn.type="button";shareBtn.className="btn btn-ghost";
+          shareBtn.textContent=u.share||"Share";
+          shareBtn.onclick=()=>navigator.share({files:[file],title:"Oddvi"}).catch(()=>{});
+          actions.appendChild(shareBtn);
+        }
+      }, "image/png");
+    }
+    el.appendChild(actions);grid.appendChild(el);
   }
 }
 
