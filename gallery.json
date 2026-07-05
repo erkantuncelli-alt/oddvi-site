@@ -13,7 +13,11 @@
         "domain": [
           "fashion"
         ]
-      }
+      },
+      "tr": "Trendlerin Ötesinde",
+      "de": "Jenseits Von Trends",
+      "fr": "Au-delà Des Tendances",
+      "hu": "Trendeken Túl"
     },
     {
       "image": "/uploads/oddgallery/finals-week-stay-odd.jpg",
@@ -28,7 +32,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Final Haftasında Da Tuhaf Kal",
+      "de": "Bleib Odd Während Der Prüfungswoche",
+      "fr": "Reste Odd Pendant Les Examens",
+      "hu": "Maradj Odd A Vizsgaidőszakban"
     },
     {
       "image": "/uploads/oddgallery/fashion-freestyle.jpg",
@@ -43,7 +51,11 @@
         "domain": [
           "fashion"
         ]
-      }
+      },
+      "tr": "Moda Serbest Stil",
+      "de": "Mode-Freestyle",
+      "fr": "Freestyle Mode",
+      "hu": "Divat Szabadstílusban"
     },
     {
       "image": "/uploads/oddgallery/everyone-focuses-i-sing.jpg",
@@ -58,7 +70,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Herkes Odaklanır, Ben Şarkı Söylerim",
+      "de": "Alle Konzentrieren Sich, Ich Singe",
+      "fr": "Tout Le Monde Se Concentre, Moi Je Chante",
+      "hu": "Mindenki Koncentrál, Én Énekelek"
     },
     {
       "image": "/uploads/oddgallery/dragon-walk.jpg",
@@ -73,7 +89,11 @@
         "domain": [
           "nature"
         ]
-      }
+      },
+      "tr": "Ejderha Yürüyüşü",
+      "de": "Drachenspaziergang",
+      "fr": "Balade Avec Un Dragon",
+      "hu": "Sárkánysétáltatás"
     },
     {
       "image": "/uploads/oddgallery/something-odd-is-coming.jpg",
@@ -88,7 +108,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Tuhaf Bir Şey Geliyor",
+      "de": "Etwas Odd Kommt",
+      "fr": "Quelque Chose D'odd Arrive",
+      "hu": "Valami Fura Készül"
     },
     {
       "image": "/uploads/oddgallery/aliens-next-door.jpg",
@@ -103,7 +127,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Yan Komşu Uzaylılar",
+      "de": "Aliens Von Nebenan",
+      "fr": "Des Aliens À Côté",
+      "hu": "Idegenek A Szomszédban"
     },
     {
       "image": "/uploads/oddgallery/everyone-moves-i-groove.jpg",
@@ -118,7 +146,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Herkes Hareket Eder, Ben Groove Yaparım",
+      "de": "Alle Bewegen Sich, Ich Groove",
+      "fr": "Tout Le Monde Bouge, Moi Je Groove",
+      "hu": "Mindenki Mozog, Én Groove-olok"
     },
     {
       "image": "/uploads/oddgallery/alerts-off-peace-on.jpg",
@@ -133,7 +165,11 @@
         "domain": [
           "nature"
         ]
-      }
+      },
+      "tr": "Bildirimler Kapalı, Huzur Açık",
+      "de": "Benachrichtigungen Aus, Ruhe An",
+      "fr": "Notifications Coupées, Paix Activée",
+      "hu": "Értesítések Ki, Nyugalom Be"
     },
     {
       "image": "/uploads/oddgallery/pizza-slice-reversed.jpg",
@@ -148,7 +184,11 @@
         "domain": [
           "food"
         ]
-      }
+      },
+      "tr": "Ters Pizza Dilimi",
+      "de": "Umgekehrtes Pizzastück",
+      "fr": "Part De Pizza À L'envers",
+      "hu": "Fordított Pizzaszelet"
     },
     {
       "image": "/uploads/oddgallery/everyone-repeats-i-dance.jpg",
@@ -163,7 +203,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Herkes Tekrar Eder, Ben Dans Ederim",
+      "de": "Alle Wiederholen, Ich Tanze",
+      "fr": "Tout Le Monde Répète, Moi Je Danse",
+      "hu": "Mindenki Ismétel, Én Táncolok"
     },
     {
       "image": "/uploads/oddgallery/odd-surprises-await.jpg",
@@ -178,7 +222,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Tuhaf Sürprizler Seni Bekliyor",
+      "de": "Odd Überraschungen Warten",
+      "fr": "Des Surprises Odd T'attendent",
+      "hu": "Fura Meglepetések Várnak"
     },
     {
       "image": "/uploads/oddgallery/flip-sweet-tooth-v1.jpg",
@@ -193,7 +241,11 @@
         "domain": [
           "food"
         ]
-      }
+      },
+      "tr": "Tatlı Krizi",
+      "de": "Naschkatze",
+      "fr": "Bec Sucré",
+      "hu": "Édesszájú Pillanat"
     },
     {
       "image": "/uploads/oddgallery/modern-rings-retro-blings.jpg",
@@ -208,7 +260,11 @@
         "domain": [
           "tech"
         ]
-      }
+      },
+      "tr": "Modern Yüzükler, Retro Işıltılar",
+      "de": "Moderne Ringe, Retro-Bling",
+      "fr": "Bagues Modernes, Bling Rétro",
+      "hu": "Modern Gyűrűk, Retro Csillogás"
     },
     {
       "image": "/uploads/oddgallery/odd-isnt-wrong-same-is-boring.jpg",
@@ -223,7 +279,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Tuhaf Olmak Yanlış Değil. Aynı Olmak Sıkıcı.",
+      "de": "Odd Ist Nicht Falsch. Gleich Ist Langweilig.",
+      "fr": "Odd N'est Pas Un Défaut. Pareil, C'est Ennuyeux.",
+      "hu": "A Fura Nem Rossz. Az Egyforma Unalmas."
     },
     {
       "image": "/uploads/oddgallery/paris-selfie-peace.jpg",
@@ -238,7 +298,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Aynı Şehir, Farklı Açı",
+      "de": "Gleiche Stadt, Anderer Winkel",
+      "fr": "Même Ville, Angle Différent",
+      "hu": "Ugyanaz A Város, Más Szög"
     },
     {
       "image": "/uploads/oddgallery/wrong-turn-right-direction.jpg",
@@ -253,7 +317,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Her Tabela Bir Yeri Gösterir",
+      "de": "Jedes Schild Zeigt Irgendwohin",
+      "fr": "Chaque Panneau Mène Quelque Part",
+      "hu": "Minden Tábla Mutat Valamerre"
     },
     {
       "image": "/uploads/oddgallery/flip-sweet-tooth-v2.jpg",
@@ -268,7 +336,11 @@
         "domain": [
           "food"
         ]
-      }
+      },
+      "tr": "Tatlı Krizi",
+      "de": "Naschkatze",
+      "fr": "Bec Sucré",
+      "hu": "Édesszájú Pillanat"
     },
     {
       "image": "/uploads/oddgallery/the-book-of-oddities.jpg",
@@ -283,7 +355,11 @@
         "domain": [
           "art-creativity"
         ]
-      }
+      },
+      "tr": "Tuhaflıklar Kitabını Yazmak",
+      "de": "Das Buch Der Kuriositäten Schreiben",
+      "fr": "Écrire Le Livre Des Bizarreries",
+      "hu": "A Furaságok Könyvét Írva"
     },
     {
       "image": "/uploads/oddgallery/why-blend-in.jpg",
@@ -298,7 +374,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Neden Uyum Sağlayasın Ki?",
+      "de": "Warum Anpassen?",
+      "fr": "Pourquoi Se Fondre Dans La Masse ?",
+      "hu": "Miért Simulnál Bele?"
     },
     {
       "image": "/uploads/oddgallery/garden-wave-hello.jpg",
@@ -313,7 +393,11 @@
         "domain": [
           "nature"
         ]
-      }
+      },
+      "tr": "Güya Çiçek Açıyor",
+      "de": "Angeblich Blühend",
+      "fr": "En Fleur, Apparemment",
+      "hu": "Állítólag Virágzik"
     },
     {
       "image": "/uploads/oddgallery/zen-amid-chaos.jpg",
@@ -328,7 +412,11 @@
         "domain": [
           "home"
         ]
-      }
+      },
+      "tr": "Dışarıda Kaos, İçeride Huzur",
+      "de": "Chaos Draußen, Ruhe Drinnen",
+      "fr": "Chaos Dehors, Calme Dedans",
+      "hu": "Kint Káosz, Bent Nyugalom"
     },
     {
       "image": "/uploads/oddgallery/i-call-it-abstract.jpg",
@@ -343,7 +431,11 @@
         "domain": [
           "art-creativity"
         ]
-      }
+      },
+      "tr": "Ben Buna Soyut Diyorum",
+      "de": "Ich Nenne Es Abstrakt",
+      "fr": "J'appelle Ça De L'abstrait",
+      "hu": "Én Absztraktnak Hívom"
     },
     {
       "image": "/uploads/oddgallery/too-odd-to-filter.jpg",
@@ -358,7 +450,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Filtrelenemeyecek Kadar Tuhaf",
+      "de": "Zu Odd Für Einen Filter",
+      "fr": "Trop Odd Pour Un Filtre",
+      "hu": "Túl Fura Egy Szűrőhöz"
     },
     {
       "image": "/uploads/oddgallery/found-normal-returned-it.jpg",
@@ -373,7 +469,11 @@
         "domain": [
           "nature"
         ]
-      }
+      },
+      "tr": "Normali Buldum. İade Ettim.",
+      "de": "Normal Gefunden. Zurückgegeben.",
+      "fr": "Trouvé Le Normal. Rendu.",
+      "hu": "Megtaláltam A Normálist. Visszavittem."
     },
     {
       "image": "/uploads/oddgallery/sip-happens.jpg",
@@ -388,7 +488,11 @@
         "domain": [
           "food"
         ]
-      }
+      },
+      "tr": "Sip Happens",
+      "de": "Sip Happens",
+      "fr": "Sip Happens",
+      "hu": "Sip Happens"
     },
     {
       "image": "/uploads/oddgallery/proud-rock-collection.jpg",
@@ -403,7 +507,11 @@
         "domain": [
           "nature"
         ]
-      }
+      },
+      "tr": "Bu Yığınla Gurur Duyuyorum",
+      "de": "Stolz Auf Diesen Haufen",
+      "fr": "Fier De Ce Tas",
+      "hu": "Büszke Vagyok Erre A Kupacra"
     },
     {
       "image": "/uploads/oddgallery/oops-made-art-again.jpg",
@@ -418,7 +526,11 @@
         "domain": [
           "art-creativity"
         ]
-      }
+      },
+      "tr": "Hop! Yine Sanat Yaptım",
+      "de": "Ups! Schon Wieder Kunst Gemacht",
+      "fr": "Oups ! Encore De L'art",
+      "hu": "Hoppá! Már Megint Művészet Lett"
     },
     {
       "image": "/uploads/oddgallery/you-missed-a-spot.jpg",
@@ -433,7 +545,11 @@
         "domain": [
           "home"
         ]
-      }
+      },
+      "tr": "Bir Yeri Atladın",
+      "de": "Da Hast Du Was Übersehen",
+      "fr": "T'as Loupé Un Endroit",
+      "hu": "Egy Helyet Kihagytál"
     },
     {
       "image": "/uploads/oddgallery/how-oddvi-was-born.jpg",
@@ -448,7 +564,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Oddvi Nasıl Doğdu",
+      "de": "Wie Oddvi Geboren Wurde",
+      "fr": "Comment Oddvi Est Né",
+      "hu": "Hogyan Született Oddvi"
     },
     {
       "image": "/uploads/oddgallery/coming-soon-teaser.jpg",
@@ -463,7 +583,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Çok Yakında",
+      "de": "Bald Verfügbar",
+      "fr": "Bientôt Disponible",
+      "hu": "Hamarosan"
     },
     {
       "image": "/uploads/oddgallery/weightlifting-philosopher.jpg",
@@ -478,7 +602,11 @@
         "domain": [
           "fitness"
         ]
-      }
+      },
+      "tr": "Halter Kaldıran Filozof",
+      "de": "Der Gewichtheber-Philosoph",
+      "fr": "Le Philosophe Haltérophile",
+      "hu": "A Súlyemelő Filozófus"
     },
     {
       "image": "/uploads/oddgallery/plant-whisperer.jpg",
@@ -493,7 +621,11 @@
         "domain": [
           "home"
         ]
-      }
+      },
+      "tr": "Bitki Fısıldayıcısı",
+      "de": "Der Pflanzenflüsterer",
+      "fr": "Le Chuchoteur De Plantes",
+      "hu": "A Növénysuttogó"
     },
     {
       "image": "/uploads/oddgallery/last-minute-canceller.jpg",
@@ -508,7 +640,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Son Dakika İptalcisi",
+      "de": "Der Last-Minute-Absager",
+      "fr": "L'annuleur De Dernière Minute",
+      "hu": "Az Utolsó Pillanatban Lemondó"
     },
     {
       "image": "/uploads/oddgallery/head-in-the-clouds.jpg",
@@ -523,7 +659,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Kafası Bulutlarda",
+      "de": "Kopf In Den Wolken",
+      "fr": "La Tête Dans Les Nuages",
+      "hu": "Fejjel A Felhőkben"
     },
     {
       "image": "/uploads/oddgallery/midnight-snacker.jpg",
@@ -538,7 +678,11 @@
         "domain": [
           "food"
         ]
-      }
+      },
+      "tr": "Gece Yarısı Atıştırmacısı",
+      "de": "Der Mitternachtssnacker",
+      "fr": "Le Grignoteur De Minuit",
+      "hu": "Éjféli Nassoló"
     },
     {
       "image": "/uploads/oddgallery/study-oddvi.jpg",
@@ -553,7 +697,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Ders Çalışan Oddvi",
+      "de": "Oddvi Beim Lernen",
+      "fr": "Oddvi Étudie",
+      "hu": "Tanuló Oddvi"
     },
     {
       "image": "/uploads/oddgallery/mountain-oddvi-summit.jpg",
@@ -568,7 +716,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Dağcı Oddvi",
+      "de": "Berg-Oddvi",
+      "fr": "Oddvi Des Montagnes",
+      "hu": "Hegymászó Oddvi"
     },
     {
       "image": "/uploads/oddgallery/oddvi-climb-different.jpg",
@@ -583,7 +735,11 @@
         "domain": [
           "fitness"
         ]
-      }
+      },
+      "tr": "Farklı Tırman",
+      "de": "Anders Klettern",
+      "fr": "Grimpe Autrement",
+      "hu": "Másképp Mászik"
     },
     {
       "image": "/uploads/oddgallery/fashion-oddvi.jpg",
@@ -598,7 +754,11 @@
         "domain": [
           "fashion"
         ]
-      }
+      },
+      "tr": "Modacı Oddvi",
+      "de": "Mode-Oddvi",
+      "fr": "Oddvi Mode",
+      "hu": "Divatos Oddvi"
     },
     {
       "image": "/uploads/oddgallery/sail-different.jpg",
@@ -613,7 +773,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Farklı Yelken Aç",
+      "de": "Anders Segeln",
+      "fr": "Navigue Autrement",
+      "hu": "Másképp Vitorlázik"
     },
     {
       "image": "/uploads/oddgallery/love-oddvi.jpg",
@@ -628,7 +792,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Aşık Oddvi",
+      "de": "Verliebter Oddvi",
+      "fr": "Oddvi Amoureux",
+      "hu": "Szerelmes Oddvi"
     },
     {
       "image": "/uploads/oddgallery/dad-oddvi.jpg",
@@ -643,7 +811,11 @@
         "domain": [
           "home"
         ]
-      }
+      },
+      "tr": "Baba Oddvi",
+      "de": "Papa Oddvi",
+      "fr": "Oddvi Papa",
+      "hu": "Apa Oddvi"
     },
     {
       "image": "/uploads/oddgallery/mom-oddvi.jpg",
@@ -658,7 +830,11 @@
         "domain": [
           "home"
         ]
-      }
+      },
+      "tr": "Anne Oddvi",
+      "de": "Mama Oddvi",
+      "fr": "Oddvi Maman",
+      "hu": "Anya Oddvi"
     },
     {
       "image": "/uploads/oddgallery/doctor-oddvi.jpg",
@@ -673,7 +849,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Doktor Oddvi",
+      "de": "Doktor Oddvi",
+      "fr": "Docteur Oddvi",
+      "hu": "Doktor Oddvi"
     },
     {
       "image": "/uploads/oddgallery/big-boss-oddvi.jpg",
@@ -688,7 +868,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Büyük Patron Oddvi",
+      "de": "Big Boss Oddvi",
+      "fr": "Grand Patron Oddvi",
+      "hu": "Nagyfőnök Oddvi"
     },
     {
       "image": "/uploads/oddgallery/boss-oddvi-desk.jpg",
@@ -703,7 +887,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Patron Oddvi",
+      "de": "Boss Oddvi",
+      "fr": "Patron Oddvi",
+      "hu": "Főnök Oddvi"
     },
     {
       "image": "/uploads/oddgallery/ceo-of-odd.jpg",
@@ -718,7 +906,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Tuhaflığın CEO'su",
+      "de": "CEO Von Odd",
+      "fr": "PDG De L'Odd",
+      "hu": "Az Odd Vezérigazgatója"
     },
     {
       "image": "/uploads/oddgallery/chef-oddvi.jpg",
@@ -733,7 +925,11 @@
         "domain": [
           "food"
         ]
-      }
+      },
+      "tr": "Şef Oddvi",
+      "de": "Chefkoch Oddvi",
+      "fr": "Chef Oddvi",
+      "hu": "Séf Oddvi"
     },
     {
       "image": "/uploads/oddgallery/surf-oddly.jpg",
@@ -748,7 +944,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Tuhaf Sörf Yap",
+      "de": "Odd Surfen",
+      "fr": "Surfe Bizarrement",
+      "hu": "Furán Szörfözik"
     },
     {
       "image": "/uploads/oddgallery/ski-oddly.jpg",
@@ -763,7 +963,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Tuhaf Kayak Yap",
+      "de": "Odd Skifahren",
+      "fr": "Skie Bizarrement",
+      "hu": "Furán Síel"
     },
     {
       "image": "/uploads/oddgallery/permanent-vacation-vibes.jpg",
@@ -778,7 +982,11 @@
         "domain": [
           "travel"
         ]
-      }
+      },
+      "tr": "Kalıcı Tatil Modu",
+      "de": "Dauerurlaub-Feeling",
+      "fr": "Vibes De Vacances Permanentes",
+      "hu": "Örök Nyaralás Hangulat"
     },
     {
       "image": "/uploads/oddgallery/night-owl-artist.jpg",
@@ -793,7 +1001,11 @@
         "domain": [
           "art-creativity"
         ]
-      }
+      },
+      "tr": "Gece Kuşu Sanatçı",
+      "de": "Nachteule-Künstler",
+      "fr": "L'artiste Oiseau De Nuit",
+      "hu": "Bagoly Művész"
     },
     {
       "image": "/uploads/oddgallery/redundant-reminder-sender.jpg",
@@ -808,7 +1020,11 @@
         "domain": [
           "tech"
         ]
-      }
+      },
+      "tr": "Gereksiz Hatırlatma Gönderici",
+      "de": "Der Redundante Erinnerungssender",
+      "fr": "L'envoyeur De Rappels Inutiles",
+      "hu": "A Felesleges Emlékeztető-küldő"
     },
     {
       "image": "/uploads/oddgallery/karaoke-king.jpg",
@@ -823,7 +1039,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Karaoke Kralı",
+      "de": "Karaoke-König",
+      "fr": "Le Roi Du Karaoké",
+      "hu": "Karaoke Király"
     },
     {
       "image": "/uploads/oddgallery/relentless-google-er.jpg",
@@ -838,7 +1058,11 @@
         "domain": [
           "tech"
         ]
-      }
+      },
+      "tr": "Yorulmak Bilmeyen Googlecı",
+      "de": "Der Unermüdliche Googler",
+      "fr": "Le Googleur Infatigable",
+      "hu": "A Fáradhatatlan Google-ozó"
     },
     {
       "image": "/uploads/oddgallery/everyone-oddvi-party.jpg",
@@ -853,7 +1077,11 @@
         "domain": [
           "social-life"
         ]
-      }
+      },
+      "tr": "Herkes Partide, Oddvi De Partide",
+      "de": "Alle Auf Der Party, Oddvi Auf Der Party",
+      "fr": "Tout Le Monde À La Fête, Oddvi À La Fête",
+      "hu": "Mindenki A Buliban, Oddvi Is A Buliban"
     },
     {
       "image": "/uploads/oddgallery/odd-voice-memo-recorder.jpg",
@@ -868,7 +1096,11 @@
         "domain": [
           "tech"
         ]
-      }
+      },
+      "tr": "Tuhaf Sesli Not Kaydedici",
+      "de": "Der Odd Sprachnotiz-Aufnehmer",
+      "fr": "L'enregistreur De Notes Vocales Odd",
+      "hu": "A Fura Hangjegyzet-rögzítő"
     },
     {
       "image": "/uploads/oddgallery/normal-is-boring-wear-odd-cook.jpg",
@@ -883,7 +1115,11 @@
         "domain": [
           "food"
         ]
-      }
+      },
+      "tr": "Normal Sıkıcıdır. Odd Giy.",
+      "de": "Normal Ist Langweilig. Trag Odd.",
+      "fr": "Le Normal, C'est Ennuyeux. Porte De L'Odd.",
+      "hu": "A Normális Unalmas. Viselj Oddot."
     },
     {
       "image": "/uploads/oddgallery/normal-is-boring-wear-odd-office.jpg",
@@ -898,7 +1134,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Normal Sıkıcıdır. Odd Giy.",
+      "de": "Normal Ist Langweilig. Trag Odd.",
+      "fr": "Le Normal, C'est Ennuyeux. Porte De L'Odd.",
+      "hu": "A Normális Unalmas. Viselj Oddot."
     },
     {
       "image": "/uploads/oddgallery/keep-the-odd-inside.jpg",
@@ -913,7 +1153,11 @@
         "domain": [
           "fashion"
         ]
-      }
+      },
+      "tr": "Tuhaflığı İçinde Sakla",
+      "de": "Behalte Das Odd In Dir",
+      "fr": "Garde L'Odd En Toi",
+      "hu": "Tartsd Meg Magadban A Furát"
     },
     {
       "image": "/uploads/oddgallery/odd-from-the-bottom-up.jpg",
@@ -928,7 +1172,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Tepeden Tırnağa Tuhaf",
+      "de": "Odd Von Grund Auf",
+      "fr": "Odd De La Tête Aux Pieds",
+      "hu": "Odd Tetőtől Talpig"
     },
     {
       "image": "/uploads/oddgallery/comfortably-weird.jpg",
@@ -943,7 +1191,11 @@
         "domain": [
           "home"
         ]
-      }
+      },
+      "tr": "Rahatça Tuhaf",
+      "de": "Bequem Weird",
+      "fr": "Confortablement Bizarre",
+      "hu": "Kényelmesen Fura"
     },
     {
       "image": "/uploads/oddgallery/wear-your-weird.jpg",
@@ -958,7 +1210,11 @@
         "domain": [
           "mystery-brand"
         ]
-      }
+      },
+      "tr": "Tuhaflığını Giy",
+      "de": "Trag Dein Weird",
+      "fr": "Porte Ta Bizarrerie",
+      "hu": "Viseld A Furaságod"
     },
     {
       "image": "/uploads/oddgallery/life-exe-stopped-working.jpg",
@@ -973,7 +1229,11 @@
         "domain": [
           "tech"
         ]
-      }
+      },
+      "tr": "Life.exe Çalışmayı Durdurdu",
+      "de": "Life.exe Wurde Beendet",
+      "fr": "Life.exe A Cessé De Fonctionner",
+      "hu": "A Life.exe Leállt"
     },
     {
       "image": "/uploads/oddgallery/ceo-of-overthinking-inc.jpg",
@@ -988,7 +1248,11 @@
         "domain": [
           "work-office"
         ]
-      }
+      },
+      "tr": "Aşırı Düşünme A.Ş. CEO'su",
+      "de": "CEO Von Overthinking Inc.",
+      "fr": "PDG De Overthinking Inc.",
+      "hu": "Az Overthinking Kft. Vezérigazgatója"
     },
     {
       "image": "/uploads/oddgallery/existential-crisis-loading.jpg",
@@ -1003,7 +1267,11 @@
         "domain": [
           "art-creativity"
         ]
-      }
+      },
+      "tr": "Varoluşsal Kriz Yükleniyor",
+      "de": "Existenzielle Krise Wird Geladen",
+      "fr": "Crise Existentielle En Cours De Chargement",
+      "hu": "Egzisztenciális Válság Töltődik"
     },
     {
       "image": "/uploads/oddgallery/dr-odd-will-see-you-now.jpg",
