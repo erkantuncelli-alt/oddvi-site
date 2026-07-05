@@ -61,6 +61,20 @@
 
   footer{padding:40px 0;background:var(--ink);color:var(--paper);text-align:center;font-size:14px}
   footer a{font-weight:700;text-decoration:none;color:var(--red-deep)}
+
+  /* ODD STREAK BADGE */
+  #oddStreakWrap{position:fixed;right:18px;bottom:18px;z-index:60}
+  #oddStreakBtn{display:flex;align-items:center;gap:7px;background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:999px;padding:10px 15px;font-family:var(--font-disp);font-weight:800;font-size:15px;cursor:pointer;box-shadow:4px 4px 0 var(--red);transition:transform .12s,box-shadow .12s}
+  #oddStreakBtn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--red)}
+  .os-emoji{font-size:18px}
+  #oddStreakPop{position:fixed;right:18px;bottom:80px;width:250px;background:var(--card);border:3px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:22px 18px 18px;text-align:center;display:none;z-index:61}
+  #oddStreakPop.open{display:block}
+  #oddStreakClose{position:absolute;top:6px;right:10px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink)}
+  .os-emoji-big{font-size:36px}
+  .os-title{font-family:var(--font-disp);font-weight:800;font-size:16px;margin-top:6px}
+  .os-sub{font-size:13px;opacity:.75;margin-top:6px}
+  .os-share{margin-top:14px;background:var(--red);color:#fff;border:2.5px solid var(--ink);border-radius:10px;padding:9px 14px;font-weight:700;font-size:13px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+  @media(max-width:680px){#oddStreakWrap{right:12px;bottom:12px}#oddStreakPop{right:12px;width:210px}}
 </style>
 </head>
 <body>
