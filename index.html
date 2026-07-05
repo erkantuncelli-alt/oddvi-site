@@ -253,6 +253,10 @@
   .odd-like.liked{background:#ffe3ea;border-color:var(--red)}
   .odd-like-heart{font-size:14px}
   .odd-share .form-msg{color:var(--ink);text-align:center}
+  .odd-consent{display:flex;align-items:flex-start;gap:8px;margin-top:14px;font-size:13px;opacity:.8;cursor:pointer;line-height:1.4}
+  .odd-consent input{margin-top:3px;flex-shrink:0}
+  .odd-takedown{margin-top:18px;font-size:13px;opacity:.65;text-align:center}
+  .odd-takedown a{font-weight:700;text-decoration:underline;opacity:1}
   .odd-feed{display:flex;gap:18px;margin-top:44px;text-align:left}
   .odd-feed .odd-card{flex:0 0 260px;scroll-snap-align:start}
   .odd-feed-link{display:inline-block;margin-top:28px;font-weight:700;color:var(--red);text-decoration:underline}
@@ -422,9 +426,14 @@
         <button type="button" id="oddPhotoRemove" aria-label="Remove photo">✕</button>
       </div>
       <div class="form-msg" id="oddPhotoMsg" role="status" style="min-height:0"></div>
+      <label class="odd-consent">
+        <input type="checkbox" id="oddConsent" />
+        <span data-i18n="share.consent">I confirm this is mine to share (including any photo) and I'm okay with it being shown publicly on the Oddvi site and social media.</span>
+      </label>
       <input id="oddWebsite" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
       <button class="btn btn-primary" id="oddShareBtn" data-i18n="share.btn" style="margin-top:14px">Share it</button>
       <div class="form-msg" id="oddShareMsg" role="status"></div>
+      <p class="odd-takedown" data-i18n-html="share.takedown">Want something you shared taken down? <a href="https://instagram.com/theoddvi" target="_blank" rel="noopener">DM us</a> and we'll remove it.</p>
     </div>
     <div class="carousel-wrap"><div class="odd-feed" id="oddFeed"></div></div>
     <a href="odd-wall.html" class="odd-feed-link" data-i18n="share.seeAll">See every Odd, ranked by likes →</a>
@@ -548,7 +557,7 @@
           honeypot=document.getElementById('oddWebsite'), statusEl=document.getElementById('oddShareMsg'),
           photoInput=document.getElementById('oddPhoto'), photoPreview=document.getElementById('oddPhotoPreview'),
           photoImg=document.getElementById('oddPhotoImg'), photoRemove=document.getElementById('oddPhotoRemove'),
-          photoMsg=document.getElementById('oddPhotoMsg');
+          photoMsg=document.getElementById('oddPhotoMsg'), consentEl=document.getElementById('oddConsent');
     if(!btn) return;
     function curLang(){return document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';}
     let sending = false;
@@ -597,6 +606,7 @@
       const message = msgEl.value.trim(), name = nameEl.value.trim(), topic = topicEl.value.trim();
       if (honeypot && honeypot.value) { return; }
       if(!topic || !message){ statusEl.textContent = D['share.err']||"Try again?"; return; }
+      if(consentEl && !consentEl.checked){ statusEl.textContent = D['share.consentErr']||"Please confirm the checkbox first."; return; }
 
       sending = true;
       const originalLabel = btn.textContent;
@@ -611,6 +621,7 @@
         if (res.ok) {
           statusEl.textContent = D['share.ok']||"Thanks — we'll take a look!";
           msgEl.value = ""; nameEl.value = ""; topicEl.value = ""; resetPhoto();
+          if(consentEl) consentEl.checked = false;
         } else {
           statusEl.textContent = D['share.err']||"Try again?";
         }

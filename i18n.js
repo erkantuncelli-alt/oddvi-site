@@ -55,6 +55,9 @@ window.I18N = (function () {
     'wall.kicker':"The Wall of Odd",'wall.h2':"Ranked By Likes.",'wall.sub':"Every shared Odd, most-liked first.",
     'wall.empty':"Nothing here yet — be the first to share.",'wall.back':"← Back home",
     'share.photoBtn':"📷 Add a photo (optional)",'share.photoErr':"That doesn't look like an image.",'share.photoTooBig':"That photo's a bit too big (max 10MB).",
+    'share.consent':"I confirm this is mine to share (including any photo) and I'm okay with it being shown publicly on the Oddvi site and social media.",
+    'share.consentErr':"Please confirm the checkbox first.",
+    'share.takedown':"Want something you shared taken down? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">DM us</a> and we'll remove it.",
   },
   tr:{
     'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.gallery':"Galeri",'nav.test':"What's your Odd?",
@@ -102,6 +105,9 @@ window.I18N = (function () {
     'wall.kicker':"Odd Duvarı",'wall.h2':"Beğeniye Göre Sıralı.",'wall.sub':"Paylaşılan tüm Odd'lar, en çok beğenilen önde.",
     'wall.empty':"Henüz burada bir şey yok — ilk paylaşan sen ol.",'wall.back':"← Ana sayfaya dön",
     'share.photoBtn':"📷 Fotoğraf ekle (opsiyonel)",'share.photoErr':"Bu bir görsel dosyası gibi durmuyor.",'share.photoTooBig':"Bu fotoğraf biraz büyük (en fazla 10MB).",
+    'share.consent':"Bunun paylaşma hakkım olan bir içerik olduğunu (fotoğraf dahil) onaylıyorum ve Oddvi sitesinde/sosyal medyasında herkese açık gösterilmesini kabul ediyorum.",
+    'share.consentErr':"Önce kutucuğu onaylar mısın?",
+    'share.takedown':"Paylaştığın bir şeyi kaldırmamızı mı istiyorsun? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Bize DM at</a>, kaldıralım.",
   },
   de:{
     'nav.meet':"Oddvi entdecken",'nav.story':"Die Geschichte",'nav.test':"What's your Odd?",
@@ -149,6 +155,9 @@ window.I18N = (function () {
     'wall.kicker':"Die Odd-Wand",'wall.h2':"Nach Likes Sortiert.",'wall.sub':"Alle geteilten Odds, die beliebtesten zuerst.",
     'wall.empty':"Hier ist noch nichts — sei die/der Erste, die/der teilt.",'wall.back':"← Zurück zur Startseite",
     'share.photoBtn':"📷 Foto hinzufügen (optional)",'share.photoErr':"Das sieht nicht nach einem Bild aus.",'share.photoTooBig':"Das Foto ist etwas zu groß (max. 10MB).",
+    'share.consent':"Ich bestätige, dass ich das Recht habe, dies zu teilen (inklusive Foto), und bin damit einverstanden, dass es öffentlich auf der Oddvi-Seite und in sozialen Medien gezeigt wird.",
+    'share.consentErr':"Bitte bestätige zuerst das Kästchen.",
+    'share.takedown':"Möchtest du, dass wir etwas entfernen, das du geteilt hast? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Schreib uns</a>, wir nehmen es raus.",
   },
   fr:{
     'nav.meet':"Rencontrer Oddvi",'nav.story':"L'histoire",'nav.test':"What's your Odd?",
@@ -196,6 +205,9 @@ window.I18N = (function () {
     'wall.kicker':"Le Mur des Odd",'wall.h2':"Classés Par Likes.",'wall.sub':"Tous les Odd partagés, les plus aimés en premier.",
     'wall.empty':"Rien ici pour l'instant — sois le premier à partager.",'wall.back':"← Retour à l'accueil",
     'share.photoBtn':"📷 Ajouter une photo (optionnel)",'share.photoErr':"Ça ne ressemble pas à une image.",'share.photoTooBig':"Cette photo est un peu trop grande (max 10 Mo).",
+    'share.consent':"Je confirme que j'ai le droit de partager ceci (photo incluse) et j'accepte que ce soit montré publiquement sur le site Oddvi et les réseaux sociaux.",
+    'share.consentErr':"Merci de confirmer la case d'abord.",
+    'share.takedown':"Tu veux qu'on retire quelque chose que tu as partagé ? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Envoie-nous un DM</a>, on s'en occupe.",
   },
   hu:{
     'nav.meet':"Ismerd meg Oddvit",'nav.story':"A történet",'nav.test':"What's your Odd?",
@@ -243,6 +255,9 @@ window.I18N = (function () {
     'wall.kicker':"Az Odd Fal",'wall.h2':"Like Szerint Rangsorolva.",'wall.sub':"Minden megosztott Odd, a legnépszerűbb elöl.",
     'wall.empty':"Még nincs itt semmi — legyél te az első, aki megosztja.",'wall.back':"← Vissza a főoldalra",
     'share.photoBtn':"📷 Fotó hozzáadása (opcionális)",'share.photoErr':"Ez nem néz ki képnek.",'share.photoTooBig':"Ez a fotó egy kicsit nagy (max 10MB).",
+    'share.consent':"Megerősítem, hogy jogom van ezt megosztani (a fotót is beleértve), és elfogadom, hogy nyilvánosan megjelenik az Oddvi oldalán és a közösségi médiában.",
+    'share.consentErr':"Kérjük, először pipáld ki a jelölőnégyzetet.",
+    'share.takedown':"Szeretnéd, hogy eltávolítsunk valamit, amit megosztottál? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Írj nekünk DM-ben</a>, és eltávolítjuk.",
   }
   };
 
