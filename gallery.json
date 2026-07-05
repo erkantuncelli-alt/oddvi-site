@@ -3,17 +3,6 @@
     {
       "image": "/uploads/oddgallery/beyond-trends-1.jpg",
       "en": "Beyond Trends",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "fashion"
-        ]
-      },
       "tr": "Trendlerin Ötesinde",
       "de": "Jenseits Von Trends",
       "fr": "Au-delà Des Tendances",
@@ -22,17 +11,6 @@
     {
       "image": "/uploads/oddgallery/finals-week-stay-odd.jpg",
       "en": "Stay Odd Through Finals Week",
-      "tags": {
-        "mood": [
-          "chaotic"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Final Haftasında Da Tuhaf Kal",
       "de": "Bleib Odd Während Der Prüfungswoche",
       "fr": "Reste Odd Pendant Les Examens",
@@ -41,17 +19,6 @@
     {
       "image": "/uploads/oddgallery/fashion-freestyle.jpg",
       "en": "Fashion Freestyle",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "fashion"
-        ]
-      },
       "tr": "Moda Serbest Stil",
       "de": "Mode-Freestyle",
       "fr": "Freestyle Mode",
@@ -60,17 +27,6 @@
     {
       "image": "/uploads/oddgallery/everyone-focuses-i-sing.jpg",
       "en": "Everyone Focuses, I Sing",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Herkes Odaklanır, Ben Şarkı Söylerim",
       "de": "Alle Konzentrieren Sich, Ich Singe",
       "fr": "Tout Le Monde Se Concentre, Moi Je Chante",
@@ -79,17 +35,6 @@
     {
       "image": "/uploads/oddgallery/dragon-walk.jpg",
       "en": "Dragon Walk",
-      "tags": {
-        "mood": [
-          "wholesome"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "nature"
-        ]
-      },
       "tr": "Ejderha Yürüyüşü",
       "de": "Drachenspaziergang",
       "fr": "Balade Avec Un Dragon",
@@ -98,17 +43,6 @@
     {
       "image": "/uploads/oddgallery/something-odd-is-coming.jpg",
       "en": "Something Odd Is Coming",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Tuhaf Bir Şey Geliyor",
       "de": "Etwas Odd Kommt",
       "fr": "Quelque Chose D'odd Arrive",
@@ -117,17 +51,6 @@
     {
       "image": "/uploads/oddgallery/aliens-next-door.jpg",
       "en": "Aliens Next Door",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Yan Komşu Uzaylılar",
       "de": "Aliens Von Nebenan",
       "fr": "Des Aliens À Côté",
@@ -136,17 +59,6 @@
     {
       "image": "/uploads/oddgallery/everyone-moves-i-groove.jpg",
       "en": "Everyone Moves, I Groove",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "group-chat"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Herkes Hareket Eder, Ben Groove Yaparım",
       "de": "Alle Bewegen Sich, Ich Groove",
       "fr": "Tout Le Monde Bouge, Moi Je Groove",
@@ -155,17 +67,6 @@
     {
       "image": "/uploads/oddgallery/alerts-off-peace-on.jpg",
       "en": "Alerts Off, Peace On",
-      "tags": {
-        "mood": [
-          "chill"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "nature"
-        ]
-      },
       "tr": "Bildirimler Kapalı, Huzur Açık",
       "de": "Benachrichtigungen Aus, Ruhe An",
       "fr": "Notifications Coupées, Paix Activée",
@@ -174,17 +75,6 @@
     {
       "image": "/uploads/oddgallery/pizza-slice-reversed.jpg",
       "en": "Pizza Slice Reversed",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "food"
-        ]
-      },
       "tr": "Ters Pizza Dilimi",
       "de": "Umgekehrtes Pizzastück",
       "fr": "Part De Pizza À L'envers",
@@ -193,17 +83,6 @@
     {
       "image": "/uploads/oddgallery/everyone-repeats-i-dance.jpg",
       "en": "Everyone Repeats, I Dance",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "group-chat"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Herkes Tekrar Eder, Ben Dans Ederim",
       "de": "Alle Wiederholen, Ich Tanze",
       "fr": "Tout Le Monde Répète, Moi Je Danse",
@@ -212,17 +91,6 @@
     {
       "image": "/uploads/oddgallery/odd-surprises-await.jpg",
       "en": "Odd Surprises Await",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Tuhaf Sürprizler Seni Bekliyor",
       "de": "Odd Überraschungen Warten",
       "fr": "Des Surprises Odd T'attendent",
@@ -231,17 +99,6 @@
     {
       "image": "/uploads/oddgallery/flip-sweet-tooth-v1.jpg",
       "en": "Flip Sweet Tooth",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "food"
-        ]
-      },
       "tr": "Tatlı Krizi",
       "de": "Naschkatze",
       "fr": "Bec Sucré",
@@ -250,17 +107,6 @@
     {
       "image": "/uploads/oddgallery/modern-rings-retro-blings.jpg",
       "en": "Modern Rings, Retro Blings",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "tech"
-        ]
-      },
       "tr": "Modern Yüzükler, Retro Işıltılar",
       "de": "Moderne Ringe, Retro-Bling",
       "fr": "Bagues Modernes, Bling Rétro",
@@ -269,17 +115,6 @@
     {
       "image": "/uploads/oddgallery/odd-isnt-wrong-same-is-boring.jpg",
       "en": "Odd Isn't Wrong. Same Is Boring.",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Tuhaf Olmak Yanlış Değil. Aynı Olmak Sıkıcı.",
       "de": "Odd Ist Nicht Falsch. Gleich Ist Langweilig.",
       "fr": "Odd N'est Pas Un Défaut. Pareil, C'est Ennuyeux.",
@@ -288,17 +123,6 @@
     {
       "image": "/uploads/oddgallery/paris-selfie-peace.jpg",
       "en": "Same City, Different Angle",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "group-chat"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Aynı Şehir, Farklı Açı",
       "de": "Gleiche Stadt, Anderer Winkel",
       "fr": "Même Ville, Angle Différent",
@@ -307,17 +131,6 @@
     {
       "image": "/uploads/oddgallery/wrong-turn-right-direction.jpg",
       "en": "Every Sign Points Somewhere",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Her Tabela Bir Yeri Gösterir",
       "de": "Jedes Schild Zeigt Irgendwohin",
       "fr": "Chaque Panneau Mène Quelque Part",
@@ -326,17 +139,6 @@
     {
       "image": "/uploads/oddgallery/flip-sweet-tooth-v2.jpg",
       "en": "Flip Sweet Tooth",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "food"
-        ]
-      },
       "tr": "Tatlı Krizi",
       "de": "Naschkatze",
       "fr": "Bec Sucré",
@@ -345,17 +147,6 @@
     {
       "image": "/uploads/oddgallery/the-book-of-oddities.jpg",
       "en": "Writing The Book Of Oddities",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "art-creativity"
-        ]
-      },
       "tr": "Tuhaflıklar Kitabını Yazmak",
       "de": "Das Buch Der Kuriositäten Schreiben",
       "fr": "Écrire Le Livre Des Bizarreries",
@@ -364,17 +155,6 @@
     {
       "image": "/uploads/oddgallery/why-blend-in.jpg",
       "en": "Why Blend In?",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Neden Uyum Sağlayasın Ki?",
       "de": "Warum Anpassen?",
       "fr": "Pourquoi Se Fondre Dans La Masse ?",
@@ -383,17 +163,6 @@
     {
       "image": "/uploads/oddgallery/garden-wave-hello.jpg",
       "en": "Blooming, Allegedly",
-      "tags": {
-        "mood": [
-          "wholesome"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "nature"
-        ]
-      },
       "tr": "Güya Çiçek Açıyor",
       "de": "Angeblich Blühend",
       "fr": "En Fleur, Apparemment",
@@ -402,17 +171,6 @@
     {
       "image": "/uploads/oddgallery/zen-amid-chaos.jpg",
       "en": "Chaos Outside, Calm Inside",
-      "tags": {
-        "mood": [
-          "chill"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "home"
-        ]
-      },
       "tr": "Dışarıda Kaos, İçeride Huzur",
       "de": "Chaos Draußen, Ruhe Drinnen",
       "fr": "Chaos Dehors, Calme Dedans",
@@ -421,17 +179,6 @@
     {
       "image": "/uploads/oddgallery/i-call-it-abstract.jpg",
       "en": "I Call It Abstract",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "art-creativity"
-        ]
-      },
       "tr": "Ben Buna Soyut Diyorum",
       "de": "Ich Nenne Es Abstrakt",
       "fr": "J'appelle Ça De L'abstrait",
@@ -440,17 +187,6 @@
     {
       "image": "/uploads/oddgallery/too-odd-to-filter.jpg",
       "en": "Too Odd To Filter",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "group-chat"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Filtrelenemeyecek Kadar Tuhaf",
       "de": "Zu Odd Für Einen Filter",
       "fr": "Trop Odd Pour Un Filtre",
@@ -459,17 +195,6 @@
     {
       "image": "/uploads/oddgallery/found-normal-returned-it.jpg",
       "en": "Found Normal. Returned It.",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "roast-a-friend"
-        ],
-        "domain": [
-          "nature"
-        ]
-      },
       "tr": "Normali Buldum. İade Ettim.",
       "de": "Normal Gefunden. Zurückgegeben.",
       "fr": "Trouvé Le Normal. Rendu.",
@@ -478,17 +203,6 @@
     {
       "image": "/uploads/oddgallery/sip-happens.jpg",
       "en": "Sip Happens",
-      "tags": {
-        "mood": [
-          "chill"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "food"
-        ]
-      },
       "tr": "Sip Happens",
       "de": "Sip Happens",
       "fr": "Sip Happens",
@@ -497,17 +211,6 @@
     {
       "image": "/uploads/oddgallery/proud-rock-collection.jpg",
       "en": "Proud Of This Pile",
-      "tags": {
-        "mood": [
-          "wholesome"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "nature"
-        ]
-      },
       "tr": "Bu Yığınla Gurur Duyuyorum",
       "de": "Stolz Auf Diesen Haufen",
       "fr": "Fier De Ce Tas",
@@ -516,17 +219,6 @@
     {
       "image": "/uploads/oddgallery/oops-made-art-again.jpg",
       "en": "Oops! Made Art Again",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "art-creativity"
-        ]
-      },
       "tr": "Hop! Yine Sanat Yaptım",
       "de": "Ups! Schon Wieder Kunst Gemacht",
       "fr": "Oups ! Encore De L'art",
@@ -535,17 +227,6 @@
     {
       "image": "/uploads/oddgallery/you-missed-a-spot.jpg",
       "en": "You Missed A Spot",
-      "tags": {
-        "mood": [
-          "petty"
-        ],
-        "occasion": [
-          "roast-a-friend"
-        ],
-        "domain": [
-          "home"
-        ]
-      },
       "tr": "Bir Yeri Atladın",
       "de": "Da Hast Du Was Übersehen",
       "fr": "T'as Loupé Un Endroit",
@@ -554,17 +235,6 @@
     {
       "image": "/uploads/oddgallery/how-oddvi-was-born.jpg",
       "en": "How Oddvi Was Born",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Oddvi Nasıl Doğdu",
       "de": "Wie Oddvi Geboren Wurde",
       "fr": "Comment Oddvi Est Né",
@@ -573,17 +243,6 @@
     {
       "image": "/uploads/oddgallery/coming-soon-teaser.jpg",
       "en": "Coming Soon",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Çok Yakında",
       "de": "Bald Verfügbar",
       "fr": "Bientôt Disponible",
@@ -592,17 +251,6 @@
     {
       "image": "/uploads/oddgallery/weightlifting-philosopher.jpg",
       "en": "Weightlifting Philosopher",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "fitness"
-        ]
-      },
       "tr": "Halter Kaldıran Filozof",
       "de": "Der Gewichtheber-Philosoph",
       "fr": "Le Philosophe Haltérophile",
@@ -611,17 +259,6 @@
     {
       "image": "/uploads/oddgallery/plant-whisperer.jpg",
       "en": "Plant Whisperer",
-      "tags": {
-        "mood": [
-          "wholesome"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "home"
-        ]
-      },
       "tr": "Bitki Fısıldayıcısı",
       "de": "Der Pflanzenflüsterer",
       "fr": "Le Chuchoteur De Plantes",
@@ -630,17 +267,6 @@
     {
       "image": "/uploads/oddgallery/last-minute-canceller.jpg",
       "en": "The Last-Minute Canceller",
-      "tags": {
-        "mood": [
-          "petty"
-        ],
-        "occasion": [
-          "roast-a-friend"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Son Dakika İptalcisi",
       "de": "Der Last-Minute-Absager",
       "fr": "L'annuleur De Dernière Minute",
@@ -649,17 +275,6 @@
     {
       "image": "/uploads/oddgallery/head-in-the-clouds.jpg",
       "en": "Head In The Clouds",
-      "tags": {
-        "mood": [
-          "chill"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Kafası Bulutlarda",
       "de": "Kopf In Den Wolken",
       "fr": "La Tête Dans Les Nuages",
@@ -668,17 +283,6 @@
     {
       "image": "/uploads/oddgallery/midnight-snacker.jpg",
       "en": "Midnight Snacker",
-      "tags": {
-        "mood": [
-          "sarcastic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "food"
-        ]
-      },
       "tr": "Gece Yarısı Atıştırmacısı",
       "de": "Der Mitternachtssnacker",
       "fr": "Le Grignoteur De Minuit",
@@ -687,17 +291,6 @@
     {
       "image": "/uploads/oddgallery/study-oddvi.jpg",
       "en": "Study Oddvi",
-      "tags": {
-        "mood": [
-          "chaotic"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Ders Çalışan Oddvi",
       "de": "Oddvi Beim Lernen",
       "fr": "Oddvi Étudie",
@@ -706,17 +299,6 @@
     {
       "image": "/uploads/oddgallery/mountain-oddvi-summit.jpg",
       "en": "Mountain Oddvi",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Dağcı Oddvi",
       "de": "Berg-Oddvi",
       "fr": "Oddvi Des Montagnes",
@@ -725,17 +307,6 @@
     {
       "image": "/uploads/oddgallery/oddvi-climb-different.jpg",
       "en": "Climb Different",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "fitness"
-        ]
-      },
       "tr": "Farklı Tırman",
       "de": "Anders Klettern",
       "fr": "Grimpe Autrement",
@@ -744,17 +315,6 @@
     {
       "image": "/uploads/oddgallery/fashion-oddvi.jpg",
       "en": "Fashion Oddvi",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "fashion"
-        ]
-      },
       "tr": "Modacı Oddvi",
       "de": "Mode-Oddvi",
       "fr": "Oddvi Mode",
@@ -763,17 +323,6 @@
     {
       "image": "/uploads/oddgallery/sail-different.jpg",
       "en": "Sail Different",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Farklı Yelken Aç",
       "de": "Anders Segeln",
       "fr": "Navigue Autrement",
@@ -782,17 +331,6 @@
     {
       "image": "/uploads/oddgallery/love-oddvi.jpg",
       "en": "Love Oddvi",
-      "tags": {
-        "mood": [
-          "wholesome"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Aşık Oddvi",
       "de": "Verliebter Oddvi",
       "fr": "Oddvi Amoureux",
@@ -801,17 +339,6 @@
     {
       "image": "/uploads/oddgallery/dad-oddvi.jpg",
       "en": "Dad Oddvi",
-      "tags": {
-        "mood": [
-          "wholesome"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "home"
-        ]
-      },
       "tr": "Baba Oddvi",
       "de": "Papa Oddvi",
       "fr": "Oddvi Papa",
@@ -820,17 +347,6 @@
     {
       "image": "/uploads/oddgallery/mom-oddvi.jpg",
       "en": "Mom Oddvi",
-      "tags": {
-        "mood": [
-          "wholesome"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "home"
-        ]
-      },
       "tr": "Anne Oddvi",
       "de": "Mama Oddvi",
       "fr": "Oddvi Maman",
@@ -839,17 +355,6 @@
     {
       "image": "/uploads/oddgallery/doctor-oddvi.jpg",
       "en": "Doctor Oddvi",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Doktor Oddvi",
       "de": "Doktor Oddvi",
       "fr": "Docteur Oddvi",
@@ -858,17 +363,6 @@
     {
       "image": "/uploads/oddgallery/big-boss-oddvi.jpg",
       "en": "Big Boss Oddvi",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Büyük Patron Oddvi",
       "de": "Big Boss Oddvi",
       "fr": "Grand Patron Oddvi",
@@ -877,17 +371,6 @@
     {
       "image": "/uploads/oddgallery/boss-oddvi-desk.jpg",
       "en": "Boss Oddvi",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Patron Oddvi",
       "de": "Boss Oddvi",
       "fr": "Patron Oddvi",
@@ -896,17 +379,6 @@
     {
       "image": "/uploads/oddgallery/ceo-of-odd.jpg",
       "en": "CEO Of Odd",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Tuhaflığın CEO'su",
       "de": "CEO Von Odd",
       "fr": "PDG De L'Odd",
@@ -915,17 +387,6 @@
     {
       "image": "/uploads/oddgallery/chef-oddvi.jpg",
       "en": "Chef Oddvi",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "food"
-        ]
-      },
       "tr": "Şef Oddvi",
       "de": "Chefkoch Oddvi",
       "fr": "Chef Oddvi",
@@ -934,17 +395,6 @@
     {
       "image": "/uploads/oddgallery/surf-oddly.jpg",
       "en": "Surf Oddly",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Tuhaf Sörf Yap",
       "de": "Odd Surfen",
       "fr": "Surfe Bizarrement",
@@ -953,17 +403,6 @@
     {
       "image": "/uploads/oddgallery/ski-oddly.jpg",
       "en": "Ski Oddly",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "throwback"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Tuhaf Kayak Yap",
       "de": "Odd Skifahren",
       "fr": "Skie Bizarrement",
@@ -972,17 +411,6 @@
     {
       "image": "/uploads/oddgallery/permanent-vacation-vibes.jpg",
       "en": "Permanent Vacation Vibes",
-      "tags": {
-        "mood": [
-          "chill"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "travel"
-        ]
-      },
       "tr": "Kalıcı Tatil Modu",
       "de": "Dauerurlaub-Feeling",
       "fr": "Vibes De Vacances Permanentes",
@@ -991,17 +419,6 @@
     {
       "image": "/uploads/oddgallery/night-owl-artist.jpg",
       "en": "Night Owl Artist",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "art-creativity"
-        ]
-      },
       "tr": "Gece Kuşu Sanatçı",
       "de": "Nachteule-Künstler",
       "fr": "L'artiste Oiseau De Nuit",
@@ -1010,17 +427,6 @@
     {
       "image": "/uploads/oddgallery/redundant-reminder-sender.jpg",
       "en": "Redundant Reminder Sender",
-      "tags": {
-        "mood": [
-          "petty"
-        ],
-        "occasion": [
-          "roast-a-friend"
-        ],
-        "domain": [
-          "tech"
-        ]
-      },
       "tr": "Gereksiz Hatırlatma Gönderici",
       "de": "Der Redundante Erinnerungssender",
       "fr": "L'envoyeur De Rappels Inutiles",
@@ -1029,17 +435,6 @@
     {
       "image": "/uploads/oddgallery/karaoke-king.jpg",
       "en": "Karaoke King",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "group-chat"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Karaoke Kralı",
       "de": "Karaoke-König",
       "fr": "Le Roi Du Karaoké",
@@ -1048,17 +443,6 @@
     {
       "image": "/uploads/oddgallery/relentless-google-er.jpg",
       "en": "Relentless Google-er",
-      "tags": {
-        "mood": [
-          "chaotic"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "tech"
-        ]
-      },
       "tr": "Yorulmak Bilmeyen Googlecı",
       "de": "Der Unermüdliche Googler",
       "fr": "Le Googleur Infatigable",
@@ -1067,17 +451,6 @@
     {
       "image": "/uploads/oddgallery/everyone-oddvi-party.jpg",
       "en": "Everyone At The Party, Oddvi At The Party",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "group-chat"
-        ],
-        "domain": [
-          "social-life"
-        ]
-      },
       "tr": "Herkes Partide, Oddvi De Partide",
       "de": "Alle Auf Der Party, Oddvi Auf Der Party",
       "fr": "Tout Le Monde À La Fête, Oddvi À La Fête",
@@ -1086,17 +459,6 @@
     {
       "image": "/uploads/oddgallery/odd-voice-memo-recorder.jpg",
       "en": "Odd Voice Memo Recorder",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "group-chat"
-        ],
-        "domain": [
-          "tech"
-        ]
-      },
       "tr": "Tuhaf Sesli Not Kaydedici",
       "de": "Der Odd Sprachnotiz-Aufnehmer",
       "fr": "L'enregistreur De Notes Vocales Odd",
@@ -1105,17 +467,6 @@
     {
       "image": "/uploads/oddgallery/normal-is-boring-wear-odd-cook.jpg",
       "en": "Normal Is Boring. Wear Odd.",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "food"
-        ]
-      },
       "tr": "Normal Sıkıcıdır. Odd Giy.",
       "de": "Normal Ist Langweilig. Trag Odd.",
       "fr": "Le Normal, C'est Ennuyeux. Porte De L'Odd.",
@@ -1124,17 +475,6 @@
     {
       "image": "/uploads/oddgallery/normal-is-boring-wear-odd-office.jpg",
       "en": "Normal Is Boring. Wear Odd.",
-      "tags": {
-        "mood": [
-          "chill"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Normal Sıkıcıdır. Odd Giy.",
       "de": "Normal Ist Langweilig. Trag Odd.",
       "fr": "Le Normal, C'est Ennuyeux. Porte De L'Odd.",
@@ -1143,17 +483,6 @@
     {
       "image": "/uploads/oddgallery/keep-the-odd-inside.jpg",
       "en": "Keep The Odd Inside",
-      "tags": {
-        "mood": [
-          "confident"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "fashion"
-        ]
-      },
       "tr": "Tuhaflığı İçinde Sakla",
       "de": "Behalte Das Odd In Dir",
       "fr": "Garde L'Odd En Toi",
@@ -1162,17 +491,6 @@
     {
       "image": "/uploads/oddgallery/odd-from-the-bottom-up.jpg",
       "en": "Odd From The Bottom Up",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Tepeden Tırnağa Tuhaf",
       "de": "Odd Von Grund Auf",
       "fr": "Odd De La Tête Aux Pieds",
@@ -1181,17 +499,6 @@
     {
       "image": "/uploads/oddgallery/comfortably-weird.jpg",
       "en": "Comfortably Weird",
-      "tags": {
-        "mood": [
-          "chill"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "home"
-        ]
-      },
       "tr": "Rahatça Tuhaf",
       "de": "Bequem Weird",
       "fr": "Confortablement Bizarre",
@@ -1200,55 +507,14 @@
     {
       "image": "/uploads/oddgallery/wear-your-weird.jpg",
       "en": "Wear Your Weird",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "motivational"
-        ],
-        "domain": [
-          "mystery-brand"
-        ]
-      },
       "tr": "Tuhaflığını Giy",
       "de": "Trag Dein Weird",
       "fr": "Porte Ta Bizarrerie",
       "hu": "Viseld A Furaságod"
     },
     {
-      "image": "/uploads/oddgallery/life-exe-stopped-working.jpg",
-      "en": "Life.exe Has Stopped Working",
-      "tags": {
-        "mood": [
-          "chaotic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "tech"
-        ]
-      },
-      "tr": "Life.exe Çalışmayı Durdurdu",
-      "de": "Life.exe Wurde Beendet",
-      "fr": "Life.exe A Cessé De Fonctionner",
-      "hu": "A Life.exe Leállt"
-    },
-    {
       "image": "/uploads/oddgallery/ceo-of-overthinking-inc.jpg",
       "en": "CEO Of Overthinking Inc.",
-      "tags": {
-        "mood": [
-          "chaotic"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      },
       "tr": "Aşırı Düşünme A.Ş. CEO'su",
       "de": "CEO Von Overthinking Inc.",
       "fr": "PDG De Overthinking Inc.",
@@ -1257,17 +523,6 @@
     {
       "image": "/uploads/oddgallery/existential-crisis-loading.jpg",
       "en": "Existential Crisis Loading",
-      "tags": {
-        "mood": [
-          "chaotic"
-        ],
-        "occasion": [
-          "self-deprecating"
-        ],
-        "domain": [
-          "art-creativity"
-        ]
-      },
       "tr": "Varoluşsal Kriz Yükleniyor",
       "de": "Existenzielle Krise Wird Geladen",
       "fr": "Crise Existentielle En Cours De Chargement",
@@ -1279,18 +534,7 @@
       "tr": "Doktor Odd Sizi Bekliyor",
       "de": "Dr. Odd Empfängt Sie Jetzt",
       "fr": "Dr Odd Va Vous Recevoir",
-      "hu": "Doktor Odd Most Fogadja Önt",
-      "tags": {
-        "mood": [
-          "dramatic"
-        ],
-        "occasion": [
-          "work-meeting"
-        ],
-        "domain": [
-          "work-office"
-        ]
-      }
+      "hu": "Doktor Odd Most Fogadja Önt"
     }
   ]
 }
