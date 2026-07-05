@@ -84,6 +84,10 @@
   @media(max-width:680px){.grid{grid-template-columns:repeat(2,1fr);gap:14px}}
   .card{position:relative;border-radius:14px;overflow:hidden;background:var(--card);aspect-ratio:4/5;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .2s ease,box-shadow .2s ease;cursor:pointer}
   .card-share{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:9px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;font-size:16px;box-shadow:2px 2px 0 var(--ink);opacity:.92;z-index:3;transition:transform .12s,box-shadow .12s}
+  .like-btn{position:absolute;left:8px;bottom:8px;display:inline-flex;align-items:center;gap:4px;border:2px solid var(--ink);background:rgba(255,248,240,.95);border-radius:999px;padding:4px 9px;font-weight:700;font-size:12px;cursor:pointer;transition:transform .12s;z-index:3}
+  .like-btn:hover:not(:disabled){transform:scale(1.08)}
+  .like-btn:disabled{cursor:default;opacity:.75}
+  .like-btn.liked{background:#ffe3ea;border-color:var(--red)}
   .card-share:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
 
   #oddStreakWrap{position:fixed;right:18px;bottom:18px;z-index:60}
@@ -205,6 +209,7 @@
 <script src="i18n.js"></script>
 <script src="streak.js"></script>
 <script src="share.js"></script>
+<script src="likes-widget.js"></script>
 <script>
   (function(){
     function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
@@ -251,12 +256,15 @@
           var occasions = (t.occasion||[]).join(' ');
           var domains = (t.domain||[]).join(' ');
           var dShare = ((window.I18N && window.I18N.dict[l]) || {})['og.share'] || 'Share';
+          var likeId = window.OddLikes ? window.OddLikes.pathId(it.image) : '';
           return '<figure class="card" data-idx="'+i+'" data-slug="'+esc(slug)+'" data-mood="'+esc(moods)+'" data-occasion="'+esc(occasions)+'" data-domain="'+esc(domains)+'">'+
             '<img src="'+esc(encodeURI(it.image))+'" alt="'+esc(cap)+'" loading="lazy">'+
             '<button class="card-share" aria-label="Share" title="'+esc(dShare)+'">&#8599;</button>'+
+            (window.OddLikes ? window.OddLikes.buttonHTML(likeId) : '')+
             '<figcaption>'+esc(cap)+'</figcaption></figure>';
         }).join('');
 
+        if(window.OddLikes) window.OddLikes.wire(grid);
         grid.querySelectorAll('.card').forEach(function(card){
           card.addEventListener('click', function(){
             openLightbox(items[+card.getAttribute('data-idx')]);

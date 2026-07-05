@@ -45,6 +45,13 @@ content:
           - { name: de, label: "Caption — Deutsch", type: string }
           - { name: fr, label: "Caption — Français", type: string }
           - { name: hu, label: "Caption — Magyar", type: string }
+          - name: tags
+            label: Tags (used for gallery filtering)
+            type: object
+            fields:
+              - { name: mood, label: "Mood tags", type: string, list: true }
+              - { name: occasion, label: "Occasion tags", type: string, list: true }
+              - { name: domain, label: "Domain tags", type: string, list: true }
 
   - name: site
     label: Home images (hero / meet / story)

@@ -68,6 +68,10 @@
   .reel .tool{width:40px;height:40px;border-radius:10px;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:2px 2px 0 var(--ink);font-size:16px;text-decoration:none;transition:transform .12s,box-shadow .12s}
   .reel .tool:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
   .reel .tag{position:absolute;left:10px;bottom:10px;background:var(--ink);color:#fff;font-family:var(--font-disp);font-weight:800;font-size:12px;padding:5px 10px;border-radius:8px}
+  .like-btn{position:absolute;right:10px;bottom:10px;display:inline-flex;align-items:center;gap:4px;border:2px solid #fff;background:rgba(20,20,20,.85);color:#fff;border-radius:999px;padding:4px 9px;font-weight:700;font-size:12px;cursor:pointer;transition:transform .12s;z-index:3}
+  .like-btn:hover:not(:disabled){transform:scale(1.08)}
+  .like-btn:disabled{cursor:default;opacity:.75}
+  .like-btn.liked{background:rgba(255,51,102,.9)}
   .reel .snd{position:absolute;left:10px;top:10px;background:var(--paper);border:2px solid var(--ink);font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;pointer-events:none}
 
   footer{padding:40px 0;background:var(--ink);color:var(--paper);text-align:center;font-size:14px}
@@ -118,6 +122,7 @@
 
 <script src="i18n.js"></script>
 <script src="streak.js"></script>
+<script src="likes-widget.js"></script>
 <script>
   (function(){
     var wrap=document.getElementById('reels'); if(!wrap) return;
@@ -145,6 +150,7 @@
       var t = D();
       wrap.innerHTML = vids.map(function(v){
         var src=encodeURI(v.video||'');
+        var likeId = window.OddLikes ? window.OddLikes.pathId(v.video||'') : '';
         return '<figure class="reel" data-src="'+esc(src)+'">'+
           '<video src="'+esc(src)+'" muted loop playsinline preload="metadata"></video>'+
           '<span class="snd">\uD83D\uDD07 '+esc(t['mot.tap']||'Tap for sound')+'</span>'+
@@ -152,9 +158,11 @@
             '<a class="tool" href="'+esc(src)+'" download title="'+esc(t['mot.download']||'Download')+'">\u2B07</a>'+
             '<button class="tool sh" title="'+esc(t['mot.share']||'Share')+'">\u2197</button>'+
           '</div>'+
+          (window.OddLikes ? window.OddLikes.buttonHTML(likeId) : '')+
           '<span class="tag">@theoddvi</span>'+
         '</figure>';
       }).join('');
+      if(window.OddLikes) window.OddLikes.wire(wrap);
 
       var reels = wrap.querySelectorAll('.reel');
       reels.forEach(function(fig){

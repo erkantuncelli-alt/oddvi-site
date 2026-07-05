@@ -263,6 +263,15 @@
   .odd-like:disabled{cursor:default;opacity:.7}
   .odd-like.liked{background:#ffe3ea;border-color:var(--red)}
   .odd-like-heart{font-size:14px}
+
+  /* Shared like button used on gallery cards + reels */
+  .like-btn{display:inline-flex;align-items:center;gap:4px;border:2px solid var(--ink);background:rgba(255,248,240,.95);border-radius:999px;padding:4px 9px;font-weight:700;font-size:12px;cursor:pointer;transition:transform .12s;z-index:3}
+  .like-btn:hover:not(:disabled){transform:scale(1.08)}
+  .like-btn:disabled{cursor:default;opacity:.75}
+  .like-btn.liked{background:#ffe3ea;border-color:var(--red)}
+  .card .like-btn{position:absolute;left:8px;bottom:8px}
+  .reel .like-btn{position:absolute;right:8px;bottom:8px;background:rgba(20,20,20,.85);border-color:#fff;color:#fff}
+  .reel .like-btn.liked{background:rgba(255,51,102,.9)}
   .odd-share .form-msg{color:var(--ink);text-align:center}
   .odd-consent{display:flex;align-items:flex-start;gap:8px;margin-top:14px;font-size:13px;opacity:.8;cursor:pointer;line-height:1.4}
   .odd-consent input{margin-top:3px;flex-shrink:0}
@@ -481,6 +490,7 @@
 <script src="i18n.js"></script>
 <script src="streak.js"></script>
 <script src="share.js"></script>
+<script src="likes-widget.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -746,11 +756,14 @@
       grid.innerHTML = subset.map(function(it){
         var cap = it[l] || it.en || '';
         var slug = (it.image.match(/([^\/]+)\.[a-zA-Z0-9]+$/)||[])[1] || '';
+        var likeId = window.OddLikes ? window.OddLikes.pathId(it.image) : '';
         return '<figure class="card" data-slug="'+esc(slug)+'" data-img="'+esc(it.image)+'" data-cap="'+esc(cap)+'">'+
           '<img src="'+esc(encodeURI(it.image))+'" alt="'+esc(cap)+'" loading="lazy">'+
           '<button class="card-share" aria-label="Share" title="Share">&#8599;</button>'+
+          (window.OddLikes ? window.OddLikes.buttonHTML(likeId) : '')+
           '<figcaption>'+esc(cap)+'</figcaption></figure>';
       }).join('');
+      if(window.OddLikes) window.OddLikes.wire(grid);
       grid.querySelectorAll('.card-share').forEach(function(btn){
         btn.addEventListener('click', function(e){
           e.preventDefault(); e.stopPropagation();
@@ -824,6 +837,7 @@
     function build(vids){
       wrap.innerHTML = vids.map(function(v){
         var src=encodeURI(v.video||'');
+        var likeId = window.OddLikes ? window.OddLikes.pathId(v.video||'') : '';
         return '<figure class="reel" data-src="'+esc(src)+'">'+
           '<video src="'+esc(src)+'" muted loop playsinline preload="metadata"></video>'+
           '<span class="snd">\uD83D\uDD07 '+esc(D['mot.tap']||'Tap for sound')+'</span>'+
@@ -831,9 +845,11 @@
             '<a class="tool" href="'+esc(src)+'" download title="'+esc(D['mot.download']||'Download')+'">\u2B07</a>'+
             '<button class="tool sh" title="'+esc(D['mot.share']||'Share')+'">\u2197</button>'+
           '</div>'+
+          (window.OddLikes ? window.OddLikes.buttonHTML(likeId) : '')+
           '<span class="tag">@theoddvi</span>'+
         '</figure>';
       }).join('');
+      if(window.OddLikes) window.OddLikes.wire(wrap);
 
       var reels = wrap.querySelectorAll('.reel');
       reels.forEach(function(fig){
