@@ -11,6 +11,13 @@
       "message": "Hi oddvi",
       "name": "Tarkan",
       "date": "2026-07-05"
+    },
+    {
+      "topic": "Really good",
+      "message": "Nice view",
+      "name": "Erkan",
+      "date": "2026-07-05",
+      "photo": "/uploads/oddgallery/submissions/.jpg"
     }
   ]
 }
