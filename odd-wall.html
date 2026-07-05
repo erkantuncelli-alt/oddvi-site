@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Wall of Odd — Oddvi</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="description" content="Every Odd shared by the community, ranked by likes." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --ink:#141414; --paper:#fff8f0; --card:#ffffff;
+    --red:#ff3366; --red-deep:#e21b54;
+    --radius:20px;
+    --font-disp:"Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:"Inter", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:24px}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;letter-spacing:-.01em;text-decoration:none;display:inline-block;transform:rotate(-3deg)}
+  .back{font-weight:700;font-size:14px;text-decoration:none;opacity:.75;display:inline-flex;align-items:center;gap:6px}
+  .back:hover{opacity:1}
+  .lang-switch{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
+  .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
+  .lang-btn:focus-visible{outline:none;opacity:1}
+  .lang-btn[aria-pressed="true"]{opacity:1;transform:translateY(-1px) rotate(-2deg);box-shadow:3px 3px 0 var(--ink)}
+  .lang-btn[data-lang="en"]{background:#ff3366}
+  .lang-btn[data-lang="tr"]{background:#1ec8c8}
+  .lang-btn[data-lang="de"]{background:#f5b400;color:#141414}
+  .lang-btn[data-lang="fr"]{background:#845ec2}
+  .lang-btn[data-lang="hu"]{background:#ff7a45}
+
+  .ghead{padding:56px 0 20px}
+  .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 12px;border-radius:8px;transform:rotate(-2deg)}
+  .h2{font-family:var(--font-disp);font-weight:800;font-size:clamp(34px,6vw,58px);line-height:1;letter-spacing:-.03em;margin-top:18px}
+  .ghead p{opacity:.78;max-width:60ch;margin-top:16px;font-weight:500;font-size:17px}
+
+  .wall-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;padding:36px 0 70px}
+  .wall-card{position:relative;border:3px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);background:var(--card);padding:22px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,box-shadow .2s}
+  .wall-card:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--ink)}
+  .wall-rank{position:absolute;top:-14px;left:18px;background:var(--ink);color:#fff;font-family:var(--font-disp);font-weight:800;font-size:13px;padding:5px 11px;border-radius:8px;transform:rotate(-2deg)}
+  .wall-rank.gold{background:var(--red)}
+  .wall-topic{font-family:var(--font-disp);font-weight:800;font-size:17px;margin-top:6px}
+  .wall-card p{font-weight:600;line-height:1.45;font-size:15px;margin:0}
+  .wall-card img{width:100%;border-radius:10px}
+  .wall-foot{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+  .wall-who{font-size:12px;font-weight:700;opacity:.6;text-transform:uppercase;letter-spacing:.03em}
+  .wall-like{display:inline-flex;align-items:center;gap:5px;border:2px solid var(--ink);background:var(--paper);border-radius:999px;padding:5px 11px;font-weight:700;font-size:13px;cursor:pointer;transition:transform .12s}
+  .wall-like:hover:not(:disabled){transform:scale(1.06)}
+  .wall-like:disabled{cursor:default;opacity:.7}
+  .wall-like.liked{background:#ffe3ea;border-color:var(--red)}
+  .wall-empty{opacity:.65;font-weight:600;padding:40px 0}
+
+  footer{padding:40px 0;background:var(--ink);color:var(--paper);text-align:center;font-size:14px}
+  footer a{font-weight:700;text-decoration:none;color:var(--red-deep)}
+
+  /* ODD STREAK BADGE */
+  #oddStreakWrap{position:fixed;right:18px;bottom:18px;z-index:60}
+  #oddStreakBtn{display:flex;align-items:center;gap:7px;background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:999px;padding:10px 15px;font-family:var(--font-disp);font-weight:800;font-size:15px;cursor:pointer;box-shadow:4px 4px 0 var(--red);transition:transform .12s,box-shadow .12s}
+  #oddStreakBtn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--red)}
+  .os-emoji{font-size:18px}
+  #oddStreakPop{position:fixed;right:18px;bottom:80px;width:250px;background:var(--card);border:3px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:22px 18px 18px;text-align:center;display:none;z-index:61}
+  #oddStreakPop.open{display:block}
+  #oddStreakClose{position:absolute;top:6px;right:10px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink)}
+  .os-emoji-big{font-size:36px}
+  .os-title{font-family:var(--font-disp);font-weight:800;font-size:16px;margin-top:6px}
+  .os-sub{font-size:13px;opacity:.75;margin-top:6px}
+  .os-share{margin-top:14px;background:var(--red);color:#fff;border:2.5px solid var(--ink);border-radius:10px;padding:9px 14px;font-weight:700;font-size:13px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+  @media(max-width:680px){#oddStreakWrap{right:12px;bottom:12px}#oddStreakPop{right:12px;width:210px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">ODDVI</a>
+    <div style="display:flex;align-items:center;gap:18px">
+      <a href="index.html" class="back" data-i18n="wall.back">← Back home</a>
+      <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
+    </div>
+  </div>
+</header>
+
+<div class="ghead wrap">
+  <span class="kicker" data-i18n="wall.kicker">The Wall of Odd</span>
+  <h1 class="h2" data-i18n="wall.h2">Ranked By Likes.</h1>
+  <p data-i18n="wall.sub">Every shared Odd, most-liked first.</p>
+</div>
+
+<div class="wrap">
+  <div class="wall-grid" id="wallGrid"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="https://instagram.com/theoddvi" target="_blank" rel="noopener">@theoddvi</a> — Stay Odd.
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="streak.js"></script>
+<script>
+  (function(){
+    var grid = document.getElementById('wallGrid'); if(!grid) return;
+    function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+    function D(){ return (window.I18N && window.I18N.dict[document.documentElement.lang||'en']) || {}; }
+    function oddId(it){
+      var s = (it.topic||'')+'|'+(it.message||''), h = 0;
+      for (var i=0;i<s.length;i++){ h = ((h<<5)-h + s.charCodeAt(i))|0; }
+      return 'o'+Math.abs(h).toString(36);
+    }
+
+    function render(items, likes){
+      if(!items.length){ grid.innerHTML = '<p class="wall-empty" data-i18n="wall.empty">'+esc(D()['wall.empty']||'Nothing here yet — be the first to share.')+'</p>'; return; }
+      grid.innerHTML = items.map(function(it, i){
+        var id = it._id;
+        var photo = it.photo ? '<img src="'+esc(it.photo)+'" alt="" loading="lazy" />' : '';
+        var liked = localStorage.getItem('oddvi_liked_'+id) === '1';
+        var rankClass = i < 3 ? ' gold' : '';
+        return '<div class="wall-card" data-odd-id="'+id+'">'+
+          '<span class="wall-rank'+rankClass+'">#'+(i+1)+'</span>'+
+          '<h3 class="wall-topic">'+esc(it.topic)+'</h3>'+
+          '<p>'+esc(it.message)+'</p>'+photo+
+          '<div class="wall-foot"><span class="wall-who">'+esc(it.name||'Anonymous Odd')+'</span>'+
+          '<button class="wall-like'+(liked?' liked':'')+'" data-id="'+id+'" aria-label="Like">'+
+          '<span class="wall-like-heart">'+(liked?'❤️':'🤍')+'</span><span class="wall-like-count">'+(likes[id]||0)+'</span></button></div>'+
+          '</div>';
+      }).join('');
+    }
+
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest && e.target.closest('.wall-like');
+      if(!btn) return;
+      var id = btn.getAttribute('data-id');
+      if(localStorage.getItem('oddvi_liked_'+id) === '1') return;
+      btn.disabled = true;
+      fetch('/api/like', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({id:id})
+      })
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(d){
+          if(d && typeof d.likes === 'number'){
+            btn.querySelector('.wall-like-count').textContent = d.likes;
+            btn.querySelector('.wall-like-heart').textContent = '❤️';
+            btn.classList.add('liked');
+            localStorage.setItem('oddvi_liked_'+id, '1');
+          }
+          btn.disabled = false;
+        })
+        .catch(function(){ btn.disabled = false; });
+    });
+
+    fetch('/odds.json?t='+Date.now())
+      .then(function(r){ return r.ok ? r.json() : {items:[]}; })
+      .then(function(d){
+        var items = (d.items||[]).map(function(it){ it._id = oddId(it); return it; });
+        if(!items.length){ render(items, {}); return; }
+        var ids = items.map(function(it){ return it._id; });
+        fetch('/api/likes?ids='+encodeURIComponent(ids.join(',')))
+          .then(function(r){ return r.ok ? r.json() : {}; })
+          .then(function(likes){
+            items.sort(function(a,b){ return (likes[b._id]||0) - (likes[a._id]||0); });
+            render(items, likes);
+          })
+          .catch(function(){ render(items, {}); });
+      })
+      .catch(function(){ grid.innerHTML = '<p class="wall-empty">Could not load the wall right now.</p>'; });
+  })();
+</script>
+</body>
+</html>

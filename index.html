@@ -253,7 +253,9 @@
   .odd-like.liked{background:#ffe3ea;border-color:var(--red)}
   .odd-like-heart{font-size:14px}
   .odd-share .form-msg{color:var(--ink);text-align:center}
-  .odd-feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:44px;text-align:left}
+  .odd-feed{display:flex;gap:18px;margin-top:44px;text-align:left}
+  .odd-feed .odd-card{flex:0 0 260px;scroll-snap-align:start}
+  .odd-feed-link{display:inline-block;margin-top:28px;font-weight:700;color:var(--red);text-decoration:underline}
   .odd-card{border:3px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);background:var(--card);padding:20px;display:flex;flex-direction:column;gap:12px;transition:transform .2s ease,box-shadow .2s ease}
   .odd-card:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
   .odd-topic{margin:0 0 4px;font-family:var(--font-disp);font-size:18px;font-weight:800}
@@ -424,7 +426,8 @@
       <button class="btn btn-primary" id="oddShareBtn" data-i18n="share.btn" style="margin-top:14px">Share it</button>
       <div class="form-msg" id="oddShareMsg" role="status"></div>
     </div>
-    <div class="odd-feed" id="oddFeed"></div>
+    <div class="carousel-wrap"><div class="odd-feed" id="oddFeed"></div></div>
+    <a href="odd-wall.html" class="odd-feed-link" data-i18n="share.seeAll">See every Odd, ranked by likes →</a>
   </div>
 </section>
 

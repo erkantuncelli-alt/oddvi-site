@@ -51,6 +51,9 @@ window.I18N = (function () {
     'share.p':"Tell us the weird little thing that makes you, you. We read every one — the best get featured right here.",
     'share.ph':"I always...",'share.topicPh':"Give it a title...",'share.namePh':"Your name (optional)",'share.btn':"Share it",
     'share.ok':"Thanks — we'll take a look!",'share.err':"Try again?",'share.empty':"Be the first to share yours.",
+    'share.seeAll':"See every Odd, ranked by likes →",
+    'wall.kicker':"The Wall of Odd",'wall.h2':"Ranked By Likes.",'wall.sub':"Every shared Odd, most-liked first.",
+    'wall.empty':"Nothing here yet — be the first to share.",'wall.back':"← Back home",
     'share.photoBtn':"📷 Add a photo (optional)",'share.photoErr':"That doesn't look like an image.",'share.photoTooBig':"That photo's a bit too big (max 10MB).",
   },
   tr:{
@@ -95,6 +98,9 @@ window.I18N = (function () {
     'share.p':"Seni sen yapan o tuhaf küçük şeyi anlat. Hepsini okuyoruz — en iyilerini burada paylaşacağız.",
     'share.ph':"Ben hep...",'share.topicPh':"Bir başlık ver...",'share.namePh':"Adın (opsiyonel)",'share.btn':"Paylaş",
     'share.ok':"Teşekkürler — göz atacağız!",'share.err':"Tekrar dener misin?",'share.empty':"İlk paylaşan sen ol.",
+    'share.seeAll':"Tüm Odd'ları, beğeniye göre sıralı gör →",
+    'wall.kicker':"Odd Duvarı",'wall.h2':"Beğeniye Göre Sıralı.",'wall.sub':"Paylaşılan tüm Odd'lar, en çok beğenilen önde.",
+    'wall.empty':"Henüz burada bir şey yok — ilk paylaşan sen ol.",'wall.back':"← Ana sayfaya dön",
     'share.photoBtn':"📷 Fotoğraf ekle (opsiyonel)",'share.photoErr':"Bu bir görsel dosyası gibi durmuyor.",'share.photoTooBig':"Bu fotoğraf biraz büyük (en fazla 10MB).",
   },
   de:{
@@ -139,6 +145,9 @@ window.I18N = (function () {
     'share.p':"Erzähl uns die schrullige Kleinigkeit, die dich zu dir macht. Wir lesen jede einzelne — die besten zeigen wir hier.",
     'share.ph':"Ich mache immer...",'share.topicPh':"Gib ihm einen Titel...",'share.namePh':"Dein Name (optional)",'share.btn':"Teilen",
     'share.ok':"Danke — wir schauen's uns an!",'share.err':"Nochmal versuchen?",'share.empty':"Sei die/der Erste, die/der teilt.",
+    'share.seeAll':"Alle Odds ansehen, nach Likes sortiert →",
+    'wall.kicker':"Die Odd-Wand",'wall.h2':"Nach Likes Sortiert.",'wall.sub':"Alle geteilten Odds, die beliebtesten zuerst.",
+    'wall.empty':"Hier ist noch nichts — sei die/der Erste, die/der teilt.",'wall.back':"← Zurück zur Startseite",
     'share.photoBtn':"📷 Foto hinzufügen (optional)",'share.photoErr':"Das sieht nicht nach einem Bild aus.",'share.photoTooBig':"Das Foto ist etwas zu groß (max. 10MB).",
   },
   fr:{
@@ -183,6 +192,9 @@ window.I18N = (function () {
     'share.p':"Raconte-nous le petit truc bizarre qui fait de toi, toi. On lit tout — les meilleurs seront mis en avant ici.",
     'share.ph':"Je fais toujours...",'share.topicPh':"Donne-lui un titre...",'share.namePh':"Ton prénom (optionnel)",'share.btn':"Partager",
     'share.ok':"Merci — on va y jeter un œil !",'share.err':"Réessayer ?",'share.empty':"Sois le premier à partager.",
+    'share.seeAll':"Voir tous les Odd, classés par likes →",
+    'wall.kicker':"Le Mur des Odd",'wall.h2':"Classés Par Likes.",'wall.sub':"Tous les Odd partagés, les plus aimés en premier.",
+    'wall.empty':"Rien ici pour l'instant — sois le premier à partager.",'wall.back':"← Retour à l'accueil",
     'share.photoBtn':"📷 Ajouter une photo (optionnel)",'share.photoErr':"Ça ne ressemble pas à une image.",'share.photoTooBig':"Cette photo est un peu trop grande (max 10 Mo).",
   },
   hu:{
@@ -227,6 +239,9 @@ window.I18N = (function () {
     'share.p':"Mondd el azt a fura kis dolgot, ami tényleg te vagy. Mindet elolvassuk — a legjobbakat itt mutatjuk be.",
     'share.ph':"Mindig...",'share.topicPh':"Adj neki egy címet...",'share.namePh':"A neved (opcionális)",'share.btn':"Megosztás",
     'share.ok':"Köszi — megnézzük!",'share.err':"Próbáld újra?",'share.empty':"Legyél te az első, aki megosztja.",
+    'share.seeAll':"Nézd meg az összes Oddot, like szerint →",
+    'wall.kicker':"Az Odd Fal",'wall.h2':"Like Szerint Rangsorolva.",'wall.sub':"Minden megosztott Odd, a legnépszerűbb elöl.",
+    'wall.empty':"Még nincs itt semmi — legyél te az első, aki megosztja.",'wall.back':"← Vissza a főoldalra",
     'share.photoBtn':"📷 Fotó hozzáadása (opcionális)",'share.photoErr':"Ez nem néz ki képnek.",'share.photoTooBig':"Ez a fotó egy kicsit nagy (max 10MB).",
   }
   };
