@@ -2,7 +2,10 @@
  * Oddvi site worker.
  * - /api/like   (POST {id})        → increments and returns the like count for one message
  * - /api/likes  (GET ?ids=a,b,c)   → returns current counts for a batch of ids
- * - everything else                → served as-is from the static assets (unchanged site behaviour)
+ * - /api/stat, /api/stats          → generic named counters (e.g. odd-test completions)
+ * - everything else                → served as-is from the static assets, with the visitor's
+ *                                     Cloudflare-detected country injected so the page can
+ *                                     open in the matching language automatically
  */
 
 const CORS_HEADERS = {
@@ -11,11 +14,26 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type'
 };
 
+// Country -> one of our 5 supported site languages. Anything not listed falls back to English.
+const COUNTRY_LANG = {
+  TR: 'tr',
+  DE: 'de', AT: 'de', CH: 'de',
+  FR: 'fr', BE: 'fr',
+  HU: 'hu'
+};
+
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status,
     headers: { 'Content-Type': 'application/json', ...CORS_HEADERS }
   });
+}
+
+class GeoLangInjector {
+  constructor(lang) { this.lang = lang; }
+  element(el) {
+    el.append(`<script>window.__ODDVI_GEO_LANG__=${JSON.stringify(this.lang)};</script>`, { html: true });
+  }
 }
 
 export default {
@@ -42,7 +60,13 @@ export default {
       return handleGetStats(url, env);
     }
 
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+    const contentType = response.headers.get('content-type') || '';
+    if (!contentType.includes('text/html')) return response;
+
+    const country = request.cf && request.cf.country;
+    const lang = COUNTRY_LANG[country] || 'en';
+    return new HTMLRewriter().on('head', new GeoLangInjector(lang)).transform(response);
   }
 };
 

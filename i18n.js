@@ -273,7 +273,11 @@ window.I18N = (function () {
 
   function pick(){
     let l; try{ l = localStorage.getItem('oddvi_lang'); }catch(e){}
-    if(!l){ const n=(navigator.language||'en').slice(0,2).toLowerCase(); l = langs.includes(n)?n:'en'; }
+    if(!l){
+      const geo = (typeof window!=='undefined' && window.__ODDVI_GEO_LANG__) || null;
+      if(geo && langs.includes(geo)){ l = geo; }
+      else{ const n=(navigator.language||'en').slice(0,2).toLowerCase(); l = langs.includes(n)?n:'en'; }
+    }
     return langs.includes(l)?l:'en';
   }
   function apply(lang){
