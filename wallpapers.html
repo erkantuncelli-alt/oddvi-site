@@ -238,7 +238,7 @@
       document.getElementById("dCov").innerHTML = '<img src="'+esc(it.file)+'" alt="'+esc(titleOf(it,l))+'">';
       document.getElementById("dTitle").textContent = titleOf(it,l);
       var vol = data.volumes.filter(function(v){return v.id===it.volume;})[0];
-      document.getElementById("dMeta").textContent = "#"+it.id + (vol ? " \u00b7 " + (vol[l]||vol.en) : "");
+      document.getElementById("dMeta").textContent = "#"+it.id + (vol ? " \u00b7 " + (vol[l]||vol.en) : "") + (it.resolution ? " \u00b7 " + it.resolution : "");
       var dn = document.getElementById("dDraftNote");
       if(it.draft){ dn.hidden = false; dn.textContent = t.draft; } else { dn.hidden = true; }
       var a = document.getElementById("dDownload");
