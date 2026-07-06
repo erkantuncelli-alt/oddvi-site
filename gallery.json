@@ -1880,6 +1880,234 @@
           "travel"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-goes-to-belgium.jpg",
+      "en": "Oddvi Goes To Belgium",
+      "tr": "Oddvi Belçika'da",
+      "de": "Oddvi Geht Nach Belgien",
+      "fr": "Oddvi Part En Belgique",
+      "hu": "Oddvi Belgiumban",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-goes-to-france.jpg",
+      "en": "Oddvi Goes To France",
+      "tr": "Oddvi Fransa'da",
+      "de": "Oddvi Geht Nach Frankreich",
+      "fr": "Oddvi Part En France",
+      "hu": "Oddvi Franciaországban",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-goes-to-netherlands.jpg",
+      "en": "Oddvi Goes To The Netherlands",
+      "tr": "Oddvi Hollanda'da",
+      "de": "Oddvi Geht In Die Niederlande",
+      "fr": "Oddvi Part Aux Pays-Bas",
+      "hu": "Oddvi Hollandiában",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-goes-to-russia.jpg",
+      "en": "Oddvi Goes To Russia",
+      "tr": "Oddvi Rusya'da",
+      "de": "Oddvi Geht Nach Russland",
+      "fr": "Oddvi Part En Russie",
+      "hu": "Oddvi Oroszországban",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-goes-to-germany.jpg",
+      "en": "Oddvi Goes To Germany",
+      "tr": "Oddvi Almanya'da",
+      "de": "Oddvi Geht Nach Deutschland",
+      "fr": "Oddvi Part En Allemagne",
+      "hu": "Oddvi Németországban",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/normal-is-so-boring-darling.jpg",
+      "en": "Normal Is So Boring, Darling",
+      "tr": "Normal Olmak Çok Sıkıcı, Canım",
+      "de": "Normal Sein Ist So Langweilig, Liebling",
+      "fr": "Être Normal, C'est Si Ennuyeux, Chéri",
+      "hu": "A Normális Olyan Unalmas, Drágám",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/not-special-just-a-little-odd.jpg",
+      "en": "Not Special. Just A Little Odd.",
+      "tr": "Özel Değilim. Sadece Biraz Odd.",
+      "de": "Nicht Besonders. Nur Ein Bisschen Odd.",
+      "fr": "Pas Spécial. Juste Un Peu Odd.",
+      "hu": "Nem Vagyok Különös. Csak Egy Kicsit Odd.",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/ugly-but-odd.jpg",
+      "en": "Ugly But Odd",
+      "tr": "Çirkin Ama Odd",
+      "de": "Hässlich Aber Odd",
+      "fr": "Moche Mais Odd",
+      "hu": "Csúnya De Odd",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddlogy-101.jpg",
+      "en": "Oddlogy 101",
+      "tr": "Oddloji 101",
+      "de": "Oddologie 101",
+      "fr": "Oddologie 101",
+      "hu": "Oddológia 101",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/live-and-odd.jpg",
+      "en": "Live & Odd",
+      "tr": "Canlı Ve Odd",
+      "de": "Live & Odd",
+      "fr": "En Direct & Odd",
+      "hu": "Élőben & Odd",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-padisah.jpg",
+      "en": "Odd Padişah",
+      "tr": "Odd Padişah",
+      "de": "Odd Padişah",
+      "fr": "Odd Padişah",
+      "hu": "Odd Padişah",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-by-birth-king-by-choice.jpg",
+      "en": "Odd By Birth, King By Choice",
+      "tr": "Doğuştan Odd, Seçimle Kral",
+      "de": "Von Geburt An Odd, Durch Wahl König",
+      "fr": "Odd De Naissance, Roi Par Choix",
+      "hu": "Születésétől Odd, Választásból Király",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fashion"
+        ]
+      }
     }
   ]
 }
