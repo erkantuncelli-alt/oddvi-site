@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Oddverse Journal — Oddvi</title>
+<title>Wallpaper Club — Oddvi</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<meta name="description" content="Field notes from a slightly crooked world. The Oddvi journal." />
+<meta name="description" content="Free Oddvi phone wallpapers. Stay odd, one lock screen at a time." />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Oddverse Journal — Oddvi" />
-<meta property="og:description" content="Field notes from a slightly crooked world. The Oddvi journal." />
+<meta property="og:title" content="Wallpaper Club — Oddvi" />
+<meta property="og:description" content="Free Oddvi phone wallpapers. Stay odd, one lock screen at a time." />
 <meta property="og:image" content="https://theoddvi.com/uploads/og-share.png" />
-<meta property="og:url" content="https://theoddvi.com/blog.html" />
+<meta property="og:url" content="https://theoddvi.com/wallpapers.html" />
 <meta property="og:site_name" content="Oddvi" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Oddverse Journal — Oddvi" />
-<meta name="twitter:description" content="Field notes from a slightly crooked world. The Oddvi journal." />
+<meta name="twitter:title" content="Wallpaper Club — Oddvi" />
+<meta name="twitter:description" content="Free Oddvi phone wallpapers. Stay odd, one lock screen at a time." />
 <meta name="twitter:image" content="https://theoddvi.com/uploads/og-share.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
   :root{
     --ink:#141414;
@@ -82,39 +81,35 @@
   .jtitle .pop{display:inline-block;background:var(--teal);color:var(--ink);padding:0 .08em;border:3px solid var(--ink);border-radius:10px;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--ink)}
   .jsub{font-size:clamp(16px,2.2vw,20px);opacity:.78;max-width:560px;font-weight:500}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;padding:26px 0 90px}
-  .post-card{background:var(--card);border:3px solid var(--ink);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;box-shadow:6px 6px 0 var(--ink);transition:transform .2s,box-shadow .2s}
-  .post-card:nth-child(odd){transform:rotate(-1.2deg)}
-  .post-card:nth-child(even){transform:rotate(1.2deg)}
-  .post-card:hover{transform:rotate(0) translateY(-4px);box-shadow:9px 9px 0 var(--ink)}
-  .post-card .cov{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-bottom:3px solid var(--ink)}
-  .post-card .cov img{width:100%;height:100%;object-fit:cover;display:block}
-  .post-card .body{padding:20px 22px 24px}
-  .post-card .date{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red-deep)}
-  .post-card h3{font-family:var(--font-disp);font-weight:800;font-size:23px;line-height:1.12;margin:8px 0 8px;letter-spacing:-.01em}
-  .post-card p{font-size:15px;opacity:.75}
-  .post-card .read{margin-top:14px;font-weight:700;font-size:14px;color:var(--red-deep)}
+  .vol-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 6px}
+  .vol-tab{font-family:var(--font-disp);font-weight:800;font-size:14px;border:2.5px solid var(--ink);border-radius:10px;padding:7px 14px;background:var(--card);cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+  .vol-tab[aria-pressed="true"]{background:var(--yellow)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px;padding:26px 0 90px}
+  .wp-card{background:var(--card);border:3px solid var(--ink);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;box-shadow:6px 6px 0 var(--ink);transition:transform .2s,box-shadow .2s;position:relative}
+  .wp-card:nth-child(odd){transform:rotate(-1deg)}
+  .wp-card:nth-child(even){transform:rotate(1deg)}
+  .wp-card:hover{transform:rotate(0) translateY(-4px);box-shadow:9px 9px 0 var(--ink)}
+  .wp-card .num{position:absolute;top:8px;left:8px;z-index:2;font-family:var(--font-disp);font-weight:800;font-size:12px;background:var(--ink);color:#fff;padding:3px 8px;border-radius:6px}
+  .wp-card .draft{position:absolute;top:8px;right:8px;z-index:2;font-family:var(--font-disp);font-weight:800;font-size:10px;letter-spacing:.04em;background:var(--yellow);color:var(--ink);padding:3px 7px;border-radius:6px;border:2px solid var(--ink)}
+  .wp-card .cov{aspect-ratio:9/16;background:var(--paper-2);overflow:hidden;border-bottom:3px solid var(--ink)}
+  .wp-card .cov img{width:100%;height:100%;object-fit:cover;display:block}
+  .wp-card .body{padding:12px 14px 16px}
+  .wp-card h3{font-family:var(--font-disp);font-weight:800;font-size:15px;line-height:1.2;letter-spacing:-.01em}
 
   .empty{padding:40px 0 120px;font-size:18px;opacity:.7;font-weight:500}
 
-  /* single post */
-  .article{max-width:720px;margin:0 auto;padding:40px 0 100px}
+  /* detail view */
+  .detail{max-width:520px;margin:0 auto;padding:40px 0 100px}
   .backlink{display:inline-block;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none;margin-bottom:26px;background:var(--yellow);border:2.5px solid var(--ink);border-radius:10px;padding:8px 14px;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
   .backlink:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
-  .article .cov{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--red);margin-bottom:28px}
-  .article .cov img{width:100%;display:block}
-  .article .date{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red-deep)}
-  .article h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(30px,5vw,48px);line-height:1.04;letter-spacing:-.02em;margin:10px 0 26px}
-  .prose{font-size:17px;line-height:1.72}
-  .prose h1,.prose h2,.prose h3{font-family:var(--font-disp);letter-spacing:-.01em;margin:30px 0 12px;line-height:1.2}
-  .prose h1{font-size:30px}.prose h2{font-size:25px}.prose h3{font-size:20px}
-  .prose p{margin:0 0 18px}
-  .prose a{color:var(--red-deep);text-decoration:underline}
-  .prose ul,.prose ol{margin:0 0 18px 22px}
-  .prose li{margin:6px 0}
-  .prose img{max-width:100%;border-radius:14px;border:3px solid var(--ink);margin:18px 0}
-  .prose blockquote{border:3px solid var(--ink);background:var(--yellow);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:16px 20px;margin:24px 0;font-family:var(--font-disp);font-size:22px}
-  .prose strong{font-weight:600}
+  .detail .cov{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--red);margin-bottom:22px;aspect-ratio:9/16}
+  .detail .cov img{width:100%;height:100%;object-fit:cover;display:block}
+  .detail h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(26px,5vw,38px);line-height:1.04;letter-spacing:-.02em;margin:0 0 6px}
+  .detail .meta{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--red-deep);margin-bottom:20px}
+  .detail .draft-note{background:var(--yellow);border:2.5px solid var(--ink);border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600;margin-bottom:20px;box-shadow:4px 4px 0 var(--ink)}
+  .dl-btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-family:var(--font-disp);font-weight:800;font-size:16px;padding:14px 22px;border-radius:14px;text-decoration:none;border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--red);transition:transform .12s,box-shadow .12s}
+  .dl-btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--red)}
 
   footer{border-top:3px solid var(--ink);padding:40px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:500}
 </style>
@@ -144,21 +139,25 @@
     <!-- LIST VIEW -->
     <section id="listView">
       <div class="hero">
-        <span class="kicker" id="jkicker">Oddverse</span>
-        <h1 class="jtitle" id="jtitle">Oddverse <span class="pop">Journal</span></h1>
-        <p class="jsub" id="jsub">Field notes from a slightly crooked world.</p>
+        <span class="kicker" id="jkicker">Wallpaper Club</span>
+        <h1 class="jtitle" id="jtitle">Free <span class="pop">Wallpapers</span></h1>
+        <p class="jsub" id="jsub">Stay odd, one lock screen at a time.</p>
       </div>
+      <div class="vol-tabs" id="volTabs"></div>
       <div class="grid" id="grid"></div>
       <p class="empty" id="empty" hidden></p>
     </section>
 
-    <!-- ARTICLE VIEW -->
-    <article class="article" id="articleView" hidden>
-      <a href="#" class="backlink" id="backlink">← Back to Journal</a>
-      <div class="cov" id="artCov" hidden></div>
-      <div class="date" id="artDate"></div>
-      <h1 id="artTitle"></h1>
-      <div class="prose" id="artBody"></div>
+    <!-- DETAIL VIEW -->
+    <article class="detail" id="detailView" hidden>
+      <a href="#" class="backlink" id="backlink">← Back to Wallpapers</a>
+      <div class="cov" id="dCov"></div>
+      <h1 id="dTitle"></h1>
+      <div class="meta" id="dMeta"></div>
+      <div class="draft-note" id="dDraftNote" hidden></div>
+      <a href="#" class="dl-btn" id="dDownload" download>
+        <span id="dDownloadLabel">Download PNG</span>
+      </a>
     </article>
   </main>
 
@@ -178,32 +177,33 @@
   </script>
   <script>
   (function(){
-    // Blog chrome strings per language (page-specific; brand slogans stay English)
     var T = {
-      en:{kicker:"Oddverse",title:'Oddverse <span class="pop">Journal</span>',sub:"Field notes from a slightly crooked world.",back:"\u2190 Back to Journal",empty:"No entries yet. Come back soon.",read:"Read \u2192"},
-      tr:{kicker:"Oddverse",title:'Oddverse <span class="pop">G\u00fcnl\u00fc\u011f\u00fc</span>',sub:"Biraz e\u011fri bir d\u00fcnyadan notlar.",back:"\u2190 G\u00fcnl\u00fc\u011fe d\u00f6n",empty:"Hen\u00fcz yaz\u0131 yok. Yak\u0131nda burada.",read:"Oku \u2192"},
-      de:{kicker:"Oddverse",title:'Oddverse <span class="pop">Journal</span>',sub:"Notizen aus einer leicht schiefen Welt.",back:"\u2190 Zur\u00fcck zum Journal",empty:"Noch keine Eintr\u00e4ge. Bald mehr.",read:"Lesen \u2192"},
-      fr:{kicker:"Oddverse",title:'Journal <span class="pop">Oddverse</span>',sub:"Notes d'un monde un peu de travers.",back:"\u2190 Retour au journal",empty:"Pas encore d'articles. \u00c0 bient\u00f4t.",read:"Lire \u2192"},
-      hu:{kicker:"Oddverse",title:'Oddverse <span class="pop">Napl\u00f3</span>',sub:"Jegyzetek egy kiss\u00e9 g\u00f6rbe vil\u00e1gb\u00f3l.",back:"\u2190 Vissza a napl\u00f3hoz",empty:"M\u00e9g nincs bejegyz\u00e9s. Hamarosan.",read:"Olvasd \u2192"}
+      en:{kicker:"Wallpaper Club",title:'Free <span class="pop">Wallpapers</span>',sub:"Stay odd, one lock screen at a time.",back:"\u2190 Back to Wallpapers",empty:"No wallpapers yet. Come back soon.",dl:"Download PNG",draft:"Draft preview \u2014 low-res placeholder. Final high-res file coming soon."},
+      tr:{kicker:"Wallpaper Club",title:'Ücretsiz <span class="pop">Duvar Kağıtları</span>',sub:"Her kilit ekranında biraz Odd kal.",back:"\u2190 Duvar Kağıtlarına dön",empty:"Henüz duvar kağıdı yok. Yakında burada.",dl:"PNG İndir",draft:"Taslak önizleme — düşük çözünürlüklü yer tutucu. Yüksek çözünürlüklü hali yakında."},
+      de:{kicker:"Wallpaper Club",title:'Kostenlose <span class="pop">Wallpaper</span>',sub:"Bleib odd, ein Sperrbildschirm nach dem anderen.",back:"\u2190 Zurück zu Wallpapers",empty:"Noch keine Wallpaper. Bald mehr.",dl:"PNG herunterladen",draft:"Entwurfsvorschau \u2014 niedrige Auflösung, Platzhalter. Finale Version folgt bald."},
+      fr:{kicker:"Wallpaper Club",title:'Fonds D\u2019écran <span class="pop">Gratuits</span>',sub:"Reste odd, un écran verrouillé à la fois.",back:"\u2190 Retour aux fonds d\u2019écran",empty:"Pas encore de fonds d\u2019écran. Bientôt.",dl:"Télécharger le PNG",draft:"Aperçu provisoire \u2014 espace réservé basse résolution. La version finale arrive bientôt."},
+      hu:{kicker:"Wallpaper Club",title:'Ingyenes <span class="pop">Háttérképek</span>',sub:"Maradj odd minden zárolt képernyőn.",back:"\u2190 Vissza a háttérképekhez",empty:"Még nincs háttérkép. Hamarosan.",dl:"PNG letöltése",draft:"Vázlat előnézet \u2014 alacsony felbontású helykitöltő. A végleges hamarosan érkezik."}
     };
-    var LANGS = ["en","tr","de","fr","hu"];
-    var posts = [];
+    var data = {volumes:[], items:[]};
 
     function lang(){
       var l = document.documentElement.lang || localStorage.getItem("oddvi_lang") || "en";
       return T[l] ? l : "en";
     }
     function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
-    function fmtDate(d,l){
-      try{ return new Date(d).toLocaleDateString(l,{year:"numeric",month:"short",day:"numeric"}); }
-      catch(e){ return d||""; }
-    }
-    function slugOf(p,i){ return (p.slug && String(p.slug).trim()) ? String(p.slug).trim() : ("post-"+i); }
+    function titleOf(item,l){ return item[l] || item.en || ""; }
 
-    // posts relevant to current language: matching lang, else (if none) show all
-    function visiblePosts(l){
-      var m = posts.filter(function(p){ return (p.lang||"").toLowerCase() === l; });
-      return m.length ? m : posts.slice();
+    var activeVol = null;
+
+    function renderVolTabs(l){
+      var vols = data.volumes.slice().sort(function(a,b){return a.order-b.order;});
+      if(!activeVol && vols.length) activeVol = vols[0].id;
+      document.getElementById("volTabs").innerHTML = vols.map(function(v){
+        return '<button class="vol-tab" data-vol="'+esc(v.id)+'" aria-pressed="'+(v.id===activeVol?'true':'false')+'">'+esc(v[l]||v.en)+'</button>';
+      }).join("");
+      document.querySelectorAll('.vol-tab').forEach(function(b){
+        b.addEventListener('click', function(){ activeVol = b.getAttribute('data-vol'); route(); });
+      });
     }
 
     function renderList(){
@@ -213,58 +213,64 @@
       document.getElementById("jsub").textContent = t.sub;
       document.getElementById("backlink").textContent = t.back;
 
-      var vis = visiblePosts(l).slice().sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
+      renderVolTabs(l);
+
+      var items = data.items.filter(function(it){ return it.volume === activeVol; })
+        .slice().sort(function(a,b){ return a.order-b.order; });
+
       var grid = document.getElementById("grid"), empty = document.getElementById("empty");
-      if(!vis.length){
+      if(!items.length){
         grid.innerHTML = ""; empty.textContent = t.empty; empty.hidden = false; return;
       }
       empty.hidden = true;
-      grid.innerHTML = vis.map(function(p){
-        var i = posts.indexOf(p), s = slugOf(p,i);
-        var cov = p.cover ? '<div class="cov"><img src="'+esc(p.cover)+'" alt="'+esc(p.title)+'" loading="lazy"></div>' : "";
-        return '<a class="post-card" href="#'+encodeURIComponent(s)+'">'+cov+
-          '<div class="body"><div class="date">'+esc(fmtDate(p.date,l))+'</div>'+
-          '<h3>'+esc(p.title)+'</h3>'+
-          (p.excerpt?'<p>'+esc(p.excerpt)+'</p>':"")+
-          '<div class="read">'+t.read+'</div></div></a>';
+      grid.innerHTML = items.map(function(it){
+        return '<a class="wp-card" href="#'+encodeURIComponent(it.id)+'">'+
+          '<span class="num">'+esc(it.id)+'</span>'+
+          (it.draft ? '<span class="draft">DRAFT</span>' : '') +
+          '<div class="cov"><img src="'+esc(it.file)+'" alt="'+esc(titleOf(it,l))+'" loading="lazy"></div>'+
+          '<div class="body"><h3>'+esc(titleOf(it,l))+'</h3></div></a>';
       }).join("");
     }
 
-    function renderArticle(p){
+    function renderDetail(it){
       var l = lang(), t = T[l];
       document.getElementById("backlink").textContent = t.back;
-      var cov = document.getElementById("artCov");
-      if(p.cover){ cov.innerHTML = '<img src="'+esc(p.cover)+'" alt="'+esc(p.title)+'">'; cov.hidden = false; }
-      else { cov.hidden = true; }
-      document.getElementById("artDate").textContent = fmtDate(p.date,l);
-      document.getElementById("artTitle").textContent = p.title || "";
-      var body = p.body || "";
-      var html = (window.marked ? marked.parse(body) : esc(body).replace(/\n/g,"<br>"));
-      document.getElementById("artBody").innerHTML = html;
+      document.getElementById("dCov").innerHTML = '<img src="'+esc(it.file)+'" alt="'+esc(titleOf(it,l))+'">';
+      document.getElementById("dTitle").textContent = titleOf(it,l);
+      var vol = data.volumes.filter(function(v){return v.id===it.volume;})[0];
+      document.getElementById("dMeta").textContent = "#"+it.id + (vol ? " \u00b7 " + (vol[l]||vol.en) : "");
+      var dn = document.getElementById("dDraftNote");
+      if(it.draft){ dn.hidden = false; dn.textContent = t.draft; } else { dn.hidden = true; }
+      var a = document.getElementById("dDownload");
+      a.href = it.file;
+      var niceName = "Oddvi-Wallpaper-" + (vol?vol.en.replace(/[^a-z0-9]+/ig,''):'') + "-" + it.id + "-" + titleOf(it,'en').replace(/[^a-z0-9]+/ig,'-').replace(/^-+|-+$/g,'') + ".png";
+      a.setAttribute('download', niceName);
+      document.getElementById("dDownloadLabel").textContent = t.dl;
     }
 
     function route(){
       var hash = decodeURIComponent((location.hash||"").replace(/^#/,"")).trim();
       var listView = document.getElementById("listView");
-      var articleView = document.getElementById("articleView");
+      var detailView = document.getElementById("detailView");
       var found = null;
       if(hash){
-        for(var i=0;i<posts.length;i++){ if(slugOf(posts[i],i)===hash){ found = posts[i]; break; } }
+        for(var i=0;i<data.items.length;i++){ if(data.items[i].id===hash){ found = data.items[i]; break; } }
       }
       if(found){
-        listView.hidden = true; articleView.hidden = false;
-        renderArticle(found); window.scrollTo(0,0);
+        activeVol = found.volume;
+        listView.hidden = true; detailView.hidden = false;
+        renderDetail(found); window.scrollTo(0,0);
       } else {
-        articleView.hidden = true; listView.hidden = false;
+        detailView.hidden = true; listView.hidden = false;
         renderList();
       }
     }
 
     function load(){
-      fetch("/blog.json?t="+Date.now())
-        .then(function(r){ return r.ok ? r.json() : {posts:[]}; })
-        .then(function(data){ posts = (data && data.posts) ? data.posts : []; route(); })
-        .catch(function(){ posts = []; route(); });
+      fetch("/wallpapers.json?t="+Date.now())
+        .then(function(r){ return r.ok ? r.json() : {volumes:[],items:[]}; })
+        .then(function(d){ data = {volumes:(d&&d.volumes)||[], items:(d&&d.items)||[]}; route(); })
+        .catch(function(){ data = {volumes:[],items:[]}; route(); });
     }
 
     window.addEventListener("hashchange", route);

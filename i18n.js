@@ -10,7 +10,7 @@ window.I18N = (function () {
 
   const dict = {
   en:{
-    'nav.meet':"Meet Oddvi",'nav.story':"The Story",'nav.gallery':"Gallery",'nav.journal':"Journal",'nav.test':"What's your Odd?",
+    'nav.meet':"Meet Oddvi",'nav.story':"The Story",'nav.gallery':"Gallery",'nav.journal':"Journal",'nav.wallpapers':"Wallpapers",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Coming soon · @theoddvi",
     'hero.btnPrimary':"Take the Odd test →",'hero.btnGhost':"See Oddvi in action ↓",
     'hero.lead':"Everyone's got an Odd — yours might shock someone, someone else's might inspire you. Own it. Love it. Normal is everywhere; Odd is where it's at.",
@@ -62,7 +62,7 @@ window.I18N = (function () {
     'share.takedown':"Want something you shared taken down? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">DM us</a> and we'll remove it.",
   },
   tr:{
-    'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.gallery':"Galeri",'nav.journal':"Günce",'nav.test':"What's your Odd?",
+    'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.gallery':"Galeri",'nav.journal':"Günce",'nav.wallpapers':"Duvar Kağıtları",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Çok yakında · @theoddvi",
     'hero.btnPrimary':"Odd testini çöz →",'hero.btnGhost':"Oddvi'yi iş başında gör ↓",
     'hero.lead':"Herkesin bir Odd'u var. Seninki birini şaşırtabilir, başkasınınki sana ilham verebilir. Sahip çık, sev. Normal her yerde; Odd tam da burada.",
@@ -114,7 +114,7 @@ window.I18N = (function () {
     'share.takedown':"Paylaştığın bir şeyi kaldırmamızı mı istiyorsun? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Bize DM at</a>, kaldıralım.",
   },
   de:{
-    'nav.meet':"Oddvi entdecken",'nav.story':"Die Geschichte",'nav.gallery':"Galerie",'nav.journal':"Journal",'nav.test':"What's your Odd?",
+    'nav.meet':"Oddvi entdecken",'nav.story':"Die Geschichte",'nav.gallery':"Galerie",'nav.journal':"Journal",'nav.wallpapers':"Wallpaper",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Bald verfügbar · @theoddvi",
     'hero.btnPrimary':"Mach den Odd-Test →",'hero.btnGhost':"Oddvi in Aktion sehen ↓",
     'hero.lead':"Jede*r hat sein Odd. Deins könnte jemanden schockieren, das eines anderen dich inspirieren. Steh dazu. Liebe es. Normal ist überall; Odd ist genau hier.",
@@ -166,7 +166,7 @@ window.I18N = (function () {
     'share.takedown':"Möchtest du, dass wir etwas entfernen, das du geteilt hast? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Schreib uns</a>, wir nehmen es raus.",
   },
   fr:{
-    'nav.meet':"Rencontrer Oddvi",'nav.story':"L'histoire",'nav.gallery':"Galerie",'nav.journal':"Journal",'nav.test':"What's your Odd?",
+    'nav.meet':"Rencontrer Oddvi",'nav.story':"L'histoire",'nav.gallery':"Galerie",'nav.journal':"Journal",'nav.wallpapers':"Fonds D'écran",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Bientôt disponible · @theoddvi",
     'hero.btnPrimary':"Faire le test Odd →",'hero.btnGhost':"Voir Oddvi en action ↓",
     'hero.lead':"Chacun a son Odd. Le tien pourrait choquer quelqu'un, celui d'un autre pourrait t'inspirer. Assume-le. Aime-le. Le normal est partout ; l'Odd, c'est ici.",
@@ -218,7 +218,7 @@ window.I18N = (function () {
     'share.takedown':"Tu veux qu'on retire quelque chose que tu as partagé ? <a href=\"https://instagram.com/theoddvi\" target=\"_blank\" rel=\"noopener\">Envoie-nous un DM</a>, on s'en occupe.",
   },
   hu:{
-    'nav.meet':"Ismerd meg Oddvit",'nav.story':"A történet",'nav.gallery':"Galéria",'nav.journal':"Napló",'nav.test':"What's your Odd?",
+    'nav.meet':"Ismerd meg Oddvit",'nav.story':"A történet",'nav.gallery':"Galéria",'nav.journal':"Napló",'nav.wallpapers':"Háttérképek",'nav.test':"What's your Odd?",
     'hero.eyebrow':"Hamarosan · @theoddvi",
     'hero.btnPrimary':"Csináld meg az Odd-tesztet →",'hero.btnGhost':"Nézd Oddvit akcióban ↓",
     'hero.lead':"Mindenkinek megvan a maga Oddja. A tiéd sokkolhat valakit, valaki másé inspirálhat téged. Vállald. Szeresd. A normális mindenhol ott van; az Odd pont itt.",
