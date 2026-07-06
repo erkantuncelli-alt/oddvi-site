@@ -494,6 +494,17 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* Bir kere #shareOdd (QR kod) ile geldiysen o bölüme kaymana izin ver, ama adres
+     çubuğunu hemen temizle — yoksa Safari bu hash'li adresi favorilere/geçmişe
+     kaydedip normal girişlerde de hep oraya atlıyor. */
+  if (location.hash === '#shareOdd') {
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        history.replaceState(null, '', location.pathname + location.search);
+      }, 800);
+    });
+  }
+
   /* keep latest dictionary for dynamic messages */
   let D = (window.I18N && window.I18N.dict[window.I18N.pick()]) || {};
   window.addEventListener('oddvi:lang', e=>{ D = e.detail.dict; });
