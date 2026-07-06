@@ -49,7 +49,8 @@
 
   header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;text-decoration:none;letter-spacing:-.01em;display:inline-block;transform:rotate(-3deg)}
+  .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;text-decoration:none;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px;transform:rotate(-3deg)}
+  .logo-icon{flex:0 0 auto;display:block}
   .nav-links{display:flex;align-items:center;gap:20px;font-weight:600;font-size:15px}
   .nav-links a.txt{text-decoration:none;opacity:.75;transition:opacity .2s,transform .2s}
   .nav-links a.txt:hover{opacity:1;transform:rotate(-2deg)}
@@ -121,14 +122,19 @@
 <body>
   <header>
     <div class="wrap nav">
-      <a href="index.html" class="logo">ODDVI</a>
+      <a href="index.html" class="logo">
+        <img class="logo-icon" src="/uploads/oddvi-logo-icon.png" width="26" height="35" alt="" aria-hidden="true" />
+        ODDVI
+      </a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
       <nav class="nav-links">
-        <a href="index.html#meet" class="txt">Meet Oddvi</a>
-        <a href="index.html#story" class="txt">The Story</a>
-        <a href="blog.html" class="txt">Journal</a>
+        <a href="story.html#meet" class="txt" data-i18n="nav.meet">Meet Oddvi</a>
+        <a href="story.html#story" class="txt" data-i18n="nav.story">The Story</a>
+        <a href="motion.html" class="txt" data-i18n="mot.kicker">Oddvi in motion</a>
+        <a href="blog.html" class="txt" data-i18n="nav.journal">Journal</a>
+        <a href="odd-gallery.html" class="txt" data-i18n="nav.gallery">Gallery</a>
         <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
-        <a href="odd-test.html" class="nav-cta">What's your Odd?</a>
+        <a href="odd-test.html" class="nav-cta" data-i18n="nav.test">What's your Odd?</a>
       </nav>
     </div>
   </header>
