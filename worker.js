@@ -159,13 +159,27 @@ async function listCounts(env, prefix, limit = 1000) {
   return entries;
 }
 
+const STATS_CACHE_KEY = 'visit:summary_cache';
+const STATS_CACHE_TTL_SECONDS = 600; // 10 minutes — keeps KV list() calls far under the free-tier daily cap
+
 async function handleAdminStats(url, env) {
   const key = url.searchParams.get('key') || '';
   if (!env.ADMIN_KEY || key !== env.ADMIN_KEY) {
     return json({ error: 'unauthorized' }, 403);
   }
 
+  const forceRefresh = url.searchParams.get('refresh') === '1';
+
   try {
+    if (!forceRefresh) {
+      const cached = await env.LIKES.get(STATS_CACHE_KEY);
+      if (cached) {
+        const data = JSON.parse(cached);
+        data.cached = true;
+        return json(data);
+      }
+    }
+
     const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays] = await Promise.all([
       env.LIKES.get('visit:total'),
       env.LIKES.get('visit:uniq_total'),
@@ -180,7 +194,7 @@ async function handleAdminStats(url, env) {
     days.sort((a, b) => a[0] < b[0] ? 1 : -1); // most recent day first
     uniqDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
 
-    return json({
+    const data = {
       total_pageviews: parseInt(total || '0', 10) || 0,
       unique_visitors: parseInt(uniqTotal || '0', 10) || 0,
       by_country: countries,
@@ -188,8 +202,14 @@ async function handleAdminStats(url, env) {
       top_pages: pages.slice(0, 20),
       top_referrers: refs.slice(0, 20),
       last_days: days.slice(0, 30),
-      unique_last_days: uniqDays.slice(0, 30)
-    });
+      unique_last_days: uniqDays.slice(0, 30),
+      generated_at: new Date().toISOString()
+    };
+
+    await env.LIKES.put(STATS_CACHE_KEY, JSON.stringify(data), { expirationTtl: STATS_CACHE_TTL_SECONDS });
+
+    data.cached = false;
+    return json(data);
   } catch (err) {
     return json({ error: 'internal', message: String(err && err.stack || err) }, 500);
   }

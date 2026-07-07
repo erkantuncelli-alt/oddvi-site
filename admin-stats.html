@@ -88,7 +88,7 @@
     <table id="tDays"></table>
   </section>
 
-  <p class="refresh">Auto-refreshes every 60s · <a href="#" id="refreshNow" style="color:var(--red)">refresh now</a></p>
+  <p class="refresh">Data refreshes every ~10 min server-side · <a href="#" id="refreshNow" style="color:var(--red)">force refresh now</a></p>
 </div>
 
 <div id="loading" style="display:none">Loading…</div>
@@ -125,7 +125,8 @@
     var today = (d.last_days && d.last_days[0] && d.last_days[0][1]) || 0;
     document.getElementById('cToday').textContent = today.toLocaleString();
     document.getElementById('cCountries').textContent = (d.by_country||[]).length;
-    document.getElementById('asOf').textContent = 'Updated ' + new Date().toLocaleTimeString();
+    var freshness = d.cached ? ' (cached, updates every ~10 min)' : ' (just recalculated)';
+    document.getElementById('asOf').textContent = 'Updated ' + new Date().toLocaleTimeString() + freshness;
 
     rowsToTable(document.getElementById('tCountries'), (d.by_country||[]).slice(0,10), {flag:true, bar:true});
     rowsToTable(document.getElementById('tRefs'), d.top_referrers||[], {bar:true});
@@ -133,10 +134,11 @@
     rowsToTable(document.getElementById('tDays'), (d.last_days||[]).slice(0,14), {bar:true});
   }
 
-  function load(key){
+  function load(key, forceRefresh){
     loading.style.display = 'block';
     errBox.style.display = 'none';
-    fetch('/api/admin-stats?key=' + encodeURIComponent(key))
+    var qs = '/api/admin-stats?key=' + encodeURIComponent(key) + (forceRefresh ? '&refresh=1' : '');
+    fetch(qs)
       .then(function(r){
         if(r.status === 403){ throw new Error('wrong-key'); }
         if(!r.ok){ throw new Error('server-error'); }
@@ -166,7 +168,7 @@
     var key = document.getElementById('keyInput').value.trim();
     if(!key) return;
     sessionStorage.setItem(KEY_STORAGE, key);
-    load(key);
+    load(key, false);
   });
   document.getElementById('keyInput').addEventListener('keydown', function(e){
     if(e.key === 'Enter') document.getElementById('enterBtn').click();
@@ -174,16 +176,18 @@
   document.getElementById('refreshNow').addEventListener('click', function(e){
     e.preventDefault();
     var key = sessionStorage.getItem(KEY_STORAGE);
-    if(key) load(key);
+    if(key) load(key, true); // manual refresh bypasses the cache
   });
 
   var saved = sessionStorage.getItem(KEY_STORAGE);
-  if(saved){ load(saved); }
+  if(saved){ load(saved, false); }
 
+  // Cheap: this just reads the KV cache (or triggers at most one recompute every ~10 min
+  // server-side), so polling every 5 minutes here stays well within Cloudflare's free KV quota.
   setInterval(function(){
     var key = sessionStorage.getItem(KEY_STORAGE);
-    if(key && dash.style.display === 'block') load(key);
-  }, 60000);
+    if(key && dash.style.display === 'block') load(key, false);
+  }, 5 * 60000);
 })();
 </script>
 </body>
