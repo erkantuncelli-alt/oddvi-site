@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Oddvi — private</title>
+<style>
+  :root{
+    --ink:#141414; --paper:#fff8f0; --card:#ffffff;
+    --red:#ff3366; --teal:#1ec8c8; --yellow:#ffc93c; --grape:#845ec2;
+    --font-disp:"Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:"Inter", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-body);background:var(--paper);color:var(--ink);min-height:100vh}
+  .wrap{max-width:960px;margin:0 auto;padding:40px 24px 100px}
+  h1{font-family:var(--font-disp);font-weight:800;font-size:32px;margin-bottom:6px}
+  .sub{opacity:.65;font-size:14px;margin-bottom:32px}
+
+  /* gate */
+  #gate{max-width:360px;margin:120px auto;text-align:center}
+  #gate input{width:100%;padding:12px 14px;font-size:16px;border:2.5px solid var(--ink);border-radius:10px;margin:16px 0;font-family:var(--font-body)}
+  #gate button{width:100%;padding:12px;font-family:var(--font-disp);font-weight:800;font-size:15px;background:var(--ink);color:#fff;border:none;border-radius:10px;cursor:pointer}
+  #gate .err{color:var(--red);font-size:13px;margin-top:10px;min-height:18px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:36px}
+  .card{background:var(--card);border:2.5px solid var(--ink);border-radius:14px;padding:18px;box-shadow:4px 4px 0 var(--ink)}
+  .card .num{font-family:var(--font-disp);font-weight:800;font-size:30px;line-height:1}
+  .card .lbl{font-size:12px;opacity:.65;margin-top:6px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:700px){.grid2{grid-template-columns:1fr}}
+  section{margin-bottom:32px}
+  section h2{font-family:var(--font-disp);font-weight:800;font-size:17px;margin-bottom:12px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:2.5px solid var(--ink);border-radius:12px;overflow:hidden}
+  td{padding:9px 14px;font-size:14px;border-top:1px solid #eee}
+  tr:first-child td{border-top:none}
+  td.n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .bar{height:6px;background:var(--teal);border-radius:3px;margin-top:4px}
+  #loading, #err{text-align:center;padding:60px 0;opacity:.6}
+  #err{color:var(--red);display:none}
+  #dash{display:none}
+  .refresh{font-size:12px;opacity:.5;margin-top:40px;text-align:center}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="wrap" style="padding:0">
+    <h1 style="font-size:24px">🔒 Oddvi Stats</h1>
+    <p class="sub">Private. Not linked anywhere on the site.</p>
+    <input type="password" id="keyInput" placeholder="Admin key" autocomplete="off" />
+    <button id="enterBtn">Enter</button>
+    <div class="err" id="gateErr"></div>
+  </div>
+</div>
+
+<div class="wrap" id="dash">
+  <h1>📊 Visitor Stats</h1>
+  <p class="sub" id="asOf"></p>
+
+  <div class="cards">
+    <div class="card"><div class="num" id="cTotal">–</div><div class="lbl">Total pageviews</div></div>
+    <div class="card"><div class="num" id="cUniq">–</div><div class="lbl">Unique visitors (approx)</div></div>
+    <div class="card"><div class="num" id="cToday">–</div><div class="lbl">Views today</div></div>
+    <div class="card"><div class="num" id="cCountries">–</div><div class="lbl">Countries reached</div></div>
+  </div>
+
+  <div class="grid2">
+    <section>
+      <h2>🌍 Top countries</h2>
+      <table id="tCountries"></table>
+    </section>
+    <section>
+      <h2>🔗 Top referrers</h2>
+      <table id="tRefs"></table>
+    </section>
+  </div>
+
+  <section>
+    <h2>📄 Top pages</h2>
+    <table id="tPages"></table>
+  </section>
+
+  <section>
+    <h2>📅 Last 14 days (pageviews)</h2>
+    <table id="tDays"></table>
+  </section>
+
+  <p class="refresh">Auto-refreshes every 60s · <a href="#" id="refreshNow" style="color:var(--red)">refresh now</a></p>
+</div>
+
+<div id="loading" style="display:none">Loading…</div>
+<div id="err"></div>
+
+<script>
+(function(){
+  var KEY_STORAGE = 'oddvi_admin_key';
+  var gate = document.getElementById('gate');
+  var dash = document.getElementById('dash');
+  var loading = document.getElementById('loading');
+  var errBox = document.getElementById('err');
+
+  function countryFlag(code){
+    if(!code || code.length!==2 || code==='XX') return '🏳️';
+    var A = 127462;
+    return String.fromCodePoint(A + (code.charCodeAt(0)-65), A + (code.charCodeAt(1)-65));
+  }
+
+  function rowsToTable(el, rows, opts){
+    opts = opts || {};
+    if(!rows.length){ el.innerHTML = '<tr><td style="opacity:.5">No data yet</td></tr>'; return; }
+    var max = Math.max.apply(null, rows.map(function(r){return r[1];}));
+    el.innerHTML = rows.map(function(r){
+      var label = opts.flag ? (countryFlag(r[0]) + ' ' + r[0]) : (r[0] || '(unknown)');
+      var pct = max ? Math.round((r[1]/max)*100) : 0;
+      return '<tr><td>'+label+(opts.bar? '<div class="bar" style="width:'+pct+'%"></div>':'')+'</td><td class="n">'+r[1].toLocaleString()+'</td></tr>';
+    }).join('');
+  }
+
+  function render(d){
+    document.getElementById('cTotal').textContent = (d.total_pageviews||0).toLocaleString();
+    document.getElementById('cUniq').textContent = (d.unique_visitors||0).toLocaleString();
+    var today = (d.last_days && d.last_days[0] && d.last_days[0][1]) || 0;
+    document.getElementById('cToday').textContent = today.toLocaleString();
+    document.getElementById('cCountries').textContent = (d.by_country||[]).length;
+    document.getElementById('asOf').textContent = 'Updated ' + new Date().toLocaleTimeString();
+
+    rowsToTable(document.getElementById('tCountries'), (d.by_country||[]).slice(0,10), {flag:true, bar:true});
+    rowsToTable(document.getElementById('tRefs'), d.top_referrers||[], {bar:true});
+    rowsToTable(document.getElementById('tPages'), d.top_pages||[], {bar:true});
+    rowsToTable(document.getElementById('tDays'), (d.last_days||[]).slice(0,14), {bar:true});
+  }
+
+  function load(key){
+    loading.style.display = 'block';
+    errBox.style.display = 'none';
+    fetch('/api/admin-stats?key=' + encodeURIComponent(key))
+      .then(function(r){
+        if(r.status === 403){ throw new Error('wrong-key'); }
+        if(!r.ok){ throw new Error('server-error'); }
+        return r.json();
+      })
+      .then(function(d){
+        loading.style.display = 'none';
+        gate.style.display = 'none';
+        dash.style.display = 'block';
+        render(d);
+      })
+      .catch(function(e){
+        loading.style.display = 'none';
+        if(e.message === 'wrong-key'){
+          sessionStorage.removeItem(KEY_STORAGE);
+          gate.style.display = 'block';
+          dash.style.display = 'none';
+          document.getElementById('gateErr').textContent = 'Wrong key.';
+        } else {
+          errBox.style.display = 'block';
+          errBox.textContent = 'Could not load stats. Try refreshing.';
+        }
+      });
+  }
+
+  document.getElementById('enterBtn').addEventListener('click', function(){
+    var key = document.getElementById('keyInput').value.trim();
+    if(!key) return;
+    sessionStorage.setItem(KEY_STORAGE, key);
+    load(key);
+  });
+  document.getElementById('keyInput').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') document.getElementById('enterBtn').click();
+  });
+  document.getElementById('refreshNow').addEventListener('click', function(e){
+    e.preventDefault();
+    var key = sessionStorage.getItem(KEY_STORAGE);
+    if(key) load(key);
+  });
+
+  var saved = sessionStorage.getItem(KEY_STORAGE);
+  if(saved){ load(saved); }
+
+  setInterval(function(){
+    var key = sessionStorage.getItem(KEY_STORAGE);
+    if(key && dash.style.display === 'block') load(key);
+  }, 60000);
+})();
+</script>
+</body>
+</html>

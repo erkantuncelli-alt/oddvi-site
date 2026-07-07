@@ -1,11 +1,13 @@
 /**
  * Oddvi site worker.
- * - /api/like   (POST {id})        → increments and returns the like count for one message
- * - /api/likes  (GET ?ids=a,b,c)   → returns current counts for a batch of ids
- * - /api/stat, /api/stats          → generic named counters (e.g. odd-test completions)
- * - everything else                → served as-is from the static assets, with the visitor's
- *                                     Cloudflare-detected country injected so the page can
- *                                     open in the matching language automatically
+ * - /api/like         (POST {id})        → increments and returns the like count for one message
+ * - /api/likes        (GET ?ids=a,b,c)   → returns current counts for a batch of ids
+ * - /api/stat, /api/stats                → generic named counters (e.g. odd-test completions)
+ * - /api/admin-stats   (GET ?key=SECRET) → private visit analytics, requires env.ADMIN_KEY
+ * - everything else                      → served as-is from the static assets, with the visitor's
+ *                                           Cloudflare-detected country injected so the page can
+ *                                           open in the matching language automatically, and a
+ *                                           lightweight anonymous visit counter recorded in KV
  */
 
 const CORS_HEADERS = {
@@ -37,7 +39,7 @@ class GeoLangInjector {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (request.method === 'OPTIONS' && url.pathname.startsWith('/api/')) {
@@ -60,15 +62,133 @@ export default {
       return handleGetStats(url, env);
     }
 
+    if (url.pathname === '/api/admin-stats' && request.method === 'GET') {
+      return handleAdminStats(url, env);
+    }
+
     const response = await env.ASSETS.fetch(request);
     const contentType = response.headers.get('content-type') || '';
     if (!contentType.includes('text/html')) return response;
 
     const country = request.cf && request.cf.country;
     const lang = COUNTRY_LANG[country] || 'en';
+
+    // Fire-and-forget visit tracking; never blocks or breaks the page response.
+    ctx.waitUntil(trackVisit(request, env, url, country).catch(() => {}));
+
     return new HTMLRewriter().on('head', new GeoLangInjector(lang)).transform(response);
   }
 };
+
+// ---------- visit tracking (anonymous, aggregate-only) ----------
+
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function referrerBucket(request) {
+  const ref = request.headers.get('Referer');
+  if (!ref) return '(direct)';
+  try {
+    const host = new URL(ref).hostname.replace(/^www\./, '');
+    return host.slice(0, 60) || '(direct)';
+  } catch (e) {
+    return '(direct)';
+  }
+}
+
+async function bump(env, key, by = 1) {
+  const current = parseInt((await env.LIKES.get(key)) || '0', 10) || 0;
+  await env.LIKES.put(key, String(current + by));
+}
+
+async function trackVisit(request, env, url, country) {
+  const ua = request.headers.get('User-Agent') || '';
+  // Skip obvious bots/crawlers so numbers reflect real people.
+  if (/bot|crawl|spider|slurp|facebookexternalhit|preview|monitor/i.test(ua)) return;
+
+  const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const path = url.pathname.replace(/\/+$/, '') || '/';
+  const country2 = (country || 'XX').toUpperCase().slice(0, 2);
+  const ref = referrerBucket(request);
+
+  const ip = request.headers.get('CF-Connecting-IP') || '';
+  const visitorHash = (await sha256Hex(ip + '|' + ua + '|' + day)).slice(0, 24);
+  const seenKey = 'visit:seen:' + day + ':' + visitorHash;
+
+  const alreadySeenToday = await env.LIKES.get(seenKey);
+
+  await Promise.all([
+    bump(env, 'visit:total'),
+    bump(env, 'visit:day:' + day),
+    bump(env, 'visit:country:' + country2),
+    bump(env, 'visit:page:' + path),
+    bump(env, 'visit:ref:' + ref),
+    alreadySeenToday ? Promise.resolve() : env.LIKES.put(seenKey, '1', { expirationTtl: 60 * 60 * 30 })
+  ]);
+
+  if (!alreadySeenToday) {
+    await Promise.all([
+      bump(env, 'visit:uniq_total'),
+      bump(env, 'visit:uniq_day:' + day),
+      bump(env, 'visit:uniq_country:' + country2)
+    ]);
+  }
+}
+
+async function listCounts(env, prefix, limit = 1000) {
+  const out = [];
+  let cursor;
+  do {
+    const page = await env.LIKES.list({ prefix, cursor, limit: 1000 });
+    for (const k of page.keys) out.push(k.name);
+    cursor = page.cursor;
+    if (out.length >= limit) break;
+    if (page.list_complete) break;
+  } while (cursor);
+
+  const entries = await Promise.all(out.map(async (name) => {
+    const v = parseInt((await env.LIKES.get(name)) || '0', 10) || 0;
+    return [name.slice(prefix.length), v];
+  }));
+  entries.sort((a, b) => b[1] - a[1]);
+  return entries;
+}
+
+async function handleAdminStats(url, env) {
+  const key = url.searchParams.get('key') || '';
+  if (!env.ADMIN_KEY || key !== env.ADMIN_KEY) {
+    return json({ error: 'unauthorized' }, 403);
+  }
+
+  const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays] = await Promise.all([
+    env.LIKES.get('visit:total'),
+    env.LIKES.get('visit:uniq_total'),
+    listCounts(env, 'visit:country:'),
+    listCounts(env, 'visit:uniq_country:'),
+    listCounts(env, 'visit:page:'),
+    listCounts(env, 'visit:ref:'),
+    listCounts(env, 'visit:day:'),
+    listCounts(env, 'visit:uniq_day:')
+  ]);
+
+  days.sort((a, b) => a[0] < b[0] ? 1 : -1); // most recent day first
+  uniqDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
+
+  return json({
+    total_pageviews: parseInt(total || '0', 10) || 0,
+    unique_visitors: parseInt(uniqTotal || '0', 10) || 0,
+    by_country: countries,
+    unique_by_country: uniqCountries,
+    top_pages: pages.slice(0, 20),
+    top_referrers: refs.slice(0, 20),
+    last_days: days.slice(0, 30),
+    unique_last_days: uniqDays.slice(0, 30)
+  });
+}
+
+// ---------- existing named counters & like system (unchanged) ----------
 
 async function handleStat(request, env) {
   let body;
