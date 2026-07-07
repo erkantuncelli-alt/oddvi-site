@@ -140,13 +140,16 @@ async function trackVisit(request, env, url, country) {
 async function listCounts(env, prefix, limit = 1000) {
   const out = [];
   let cursor;
-  do {
-    const page = await env.LIKES.list({ prefix, cursor, limit: 1000 });
+  for (;;) {
+    const opts = { prefix, limit: 1000 };
+    if (cursor) opts.cursor = cursor;
+    const page = await env.LIKES.list(opts);
     for (const k of page.keys) out.push(k.name);
-    cursor = page.cursor;
     if (out.length >= limit) break;
     if (page.list_complete) break;
-  } while (cursor);
+    if (!page.cursor) break;
+    cursor = page.cursor;
+  }
 
   const entries = await Promise.all(out.map(async (name) => {
     const v = parseInt((await env.LIKES.get(name)) || '0', 10) || 0;
@@ -162,30 +165,34 @@ async function handleAdminStats(url, env) {
     return json({ error: 'unauthorized' }, 403);
   }
 
-  const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays] = await Promise.all([
-    env.LIKES.get('visit:total'),
-    env.LIKES.get('visit:uniq_total'),
-    listCounts(env, 'visit:country:'),
-    listCounts(env, 'visit:uniq_country:'),
-    listCounts(env, 'visit:page:'),
-    listCounts(env, 'visit:ref:'),
-    listCounts(env, 'visit:day:'),
-    listCounts(env, 'visit:uniq_day:')
-  ]);
+  try {
+    const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays] = await Promise.all([
+      env.LIKES.get('visit:total'),
+      env.LIKES.get('visit:uniq_total'),
+      listCounts(env, 'visit:country:'),
+      listCounts(env, 'visit:uniq_country:'),
+      listCounts(env, 'visit:page:'),
+      listCounts(env, 'visit:ref:'),
+      listCounts(env, 'visit:day:'),
+      listCounts(env, 'visit:uniq_day:')
+    ]);
 
-  days.sort((a, b) => a[0] < b[0] ? 1 : -1); // most recent day first
-  uniqDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
+    days.sort((a, b) => a[0] < b[0] ? 1 : -1); // most recent day first
+    uniqDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
 
-  return json({
-    total_pageviews: parseInt(total || '0', 10) || 0,
-    unique_visitors: parseInt(uniqTotal || '0', 10) || 0,
-    by_country: countries,
-    unique_by_country: uniqCountries,
-    top_pages: pages.slice(0, 20),
-    top_referrers: refs.slice(0, 20),
-    last_days: days.slice(0, 30),
-    unique_last_days: uniqDays.slice(0, 30)
-  });
+    return json({
+      total_pageviews: parseInt(total || '0', 10) || 0,
+      unique_visitors: parseInt(uniqTotal || '0', 10) || 0,
+      by_country: countries,
+      unique_by_country: uniqCountries,
+      top_pages: pages.slice(0, 20),
+      top_referrers: refs.slice(0, 20),
+      last_days: days.slice(0, 30),
+      unique_last_days: uniqDays.slice(0, 30)
+    });
+  } catch (err) {
+    return json({ error: 'internal', message: String(err && err.stack || err) }, 500);
+  }
 }
 
 // ---------- existing named counters & like system (unchanged) ----------
@@ -245,3 +252,6 @@ async function handleGetLikes(url, env) {
   }));
   return json(result);
 }
+
+// Named exports (harmless for the Workers runtime; used by local tests).
+export { listCounts, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump };
