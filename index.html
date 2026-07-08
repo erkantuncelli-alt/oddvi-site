@@ -247,18 +247,24 @@
   .connect-grid{background:var(--paper-2);padding:70px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
   .connect-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
   @media(max-width:900px){.connect-cols{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
-  .connect-card{background:var(--card);border:3px solid var(--ink);border-radius:20px;padding:30px 26px;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;text-align:left}
-  .connect-card:nth-child(1){transform:rotate(-1deg)}
-  .connect-card:nth-child(2){transform:rotate(1deg)}
-  .connect-card:nth-child(3){transform:rotate(-1deg)}
-  .connect-card h3{font-family:var(--font-disp);font-weight:800;font-size:22px;line-height:1.1;letter-spacing:-.01em;margin:14px 0 10px}
-  .connect-card p{opacity:.75;font-size:14px;font-weight:500;line-height:1.5;flex-grow:1}
-  .connect-card .btn{margin-top:16px;font-size:15px;padding:12px 18px;align-self:flex-start}
-  .connect-card .odd-feed-link{display:block;margin-top:14px;font-weight:700;font-size:13px;text-decoration:underline;opacity:.7}
+  .connect-card{border:3px solid var(--ink);border-radius:20px;padding:30px 26px;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;text-align:left;color:#fff}
+  .connect-card:nth-child(1){transform:rotate(-1deg);background:var(--teal)}
+  .connect-card:nth-child(2){transform:rotate(1deg);background:var(--red)}
+  .connect-card:nth-child(3){transform:rotate(-1deg);background:var(--grape)}
+  .connect-card h3{font-family:var(--font-disp);font-weight:800;font-size:22px;line-height:1.1;letter-spacing:-.01em;margin:14px 0 10px;color:#fff}
+  .connect-card p{opacity:.92;font-size:14px;font-weight:500;line-height:1.5;flex-grow:1;color:#fff}
+  .connect-card .btn{margin-top:16px;font-size:15px;padding:12px 18px;align-self:flex-start;border-color:var(--ink)}
+  .connect-card:nth-child(1) .btn-primary{background:var(--red);color:#fff}
+  .connect-card:nth-child(1) .btn-primary:hover{background:var(--red-deep)}
+  .connect-card:nth-child(2) .btn-primary{background:var(--yellow);color:var(--ink)}
+  .connect-card:nth-child(2) .btn-primary:hover{background:var(--yellow-deep)}
+  .connect-card:nth-child(3) .btn-primary{background:var(--yellow);color:var(--ink)}
+  .connect-card:nth-child(3) .btn-primary:hover{background:var(--yellow-deep)}
+  .connect-card .odd-feed-link{display:block;margin-top:14px;font-weight:700;font-size:13px;text-decoration:underline;opacity:.85;color:#fff}
   .connect-card-signup .form{display:flex;flex-direction:column;gap:10px;max-width:none;margin:16px 0 0}
   .connect-card-signup .form input{padding:12px 16px;border-radius:10px;font-size:15px;font-family:var(--font-body);border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
   .connect-card-signup .form input:focus{outline:none}
-  .form-msg{margin-top:14px;font-weight:700;font-size:13px;min-height:18px}
+  .form-msg{margin-top:14px;font-weight:700;font-size:13px;min-height:18px;color:#fff}
 
   /* Shared like button used on gallery cards + reels */
   .like-btn{display:inline-flex;align-items:center;gap:4px;border:2px solid var(--ink);background:rgba(255,248,240,.95);border-radius:999px;padding:4px 9px;font-weight:700;font-size:12px;cursor:pointer;transition:transform .12s;z-index:3}
