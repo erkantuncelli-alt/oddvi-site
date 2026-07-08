@@ -551,10 +551,18 @@
     var GAL = [];
     function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
     function curLang(){return document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';}
+    function shuffle(arr){
+      var a = arr.slice();
+      for(var i=a.length-1;i>0;i--){
+        var j = Math.floor(Math.random()*(i+1));
+        var tmp = a[i]; a[i]=a[j]; a[j]=tmp;
+      }
+      return a;
+    }
     function render(){
       var grid=document.getElementById('galGrid'); if(!grid) return;
       var l=curLang();
-      var subset = GAL.slice(0,3);
+      var subset = GAL.slice(0,10);
       grid.innerHTML = subset.map(function(it){
         var cap = it[l] || it.en || '';
         var slug = (it.image.match(/([^\/]+)\.[a-zA-Z0-9]+$/)||[])[1] || '';
@@ -577,7 +585,7 @@
     }
     fetch('/gallery.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{items:[]};})
-      .then(function(d){ GAL=(d&&d.items)?d.items:[]; render(); })
+      .then(function(d){ GAL=shuffle((d&&d.items)?d.items:[]); render(); })
       .catch(function(){});
     window.addEventListener('oddvi:lang', render);
   })();
@@ -617,6 +625,14 @@
   (function(){
     var wrap=document.getElementById('reels'); if(!wrap) return;
     function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+    function shuffle(arr){
+      var a = arr.slice();
+      for(var i=a.length-1;i>0;i--){
+        var j = Math.floor(Math.random()*(i+1));
+        var tmp = a[i]; a[i]=a[j]; a[j]=tmp;
+      }
+      return a;
+    }
     var section = wrap.closest('section');
 
     async function shareReel(url){
@@ -680,7 +696,7 @@
     fetch('/videos.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{videos:[]};})
       .then(function(d){
-        var v=((d&&d.videos)?d.videos:[]).slice().reverse().slice(0,3);
+        var v=shuffle(((d&&d.videos)?d.videos:[])).slice(0,10);
         if(v.length){
           build(v);
           window.addEventListener('oddvi:lang', function(){ build(v); });
