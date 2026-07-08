@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Oddvi — private</title>
+<title>Oddvi — özel</title>
 <style>
   :root{
     --ink:#141414; --paper:#fff8f0; --card:#ffffff;
@@ -18,7 +18,7 @@
   h1{font-family:var(--font-disp);font-weight:800;font-size:32px;margin-bottom:6px}
   .sub{opacity:.65;font-size:14px;margin-bottom:32px}
 
-  /* gate */
+  /* giriş ekranı */
   #gate{max-width:360px;margin:120px auto;text-align:center}
   #gate input{width:100%;padding:12px 14px;font-size:16px;border:2.5px solid var(--ink);border-radius:10px;margin:16px 0;font-family:var(--font-body)}
   #gate button{width:100%;padding:12px;font-family:var(--font-disp);font-weight:800;font-size:15px;background:var(--ink);color:#fff;border:none;border-radius:10px;cursor:pointer}
@@ -34,64 +34,75 @@
   section{margin-bottom:32px}
   section h2{font-family:var(--font-disp);font-weight:800;font-size:17px;margin-bottom:12px}
   table{width:100%;border-collapse:collapse;background:var(--card);border:2.5px solid var(--ink);border-radius:12px;overflow:hidden}
-  td{padding:9px 14px;font-size:14px;border-top:1px solid #eee}
+  td{padding:9px 14px;font-size:14px;border-top:1px solid #eee;vertical-align:middle}
   tr:first-child td{border-top:none}
-  td.n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  td.n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
   .bar{height:6px;background:var(--teal);border-radius:3px;margin-top:4px}
   #loading, #err{text-align:center;padding:60px 0;opacity:.6}
   #err{color:var(--red);display:none}
   #dash{display:none}
   .refresh{font-size:12px;opacity:.5;margin-top:40px;text-align:center}
+
+  .scroll-page{font-weight:700;font-size:14px;margin-bottom:6px}
+  .scroll-steps{display:flex;gap:6px;margin-bottom:16px}
+  .scroll-step{flex:1;background:var(--card);border:2px solid var(--ink);border-radius:8px;padding:8px 6px;text-align:center}
+  .scroll-step .pct{font-family:var(--font-disp);font-weight:800;font-size:16px}
+  .scroll-step .lbl2{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:.03em}
 </style>
 </head>
 <body>
 
 <div id="gate">
   <div class="wrap" style="padding:0">
-    <h1 style="font-size:24px">🔒 Oddvi Stats</h1>
-    <p class="sub">Private. Not linked anywhere on the site.</p>
-    <input type="password" id="keyInput" placeholder="Admin key" autocomplete="off" />
-    <button id="enterBtn">Enter</button>
+    <h1 style="font-size:24px">🔒 Oddvi İstatistikleri</h1>
+    <p class="sub">Özel. Sitede hiçbir yere bağlı değil.</p>
+    <input type="password" id="keyInput" placeholder="Anahtar" autocomplete="off" />
+    <button id="enterBtn">Gir</button>
     <div class="err" id="gateErr"></div>
   </div>
 </div>
 
 <div class="wrap" id="dash">
-  <h1>📊 Visitor Stats</h1>
+  <h1>📊 Ziyaretçi İstatistikleri</h1>
   <p class="sub" id="asOf"></p>
 
   <div class="cards">
-    <div class="card"><div class="num" id="cTotal">–</div><div class="lbl">Total pageviews</div></div>
-    <div class="card"><div class="num" id="cUniq">–</div><div class="lbl">Unique visitors (approx)</div></div>
-    <div class="card"><div class="num" id="cToday">–</div><div class="lbl">Views today</div></div>
-    <div class="card"><div class="num" id="cCountries">–</div><div class="lbl">Countries reached</div></div>
+    <div class="card"><div class="num" id="cTotal">–</div><div class="lbl">Toplam Görüntülenme</div></div>
+    <div class="card"><div class="num" id="cUniq">–</div><div class="lbl">Tekil Ziyaretçi (yaklaşık)</div></div>
+    <div class="card"><div class="num" id="cToday">–</div><div class="lbl">Bugünkü Görüntülenme</div></div>
+    <div class="card"><div class="num" id="cCountries">–</div><div class="lbl">Ulaşılan Ülke</div></div>
   </div>
 
   <div class="grid2">
     <section>
-      <h2>🌍 Top countries</h2>
+      <h2>🌍 En Çok Ziyaret Eden Ülkeler</h2>
       <table id="tCountries"></table>
     </section>
     <section>
-      <h2>🔗 Top referrers</h2>
+      <h2>🔗 En Çok Gelinen Kaynaklar</h2>
       <table id="tRefs"></table>
     </section>
   </div>
 
   <section>
-    <h2>📄 Top pages</h2>
+    <h2>📄 En Çok Gezilen Sayfalar</h2>
     <table id="tPages"></table>
   </section>
 
   <section>
-    <h2>📅 Last 14 days (pageviews)</h2>
+    <h2>📜 Kaydırma Derinliği (sayfada ne kadar aşağı iniyorlar)</h2>
+    <div id="scrollDepth"></div>
+  </section>
+
+  <section>
+    <h2>📅 Son 14 Gün (görüntülenme)</h2>
     <table id="tDays"></table>
   </section>
 
-  <p class="refresh">Data refreshes every ~10 min server-side · <a href="#" id="refreshNow" style="color:var(--red)">force refresh now</a></p>
+  <p class="refresh">Veriler sunucu tarafında ~10 dakikada bir yenileniyor · <a href="#" id="refreshNow" style="color:var(--red)">şimdi zorla yenile</a></p>
 </div>
 
-<div id="loading" style="display:none">Loading…</div>
+<div id="loading" style="display:none">Yükleniyor…</div>
 <div id="err"></div>
 
 <script>
@@ -110,28 +121,51 @@
 
   function rowsToTable(el, rows, opts){
     opts = opts || {};
-    if(!rows.length){ el.innerHTML = '<tr><td style="opacity:.5">No data yet</td></tr>'; return; }
+    if(!rows.length){ el.innerHTML = '<tr><td style="opacity:.5">Henüz veri yok</td></tr>'; return; }
     var max = Math.max.apply(null, rows.map(function(r){return r[1];}));
     el.innerHTML = rows.map(function(r){
-      var label = opts.flag ? (countryFlag(r[0]) + ' ' + r[0]) : (r[0] || '(unknown)');
+      var label = opts.flag ? (countryFlag(r[0]) + ' ' + r[0]) : (r[0] || '(bilinmiyor)');
       var pct = max ? Math.round((r[1]/max)*100) : 0;
-      return '<tr><td>'+label+(opts.bar? '<div class="bar" style="width:'+pct+'%"></div>':'')+'</td><td class="n">'+r[1].toLocaleString()+'</td></tr>';
+      return '<tr><td>'+label+(opts.bar? '<div class="bar" style="width:'+pct+'%"></div>':'')+'</td><td class="n">'+r[1].toLocaleString('tr-TR')+'</td></tr>';
+    }).join('');
+  }
+
+  function renderScrollDepth(el, scrollByPage, topPages){
+    var pageviews = {};
+    (topPages||[]).forEach(function(p){ pageviews[p[0]] = p[1]; });
+
+    var pages = Object.keys(scrollByPage||{});
+    if(!pages.length){ el.innerHTML = '<p style="opacity:.5;font-size:14px">Henüz veri yok</p>'; return; }
+
+    // En çok görüntülenen sayfalardan başlayarak sırala
+    pages.sort(function(a,b){ return (pageviews[b]||0) - (pageviews[a]||0); });
+
+    el.innerHTML = pages.map(function(page){
+      var m = scrollByPage[page] || {};
+      var total = pageviews[page] || 0;
+      var steps = [25,50,75,100].map(function(pct){
+        var count = m[String(pct)] || 0;
+        var ratio = total ? Math.round((count/total)*100) : 0;
+        return '<div class="scroll-step"><div class="pct">'+ratio+'%</div><div class="lbl2">'+pct+'\'e indi</div></div>';
+      }).join('');
+      return '<div class="scroll-page">'+(page||'/')+'</div><div class="scroll-steps">'+steps+'</div>';
     }).join('');
   }
 
   function render(d){
-    document.getElementById('cTotal').textContent = (d.total_pageviews||0).toLocaleString();
-    document.getElementById('cUniq').textContent = (d.unique_visitors||0).toLocaleString();
+    document.getElementById('cTotal').textContent = (d.total_pageviews||0).toLocaleString('tr-TR');
+    document.getElementById('cUniq').textContent = (d.unique_visitors||0).toLocaleString('tr-TR');
     var today = (d.last_days && d.last_days[0] && d.last_days[0][1]) || 0;
-    document.getElementById('cToday').textContent = today.toLocaleString();
+    document.getElementById('cToday').textContent = today.toLocaleString('tr-TR');
     document.getElementById('cCountries').textContent = (d.by_country||[]).length;
-    var freshness = d.cached ? ' (cached, updates every ~10 min)' : ' (just recalculated)';
-    document.getElementById('asOf').textContent = 'Updated ' + new Date().toLocaleTimeString() + freshness;
+    var freshness = d.cached ? ' (önbellekten, ~10 dakikada bir yenilenir)' : ' (az önce yeniden hesaplandı)';
+    document.getElementById('asOf').textContent = 'Güncellendi: ' + new Date().toLocaleTimeString('tr-TR') + freshness;
 
     rowsToTable(document.getElementById('tCountries'), (d.by_country||[]).slice(0,10), {flag:true, bar:true});
     rowsToTable(document.getElementById('tRefs'), d.top_referrers||[], {bar:true});
     rowsToTable(document.getElementById('tPages'), d.top_pages||[], {bar:true});
     rowsToTable(document.getElementById('tDays'), (d.last_days||[]).slice(0,14), {bar:true});
+    renderScrollDepth(document.getElementById('scrollDepth'), d.scroll_by_page, d.top_pages);
   }
 
   function load(key, forceRefresh){
@@ -156,10 +190,10 @@
           sessionStorage.removeItem(KEY_STORAGE);
           gate.style.display = 'block';
           dash.style.display = 'none';
-          document.getElementById('gateErr').textContent = 'Wrong key.';
+          document.getElementById('gateErr').textContent = 'Yanlış anahtar.';
         } else {
           errBox.style.display = 'block';
-          errBox.textContent = 'Could not load stats. Try refreshing.';
+          errBox.textContent = 'İstatistikler yüklenemedi. Yenilemeyi dene.';
         }
       });
   }
@@ -176,14 +210,12 @@
   document.getElementById('refreshNow').addEventListener('click', function(e){
     e.preventDefault();
     var key = sessionStorage.getItem(KEY_STORAGE);
-    if(key) load(key, true); // manual refresh bypasses the cache
+    if(key) load(key, true);
   });
 
   var saved = sessionStorage.getItem(KEY_STORAGE);
   if(saved){ load(saved, false); }
 
-  // Cheap: this just reads the KV cache (or triggers at most one recompute every ~10 min
-  // server-side), so polling every 5 minutes here stays well within Cloudflare's free KV quota.
   setInterval(function(){
     var key = sessionStorage.getItem(KEY_STORAGE);
     if(key && dash.style.display === 'block') load(key, false);

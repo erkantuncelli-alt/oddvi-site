@@ -180,7 +180,7 @@ async function handleAdminStats(url, env) {
       }
     }
 
-    const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays] = await Promise.all([
+    const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays, scrollRaw] = await Promise.all([
       env.LIKES.get('visit:total'),
       env.LIKES.get('visit:uniq_total'),
       listCounts(env, 'visit:country:'),
@@ -188,11 +188,23 @@ async function handleAdminStats(url, env) {
       listCounts(env, 'visit:page:'),
       listCounts(env, 'visit:ref:'),
       listCounts(env, 'visit:day:'),
-      listCounts(env, 'visit:uniq_day:')
+      listCounts(env, 'visit:uniq_day:'),
+      listCounts(env, 'stat:scroll:')
     ]);
 
     days.sort((a, b) => a[0] < b[0] ? 1 : -1); // most recent day first
     uniqDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
+
+    // scrollRaw entries look like ["/some-page:75", 12] — regroup by page.
+    const scrollByPage = {};
+    for (const [k, v] of scrollRaw) {
+      const idx = k.lastIndexOf(':');
+      if (idx === -1) continue;
+      const page = k.slice(0, idx);
+      const milestone = k.slice(idx + 1);
+      if (!scrollByPage[page]) scrollByPage[page] = {};
+      scrollByPage[page][milestone] = v;
+    }
 
     const data = {
       total_pageviews: parseInt(total || '0', 10) || 0,
@@ -203,6 +215,7 @@ async function handleAdminStats(url, env) {
       top_referrers: refs.slice(0, 20),
       last_days: days.slice(0, 30),
       unique_last_days: uniqDays.slice(0, 30),
+      scroll_by_page: scrollByPage,
       generated_at: new Date().toISOString()
     };
 
@@ -274,4 +287,4 @@ async function handleGetLikes(url, env) {
 }
 
 // Named exports (harmless for the Workers runtime; used by local tests).
-export { listCounts, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump };
+export { listCounts, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat };

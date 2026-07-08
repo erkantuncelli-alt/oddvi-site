@@ -447,3 +447,51 @@ Object.assign(window.I18N.dict.tr,{'cap.istanbul':"1. Peron. Yanlış tren, muht
 Object.assign(window.I18N.dict.de,{'cap.istanbul':"Gleis 1. Wohl der falsche Zug.",'cap.stayodd':"Stay odd. Logisch.",'cap.normal':"Normal ist langweilig.",'cap.oddparty':"Odd-Party. Weirdness mitbringen.",'cap.ukulele':"Schreibt ein Lied, das keiner wollte.",'cap.mic':"Open Mic, null Proben.",'cap.receipt':"Liest den Kassenzettel. Bereut.",'cap.freedom':"17 Uhr. Feierabend.",'cap.baking':"Schritt 4: Pizza bestellen.",'cap.library':"Drei Bücher offen, keins zu Ende.",'cap.veggies':"Isst gesund. Angeblich.",'cap.orb':"Befragt die Kugel."});
 Object.assign(window.I18N.dict.fr,{'cap.istanbul':"Quai 1. Mauvais train, sûrement.",'cap.stayodd':"Stay odd. Évidemment.",'cap.normal':"Le normal, c'est ennuyeux.",'cap.oddparty':"Odd party. Ramène ton grain de folie.",'cap.ukulele':"Écrit une chanson que personne n'a demandée.",'cap.mic':"Scène ouverte, zéro répétition.",'cap.receipt':"Lit le ticket. Le regrette.",'cap.freedom':"17 h. L'heure de la liberté.",'cap.baking':"Étape 4 : commander une pizza.",'cap.library':"Trois livres entamés, aucun fini.",'cap.veggies':"Mange sainement. Soi-disant.",'cap.orb':"Consulte la boule."});
 Object.assign(window.I18N.dict.hu,{'cap.istanbul':"1-es vágány. Rossz vonat, valószínűleg.",'cap.stayodd':"Maradj odd. Nyilván.",'cap.normal':"A normális unalmas.",'cap.oddparty':"Odd buli. Hozd a furaságod.",'cap.ukulele':"Olyan dalt ír, amit senki sem kért.",'cap.mic':"Nyílt mikrofon, nulla próba.",'cap.receipt':"Olvassa a blokkot. Megbánja.",'cap.freedom':"17 óra. A szabadság ideje.",'cap.baking':"4. lépés: rendelj pizzát.",'cap.library':"Három könyv félbehagyva.",'cap.veggies':"Egészségesen eszik. Állítólag.",'cap.orb':"Megkérdezi a gömböt."});
+
+/* ---- Scroll-depth tracking (anonymous, aggregate-only, sitewide) ---- */
+(function(){
+  if (window.__ODDVI_SCROLL_TRACK__) return; // avoid double-init if script runs twice
+  window.__ODDVI_SCROLL_TRACK__ = true;
+
+  var MILESTONES = [25, 50, 75, 100];
+  var sent = {};
+  var path = (location.pathname.replace(/\/+$/, '') || '/');
+
+  // Skip the private admin dashboard itself — no point tracking scroll there.
+  if (path === '/admin-stats.html' || path === '/admin-stats') return;
+
+  function send(pct){
+    if (sent[pct]) return;
+    sent[pct] = true;
+    var name = 'scroll:' + path + ':' + pct;
+    var body = JSON.stringify({ name: name });
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('/api/stat', new Blob([body], { type: 'application/json' }));
+      } else {
+        fetch('/api/stat', { method: 'POST', body: body, headers: { 'Content-Type': 'application/json' }, keepalive: true });
+      }
+    } catch (e) { /* never let analytics break the page */ }
+  }
+
+  var ticking = false;
+  function check(){
+    ticking = false;
+    var doc = document.documentElement;
+    var scrollTop = window.pageYOffset || doc.scrollTop || 0;
+    var viewport = window.innerHeight || doc.clientHeight;
+    var full = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+    if (full <= viewport) { send(100); return; } // page shorter than one screen
+    var pct = Math.round(((scrollTop + viewport) / full) * 100);
+    MILESTONES.forEach(function(m){ if (pct >= m) send(m); });
+  }
+
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(check); }
+  }, { passive: true });
+
+  window.addEventListener('load', function(){ setTimeout(check, 800); });
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'hidden') check();
+  });
+})();
