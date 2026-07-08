@@ -2108,6 +2108,196 @@
           "fashion"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/01-i-love-you.jpg",
+      "en": "I Love You",
+      "tr": "Seni Seviyorum",
+      "de": "Ich Liebe Dich",
+      "fr": "Je T'aime",
+      "hu": "Szeretlek",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/02-you-make-me-crazy.jpg",
+      "en": "You Make Me Crazy",
+      "tr": "Beni Çıldırtıyorsun",
+      "de": "Du Machst Mich Verrückt",
+      "fr": "Tu Me Rends Fou",
+      "hu": "Megőrjítesz",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/03-you-are-special-to-me.jpg",
+      "en": "You Are Special To Me",
+      "tr": "Benim İçin Özelsin",
+      "de": "Du Bist Mir Wichtig",
+      "fr": "Tu Es Spécial Pour Moi",
+      "hu": "Különleges Vagy Nekem",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/04-completely-in-love.jpg",
+      "en": "Completely In Love With You",
+      "tr": "Sana Tamamen Aşığım",
+      "de": "Total In Dich Verliebt",
+      "fr": "Complètement Amoureux De Toi",
+      "hu": "Teljesen Beléd Szerettem",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/05-you-plus-me-perfect.jpg",
+      "en": "You + Me = Perfect",
+      "tr": "Sen + Ben = Mükemmel",
+      "de": "Du + Ich = Perfekt",
+      "fr": "Toi + Moi = Parfait",
+      "hu": "Te + Én = Tökéletes",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/06-lots-of-kisses.jpg",
+      "en": "Lots Of Kisses For You",
+      "tr": "Sana Bir Sürü Öpücük",
+      "de": "Ganz Viele Küsse Für Dich",
+      "fr": "Plein De Bisous Pour Toi",
+      "hu": "Sok Puszi Neked",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/07-just-you-always-you.jpg",
+      "en": "Just You, Always You",
+      "tr": "Sadece Sen, Hep Sen",
+      "de": "Nur Du, Immer Du",
+      "fr": "Juste Toi, Toujours Toi",
+      "hu": "Csak Te, Mindig Te",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/08-you-are-in-my-heart.jpg",
+      "en": "You Are In My Heart",
+      "tr": "Kalbimdesin",
+      "de": "Du Bist In Meinem Herzen",
+      "fr": "Tu Es Dans Mon Cœur",
+      "hu": "A Szívemben Vagy",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/09-with-you-everything-perfect.jpg",
+      "en": "With You, Everything Is Perfect",
+      "tr": "Seninle Her Şey Mükemmel",
+      "de": "Mit Dir Ist Alles Perfekt",
+      "fr": "Avec Toi, Tout Est Parfait",
+      "hu": "Veled Minden Tökéletes",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/10-you-are-my-favorite-person.jpg",
+      "en": "You Are My Favorite Person",
+      "tr": "Sen Benim Favori İnsanımsın",
+      "de": "Du Bist Mein Lieblingsmensch",
+      "fr": "Tu Es Ma Personne Préférée",
+      "hu": "Te Vagy A Kedvenc Emberem",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     }
   ]
 }
