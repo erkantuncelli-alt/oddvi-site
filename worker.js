@@ -117,24 +117,51 @@ async function trackVisit(request, env, url, country) {
   const visitorHash = (await sha256Hex(ip + '|' + ua + '|' + day)).slice(0, 24);
   const seenKey = 'visit:seen:' + day + ':' + visitorHash;
 
-  const alreadySeenToday = await env.LIKES.get(seenKey);
-
-  await Promise.all([
-    bump(env, 'visit:total'),
-    bump(env, 'visit:day:' + day),
-    bump(env, 'visit:country:' + country2),
-    bump(env, 'visit:page:' + path),
-    bump(env, 'visit:ref:' + ref),
-    alreadySeenToday ? Promise.resolve() : env.LIKES.put(seenKey, '1', { expirationTtl: 60 * 60 * 30 })
+  // One key per day holds everything (total, unique, countries, pages, referrers) as a single
+  // JSON blob. This keeps KV writes to ~1-2 per visit instead of 5-9, which matters a lot on
+  // Cloudflare's free-tier daily put() quota.
+  const dailyKey = 'visit:daily:' + day;
+  const [alreadySeenToday, rawDaily] = await Promise.all([
+    env.LIKES.get(seenKey),
+    env.LIKES.get(dailyKey)
   ]);
 
+  let data;
+  try { data = rawDaily ? JSON.parse(rawDaily) : null; } catch (e) { data = null; }
+  if (!data) data = { total: 0, uniq: 0, countries: {}, pages: {}, refs: {} };
+
+  data.total += 1;
+  data.countries[country2] = (data.countries[country2] || 0) + 1;
+  data.pages[path] = (data.pages[path] || 0) + 1;
+  data.refs[ref] = (data.refs[ref] || 0) + 1;
+  if (!alreadySeenToday) data.uniq += 1;
+
+  const writes = [env.LIKES.put(dailyKey, JSON.stringify(data))];
   if (!alreadySeenToday) {
-    await Promise.all([
-      bump(env, 'visit:uniq_total'),
-      bump(env, 'visit:uniq_day:' + day),
-      bump(env, 'visit:uniq_country:' + country2)
-    ]);
+    writes.push(env.LIKES.put(seenKey, '1', { expirationTtl: 60 * 60 * 30 }));
   }
+  await Promise.all(writes);
+}
+
+async function listDailyBlobs(env, prefix) {
+  const names = [];
+  let cursor;
+  for (;;) {
+    const opts = { prefix, limit: 1000 };
+    if (cursor) opts.cursor = cursor;
+    const page = await env.LIKES.list(opts);
+    for (const k of page.keys) names.push(k.name);
+    if (page.list_complete) break;
+    if (!page.cursor) break;
+    cursor = page.cursor;
+  }
+  const entries = await Promise.all(names.map(async (name) => {
+    const raw = await env.LIKES.get(name);
+    let data = null;
+    try { data = raw ? JSON.parse(raw) : null; } catch (e) { data = null; }
+    return { day: name.slice(prefix.length), data };
+  }));
+  return entries.filter(e => e.data);
 }
 
 async function listCounts(env, prefix, limit = 1000) {
@@ -180,22 +207,27 @@ async function handleAdminStats(url, env) {
       }
     }
 
-    const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays, scrollRaw, downloadsRaw, submitsRaw] = await Promise.all([
-      env.LIKES.get('visit:total'),
-      env.LIKES.get('visit:uniq_total'),
-      listCounts(env, 'visit:country:'),
-      listCounts(env, 'visit:uniq_country:'),
-      listCounts(env, 'visit:page:'),
-      listCounts(env, 'visit:ref:'),
-      listCounts(env, 'visit:day:'),
-      listCounts(env, 'visit:uniq_day:'),
+    const [dailyBlobs, scrollRaw, downloadsRaw, submitsRaw] = await Promise.all([
+      listDailyBlobs(env, 'visit:daily:'),
       listCounts(env, 'stat:scroll:'),
       listCounts(env, 'stat:download:'),
       listCounts(env, 'stat:submit:')
     ]);
 
-    days.sort((a, b) => a[0] < b[0] ? 1 : -1); // most recent day first
-    uniqDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
+    let totalPageviews = 0, totalUniq = 0;
+    const countryTotals = {}, pageTotals = {}, refTotals = {};
+    const lastDays = [];
+    for (const { day, data: d } of dailyBlobs) {
+      totalPageviews += d.total || 0;
+      totalUniq += d.uniq || 0;
+      lastDays.push([day, d.total || 0]);
+      for (const [k, v] of Object.entries(d.countries || {})) countryTotals[k] = (countryTotals[k] || 0) + v;
+      for (const [k, v] of Object.entries(d.pages || {})) pageTotals[k] = (pageTotals[k] || 0) + v;
+      for (const [k, v] of Object.entries(d.refs || {})) refTotals[k] = (refTotals[k] || 0) + v;
+    }
+    lastDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
+    const toSortedEntries = (obj) => Object.entries(obj).sort((a, b) => b[1] - a[1]);
+
     downloadsRaw.sort((a, b) => b[1] - a[1]);
     submitsRaw.sort((a, b) => b[1] - a[1]);
 
@@ -214,14 +246,12 @@ async function handleAdminStats(url, env) {
     const submitsTotal = submitsRaw.reduce((sum, [, v]) => sum + v, 0);
 
     const data = {
-      total_pageviews: parseInt(total || '0', 10) || 0,
-      unique_visitors: parseInt(uniqTotal || '0', 10) || 0,
-      by_country: countries,
-      unique_by_country: uniqCountries,
-      top_pages: pages.slice(0, 20),
-      top_referrers: refs.slice(0, 20),
-      last_days: days.slice(0, 30),
-      unique_last_days: uniqDays.slice(0, 30),
+      total_pageviews: totalPageviews,
+      unique_visitors: totalUniq,
+      by_country: toSortedEntries(countryTotals),
+      top_pages: toSortedEntries(pageTotals).slice(0, 20),
+      top_referrers: toSortedEntries(refTotals).slice(0, 20),
+      last_days: lastDays.slice(0, 30),
       scroll_by_page: scrollByPage,
       downloads_total: downloadsTotal,
       downloads_by_item: downloadsRaw.slice(0, 30),
@@ -298,4 +328,4 @@ async function handleGetLikes(url, env) {
 }
 
 // Named exports (harmless for the Workers runtime; used by local tests).
-export { listCounts, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat };
+export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat };
