@@ -266,6 +266,7 @@
           statusEl.textContent = D()['share.ok']||"Thanks — we'll take a look!";
           msgEl.value = ""; nameEl.value = ""; topicEl.value = ""; resetPhoto();
           if(consentEl) consentEl.checked = false;
+          fetch('/api/stat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name:'submit:share-odd'})}).catch(function(){});
         } else {
           statusEl.textContent = D()['share.err']||"Try again?";
         }

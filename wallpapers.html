@@ -246,6 +246,13 @@
       var niceName = "Oddvi-Wallpaper-" + (vol?vol.en.replace(/[^a-z0-9]+/ig,''):'') + "-" + it.id + "-" + titleOf(it,'en').replace(/[^a-z0-9]+/ig,'-').replace(/^-+|-+$/g,'') + ".png";
       a.setAttribute('download', niceName);
       document.getElementById("dDownloadLabel").textContent = t.dl;
+      a.onclick = function(){
+        try {
+          var body = JSON.stringify({ name: 'download:wallpaper:' + (vol?vol.id:'?') + ':' + it.id });
+          if (navigator.sendBeacon) { navigator.sendBeacon('/api/stat', new Blob([body], {type:'application/json'})); }
+          else { fetch('/api/stat', {method:'POST', headers:{'Content-Type':'application/json'}, body: body, keepalive:true}); }
+        } catch(e){}
+      };
     }
 
     function route(){

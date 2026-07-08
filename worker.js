@@ -180,7 +180,7 @@ async function handleAdminStats(url, env) {
       }
     }
 
-    const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays, scrollRaw] = await Promise.all([
+    const [total, uniqTotal, countries, uniqCountries, pages, refs, days, uniqDays, scrollRaw, downloadsRaw, submitsRaw] = await Promise.all([
       env.LIKES.get('visit:total'),
       env.LIKES.get('visit:uniq_total'),
       listCounts(env, 'visit:country:'),
@@ -189,11 +189,15 @@ async function handleAdminStats(url, env) {
       listCounts(env, 'visit:ref:'),
       listCounts(env, 'visit:day:'),
       listCounts(env, 'visit:uniq_day:'),
-      listCounts(env, 'stat:scroll:')
+      listCounts(env, 'stat:scroll:'),
+      listCounts(env, 'stat:download:'),
+      listCounts(env, 'stat:submit:')
     ]);
 
     days.sort((a, b) => a[0] < b[0] ? 1 : -1); // most recent day first
     uniqDays.sort((a, b) => a[0] < b[0] ? 1 : -1);
+    downloadsRaw.sort((a, b) => b[1] - a[1]);
+    submitsRaw.sort((a, b) => b[1] - a[1]);
 
     // scrollRaw entries look like ["/some-page:75", 12] — regroup by page.
     const scrollByPage = {};
@@ -206,6 +210,9 @@ async function handleAdminStats(url, env) {
       scrollByPage[page][milestone] = v;
     }
 
+    const downloadsTotal = downloadsRaw.reduce((sum, [, v]) => sum + v, 0);
+    const submitsTotal = submitsRaw.reduce((sum, [, v]) => sum + v, 0);
+
     const data = {
       total_pageviews: parseInt(total || '0', 10) || 0,
       unique_visitors: parseInt(uniqTotal || '0', 10) || 0,
@@ -216,6 +223,10 @@ async function handleAdminStats(url, env) {
       last_days: days.slice(0, 30),
       unique_last_days: uniqDays.slice(0, 30),
       scroll_by_page: scrollByPage,
+      downloads_total: downloadsTotal,
+      downloads_by_item: downloadsRaw.slice(0, 30),
+      submits_total: submitsTotal,
+      submits_by_type: submitsRaw.slice(0, 10),
       generated_at: new Date().toISOString()
     };
 

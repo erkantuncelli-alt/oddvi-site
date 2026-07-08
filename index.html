@@ -533,6 +533,7 @@
         if (res.ok) {
           msg.textContent = D['sign.ok']||"You're in!";
           input.value = "";
+          fetch('/api/stat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name:'submit:email-signup'})}).catch(function(){});
         } else {
           msg.textContent = D['sign.err']||"Try again?";
         }

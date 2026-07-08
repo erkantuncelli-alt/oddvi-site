@@ -71,6 +71,8 @@
     <div class="card"><div class="num" id="cUniq">–</div><div class="lbl">Tekil Ziyaretçi (yaklaşık)</div></div>
     <div class="card"><div class="num" id="cToday">–</div><div class="lbl">Bugünkü Görüntülenme</div></div>
     <div class="card"><div class="num" id="cCountries">–</div><div class="lbl">Ulaşılan Ülke</div></div>
+    <div class="card"><div class="num" id="cDownloads">–</div><div class="lbl">Toplam İndirme</div></div>
+    <div class="card"><div class="num" id="cSubmits">–</div><div class="lbl">Toplam Gönderim</div></div>
   </div>
 
   <div class="grid2">
@@ -81,6 +83,17 @@
     <section>
       <h2>🔗 En Çok Gelinen Kaynaklar</h2>
       <table id="tRefs"></table>
+    </section>
+  </div>
+
+  <div class="grid2">
+    <section>
+      <h2>⬇️ En Çok İndirilen Wallpaper'lar</h2>
+      <table id="tDownloads"></table>
+    </section>
+    <section>
+      <h2>✉️ Gönderim Türleri (Share Your Odd / Email Kayıt)</h2>
+      <table id="tSubmits"></table>
     </section>
   </div>
 
@@ -158,6 +171,8 @@
     var today = (d.last_days && d.last_days[0] && d.last_days[0][1]) || 0;
     document.getElementById('cToday').textContent = today.toLocaleString('tr-TR');
     document.getElementById('cCountries').textContent = (d.by_country||[]).length;
+    document.getElementById('cDownloads').textContent = (d.downloads_total||0).toLocaleString('tr-TR');
+    document.getElementById('cSubmits').textContent = (d.submits_total||0).toLocaleString('tr-TR');
     var freshness = d.cached ? ' (önbellekten, ~10 dakikada bir yenilenir)' : ' (az önce yeniden hesaplandı)';
     document.getElementById('asOf').textContent = 'Güncellendi: ' + new Date().toLocaleTimeString('tr-TR') + freshness;
 
@@ -166,6 +181,16 @@
     rowsToTable(document.getElementById('tPages'), d.top_pages||[], {bar:true});
     rowsToTable(document.getElementById('tDays'), (d.last_days||[]).slice(0,14), {bar:true});
     renderScrollDepth(document.getElementById('scrollDepth'), d.scroll_by_page, d.top_pages);
+
+    var dlRows = (d.downloads_by_item||[]).map(function(r){
+      var label = r[0].replace(/^wallpaper:/, '').replace(/:/g, ' · ');
+      return [label, r[1]];
+    });
+    rowsToTable(document.getElementById('tDownloads'), dlRows, {bar:true});
+
+    var subLabels = {'share-odd':'Share Your Odd formu', 'email-signup':'Email kaydı'};
+    var subRows = (d.submits_by_type||[]).map(function(r){ return [subLabels[r[0]]||r[0], r[1]]; });
+    rowsToTable(document.getElementById('tSubmits'), subRows, {bar:true});
   }
 
   function load(key, forceRefresh){
