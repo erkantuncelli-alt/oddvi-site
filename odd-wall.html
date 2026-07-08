@@ -83,6 +83,27 @@
   .sharer-chip .rank{font-family:var(--font-disp);font-weight:800;color:var(--red)}
   .sharer-chip .count{opacity:.55;font-weight:600;font-size:12px}
 
+  /* Share Your Odd — form (moved here from the homepage) */
+  .share-toggle-wrap{padding:8px 0 10px}
+  .share-toggle{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:12px;padding:12px 20px;font-family:var(--font-disp);font-weight:800;font-size:15px;cursor:pointer;box-shadow:4px 4px 0 var(--red);transition:transform .12s,box-shadow .12s}
+  .share-toggle:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--red)}
+  #shareFormWrap{display:none;margin-top:20px;max-width:560px}
+  #shareFormWrap.open{display:block}
+  .odd-form{display:flex;flex-direction:column;gap:12px;background:var(--card);border:3px solid var(--ink);border-radius:16px;padding:22px;box-shadow:6px 6px 0 var(--ink)}
+  .odd-form input[type=text], .odd-form textarea{font-family:var(--font-body);font-size:15px;padding:12px 14px;border:2.5px solid var(--ink);border-radius:10px;background:var(--paper);resize:vertical}
+  .odd-form textarea{min-height:90px}
+  .odd-photo-label{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;cursor:pointer;border:2.5px dashed var(--ink);border-radius:10px;padding:10px 14px;width:fit-content}
+  .odd-photo-preview{display:inline-flex;align-items:center;gap:10px}
+  .odd-photo-preview img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:2px solid var(--ink)}
+  .odd-photo-preview button{border:none;background:var(--red);color:#fff;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:12px;line-height:1}
+  .odd-consent{display:flex;align-items:flex-start;gap:8px;font-size:13px;opacity:.8;font-weight:500;line-height:1.4}
+  .odd-consent input{margin-top:3px}
+  .btn-primary{background:var(--red);color:#fff;border:2.5px solid var(--ink);border-radius:10px;padding:12px 20px;font-family:var(--font-disp);font-weight:800;font-size:15px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s;align-self:flex-start}
+  .btn-primary:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .form-msg{font-size:13px;font-weight:700;min-height:18px}
+  .odd-takedown{font-size:12px;opacity:.6;margin-top:2px}
+  .odd-takedown a{color:var(--red-deep);font-weight:700}
+
   footer{padding:40px 0;background:var(--ink);color:var(--paper);text-align:center;font-size:14px}
   footer a{font-weight:700;text-decoration:none;color:var(--red-deep)}
 
@@ -120,6 +141,34 @@
 </div>
 
 <div class="wrap">
+  <div class="share-toggle-wrap">
+    <button class="share-toggle" id="shareToggleBtn" data-i18n="share.btn2" aria-expanded="false">✏️ Share Your Odd</button>
+    <div id="shareFormWrap">
+      <div class="odd-form">
+        <p style="font-weight:700;font-size:15px" data-i18n="share.p">Tell us the weird little thing that makes you, you. We read every one — the best get featured right here.</p>
+        <input id="oddTopic" type="text" class="odd-name" maxlength="60" data-i18n-ph="share.topicPh" placeholder="Give it a title..." />
+        <textarea id="oddMsg" maxlength="180" data-i18n-ph="share.ph" placeholder="I always..."></textarea>
+        <input id="oddName" type="text" class="odd-name" maxlength="40" data-i18n-ph="share.namePh" placeholder="Your name (optional)" />
+        <label class="odd-photo-label" for="oddPhoto">
+          <input id="oddPhoto" type="file" accept="image/*" style="display:none" />
+          <span data-i18n="share.photoBtn">📷 Add a photo (optional)</span>
+        </label>
+        <div id="oddPhotoPreview" class="odd-photo-preview" style="display:none">
+          <img id="oddPhotoImg" alt="" />
+          <button type="button" id="oddPhotoRemove" aria-label="Remove photo">✕</button>
+        </div>
+        <div class="form-msg" id="oddPhotoMsg" role="status" style="min-height:0"></div>
+        <label class="odd-consent">
+          <input type="checkbox" id="oddConsent" />
+          <span data-i18n="share.consent">I confirm this is mine to share (including any photo) and I'm okay with it being shown publicly on the Oddvi site and social media.</span>
+        </label>
+        <input id="oddWebsite" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+        <button class="btn-primary" id="oddShareBtn" data-i18n="share.btn">Share it</button>
+        <div class="form-msg" id="oddShareMsg" role="status"></div>
+        <p class="odd-takedown" data-i18n-html="share.takedown">Want something you shared taken down? <a href="https://instagram.com/theoddvi" target="_blank" rel="noopener">DM us</a> and we'll remove it.</p>
+      </div>
+    </div>
+  </div>
   <div class="top-sharers" id="topSharers"></div>
   <div class="wall-grid" id="wallGrid"></div>
 </div>
@@ -132,6 +181,102 @@
 
 <script src="i18n.js"></script>
 <script src="streak.js"></script>
+<script>
+  /* Share Your Odd — toggle + submit (moved here from the homepage) */
+  (function(){
+    var toggleBtn = document.getElementById('shareToggleBtn'), formWrap = document.getElementById('shareFormWrap');
+    if(toggleBtn){
+      toggleBtn.addEventListener('click', function(){
+        var open = formWrap.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', open ? 'true':'false');
+        if(open){ document.getElementById('oddTopic').focus(); }
+      });
+    }
+    if(location.hash === '#share' && formWrap){ formWrap.classList.add('open'); toggleBtn.setAttribute('aria-expanded','true'); }
+
+    function D(){ return (window.I18N && window.I18N.dict[document.documentElement.lang||'en']) || {}; }
+    const WEBHOOK_URL = 'https://tuzwzs6k.rpcld.app/webhook/oddvi-share-odd';
+    const btn=document.getElementById('oddShareBtn'), msgEl=document.getElementById('oddMsg'),
+          topicEl=document.getElementById('oddTopic'), nameEl=document.getElementById('oddName'),
+          honeypot=document.getElementById('oddWebsite'), statusEl=document.getElementById('oddShareMsg'),
+          photoInput=document.getElementById('oddPhoto'), photoPreview=document.getElementById('oddPhotoPreview'),
+          photoImg=document.getElementById('oddPhotoImg'), photoRemove=document.getElementById('oddPhotoRemove'),
+          photoMsg=document.getElementById('oddPhotoMsg'), consentEl=document.getElementById('oddConsent');
+    if(!btn) return;
+    function curLang(){return document.documentElement.lang || localStorage.getItem('oddvi_lang') || 'en';}
+    let sending = false;
+    let photoDataUrl = null;
+
+    function resetPhoto(){
+      photoDataUrl = null;
+      if(photoInput) photoInput.value = '';
+      if(photoPreview) photoPreview.style.display = 'none';
+      if(photoMsg) photoMsg.textContent = '';
+    }
+
+    if (photoInput) {
+      photoInput.addEventListener('change', function(){
+        const file = photoInput.files && photoInput.files[0];
+        if(!file) return;
+        if(!file.type.startsWith('image/')){ photoMsg.textContent = D()['share.photoErr']||"That doesn't look like an image."; photoInput.value=''; return; }
+        if(file.size > 10*1024*1024){ photoMsg.textContent = D()['share.photoTooBig']||"That photo's a bit too big (max 10MB)."; photoInput.value=''; return; }
+        photoMsg.textContent = '';
+        const reader = new FileReader();
+        reader.onload = function(e){
+          const imgEl = new Image();
+          imgEl.onload = function(){
+            const maxDim = 1000;
+            let w = imgEl.width, h = imgEl.height;
+            if (w > maxDim || h > maxDim) {
+              const scale = maxDim / Math.max(w,h);
+              w = Math.round(w*scale); h = Math.round(h*scale);
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w; canvas.height = h;
+            canvas.getContext('2d').drawImage(imgEl, 0, 0, w, h);
+            photoDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+            photoImg.src = photoDataUrl;
+            photoPreview.style.display = 'inline-flex';
+          };
+          imgEl.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+    if (photoRemove) photoRemove.addEventListener('click', resetPhoto);
+
+    btn.addEventListener('click', async ()=>{
+      if (sending) return;
+      const message = msgEl.value.trim(), name = nameEl.value.trim(), topic = topicEl.value.trim();
+      if (honeypot && honeypot.value) { return; }
+      if(!topic || !message){ statusEl.textContent = D()['share.err']||"Try again?"; return; }
+      if(consentEl && !consentEl.checked){ statusEl.textContent = D()['share.consentErr']||"Please confirm the checkbox first."; return; }
+
+      sending = true;
+      const originalLabel = btn.textContent;
+      btn.disabled = true; btn.textContent = '…'; statusEl.textContent = '';
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic: topic, message: message, name: name, lang: curLang(), photo: photoDataUrl || undefined })
+        });
+        if (res.ok) {
+          statusEl.textContent = D()['share.ok']||"Thanks — we'll take a look!";
+          msgEl.value = ""; nameEl.value = ""; topicEl.value = ""; resetPhoto();
+          if(consentEl) consentEl.checked = false;
+        } else {
+          statusEl.textContent = D()['share.err']||"Try again?";
+        }
+      } catch (e) {
+        statusEl.textContent = D()['share.err']||"Try again?";
+      } finally {
+        sending = false; btn.disabled = false; btn.textContent = originalLabel;
+      }
+    });
+  })();
+</script>
 <script>
   (function(){
     var grid = document.getElementById('wallGrid'); if(!grid) return;
