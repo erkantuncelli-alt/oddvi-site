@@ -76,7 +76,12 @@ export default {
     // Fire-and-forget visit tracking; never blocks or breaks the page response.
     ctx.waitUntil(trackVisit(request, env, url, country).catch(() => {}));
 
-    return new HTMLRewriter().on('head', new GeoLangInjector(lang)).transform(response);
+    const transformed = new HTMLRewriter().on('head', new GeoLangInjector(lang)).transform(response);
+    // Force every visit to hit the worker (no browser-cache shortcuts) so pageview counts and
+    // client-side scroll-depth beacons never fall out of sync with each other.
+    const headers = new Headers(transformed.headers);
+    headers.set('Cache-Control', 'no-store');
+    return new Response(transformed.body, { status: transformed.status, statusText: transformed.statusText, headers });
   }
 };
 

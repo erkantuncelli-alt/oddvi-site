@@ -158,7 +158,7 @@
       var total = pageviews[page] || 0;
       var steps = [25,50,75,100].map(function(pct){
         var count = m[String(pct)] || 0;
-        var ratio = total ? Math.round((count/total)*100) : 0;
+        var ratio = total ? Math.min(100, Math.round((count/total)*100)) : 0;
         return '<div class="scroll-step"><div class="pct">'+ratio+'%</div><div class="lbl2">'+pct+'\'e indi</div></div>';
       }).join('');
       return '<div class="scroll-page">'+(page||'/')+'</div><div class="scroll-steps">'+steps+'</div>';
