@@ -261,6 +261,9 @@
   .connect-card:nth-child(3) .btn-primary{background:var(--yellow);color:var(--ink)}
   .connect-card:nth-child(3) .btn-primary:hover{background:var(--yellow-deep)}
   .connect-card .odd-feed-link{display:block;margin-top:14px;font-weight:700;font-size:13px;text-decoration:underline;opacity:.85;color:#fff}
+  .mini-thumbs{display:flex;align-items:center;margin:14px 0 4px}
+  .mini-thumbs img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2.5px solid #fff;box-shadow:0 0 0 1.5px var(--ink);margin-right:-12px;background:#ddd}
+  .mini-thumbs .mini-thumbs-label{margin-left:18px;font-size:12px;font-weight:700;opacity:.85}
   .connect-card-signup .form{display:flex;flex-direction:column;gap:10px;max-width:none;margin:16px 0 0}
   .connect-card-signup .form input{padding:12px 16px;border-radius:10px;font-size:15px;font-family:var(--font-body);border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
   .connect-card-signup .form input:focus{outline:none}
@@ -419,6 +422,7 @@
         <span class="kicker" data-i18n="share.kicker">Your turn</span>
         <h3 data-i18n="share.h2">Share Your Odd.</h3>
         <p data-i18n="share.p">Tell us the weird little thing that makes you, you. We read every one — the best get featured right here.</p>
+        <div class="mini-thumbs" id="miniThumbs"></div>
         <a href="odd-wall.html#share" class="btn btn-primary" data-i18n="share.btn2">✏️ Share Your Odd</a>
         <a href="odd-wall.html" class="odd-feed-link" data-i18n="share.seeAll">See every Odd, ranked by likes →</a>
       </div>
@@ -503,6 +507,25 @@
       frame.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg) translateZ(0)`;
     });
     fig.addEventListener('mouseleave', ()=>{ frame.style.transform=''; });
+  })();
+
+  /* Share Your Odd kartı — küçük fotoğraf önizlemeleri (odds.json'dan) */
+  (function(){
+    var el = document.getElementById('miniThumbs');
+    if(!el) return;
+    fetch('/odds.json?t='+Date.now())
+      .then(function(r){ return r.ok ? r.json() : {items:[]}; })
+      .then(function(d){
+        var items = ((d&&d.items)?d.items:[]).filter(function(it){ return it.photo; });
+        if(!items.length){ return; }
+        // shuffle then take up to 4
+        for(var i=items.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=items[i]; items[i]=items[j]; items[j]=t; }
+        var subset = items.slice(0,4);
+        el.innerHTML = subset.map(function(it){
+          return '<img src="'+it.photo+'" alt="" loading="lazy" />';
+        }).join('');
+      })
+      .catch(function(){});
   })();
 
   /* Email — gerçek n8n webhook'una POST atar */
