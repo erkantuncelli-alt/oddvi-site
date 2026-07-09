@@ -187,6 +187,13 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    if (url.pathname === '/api/probe') {
+      let dictOk = false, deKeys = 0, matchResult = null, matchErr = null;
+      try { dictOk = !!dict && !!dict.en; deKeys = dict && dict.de ? Object.keys(dict.de).length : -1; } catch (e) { matchErr = 'dict:' + String(e); }
+      try { matchResult = matchLocalizedPath('/de/'); } catch (e) { matchErr = (matchErr ? matchErr + ' | ' : '') + 'match:' + String(e && e.stack || e); }
+      return json({ pathname: url.pathname, dictOk, deKeys, matchResult, matchErr, workerVersion: 'probe-v1' });
+    }
+
     if (request.method === 'OPTIONS' && url.pathname.startsWith('/api/')) {
       return new Response(null, { headers: CORS_HEADERS });
     }
