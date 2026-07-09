@@ -4,11 +4,16 @@
  * - /api/likes        (GET ?ids=a,b,c)   → returns current counts for a batch of ids
  * - /api/stat, /api/stats                → generic named counters (e.g. odd-test completions)
  * - /api/admin-stats   (GET ?key=SECRET) → private visit analytics, requires env.ADMIN_KEY
+ * - /tr/ /de/ /fr/ /hu/ (index.html, wallpapers.html only) → fully server-rendered translated
+ *                                           HTML (real crawlable pages, not JS-only switching),
+ *                                           with hreflang + canonical tags for international SEO
  * - everything else                      → served as-is from the static assets, with the visitor's
  *                                           Cloudflare-detected country injected so the page can
  *                                           open in the matching language automatically, and a
  *                                           lightweight anonymous visit counter recorded in KV
  */
+
+import { dict } from './i18n-dict.js';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -24,6 +29,31 @@ const COUNTRY_LANG = {
   HU: 'hu'
 };
 
+const SITE_ORIGIN = 'https://theoddvi.com';
+const LOCALIZABLE_LANGS = ['tr', 'de', 'fr', 'hu']; // en = default, lives at the un-prefixed URL
+const ALL_LANGS = ['en', 'tr', 'de', 'fr', 'hu'];
+// Pages we fully server-render translations for. Add more page keys here as this rolls out further.
+const LOCALIZABLE_PAGES = ['index.html', 'wallpapers.html'];
+
+// Per-page <title>/<meta description> translations. Everything else on the page is translated via
+// the shared data-i18n dictionary (i18n-dict.js), same one the client-side switcher uses.
+const PAGE_META = {
+  'index.html': {
+    en: { title: "Oddvi — What's your Odd?", description: "Meet Oddvi. Normal is everywhere, Odd is remembered. The mascot of Pardon My Odd — coming soon." },
+    tr: { title: "Oddvi — Senin Odd'un Ne?", description: "Oddvi ile tanış. Normal her yerde, Odd akılda kalır. Pardon My Odd'un maskotu — yakında geliyor." },
+    de: { title: "Oddvi — Was Ist Dein Odd?", description: "Lerne Oddvi kennen. Normal ist überall, Odd bleibt in Erinnerung. Das Maskottchen von Pardon My Odd — bald verfügbar." },
+    fr: { title: "Oddvi — C'est Quoi Ton Odd ?", description: "Découvre Oddvi. Normal est partout, Odd on s'en souvient. La mascotte de Pardon My Odd — bientôt disponible." },
+    hu: { title: "Oddvi — Mi A Te Oddod?", description: "Ismerd meg Oddvit. A normális mindenhol ott van, az Odd megmarad. A Pardon My Odd kabalája — hamarosan." }
+  },
+  'wallpapers.html': {
+    en: { title: "Wallpaper Club — Oddvi", description: "Free Oddvi phone wallpapers. Stay odd, one lock screen at a time." },
+    tr: { title: "Wallpaper Club — Oddvi", description: "Ücretsiz Oddvi telefon duvar kağıtları. Her kilit ekranında biraz Odd kal." },
+    de: { title: "Wallpaper Club — Oddvi", description: "Kostenlose Oddvi-Handy-Wallpaper. Bleib odd, ein Sperrbildschirm nach dem anderen." },
+    fr: { title: "Wallpaper Club — Oddvi", description: "Fonds d'écran Oddvi gratuits. Reste odd, un écran verrouillé à la fois." },
+    hu: { title: "Wallpaper Club — Oddvi", description: "Ingyenes Oddvi háttérképek. Maradj odd minden zárolt képernyőn." }
+  }
+};
+
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status,
@@ -31,11 +61,108 @@ function json(obj, status = 200) {
   });
 }
 
+// pathname for a given page+lang, matching our /xx/ prefix scheme. English = no prefix.
+function localizedUrl(page, lang) {
+  const slug = page === 'index.html' ? '' : page;
+  return lang === 'en' ? `${SITE_ORIGIN}/${slug}` : `${SITE_ORIGIN}/${lang}/${slug}`;
+}
+
+function buildHreflangHtml(page) {
+  const links = ALL_LANGS.map(l => `<link rel="alternate" hreflang="${l === 'en' ? 'en' : l}" href="${localizedUrl(page, l)}" />`).join('\n');
+  const xdefault = `<link rel="alternate" hreflang="x-default" href="${localizedUrl(page, 'en')}" />`;
+  const canonical = `<link rel="canonical" href="${localizedUrl(page, 'en')}" />`;
+  return `\n${canonical}\n${links}\n${xdefault}\n`;
+}
+
+function matchLocalizedPath(pathname) {
+  for (const lang of LOCALIZABLE_LANGS) {
+    if (pathname === '/' + lang || pathname === '/' + lang + '/') {
+      return { lang, page: 'index.html' };
+    }
+    const prefix = '/' + lang + '/';
+    if (pathname.startsWith(prefix)) {
+      const rest = pathname.slice(prefix.length);
+      if (rest === '' || rest === 'index.html') return { lang, page: 'index.html' };
+      if (LOCALIZABLE_PAGES.includes(rest)) return { lang, page: rest };
+    }
+  }
+  return null;
+}
+
 class GeoLangInjector {
   constructor(lang) { this.lang = lang; }
   element(el) {
     el.append(`<script>window.__ODDVI_GEO_LANG__=${JSON.stringify(this.lang)};</script>`, { html: true });
   }
+}
+
+class SeoHeadInjector {
+  constructor(html) { this.html = html; }
+  element(el) { el.append(this.html, { html: true }); }
+}
+
+class HtmlLangSetter {
+  constructor(lang) { this.lang = lang; }
+  element(el) { el.setAttribute('lang', this.lang); }
+}
+
+class TitleSetter {
+  constructor(text) { this.text = text; }
+  element(el) { if (this.text) el.setInnerContent(this.text, { html: false }); }
+}
+
+class MetaDescSetter {
+  constructor(text) { this.text = text; }
+  element(el) { if (this.text) el.setAttribute('content', this.text); }
+}
+
+// Mirrors the client-side apply() in i18n.js, but runs server-side so crawlers see real
+// translated HTML with zero JavaScript required.
+class I18nAttrSetter {
+  constructor(attr, langDict, fallbackDict, mode) {
+    this.attr = attr; this.d = langDict; this.f = fallbackDict; this.mode = mode; // mode: 'text' | 'html' | 'placeholder'
+  }
+  element(el) {
+    const key = el.getAttribute(this.attr);
+    if (!key) return;
+    const v = this.d[key] != null ? this.d[key] : this.f[key];
+    if (v == null) return;
+    if (this.mode === 'text') el.setInnerContent(v, { html: false });
+    else if (this.mode === 'html') el.setInnerContent(v, { html: true });
+    else if (this.mode === 'placeholder') el.setAttribute('placeholder', v);
+  }
+}
+
+async function handleLocalizedPage(request, env, ctx, lang, page, url) {
+  const assetUrl = new URL(request.url);
+  assetUrl.pathname = '/' + page;
+  const assetReq = new Request(assetUrl.toString(), request);
+  const response = await env.ASSETS.fetch(assetReq);
+  const contentType = response.headers.get('content-type') || '';
+  if (!contentType.includes('text/html')) return response;
+
+  const country = request.cf && request.cf.country;
+  ctx.waitUntil(trackVisit(request, env, url, country).catch(() => {}));
+
+  const langDict = dict[lang] || dict.en;
+  const fallback = dict.en;
+  const meta = (PAGE_META[page] && PAGE_META[page][lang]) || (PAGE_META[page] && PAGE_META[page].en);
+
+  let rewriter = new HTMLRewriter()
+    .on('[data-i18n]', new I18nAttrSetter('data-i18n', langDict, fallback, 'text'))
+    .on('[data-i18n-html]', new I18nAttrSetter('data-i18n-html', langDict, fallback, 'html'))
+    .on('[data-i18n-ph]', new I18nAttrSetter('data-i18n-ph', langDict, fallback, 'placeholder'))
+    .on('html', new HtmlLangSetter(lang))
+    .on('head', new SeoHeadInjector(buildHreflangHtml(page)))
+    .on('head', new GeoLangInjector(lang));
+
+  if (meta && meta.title) rewriter = rewriter.on('title', new TitleSetter(meta.title));
+  if (meta && meta.description) rewriter = rewriter.on('meta[name="description"]', new MetaDescSetter(meta.description));
+
+  const transformed = rewriter.transform(response);
+  const headers = new Headers(transformed.headers);
+  headers.set('Cache-Control', 'no-store');
+  return new Response(transformed.body, { status: transformed.status, statusText: transformed.statusText, headers });
 }
 
 export default {
@@ -66,6 +193,12 @@ export default {
       return handleAdminStats(url, env);
     }
 
+    // Real, crawlable translated URLs: /tr/, /de/, /fr/, /hu/ (index + wallpapers for now).
+    const localized = matchLocalizedPath(url.pathname);
+    if (localized) {
+      return handleLocalizedPage(request, env, ctx, localized.lang, localized.page, url);
+    }
+
     const response = await env.ASSETS.fetch(request);
     const contentType = response.headers.get('content-type') || '';
     if (!contentType.includes('text/html')) return response;
@@ -76,7 +209,18 @@ export default {
     // Fire-and-forget visit tracking; never blocks or breaks the page response.
     ctx.waitUntil(trackVisit(request, env, url, country).catch(() => {}));
 
-    const transformed = new HTMLRewriter().on('head', new GeoLangInjector(lang)).transform(response);
+    // The default (un-prefixed, English) URL for a localized page needs hreflang links back to
+    // its /tr/ /de/ /fr/ /hu/ siblings too — hreflang has to be reciprocal on every page in the set.
+    const cleanPath = url.pathname.replace(/^\/+/, '');
+    const defaultPage = cleanPath === '' ? 'index.html' : cleanPath;
+    const isLocalizableDefault = LOCALIZABLE_PAGES.includes(defaultPage);
+
+    let rewriter = new HTMLRewriter().on('head', new GeoLangInjector(lang));
+    if (isLocalizableDefault) {
+      rewriter = rewriter.on('head', new SeoHeadInjector(buildHreflangHtml(defaultPage)));
+    }
+
+    const transformed = rewriter.transform(response);
     // Force every visit to hit the worker (no browser-cache shortcuts) so pageview counts and
     // client-side scroll-depth beacons never fall out of sync with each other.
     const headers = new Headers(transformed.headers);
@@ -333,4 +477,4 @@ async function handleGetLikes(url, env) {
 }
 
 // Named exports (harmless for the Workers runtime; used by local tests).
-export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat };
+export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage };

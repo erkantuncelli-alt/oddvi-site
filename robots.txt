@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin-stats.html
+Disallow: /api/
+
+Sitemap: https://theoddvi.com/sitemap.xml
