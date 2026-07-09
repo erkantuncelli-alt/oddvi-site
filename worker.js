@@ -134,35 +134,50 @@ class I18nAttrSetter {
 }
 
 async function handleLocalizedPage(request, env, ctx, lang, page, url) {
-  const assetUrl = new URL(request.url);
-  assetUrl.pathname = '/' + page;
-  const assetReq = new Request(assetUrl.toString(), request);
-  const response = await env.ASSETS.fetch(assetReq);
-  const contentType = response.headers.get('content-type') || '';
-  if (!contentType.includes('text/html')) return response;
+  try {
+    const assetUrl = new URL(request.url);
+    assetUrl.pathname = '/' + page;
+    const assetReq = new Request(assetUrl.toString(), request);
+    const response = await env.ASSETS.fetch(assetReq);
+    const contentType = response.headers.get('content-type') || '';
+    if (!contentType.includes('text/html')) return response;
 
-  const country = request.cf && request.cf.country;
-  ctx.waitUntil(trackVisit(request, env, url, country).catch(() => {}));
+    const country = request.cf && request.cf.country;
+    ctx.waitUntil(trackVisit(request, env, url, country).catch(() => {}));
 
-  const langDict = dict[lang] || dict.en;
-  const fallback = dict.en;
-  const meta = (PAGE_META[page] && PAGE_META[page][lang]) || (PAGE_META[page] && PAGE_META[page].en);
+    const langDict = dict[lang] || dict.en;
+    const fallback = dict.en;
+    const meta = (PAGE_META[page] && PAGE_META[page][lang]) || (PAGE_META[page] && PAGE_META[page].en);
 
-  let rewriter = new HTMLRewriter()
-    .on('[data-i18n]', new I18nAttrSetter('data-i18n', langDict, fallback, 'text'))
-    .on('[data-i18n-html]', new I18nAttrSetter('data-i18n-html', langDict, fallback, 'html'))
-    .on('[data-i18n-ph]', new I18nAttrSetter('data-i18n-ph', langDict, fallback, 'placeholder'))
-    .on('html', new HtmlLangSetter(lang))
-    .on('head', new SeoHeadInjector(buildHreflangHtml(page)))
-    .on('head', new GeoLangInjector(lang));
+    let rewriter = new HTMLRewriter()
+      .on('[data-i18n]', new I18nAttrSetter('data-i18n', langDict, fallback, 'text'))
+      .on('[data-i18n-html]', new I18nAttrSetter('data-i18n-html', langDict, fallback, 'html'))
+      .on('[data-i18n-ph]', new I18nAttrSetter('data-i18n-ph', langDict, fallback, 'placeholder'))
+      .on('html', new HtmlLangSetter(lang))
+      .on('head', new SeoHeadInjector(buildHreflangHtml(page)))
+      .on('head', new GeoLangInjector(lang));
 
-  if (meta && meta.title) rewriter = rewriter.on('title', new TitleSetter(meta.title));
-  if (meta && meta.description) rewriter = rewriter.on('meta[name="description"]', new MetaDescSetter(meta.description));
+    if (meta && meta.title) rewriter = rewriter.on('title', new TitleSetter(meta.title));
+    if (meta && meta.description) rewriter = rewriter.on('meta[name="description"]', new MetaDescSetter(meta.description));
 
-  const transformed = rewriter.transform(response);
-  const headers = new Headers(transformed.headers);
-  headers.set('Cache-Control', 'no-store');
-  return new Response(transformed.body, { status: transformed.status, statusText: transformed.statusText, headers });
+    const transformed = rewriter.transform(response);
+    const headers = new Headers(transformed.headers);
+    headers.set('Cache-Control', 'no-store');
+    return new Response(transformed.body, { status: transformed.status, statusText: transformed.statusText, headers });
+  } catch (err) {
+    // Never let a localization bug take the page down — fail loud but visible instead of a
+    // generic Cloudflare error page, and fall back to serving the plain English page untouched.
+    try {
+      const fallbackReq = new Request(new URL('/' + page, request.url).toString(), request);
+      const fallbackResp = await env.ASSETS.fetch(fallbackReq);
+      const headers = new Headers(fallbackResp.headers);
+      headers.set('X-Oddvi-Localize-Error', String(err && err.message || err).slice(0, 200));
+      headers.set('Cache-Control', 'no-store');
+      return new Response(fallbackResp.body, { status: fallbackResp.status, statusText: fallbackResp.statusText, headers });
+    } catch (err2) {
+      return new Response('Localization error: ' + String(err && err.stack || err), { status: 500 });
+    }
+  }
 }
 
 export default {
