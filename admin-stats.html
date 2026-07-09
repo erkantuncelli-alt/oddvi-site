@@ -112,7 +112,7 @@
     <table id="tDays"></table>
   </section>
 
-  <p class="refresh">Veriler sunucu tarafında ~10 dakikada bir yenileniyor · <a href="#" id="refreshNow" style="color:var(--red)">şimdi zorla yenile</a></p>
+  <p class="refresh">Veriler sunucu tarafında ~60 dakikada bir yenileniyor · <a href="#" id="refreshNow" style="color:var(--red)">şimdi zorla yenile</a></p>
 </div>
 
 <div id="loading" style="display:none">Yükleniyor…</div>
@@ -173,7 +173,7 @@
     document.getElementById('cCountries').textContent = (d.by_country||[]).length;
     document.getElementById('cDownloads').textContent = (d.downloads_total||0).toLocaleString('tr-TR');
     document.getElementById('cSubmits').textContent = (d.submits_total||0).toLocaleString('tr-TR');
-    var freshness = d.cached ? ' (önbellekten, ~10 dakikada bir yenilenir)' : ' (az önce yeniden hesaplandı)';
+    var freshness = d.cached ? ' (önbellekten, ~60 dakikada bir yenilenir)' : ' (az önce yeniden hesaplandı)';
     document.getElementById('asOf').textContent = 'Güncellendi: ' + new Date().toLocaleTimeString('tr-TR') + freshness;
 
     rowsToTable(document.getElementById('tCountries'), (d.by_country||[]).slice(0,10), {flag:true, bar:true});
@@ -244,7 +244,7 @@
   setInterval(function(){
     var key = sessionStorage.getItem(KEY_STORAGE);
     if(key && dash.style.display === 'block') load(key, false);
-  }, 5 * 60000);
+  }, 30 * 60000);
 })();
 </script>
 </body>

@@ -192,7 +192,7 @@ async function listCounts(env, prefix, limit = 1000) {
 }
 
 const STATS_CACHE_KEY = 'visit:summary_cache';
-const STATS_CACHE_TTL_SECONDS = 600; // 10 minutes — keeps KV list() calls far under the free-tier daily cap
+const STATS_CACHE_TTL_SECONDS = 3600; // 60 minutes — manual "force refresh" covers on-demand freshness, so auto-recompute can be rare
 
 async function handleAdminStats(url, env) {
   const key = url.searchParams.get('key') || '';
