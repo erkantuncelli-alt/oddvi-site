@@ -107,13 +107,13 @@ class HtmlLangSetter {
 }
 
 class TitleSetter {
-  constructor(text) { this.text = text; }
-  element(el) { if (this.text) el.setInnerContent(this.text, { html: false }); }
+  constructor(titleText) { this.titleText = titleText; }
+  element(el) { if (this.titleText) el.setInnerContent(this.titleText, { html: false }); }
 }
 
 class MetaDescSetter {
-  constructor(text) { this.text = text; }
-  element(el) { if (this.text) el.setAttribute('content', this.text); }
+  constructor(descText) { this.descText = descText; }
+  element(el) { if (this.descText) el.setAttribute('content', this.descText); }
 }
 
 // Mirrors the client-side apply() in i18n.js, but runs server-side so crawlers see real
