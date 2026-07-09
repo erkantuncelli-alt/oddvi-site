@@ -137,7 +137,7 @@ async function handleLocalizedPage(request, env, ctx, lang, page, url) {
   try {
     const assetUrl = new URL(request.url);
     assetUrl.pathname = '/' + page;
-    const assetReq = new Request(assetUrl.toString(), request);
+    const assetReq = new Request(assetUrl.toString(), { method: request.method, headers: request.headers });
     const response = await env.ASSETS.fetch(assetReq);
     const contentType = response.headers.get('content-type') || '';
     if (!contentType.includes('text/html')) return response;
@@ -165,10 +165,13 @@ async function handleLocalizedPage(request, env, ctx, lang, page, url) {
     headers.set('Cache-Control', 'no-store');
     return new Response(transformed.body, { status: transformed.status, statusText: transformed.statusText, headers });
   } catch (err) {
+    if (url.searchParams.get('debug') === '1') {
+      return new Response('Localization error: ' + String(err && err.stack || err), { status: 500 });
+    }
     // Never let a localization bug take the page down — fail loud but visible instead of a
     // generic Cloudflare error page, and fall back to serving the plain English page untouched.
     try {
-      const fallbackReq = new Request(new URL('/' + page, request.url).toString(), request);
+      const fallbackReq = new Request(new URL('/' + page, request.url).toString(), { method: request.method, headers: request.headers });
       const fallbackResp = await env.ASSETS.fetch(fallbackReq);
       const headers = new Headers(fallbackResp.headers);
       headers.set('X-Oddvi-Localize-Error', String(err && err.message || err).slice(0, 200));
