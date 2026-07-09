@@ -191,7 +191,22 @@ export default {
       let dictOk = false, deKeys = 0, matchResult = null, matchErr = null;
       try { dictOk = !!dict && !!dict.en; deKeys = dict && dict.de ? Object.keys(dict.de).length : -1; } catch (e) { matchErr = 'dict:' + String(e); }
       try { matchResult = matchLocalizedPath('/de/'); } catch (e) { matchErr = (matchErr ? matchErr + ' | ' : '') + 'match:' + String(e && e.stack || e); }
-      return json({ pathname: url.pathname, dictOk, deKeys, matchResult, matchErr, workerVersion: 'probe-v1' });
+
+      let renderOk = false, renderErr = null, renderSnippet = null, renderStatus = null;
+      try {
+        const fakeUrl = new URL(SITE_ORIGIN + '/de/?debug=1');
+        const fakeReq = new Request(fakeUrl.toString(), { method: 'GET', headers: request.headers });
+        const resp = await handleLocalizedPage(fakeReq, env, ctx, 'de', 'index.html', fakeUrl);
+        renderStatus = resp.status;
+        const text = await resp.text();
+        renderSnippet = text.slice(0, 400);
+        renderOk = resp.status === 200 && !text.startsWith('Localization error');
+        if (text.startsWith('Localization error')) renderErr = text.slice(0, 500);
+      } catch (e) {
+        renderErr = String(e && e.stack || e);
+      }
+
+      return json({ pathname: url.pathname, dictOk, deKeys, matchResult, matchErr, renderOk, renderStatus, renderErr, renderSnippet, workerVersion: 'probe-v2' });
     }
 
     if (request.method === 'OPTIONS' && url.pathname.startsWith('/api/')) {
