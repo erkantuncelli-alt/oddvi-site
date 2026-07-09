@@ -332,11 +332,7 @@ window.I18N.quiz = {
    {t:"Pick a 2am snack.",o:[["Cold pizza, no shame","nightowl"],["Whatever's most adventurous","explorer"],["Herbal tea, actually","zen"],["The leftover cake. All of it.","rebel"]]},
    {t:"Your room/desk looks like…",o:[["Organized chaos of projects","creative"],["Maps, gadgets and souvenirs","explorer"],["Minimal, calm, clear","zen"],["Fairy lights and a pillow fort","dreamer"]]},
    {t:"Choose a superpower.",o:[["Teleport anywhere, instantly","explorer"],["Turn any idea real","creative"],["Never need to sleep","nightowl"],["Permanent inner peace","zen"]]},
-   {t:"At a party, you're…",o:[["Still dancing when the lights come on","nightowl"],["Deep in one good conversation","dreamer"],["Talking everyone into something wild","rebel"],["Outside, looking at the sky","zen"]]},
-   {t:"Pick a vibe.",o:[["Neon & bass","nightowl"],["Paint & paper","creative"],["Forest & fog","explorer"],["Candles & quiet","zen"]]},
-   {t:"Your phone wallpaper is…",o:[["A place I want to go","explorer"],["Something I made","creative"],["Pure black, mysterious","rebel"],["Soft clouds, pastel everything","dreamer"]]},
-   {t:"People describe you as…",o:[["Unpredictable","rebel"],["Imaginative","dreamer"],["Calm","zen"],["Up for anything","explorer"]]},
-   {t:"Pick a motto.",o:[["“Why not?”","rebel"],["“Let's get lost.”","explorer"],["“Go make something.”","creative"],["“Just breathe.”","zen"]]}
+   {t:"At a party, you're…",o:[["Still dancing when the lights come on","nightowl"],["Deep in one good conversation","dreamer"],["Talking everyone into something wild","rebel"],["Outside, looking at the sky","zen"]]}
   ],
   r:{
    explorer:{n:"Explorer Odd",tg:"Always a little lost, on purpose.",bl:"You'd rather take the weird turn than the safe one. New places, new snacks, new trouble — you're in.",tr:["Curious","Restless","Maps optional"]},
@@ -355,11 +351,7 @@ window.I18N.quiz = {
    {t:"Gece 2 atıştırması seç.",o:[["Soğuk pizza, utanmadan","nightowl"],["En maceralı olan ne varsa","explorer"],["Aslında bitki çayı","zen"],["Kalan pastanın hepsi","rebel"]]},
    {t:"Odan/masan neye benziyor?",o:[["Projelerden oluşan düzenli bir kaos","creative"],["Haritalar, aletler, hatıralar","explorer"],["Minimal, sakin, ferah","zen"],["Peri ışıkları ve yastık kalesi","dreamer"]]},
    {t:"Bir süper güç seç.",o:[["Her yere anında ışınlanmak","explorer"],["Her fikri gerçek yapmak","creative"],["Hiç uyumaya ihtiyaç duymamak","nightowl"],["Kalıcı iç huzur","zen"]]},
-   {t:"Partide sen…",o:[["Işıklar yanınca hâlâ dans ediyorsun","nightowl"],["Tek bir güzel sohbete dalmışsın","dreamer"],["Herkesi çılgın bir şeye ikna ediyorsun","rebel"],["Dışarıda, gökyüzüne bakıyorsun","zen"]]},
-   {t:"Bir hava seç.",o:[["Neon & bas","nightowl"],["Boya & kâğıt","creative"],["Orman & sis","explorer"],["Mum & sessizlik","zen"]]},
-   {t:"Telefon duvar kağıdın…",o:[["Gitmek istediğim bir yer","explorer"],["Kendi yaptığım bir şey","creative"],["Saf siyah, gizemli","rebel"],["Yumuşak bulutlar, pastel her şey","dreamer"]]},
-   {t:"İnsanlar seni şöyle tanımlar…",o:[["Öngörülemez","rebel"],["Hayal gücü kuvvetli","dreamer"],["Sakin","zen"],["Her şeye varım","explorer"]]},
-   {t:"Bir slogan seç.",o:[["“Neden olmasın?”","rebel"],["“Hadi kaybolalım.”","explorer"],["“Git bir şey yap.”","creative"],["“Sadece nefes al.”","zen"]]}
+   {t:"Partide sen…",o:[["Işıklar yanınca hâlâ dans ediyorsun","nightowl"],["Tek bir güzel sohbete dalmışsın","dreamer"],["Herkesi çılgın bir şeye ikna ediyorsun","rebel"],["Dışarıda, gökyüzüne bakıyorsun","zen"]]}
   ],
   r:{
    explorer:{n:"Kaşif Odd",tg:"Hep biraz kayıp, bilerek.",bl:"Güvenli yol yerine tuhaf yolu seçersin. Yeni yerler, yeni atıştırmalıklar, yeni belalar — varsın.",tr:["Meraklı","Yerinde duramaz","Harita opsiyonel"]},
@@ -378,11 +370,7 @@ window.I18N.quiz = {
    {t:"Wähl einen 2-Uhr-Snack.",o:[["Kalte Pizza, ohne Reue","nightowl"],["Was auch immer am abenteuerlichsten ist","explorer"],["Eigentlich Kräutertee","zen"],["Den Rest vom Kuchen. Alles.","rebel"]]},
    {t:"Dein Zimmer/Schreibtisch sieht aus wie…",o:[["Geordnetes Chaos aus Projekten","creative"],["Karten, Gadgets und Souvenirs","explorer"],["Minimalistisch, ruhig, klar","zen"],["Lichterketten und eine Kissenburg","dreamer"]]},
    {t:"Wähl eine Superkraft.",o:[["Mich überallhin teleportieren, sofort","explorer"],["Jede Idee real machen","creative"],["Nie schlafen müssen","nightowl"],["Dauerhafter innerer Frieden","zen"]]},
-   {t:"Auf einer Party bist du…",o:[["Tanzt noch, wenn das Licht angeht","nightowl"],["Tief in einem guten Gespräch","dreamer"],["Überredest alle zu etwas Verrücktem","rebel"],["Draußen, schaust in den Himmel","zen"]]},
-   {t:"Wähl eine Stimmung.",o:[["Neon & Bass","nightowl"],["Farbe & Papier","creative"],["Wald & Nebel","explorer"],["Kerzen & Stille","zen"]]},
-   {t:"Dein Handy-Hintergrund ist…",o:[["Ein Ort, an den ich will","explorer"],["Etwas, das ich gemacht habe","creative"],["Tiefschwarz, geheimnisvoll","rebel"],["Weiche Wolken, alles pastell","dreamer"]]},
-   {t:"Andere beschreiben dich als…",o:[["Unberechenbar","rebel"],["Fantasievoll","dreamer"],["Ruhig","zen"],["Für alles zu haben","explorer"]]},
-   {t:"Wähl ein Motto.",o:[["„Warum nicht?“","rebel"],["„Lass uns verloren gehen.“","explorer"],["„Mach was.“","creative"],["„Einfach atmen.“","zen"]]}
+   {t:"Auf einer Party bist du…",o:[["Tanzt noch, wenn das Licht angeht","nightowl"],["Tief in einem guten Gespräch","dreamer"],["Überredest alle zu etwas Verrücktem","rebel"],["Draußen, schaust in den Himmel","zen"]]}
   ],
   r:{
    explorer:{n:"Entdecker-Odd",tg:"Immer ein bisschen verloren — absichtlich.",bl:"Du nimmst lieber die seltsame Abzweigung als die sichere. Neue Orte, neue Snacks, neuer Ärger — du bist dabei.",tr:["Neugierig","Rastlos","Karte optional"]},
@@ -401,11 +389,7 @@ window.I18N.quiz = {
    {t:"Choisis un snack de 2 h du matin.",o:[["Pizza froide, sans honte","nightowl"],["Ce qu'il y a de plus aventureux","explorer"],["Une tisane, en fait","zen"],["Le reste du gâteau. En entier.","rebel"]]},
    {t:"Ta chambre/ton bureau ressemble à…",o:[["Un chaos organisé de projets","creative"],["Cartes, gadgets et souvenirs","explorer"],["Minimal, calme, clair","zen"],["Guirlandes et fort en coussins","dreamer"]]},
    {t:"Choisis un super-pouvoir.",o:[["Me téléporter partout, instantanément","explorer"],["Rendre réelle n'importe quelle idée","creative"],["Ne jamais avoir besoin de dormir","nightowl"],["La paix intérieure permanente","zen"]]},
-   {t:"En soirée, tu es…",o:[["Encore en train de danser quand les lumières se rallument","nightowl"],["Plongé dans une bonne conversation","dreamer"],["En train de convaincre tout le monde de faire un truc fou","rebel"],["Dehors, à regarder le ciel","zen"]]},
-   {t:"Choisis une ambiance.",o:[["Néon & basses","nightowl"],["Peinture & papier","creative"],["Forêt & brume","explorer"],["Bougies & silence","zen"]]},
-   {t:"Ton fond d'écran, c'est…",o:[["Un endroit où je veux aller","explorer"],["Quelque chose que j'ai fait","creative"],["Noir profond, mystérieux","rebel"],["Nuages doux, tout en pastel","dreamer"]]},
-   {t:"On te décrit comme…",o:[["Imprévisible","rebel"],["Imaginatif","dreamer"],["Calme","zen"],["Partant pour tout","explorer"]]},
-   {t:"Choisis une devise.",o:[["« Pourquoi pas ? »","rebel"],["« Allons nous perdre. »","explorer"],["« Va créer un truc. »","creative"],["« Respire, c'est tout. »","zen"]]}
+   {t:"En soirée, tu es…",o:[["Encore en train de danser quand les lumières se rallument","nightowl"],["Plongé dans une bonne conversation","dreamer"],["En train de convaincre tout le monde de faire un truc fou","rebel"],["Dehors, à regarder le ciel","zen"]]}
   ],
   r:{
    explorer:{n:"Explorateur Odd",tg:"Toujours un peu perdu, exprès.",bl:"Tu préfères le virage bizarre au virage sûr. Nouveaux lieux, nouveaux snacks, nouveaux ennuis — tu es partant.",tr:["Curieux","Jamais en place","Carte facultative"]},
@@ -424,11 +408,7 @@ window.I18N.quiz = {
    {t:"Válassz egy hajnali nasit.",o:[["Hideg pizza, szégyen nélkül","nightowl"],["Ami a legkalandosabb","explorer"],["Igazából egy gyógytea","zen"],["A maradék süti. Az egész.","rebel"]]},
    {t:"A szobád/asztalod ilyen…",o:[["Projektek rendezett káosza","creative"],["Térképek, kütyük és szuvenírek","explorer"],["Minimál, nyugodt, tiszta","zen"],["Fényfüzér és párnavár","dreamer"]]},
    {t:"Válassz egy szupererőt.",o:[["Bárhova azonnal teleportálni","explorer"],["Bármilyen ötletet valóra váltani","creative"],["Sosem kell aludni","nightowl"],["Tartós belső béke","zen"]]},
-   {t:"Egy buliban te…",o:[["Még táncolsz, amikor felkapcsolják a villanyt","nightowl"],["Elmélyülsz egy jó beszélgetésben","dreamer"],["Mindenkit rábeszélsz valami vadra","rebel"],["Kint vagy, az eget nézed","zen"]]},
-   {t:"Válassz egy hangulatot.",o:[["Neon & basszus","nightowl"],["Festék & papír","creative"],["Erdő & köd","explorer"],["Gyertya & csend","zen"]]},
-   {t:"A telefonod háttérképe…",o:[["Egy hely, ahová vágyom","explorer"],["Valami, amit én készítettem","creative"],["Mélyfekete, titokzatos","rebel"],["Lágy felhők, csupa pasztell","dreamer"]]},
-   {t:"Mások így írnak le…",o:[["Kiszámíthatatlan","rebel"],["Fantáziadús","dreamer"],["Nyugodt","zen"],["Bármire kapható","explorer"]]},
-   {t:"Válassz egy mottót.",o:[["„Miért is ne?”","rebel"],["„Tévedjünk el.”","explorer"],["„Menj, alkoss valamit.”","creative"],["„Csak lélegezz.”","zen"]]}
+   {t:"Egy buliban te…",o:[["Még táncolsz, amikor felkapcsolják a villanyt","nightowl"],["Elmélyülsz egy jó beszélgetésben","dreamer"],["Mindenkit rábeszélsz valami vadra","rebel"],["Kint vagy, az eget nézed","zen"]]}
   ],
   r:{
    explorer:{n:"Felfedező Odd",tg:"Mindig kicsit eltévedve — szándékosan.",bl:"Inkább a furcsa kanyart választod, mint a biztosat. Új helyek, új nasik, új balhé — benne vagy.",tr:["Kíváncsi","Nyughatatlan","Térkép opcionális"]},

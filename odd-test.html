@@ -171,8 +171,24 @@
 
 <script src="i18n.js"></script>
 <script>
-/* image per archetype (same across languages) */
-const IMG={explorer:"uploads/oddgallery/wrong-turn-right-direction.jpg",creative:"uploads/oddgallery/oops-made-art-again.jpg",nightowl:"uploads/oddgallery/midnight-snacker.jpg",zen:"uploads/oddgallery/zen-amid-chaos.jpg",rebel:"uploads/oddgallery/why-blend-in.jpg",dreamer:"uploads/oddgallery/head-in-the-clouds.jpg"};
+/* image pools per archetype — one is picked at random each time a result is shown */
+const IMG_POOL={
+  explorer:["uploads/oddgallery/wrong-turn-right-direction.jpg","uploads/oddgallery/mountain-oddvi-summit.jpg","uploads/oddgallery/sail-different.jpg","uploads/oddgallery/surf-oddly.jpg","uploads/oddgallery/ski-oddly.jpg","uploads/oddgallery/oddvi-goes-to-italy-v2.jpg"],
+  creative:["uploads/oddgallery/oops-made-art-again.jpg","uploads/oddgallery/the-book-of-oddities.jpg","uploads/oddgallery/i-call-it-abstract.jpg","uploads/oddgallery/third-eye-spray-paint.jpg","uploads/oddgallery/spray-paint-swagger.jpg"],
+  nightowl:["uploads/oddgallery/midnight-snacker.jpg","uploads/oddgallery/night-owl-artist.jpg","uploads/oddgallery/midnight-heist.jpg","uploads/oddgallery/ugly-but-odd.jpg","uploads/oddgallery/existential-crisis-loading.jpg"],
+  zen:["uploads/oddgallery/zen-amid-chaos.jpg","uploads/oddgallery/alerts-off-peace-on.jpg","uploads/oddgallery/sip-happens.jpg","uploads/oddgallery/comfortably-weird.jpg","uploads/oddgallery/permanent-vacation-vibes.jpg"],
+  rebel:["uploads/oddgallery/why-blend-in.jpg","uploads/oddgallery/found-normal-returned-it.jpg","uploads/oddgallery/you-missed-a-spot.jpg","uploads/oddgallery/premium-style-bargain-quality.jpg","uploads/oddgallery/no-refund-odd.jpg"],
+  dreamer:["uploads/oddgallery/head-in-the-clouds.jpg","uploads/oddgallery/dragon-walk.jpg","uploads/oddgallery/garden-wave-hello.jpg","uploads/oddgallery/proud-rock-collection.jpg"]
+};
+/* picked once per archetype per test session, so downloads (wallpaper/profile/card) all match the result screen */
+const IMG={};
+function pickImg(key){
+  if(!IMG[key]){
+    const pool=IMG_POOL[key]||[];
+    IMG[key]=pool.length?pool[Math.floor(Math.random()*pool.length)]:"";
+  }
+  return IMG[key];
+}
 const PRIORITY=["explorer","creative","nightowl","zen","rebel","dreamer"];
 
 const $=s=>document.querySelector(s);
@@ -219,13 +235,13 @@ function renderPreview(){
   const r=QZ().r;
   $("#oddsPreview").innerHTML=PRIORITY.map(k=>{
     const name=(r[k]&&r[k].n)||k;
-    return `<figure><img src="${IMG[k]}" alt="${name}" loading="lazy"><figcaption>${name.replace(/ Odd$/,'')}</figcaption></figure>`;
+    return `<figure><img src="${pickImg(k)}" alt="${name}" loading="lazy"><figcaption>${name.replace(/ Odd$/,'')}</figcaption></figure>`;
   }).join("");
 }
 function show(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));$("#"+id).classList.add("active");screen=id;window.scrollTo({top:0,behavior:"smooth"});}
 
 $("#startBtn").onclick=()=>{state={i:0,picks:[]};show("quiz");renderQ();};
-$("#restartBtn").onclick=()=>{state={i:0,picks:[]};lastKey=null;show("intro");renderPreview();};
+$("#restartBtn").onclick=()=>{state={i:0,picks:[]};lastKey=null;Object.keys(IMG).forEach(k=>delete IMG[k]);show("intro");renderPreview();};
 $("#backBtn").onclick=()=>{if(state.i>0){state.i--;state.picks.pop();renderQ();}};
 
 function renderQ(){
@@ -265,7 +281,7 @@ async function showResult(key){
   lastKey=key;
   const R=QZ().r[key]||{}, u=QZ().ui;
   $("#rName").textContent=R.n||"";
-  $("#rImg").src=IMG[key];$("#rImg").alt=R.n||"";
+  $("#rImg").src=pickImg(key);$("#rImg").alt=R.n||"";
   $("#rBlurb").textContent=R.bl||"";
   $("#rTraits").innerHTML=(R.tr||[]).map(t=>`<span>${t}</span>`).join("");
   $("#bar").style.width="100%";
@@ -275,7 +291,7 @@ async function showResult(key){
   grid.innerHTML=`<div class="dl"><div class="thumb"><span>${u.building||"…"}</span></div></div>`.repeat(3);
 
   let img; try{await document.fonts.ready;}catch(e){}
-  try{img=await loadImg(IMG[key]);}catch(e){img=null;}
+  try{img=await loadImg(pickImg(key));}catch(e){img=null;}
 
   const formats=[
     {label:u.dlWallpaper,file:`oddvi-${key}-wallpaper.png`,draw:c=>wallpaper(c,img,R)},
