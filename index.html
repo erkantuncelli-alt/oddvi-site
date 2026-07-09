@@ -296,6 +296,32 @@
 
   :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:8px}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  /* ---- Daily Odd Poll ---- */
+  .poll-section{padding:54px 0;background:var(--paper-2);border-bottom:3px solid var(--ink)}
+  .poll-wrap{text-align:center;max-width:640px}
+  .poll-card{margin-top:18px;background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:7px 7px 0 var(--ink);padding:32px 28px}
+  @media(max-width:520px){.poll-card{padding:24px 18px;box-shadow:5px 5px 0 var(--ink)}}
+  .poll-series{font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);min-height:16px}
+  .poll-question{font-family:var(--font-disp);font-weight:800;font-size:clamp(24px,4.4vw,34px);line-height:1.12;margin:8px 0 24px;min-height:1.2em}
+  .poll-options{display:flex;align-items:center;gap:14px}
+  @media(max-width:560px){.poll-options{flex-direction:column}}
+  .poll-vs{font-family:var(--font-disp);font-weight:800;font-size:14px;opacity:.4;flex:none}
+  .poll-opt{flex:1;width:100%;text-align:left;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;padding:16px 18px;cursor:pointer;font-family:inherit;color:inherit;transition:transform .15s,box-shadow .15s;box-shadow:4px 4px 0 var(--ink)}
+  .poll-opt:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .poll-opt:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
+  .poll-card.voted .poll-opt{cursor:default}
+  .poll-card.voted .poll-opt:hover{transform:none;box-shadow:4px 4px 0 var(--ink)}
+  .poll-opt-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .poll-opt-label{font-weight:700;font-size:17px}
+  .poll-opt-pct{font-family:var(--font-disp);font-weight:800;font-size:17px;opacity:0;transition:opacity .3s}
+  .poll-card.voted .poll-opt-pct{opacity:1}
+  .poll-opt-bar{display:block;height:8px;border-radius:999px;background:var(--paper-2);margin-top:10px;overflow:hidden;border:1.5px solid var(--line)}
+  .poll-opt-fill{display:block;height:100%;width:0%;background:var(--red);border-radius:999px;transition:width .6s cubic-bezier(.16,1,.3,1)}
+  #pollBtnB .poll-opt-fill{background:var(--yellow-deep)}
+  .poll-opt.picked{border-color:var(--red);box-shadow:4px 4px 0 var(--red)}
+  .poll-hint{margin-top:20px;font-size:14px;opacity:.6;font-weight:500}
+  .poll-share{margin-top:18px}
 </style>
 <script type="application/ld+json">
 {
@@ -395,6 +421,37 @@
   <div class="marquee"><span data-i18n-html="marquee.text">NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;</span></div>
 </section>
 
+<section id="poll" class="poll-section">
+  <div class="wrap poll-wrap">
+    <span class="kicker" data-i18n="poll.kicker">Today's Odd Poll</span>
+    <div class="poll-card" id="pollCard">
+      <div class="poll-series" id="pollSeries">&nbsp;</div>
+      <h3 class="poll-question" id="pollQuestion">&nbsp;</h3>
+      <div class="poll-options">
+        <button type="button" class="poll-opt" id="pollBtnA">
+          <span class="poll-opt-top">
+            <span class="poll-opt-label" id="pollOptA"></span>
+            <span class="poll-opt-pct" id="pollPctA"></span>
+          </span>
+          <span class="poll-opt-bar"><span class="poll-opt-fill" id="pollFillA"></span></span>
+        </button>
+        <div class="poll-vs">VS</div>
+        <button type="button" class="poll-opt" id="pollBtnB">
+          <span class="poll-opt-top">
+            <span class="poll-opt-label" id="pollOptB"></span>
+            <span class="poll-opt-pct" id="pollPctB"></span>
+          </span>
+          <span class="poll-opt-bar"><span class="poll-opt-fill" id="pollFillB"></span></span>
+        </button>
+      </div>
+      <p class="poll-hint" id="pollHint" data-i18n="poll.hint">Tap one. See what everyone picked.</p>
+      <div class="poll-share" id="pollShare" style="display:none">
+        <button type="button" class="btn btn-primary" id="pollShareBtn" data-i18n="poll.share">Share your pick</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="manifesto">
   <div class="wrap">
     <div class="big-o">O</div>
@@ -489,6 +546,7 @@
 <script src="streak.js"></script>
 <script src="share.js"></script>
 <script src="likes-widget.js"></script>
+<script src="poll.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 

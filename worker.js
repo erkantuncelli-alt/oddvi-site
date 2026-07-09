@@ -14,6 +14,7 @@
  */
 
 import { dict } from './i18n-dict.js';
+import { pollPool } from './poll-dict.js';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -205,6 +206,14 @@ export default {
 
     if (url.pathname === '/api/stats' && request.method === 'GET') {
       return handleGetStats(url, env);
+    }
+
+    if (url.pathname === '/api/poll/today' && request.method === 'GET') {
+      return handlePollToday(request, env);
+    }
+
+    if (url.pathname === '/api/poll/vote' && request.method === 'POST') {
+      return handlePollVote(request, env);
     }
 
     if (url.pathname === '/api/admin-stats' && request.method === 'GET') {
@@ -436,6 +445,105 @@ async function handleAdminStats(url, env) {
   }
 }
 
+// ---------- daily odd poll (2-choice, deterministic no-repeat rotation) ----------
+
+// Deterministic seeded shuffle (mulberry32) so the daily pick is reproducible across requests
+// without needing to store/read a shuffle order from KV. Cycles through the whole pool with no
+// repeats, then reshuffles (differently) for the next cycle.
+function pollIndexForDay(dayStr, poolLen) {
+  const epochDay = Math.floor(Date.parse(dayStr + 'T00:00:00Z') / 86400000);
+  const cycle = Math.floor(epochDay / poolLen);
+  const posInCycle = ((epochDay % poolLen) + poolLen) % poolLen;
+
+  let seed = (cycle * 2654435761) >>> 0;
+  function rng() {
+    seed = (seed + 0x6D2B79F5) >>> 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  }
+  const arr = Array.from({ length: poolLen }, (_, i) => i);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr[posInCycle];
+}
+
+async function pollVisitorHash(request, day) {
+  const ip = request.headers.get('CF-Connecting-IP') || '';
+  const ua = request.headers.get('User-Agent') || '';
+  return (await sha256Hex('poll:' + ip + '|' + ua + '|' + day)).slice(0, 24);
+}
+
+async function handlePollToday(request, env) {
+  try {
+    const day = new Date().toISOString().slice(0, 10);
+    const idx = pollIndexForDay(day, pollPool.length);
+    const poll = pollPool[idx];
+
+    const votesKey = 'poll:votes:' + day;
+    const visitorHash = await pollVisitorHash(request, day);
+    const seenKey = 'poll:seen:' + day + ':' + visitorHash;
+
+    const [rawVotes, yourVote] = await Promise.all([
+      env.LIKES.get(votesKey),
+      env.LIKES.get(seenKey)
+    ]);
+
+    let votes;
+    try { votes = rawVotes ? JSON.parse(rawVotes) : null; } catch (e) { votes = null; }
+    if (!votes) votes = { a: 0, b: 0 };
+
+    return json({
+      date: day,
+      series: poll.series,
+      question: poll.question,
+      option_a: poll.option_a,
+      option_b: poll.option_b,
+      votes,
+      yourVote: yourVote || null
+    });
+  } catch (err) {
+    return json({ error: 'internal', message: String(err && err.stack || err) }, 500);
+  }
+}
+
+async function handlePollVote(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch (e) {
+    return json({ error: 'bad json' }, 400);
+  }
+  const choice = body && body.choice;
+  if (choice !== 'a' && choice !== 'b') return json({ error: 'invalid choice' }, 400);
+
+  const day = new Date().toISOString().slice(0, 10);
+  const votesKey = 'poll:votes:' + day;
+  const visitorHash = await pollVisitorHash(request, day);
+  const seenKey = 'poll:seen:' + day + ':' + visitorHash;
+
+  const existing = await env.LIKES.get(seenKey);
+  const rawVotes = await env.LIKES.get(votesKey);
+  let votes;
+  try { votes = rawVotes ? JSON.parse(rawVotes) : null; } catch (e) { votes = null; }
+  if (!votes) votes = { a: 0, b: 0 };
+
+  if (existing) {
+    // Already voted today — return current tallies untouched, idempotent.
+    return json({ votes, yourVote: existing });
+  }
+
+  votes[choice] = (votes[choice] || 0) + 1;
+  await Promise.all([
+    env.LIKES.put(votesKey, JSON.stringify(votes)),
+    env.LIKES.put(seenKey, choice, { expirationTtl: 60 * 60 * 30 })
+  ]);
+
+  return json({ votes, yourVote: choice });
+}
+
 // ---------- existing named counters & like system (unchanged) ----------
 
 async function handleStat(request, env) {
@@ -495,4 +603,4 @@ async function handleGetLikes(url, env) {
 }
 
 // Named exports (harmless for the Workers runtime; used by local tests).
-export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage };
+export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage, pollIndexForDay, handlePollToday, handlePollVote };
