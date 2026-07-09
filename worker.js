@@ -383,11 +383,12 @@ async function handleAdminStats(url, env) {
       }
     }
 
-    const [dailyBlobs, scrollRaw, downloadsRaw, submitsRaw] = await Promise.all([
+    const [dailyBlobs, scrollRaw, downloadsRaw, submitsRaw, pollBlobs] = await Promise.all([
       listDailyBlobs(env, 'visit:daily:'),
       listCounts(env, 'stat:scroll:'),
       listCounts(env, 'stat:download:'),
-      listCounts(env, 'stat:submit:')
+      listCounts(env, 'stat:submit:'),
+      listDailyBlobs(env, 'poll:votes:')
     ]);
 
     let totalPageviews = 0, totalUniq = 0;
@@ -421,6 +422,36 @@ async function handleAdminStats(url, env) {
     const downloadsTotal = downloadsRaw.reduce((sum, [, v]) => sum + v, 0);
     const submitsTotal = submitsRaw.reduce((sum, [, v]) => sum + v, 0);
 
+    // ---- daily odd poll summary ----
+    const pollByDay = {};
+    for (const { day, data: v } of pollBlobs) pollByDay[day] = v;
+
+    function pollForDay(day) {
+      const idx = pollIndexForDay(day, pollPool.length);
+      const p = pollPool[idx];
+      const votes = pollByDay[day] || { a: 0, b: 0 };
+      const total = (votes.a || 0) + (votes.b || 0);
+      return {
+        day,
+        series: p.series.en,
+        question: p.question.en,
+        option_a: p.option_a.en,
+        option_b: p.option_b.en,
+        votes_a: votes.a || 0,
+        votes_b: votes.b || 0,
+        total
+      };
+    }
+
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const pollToday = pollForDay(todayStr);
+
+    const pollHistoryDays = Object.keys(pollByDay).sort().reverse().slice(0, 14);
+    // Always include today even if it has zero votes yet (not in pollByDay until first vote).
+    if (!pollHistoryDays.includes(todayStr)) pollHistoryDays.unshift(todayStr);
+    const pollHistory = pollHistoryDays.map(pollForDay);
+    const pollVotesAllTime = Object.values(pollByDay).reduce((sum, v) => sum + (v.a || 0) + (v.b || 0), 0);
+
     const data = {
       total_pageviews: totalPageviews,
       unique_visitors: totalUniq,
@@ -433,6 +464,9 @@ async function handleAdminStats(url, env) {
       downloads_by_item: downloadsRaw.slice(0, 30),
       submits_total: submitsTotal,
       submits_by_type: submitsRaw.slice(0, 10),
+      poll_today: pollToday,
+      poll_history: pollHistory,
+      poll_votes_total: pollVotesAllTime,
       generated_at: new Date().toISOString()
     };
 

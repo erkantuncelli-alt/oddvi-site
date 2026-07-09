@@ -38,6 +38,16 @@
   tr:first-child td{border-top:none}
   td.n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
   .bar{height:6px;background:var(--teal);border-radius:3px;margin-top:4px}
+  .poll-card{background:var(--card);border:2.5px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink);padding:20px}
+  .poll-q-series{font-family:var(--font-disp);font-weight:800;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+  .poll-q-question{font-family:var(--font-disp);font-weight:800;font-size:22px;margin-bottom:16px}
+  .poll-opt-row{margin-bottom:12px}
+  .poll-opt-row:last-child{margin-bottom:0}
+  .poll-opt-row .top{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:4px}
+  .poll-opt-row .bar-bg{height:14px;background:var(--paper);border:2px solid var(--ink);border-radius:999px;overflow:hidden}
+  .poll-opt-row .bar-fill{height:100%;background:var(--red)}
+  .poll-opt-row.b .bar-fill{background:var(--yellow)}
+  .poll-total{margin-top:12px;font-size:12px;opacity:.6}
   #loading, #err{text-align:center;padding:60px 0;opacity:.6}
   #err{color:var(--red);display:none}
   #dash{display:none}
@@ -73,6 +83,7 @@
     <div class="card"><div class="num" id="cCountries">–</div><div class="lbl">Ulaşılan Ülke</div></div>
     <div class="card"><div class="num" id="cDownloads">–</div><div class="lbl">Toplam İndirme</div></div>
     <div class="card"><div class="num" id="cSubmits">–</div><div class="lbl">Toplam Gönderim</div></div>
+    <div class="card"><div class="num" id="cPollVotes">–</div><div class="lbl">Toplam Anket Oyu</div></div>
   </div>
 
   <div class="grid2">
@@ -96,6 +107,16 @@
       <table id="tSubmits"></table>
     </section>
   </div>
+
+  <section>
+    <h2>🗳️ Bugünkü Anket</h2>
+    <div id="pollToday"></div>
+  </section>
+
+  <section>
+    <h2>📆 Son Anketler</h2>
+    <table id="tPollHistory"></table>
+  </section>
 
   <section>
     <h2>📄 En Çok Gezilen Sayfalar</h2>
@@ -165,6 +186,30 @@
     }).join('');
   }
 
+  function renderPollToday(el, p){
+    if(!p){ el.innerHTML = '<p style="opacity:.5;font-size:14px">Henüz veri yok</p>'; return; }
+    var total = p.total || 0;
+    var pctA = total ? Math.round((p.votes_a/total)*100) : 50;
+    var pctB = total ? 100 - pctA : 50;
+    el.innerHTML =
+      '<div class="poll-card">' +
+        '<div class="poll-q-series">' + p.series + '</div>' +
+        '<div class="poll-q-question">' + p.question + '</div>' +
+        '<div class="poll-opt-row a"><div class="top"><span>' + p.option_a + '</span><span>' + pctA + '% · ' + p.votes_a + '</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + pctA + '%"></div></div></div>' +
+        '<div class="poll-opt-row b"><div class="top"><span>' + p.option_b + '</span><span>' + pctB + '% · ' + p.votes_b + '</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + pctB + '%"></div></div></div>' +
+        '<div class="poll-total">' + total.toLocaleString('tr-TR') + ' oy · ' + p.day + '</div>' +
+      '</div>';
+  }
+
+  function renderPollHistory(el, history){
+    if(!history || !history.length){ el.innerHTML = '<tr><td style="opacity:.5">Henüz veri yok</td></tr>'; return; }
+    el.innerHTML = history.map(function(p){
+      var total = p.total || 0;
+      var pctA = total ? Math.round((p.votes_a/total)*100) : 0;
+      return '<tr><td>' + p.day + ' — <b>' + p.question + '</b><br><span style="opacity:.6;font-size:12px">' + p.option_a + ' ' + pctA + '% vs ' + p.option_b + ' ' + (100-pctA) + '%</span></td><td class="n">' + total.toLocaleString('tr-TR') + '</td></tr>';
+    }).join('');
+  }
+
   function render(d){
     document.getElementById('cTotal').textContent = (d.total_pageviews||0).toLocaleString('tr-TR');
     document.getElementById('cUniq').textContent = (d.unique_visitors||0).toLocaleString('tr-TR');
@@ -173,6 +218,7 @@
     document.getElementById('cCountries').textContent = (d.by_country||[]).length;
     document.getElementById('cDownloads').textContent = (d.downloads_total||0).toLocaleString('tr-TR');
     document.getElementById('cSubmits').textContent = (d.submits_total||0).toLocaleString('tr-TR');
+    document.getElementById('cPollVotes').textContent = (d.poll_votes_total||0).toLocaleString('tr-TR');
     var freshness = d.cached ? ' (önbellekten, ~60 dakikada bir yenilenir)' : ' (az önce yeniden hesaplandı)';
     document.getElementById('asOf').textContent = 'Güncellendi: ' + new Date().toLocaleTimeString('tr-TR') + freshness;
 
@@ -187,6 +233,9 @@
       return [label, r[1]];
     });
     rowsToTable(document.getElementById('tDownloads'), dlRows, {bar:true});
+
+    renderPollToday(document.getElementById('pollToday'), d.poll_today);
+    renderPollHistory(document.getElementById('tPollHistory'), d.poll_history);
 
     var subLabels = {'share-odd':'Share Your Odd formu', 'email-signup':'Email kaydı'};
     var subRows = (d.submits_by_type||[]).map(function(r){ return [subLabels[r[0]]||r[0], r[1]]; });
