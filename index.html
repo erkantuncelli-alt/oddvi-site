@@ -321,6 +321,8 @@
   #pollBtnB .poll-opt-fill{background:var(--yellow-deep)}
   .poll-opt.picked{border-color:var(--red);box-shadow:4px 4px 0 var(--red)}
   .poll-hint{margin-top:20px;font-size:14px;opacity:.6;font-weight:500}
+  .poll-history-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--red-deep);text-decoration:none}
+  .poll-history-link:hover{text-decoration:underline}
   .poll-share{margin-top:18px}
 </style>
 <script type="application/ld+json">
@@ -445,6 +447,7 @@
         </button>
       </div>
       <p class="poll-hint" id="pollHint" data-i18n="poll.hint">Tap one. See what everyone picked.</p>
+      <a href="/odd-poll.html" class="poll-history-link" data-i18n="poll.historyLink">See past results →</a>
       <div class="poll-share" id="pollShare" style="display:none">
         <button type="button" class="btn btn-primary" id="pollShareBtn" data-i18n="poll.share">Share your pick</button>
       </div>

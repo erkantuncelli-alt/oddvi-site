@@ -208,6 +208,10 @@ export default {
       return handleGetStats(url, env);
     }
 
+    if (url.pathname === '/api/poll/history' && request.method === 'GET') {
+      return handlePollHistory(url, env);
+    }
+
     if (url.pathname === '/api/poll/today' && request.method === 'GET') {
       return handlePollToday(request, env);
     }
@@ -510,6 +514,42 @@ async function pollVisitorHash(request, day) {
   return (await sha256Hex('poll:' + ip + '|' + ua + '|' + day)).slice(0, 24);
 }
 
+async function handlePollHistory(url, env) {
+  const daysParam = parseInt(url.searchParams.get('days') || '30', 10);
+  const days = Math.max(1, Math.min(isNaN(daysParam) ? 30 : daysParam, 120));
+
+  const today = new Date();
+  const dayList = [];
+  for (let i = 1; i <= days; i++) {
+    dayList.push(new Date(today.getTime() - i * 86400000).toISOString().slice(0, 10));
+  }
+
+  const rawVotes = await Promise.all(dayList.map(d => env.LIKES.get('poll:votes:' + d)));
+
+  const results = [];
+  dayList.forEach((dayStr, i) => {
+    let votes;
+    try { votes = rawVotes[i] ? JSON.parse(rawVotes[i]) : null; } catch (e) { votes = null; }
+    if (!votes) votes = { a: 0, b: 0 };
+    const total = (votes.a || 0) + (votes.b || 0);
+    if (total === 0) return; // nobody voted that day (e.g. before launch) — skip, not a real result
+
+    const idx = pollIndexForDay(dayStr, pollPool.length);
+    const p = pollPool[idx];
+    results.push({
+      day: dayStr,
+      series: p.series,
+      question: p.question,
+      option_a: p.option_a,
+      option_b: p.option_b,
+      votes,
+      total
+    });
+  });
+
+  return json({ days: results });
+}
+
 async function handlePollToday(request, env) {
   try {
     const day = new Date().toISOString().slice(0, 10);
@@ -637,4 +677,4 @@ async function handleGetLikes(url, env) {
 }
 
 // Named exports (harmless for the Workers runtime; used by local tests).
-export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage, pollIndexForDay, handlePollToday, handlePollVote };
+export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage, pollIndexForDay, handlePollToday, handlePollVote, handlePollHistory };

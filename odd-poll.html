@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Past Odd Polls — Oddvi</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="description" content="Every past Odd Poll result — see what everyone chose." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Past Odd Polls — Oddvi" />
+<meta property="og:description" content="Every past Odd Poll result — see what everyone chose." />
+<meta property="og:image" content="https://theoddvi.com/uploads/og-share.png" />
+<meta property="og:url" content="https://theoddvi.com/odd-poll.html" />
+<meta property="og:site_name" content="Oddvi" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Past Odd Polls — Oddvi" />
+<meta name="twitter:description" content="Every past Odd Poll result — see what everyone chose." />
+<meta name="twitter:image" content="https://theoddvi.com/uploads/og-share.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#141414;
+    --paper:#fff8f0;
+    --paper-2:#f7eddd;
+    --card:#ffffff;
+    --red:#ff3366;
+    --red-deep:#e21b54;
+    --teal:#1ec8c8;
+    --yellow:#ffc93c;
+    --yellow-deep:#f5b400;
+    --grape:#845ec2;
+    --tang:#ff7a45;
+    --mint:#e7fbf0;
+    --line: color-mix(in srgb, var(--ink) 14%, transparent);
+    --font-disp:"Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:"Inter", system-ui, sans-serif;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;text-decoration:none;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px;transform:rotate(-3deg)}
+  .logo-icon{flex:0 0 auto;display:block}
+  .nav-links{display:flex;align-items:center;gap:20px;font-weight:600;font-size:15px}
+  .nav-links a.txt{text-decoration:none;opacity:.75;transition:opacity .2s,transform .2s}
+  .nav-links a.txt:hover{opacity:1;transform:rotate(-2deg)}
+  .nav-cta{background:var(--red);color:#fff;padding:9px 16px;border-radius:12px;font-weight:700;font-size:14px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s;text-decoration:none}
+  .nav-cta:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .nav-toggle{display:none;background:var(--ink);color:#fff;border:2.5px solid var(--ink);border-radius:10px;width:44px;height:40px;font-size:20px;cursor:pointer;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink)}
+  @media(max-width:760px){
+    .nav-toggle{display:flex}
+    .nav-links{position:absolute;top:72px;left:0;right:0;background:var(--paper);border-bottom:3px solid var(--ink);flex-direction:column;align-items:stretch;padding:14px 24px;gap:14px;display:none}
+    .nav-links.open{display:flex}
+    .nav-cta{text-align:center}
+  }
+  .lang-switch{display:flex;gap:4px;border:2px solid var(--ink);border-radius:999px;padding:3px;margin-left:4px}
+  .lang-switch button{font-family:var(--font-disp);font-size:11px;font-weight:800;letter-spacing:.03em;background:transparent;color:var(--ink);opacity:.5;border:none;border-radius:999px;padding:5px 9px;cursor:pointer}
+  .lang-switch button.active{background:var(--ink);color:#fff;opacity:1}
+
+  .hero{padding:54px 0 30px}
+  .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);border:2.5px solid var(--ink);border-radius:999px;padding:6px 14px;transform:rotate(-2deg)}
+  h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(32px,5.4vw,52px);line-height:1.05;letter-spacing:-.02em;margin:16px 0 12px}
+  .sub{font-size:17px;opacity:.72;max-width:600px}
+
+  .poll-list{display:flex;flex-direction:column;gap:16px;padding:10px 0 100px}
+  .poll-entry{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);padding:22px 24px}
+  .poll-entry .top-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+  .poll-entry .series{font-family:var(--font-disp);font-weight:800;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--red-deep)}
+  .poll-entry .date{font-size:12px;opacity:.5;font-weight:600}
+  .poll-entry .question{font-family:var(--font-disp);font-weight:800;font-size:20px;margin-bottom:16px}
+  .opt-row{margin-bottom:10px}
+  .opt-row:last-of-type{margin-bottom:0}
+  .opt-row .top{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:4px}
+  .opt-row.winner .top{color:var(--red-deep)}
+  .opt-row .bar-bg{height:10px;background:var(--paper-2);border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
+  .opt-row .bar-fill{height:100%;background:var(--yellow-deep)}
+  .opt-row.winner .bar-fill{background:var(--red)}
+  .poll-entry .total{margin-top:12px;font-size:12px;opacity:.5;font-weight:600}
+
+  .empty{padding:60px 0;text-align:center;opacity:.6;font-size:16px}
+  .loadmore{display:block;margin:0 auto;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:12px 26px;font-weight:700;font-size:14px;cursor:pointer}
+  .loadmore:hover{opacity:.85}
+  .loadmore-wrap{text-align:center;padding:10px 0 60px}
+
+  footer{border-top:3px solid var(--ink);padding:40px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:500}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="/index.html" class="logo">
+        <img class="logo-icon" src="/uploads/oddvi-logo-icon.png" width="26" height="35" alt="" aria-hidden="true" />
+        ODDVI
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+      <nav class="nav-links">
+        <a href="/story.html#meet" class="txt" data-i18n="nav.meet">Meet Oddvi</a>
+        <a href="/story.html#story" class="txt" data-i18n="nav.story">The Story</a>
+        <a href="/motion.html" class="txt" data-i18n="mot.kicker">Oddvi in motion</a>
+        <a href="/blog.html" class="txt" data-i18n="nav.journal">Journal</a>
+        <a href="/odd-gallery.html" class="txt" data-i18n="nav.gallery">Gallery</a>
+        <a href="/wallpapers.html" class="txt" data-i18n="nav.wallpapers">Wallpapers</a>
+        <div id="langSwitch" class="lang-switch" role="group" aria-label="Language"></div>
+        <a href="/odd-test.html" class="nav-cta" data-i18n="nav.test">What's your Odd?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <span class="kicker" id="t-kicker" data-i18n="pollhist.kicker">Past Odd Polls</span>
+      <h1 id="t-title" data-i18n-html="pollhist.title">Every Odd Poll,<br>ranked by chaos.</h1>
+      <p class="sub" id="t-sub" data-i18n="pollhist.sub">The daily question changes every day — here's what everyone picked, day by day.</p>
+    </div>
+
+    <div class="poll-list" id="pollList"></div>
+    <p class="empty" id="emptyMsg" hidden></p>
+    <div class="loadmore-wrap" id="loadMoreWrap" hidden>
+      <button class="loadmore" id="loadMoreBtn" data-i18n="pollhist.more">Load more</button>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <span>© Pardon My Odd</span>
+    <span>Follow the blob: <a href="https://instagram.com/theoddvi" style="color:var(--red-deep)">@theoddvi</a> <span style="opacity:.55;font-size:13px">· 🏗️ <a href="https://instagram.com/pardonmyodd" style="color:inherit" title="Our upcoming brand — coming soon">@pardonmyodd</a></span></span>
+  </footer>
+
+  <script src="/i18n.js"></script>
+  <script>
+    (function(){
+      var t=document.querySelector('.nav-toggle'), nl=document.querySelector('.nav-links');
+      if(!t||!nl) return;
+      t.addEventListener('click',function(){var o=nl.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+    })();
+  </script>
+  <script src="/odd-poll-history.js"></script>
+</body>
+</html>
