@@ -2098,5 +2098,725 @@ export const pollPool = [
       "fr": "Pas de films 🎬",
       "hu": "Nincs film 🎬"
     }
+  },
+  {
+    "series": {
+      "en": "Street Legends",
+      "tr": "Sokak Efsaneleri",
+      "de": "Straßenlegenden",
+      "fr": "Légendes De La Rue",
+      "hu": "Utcai Legendák"
+    },
+    "question": {
+      "en": "Tag the wall with...",
+      "tr": "Duvara ne yaz?",
+      "de": "Wand besprühen mit...",
+      "fr": "Tague le mur avec...",
+      "hu": "Mit fújj a falra?"
+    },
+    "option_a": {
+      "en": "Your name 🎨",
+      "tr": "Adını 🎨",
+      "de": "Deinem Namen 🎨",
+      "fr": "Ton nom 🎨",
+      "hu": "A neved 🎨"
+    },
+    "option_b": {
+      "en": "A random word",
+      "tr": "Rastgele bir kelime",
+      "de": "Einem Zufallswort",
+      "fr": "Un mot au hasard",
+      "hu": "Egy random szót"
+    }
+  },
+  {
+    "series": {
+      "en": "Street Legends",
+      "tr": "Sokak Efsaneleri",
+      "de": "Straßenlegenden",
+      "fr": "Légendes De La Rue",
+      "hu": "Utcai Legendák"
+    },
+    "question": {
+      "en": "Sneaker flex?",
+      "tr": "Sneaker gösterişi?",
+      "de": "Sneaker-Flex?",
+      "fr": "Flex sneakers?",
+      "hu": "Cipő villogtatás?"
+    },
+    "option_a": {
+      "en": "Never worn 👟",
+      "tr": "Hiç giyilmemiş 👟",
+      "de": "Nie getragen 👟",
+      "fr": "Jamais portées 👟",
+      "hu": "Sosem hordott 👟"
+    },
+    "option_b": {
+      "en": "Never cleaned",
+      "tr": "Hiç temizlenmemiş",
+      "de": "Nie geputzt",
+      "fr": "Jamais nettoyées",
+      "hu": "Sosem tisztított"
+    }
+  },
+  {
+    "series": {
+      "en": "Street Legends",
+      "tr": "Sokak Efsaneleri",
+      "de": "Straßenlegenden",
+      "fr": "Légendes De La Rue",
+      "hu": "Utcai Legendák"
+    },
+    "question": {
+      "en": "Cap style?",
+      "tr": "Şapka stili?",
+      "de": "Cap-Stil?",
+      "fr": "Style de casquette?",
+      "hu": "Sapka stílus?"
+    },
+    "option_a": {
+      "en": "Backwards 🧢",
+      "tr": "Ters 🧢",
+      "de": "Verkehrt herum 🧢",
+      "fr": "À l'envers 🧢",
+      "hu": "Hátrafelé 🧢"
+    },
+    "option_b": {
+      "en": "Forwards",
+      "tr": "Düz",
+      "de": "Normal",
+      "fr": "À l'endroit",
+      "hu": "Előrefelé"
+    }
+  },
+  {
+    "series": {
+      "en": "Street Legends",
+      "tr": "Sokak Efsaneleri",
+      "de": "Straßenlegenden",
+      "fr": "Légendes De La Rue",
+      "hu": "Utcai Legendák"
+    },
+    "question": {
+      "en": "Hoodie hood?",
+      "tr": "Kapüşon?",
+      "de": "Hoodie-Kapuze?",
+      "fr": "Capuche?",
+      "hu": "Kapucni?"
+    },
+    "option_a": {
+      "en": "Always up",
+      "tr": "Hep takılı",
+      "de": "Immer oben",
+      "fr": "Toujours levée",
+      "hu": "Mindig fent"
+    },
+    "option_b": {
+      "en": "Always down",
+      "tr": "Hep açık",
+      "de": "Immer unten",
+      "fr": "Toujours baissée",
+      "hu": "Mindig lent"
+    }
+  },
+  {
+    "series": {
+      "en": "Street Legends",
+      "tr": "Sokak Efsaneleri",
+      "de": "Straßenlegenden",
+      "fr": "Légendes De La Rue",
+      "hu": "Utcai Legendák"
+    },
+    "question": {
+      "en": "Fresh fit means...",
+      "tr": "Efsane kombin demek...",
+      "de": "Frischer Look heißt...",
+      "fr": "Tenue fraîche veut dire...",
+      "hu": "A menő szett azt jelenti..."
+    },
+    "option_a": {
+      "en": "New drop 🔥",
+      "tr": "Yeni drop 🔥",
+      "de": "Neuer Drop 🔥",
+      "fr": "Nouvelle sortie 🔥",
+      "hu": "Új dobás 🔥"
+    },
+    "option_b": {
+      "en": "Old favorite",
+      "tr": "Eski favori",
+      "de": "Alter Favorit",
+      "fr": "Vieux favori",
+      "hu": "Régi kedvenc"
+    }
+  },
+  {
+    "series": {
+      "en": "Street Legends",
+      "tr": "Sokak Efsaneleri",
+      "de": "Straßenlegenden",
+      "fr": "Légendes De La Rue",
+      "hu": "Utcai Legendák"
+    },
+    "question": {
+      "en": "Skate or...",
+      "tr": "Kaykay mı yoksa...",
+      "de": "Skaten oder...",
+      "fr": "Skate ou...",
+      "hu": "Gördeszka vagy..."
+    },
+    "option_a": {
+      "en": "Skateboard 🛹",
+      "tr": "Kaykay 🛹",
+      "de": "Skateboard 🛹",
+      "fr": "Skateboard 🛹",
+      "hu": "Gördeszka 🛹"
+    },
+    "option_b": {
+      "en": "Roller blades",
+      "tr": "Paten",
+      "de": "Rollschuhe",
+      "fr": "Rollers",
+      "hu": "Görkorcsolya"
+    }
+  },
+  {
+    "series": {
+      "en": "Glitch In Reality",
+      "tr": "Gerçeklikte Hata",
+      "de": "Riss In Der Realität",
+      "fr": "Bug Dans La Réalité",
+      "hu": "Hiba A Valóságban"
+    },
+    "question": {
+      "en": "Your shadow...",
+      "tr": "Gölgen...",
+      "de": "Dein Schatten...",
+      "fr": "Ton ombre...",
+      "hu": "Az árnyékod..."
+    },
+    "option_a": {
+      "en": "Argues with you",
+      "tr": "Seninle tartışır",
+      "de": "Widerspricht dir",
+      "fr": "Te contredit",
+      "hu": "Vitatkozik veled"
+    },
+    "option_b": {
+      "en": "Copies you perfectly",
+      "tr": "Seni mükemmel taklit eder",
+      "de": "Kopiert dich perfekt",
+      "fr": "Te copie parfaitement",
+      "hu": "Tökéletesen utánoz"
+    }
+  },
+  {
+    "series": {
+      "en": "Glitch In Reality",
+      "tr": "Gerçeklikte Hata",
+      "de": "Riss In Der Realität",
+      "fr": "Bug Dans La Réalité",
+      "hu": "Hiba A Valóságban"
+    },
+    "question": {
+      "en": "Your reflection is...",
+      "tr": "Yansıman...",
+      "de": "Dein Spiegelbild ist...",
+      "fr": "Ton reflet est...",
+      "hu": "A tükörképed..."
+    },
+    "option_a": {
+      "en": "5 min ahead ⏱️",
+      "tr": "5 dk ileride ⏱️",
+      "de": "5 Min voraus ⏱️",
+      "fr": "5 min en avance ⏱️",
+      "hu": "5 perccel előbb ⏱️"
+    },
+    "option_b": {
+      "en": "5 min behind",
+      "tr": "5 dk geride",
+      "de": "5 Min zurück",
+      "fr": "5 min en retard",
+      "hu": "5 perccel később"
+    }
+  },
+  {
+    "series": {
+      "en": "Glitch In Reality",
+      "tr": "Gerçeklikte Hata",
+      "de": "Riss In Der Realität",
+      "fr": "Bug Dans La Réalité",
+      "hu": "Hiba A Valóságban"
+    },
+    "question": {
+      "en": "You sneeze...",
+      "tr": "Hapşırınca...",
+      "de": "Du niest...",
+      "fr": "Tu éternues...",
+      "hu": "Tüsszentéskor..."
+    },
+    "option_a": {
+      "en": "Confetti 🎉",
+      "tr": "Konfeti çıkar 🎉",
+      "de": "Konfetti 🎉",
+      "fr": "Des confettis 🎉",
+      "hu": "Konfetti jön 🎉"
+    },
+    "option_b": {
+      "en": "Glitter ✨",
+      "tr": "Simli toz çıkar ✨",
+      "de": "Glitzer ✨",
+      "fr": "Des paillettes ✨",
+      "hu": "Csillám jön ✨"
+    }
+  },
+  {
+    "series": {
+      "en": "Glitch In Reality",
+      "tr": "Gerçeklikte Hata",
+      "de": "Riss In Der Realität",
+      "fr": "Bug Dans La Réalité",
+      "hu": "Hiba A Valóságban"
+    },
+    "question": {
+      "en": "Your echo...",
+      "tr": "Yankın...",
+      "de": "Dein Echo...",
+      "fr": "Ton écho...",
+      "hu": "A visszhangod..."
+    },
+    "option_a": {
+      "en": "Talks back",
+      "tr": "Sana cevap verir",
+      "de": "Antwortet dir",
+      "fr": "Te répond",
+      "hu": "Válaszol neked"
+    },
+    "option_b": {
+      "en": "Sings instead",
+      "tr": "Şarkı söyler",
+      "de": "Singt stattdessen",
+      "fr": "Chante à la place",
+      "hu": "Inkább énekel"
+    }
+  },
+  {
+    "series": {
+      "en": "Glitch In Reality",
+      "tr": "Gerçeklikte Hata",
+      "de": "Riss In Der Realität",
+      "fr": "Bug Dans La Réalité",
+      "hu": "Hiba A Valóságban"
+    },
+    "question": {
+      "en": "Doorbell sound?",
+      "tr": "Kapı zili sesi?",
+      "de": "Klingelton?",
+      "fr": "Son de sonnette?",
+      "hu": "Csengőhang?"
+    },
+    "option_a": {
+      "en": "Kazoo 🎺",
+      "tr": "Kazoo 🎺",
+      "de": "Kazoo 🎺",
+      "fr": "Mirliton 🎺",
+      "hu": "Kazu 🎺"
+    },
+    "option_b": {
+      "en": "Air horn 📯",
+      "tr": "Korna 📯",
+      "de": "Nebelhorn 📯",
+      "fr": "Corne de brume 📯",
+      "hu": "Hajókürt 📯"
+    }
+  },
+  {
+    "series": {
+      "en": "Glitch In Reality",
+      "tr": "Gerçeklikte Hata",
+      "de": "Riss In Der Realität",
+      "fr": "Bug Dans La Réalité",
+      "hu": "Hiba A Valóságban"
+    },
+    "question": {
+      "en": "Waking up...",
+      "tr": "Uyanma anı...",
+      "de": "Aufwachen...",
+      "fr": "Se réveiller...",
+      "hu": "Ébredés..."
+    },
+    "option_a": {
+      "en": "Mid-sentence 💬",
+      "tr": "Cümlenin ortasında 💬",
+      "de": "Mitten im Satz 💬",
+      "fr": "En pleine phrase 💬",
+      "hu": "Mondat közepén 💬"
+    },
+    "option_b": {
+      "en": "Mid-dream 💭",
+      "tr": "Rüyanın ortasında 💭",
+      "de": "Mitten im Traum 💭",
+      "fr": "En plein rêve 💭",
+      "hu": "Álom közepén 💭"
+    }
+  },
+  {
+    "series": {
+      "en": "Pack Your Weird",
+      "tr": "Tuhaflığını Paketle",
+      "de": "Pack Deine Macke Ein",
+      "fr": "Emballe Ta Bizarrerie",
+      "hu": "Csomagold Be A Furcsaságod"
+    },
+    "question": {
+      "en": "Umbrella made of...",
+      "tr": "Şemsiye neyden?",
+      "de": "Regenschirm aus...",
+      "fr": "Parapluie en...",
+      "hu": "Az esernyő miből van?"
+    },
+    "option_a": {
+      "en": "Leaves 🍃",
+      "tr": "Yapraklardan 🍃",
+      "de": "Blättern 🍃",
+      "fr": "Feuilles 🍃",
+      "hu": "Levelekből 🍃"
+    },
+    "option_b": {
+      "en": "Feathers 🪶",
+      "tr": "Tüylerden 🪶",
+      "de": "Federn 🪶",
+      "fr": "Plumes 🪶",
+      "hu": "Tollakból 🪶"
+    }
+  },
+  {
+    "series": {
+      "en": "Pack Your Weird",
+      "tr": "Tuhaflığını Paketle",
+      "de": "Pack Deine Macke Ein",
+      "fr": "Emballe Ta Bizarrerie",
+      "hu": "Csomagold Be A Furcsaságod"
+    },
+    "question": {
+      "en": "Backpack full of...",
+      "tr": "Sırt çantası dolu...",
+      "de": "Rucksack voller...",
+      "fr": "Sac à dos rempli de...",
+      "hu": "A hátizsák tele van..."
+    },
+    "option_a": {
+      "en": "Balloons 🎈",
+      "tr": "Balonla 🎈",
+      "de": "Luftballons 🎈",
+      "fr": "Ballons 🎈",
+      "hu": "Lufikkal 🎈"
+    },
+    "option_b": {
+      "en": "Bricks 🧱",
+      "tr": "Tuğlayla 🧱",
+      "de": "Ziegelsteine 🧱",
+      "fr": "Briques 🧱",
+      "hu": "Téglákkal 🧱"
+    }
+  },
+  {
+    "series": {
+      "en": "Pack Your Weird",
+      "tr": "Tuhaflığını Paketle",
+      "de": "Pack Deine Macke Ein",
+      "fr": "Emballe Ta Bizarrerie",
+      "hu": "Csomagold Be A Furcsaságod"
+    },
+    "question": {
+      "en": "Pockets full of...",
+      "tr": "Cepler dolu...",
+      "de": "Taschen voller...",
+      "fr": "Poches pleines de...",
+      "hu": "A zsebek tele vannak..."
+    },
+    "option_a": {
+      "en": "Pebbles",
+      "tr": "Çakıl taşıyla",
+      "de": "Kieselsteine",
+      "fr": "Cailloux",
+      "hu": "Kaviccsal"
+    },
+    "option_b": {
+      "en": "Glitter ✨",
+      "tr": "Simli tozla ✨",
+      "de": "Glitzer ✨",
+      "fr": "Paillettes ✨",
+      "hu": "Csillámmal ✨"
+    }
+  },
+  {
+    "series": {
+      "en": "Pack Your Weird",
+      "tr": "Tuhaflığını Paketle",
+      "de": "Pack Deine Macke Ein",
+      "fr": "Emballe Ta Bizarrerie",
+      "hu": "Csomagold Be A Furcsaságod"
+    },
+    "question": {
+      "en": "Your bike has...",
+      "tr": "Bisikletinin...",
+      "de": "Dein Fahrrad hat...",
+      "fr": "Ton vélo a...",
+      "hu": "A biciklidnek..."
+    },
+    "option_a": {
+      "en": "Wings 🦋",
+      "tr": "Kanadı var 🦋",
+      "de": "Flügel 🦋",
+      "fr": "Des ailes 🦋",
+      "hu": "Szárnya van 🦋"
+    },
+    "option_b": {
+      "en": "Fins 🐠",
+      "tr": "Yüzgeci var 🐠",
+      "de": "Flossen 🐠",
+      "fr": "Des nageoires 🐠",
+      "hu": "Uszonya van 🐠"
+    }
+  },
+  {
+    "series": {
+      "en": "Pack Your Weird",
+      "tr": "Tuhaflığını Paketle",
+      "de": "Pack Deine Macke Ein",
+      "fr": "Emballe Ta Bizarrerie",
+      "hu": "Csomagold Be A Furcsaságod"
+    },
+    "question": {
+      "en": "Socks that never...",
+      "tr": "Hiç uymayan çorap mı...",
+      "de": "Socken, die nie...",
+      "fr": "Chaussettes qui ne...",
+      "hu": "A zokni sosem..."
+    },
+    "option_a": {
+      "en": "Match",
+      "tr": "Eşleşmez",
+      "de": "Zusammenpassen",
+      "fr": "S'accordent jamais",
+      "hu": "Passzol"
+    },
+    "option_b": {
+      "en": "Stay up",
+      "tr": "Yukarı durmaz",
+      "de": "Oben bleiben",
+      "fr": "Tiennent jamais",
+      "hu": "Marad fent"
+    }
+  },
+  {
+    "series": {
+      "en": "Pack Your Weird",
+      "tr": "Tuhaflığını Paketle",
+      "de": "Pack Deine Macke Ein",
+      "fr": "Emballe Ta Bizarrerie",
+      "hu": "Csomagold Be A Furcsaságod"
+    },
+    "question": {
+      "en": "Shoe that squeaks?",
+      "tr": "Gıcırdayan ayakkabı?",
+      "de": "Quietschender Schuh?",
+      "fr": "Chaussure qui grince?",
+      "hu": "Melyik cipő nyikorog?"
+    },
+    "option_a": {
+      "en": "Left 👟",
+      "tr": "Sol 👟",
+      "de": "Links 👟",
+      "fr": "Gauche 👟",
+      "hu": "Bal 👟"
+    },
+    "option_b": {
+      "en": "Right 👟",
+      "tr": "Sağ 👟",
+      "de": "Rechts 👟",
+      "fr": "Droite 👟",
+      "hu": "Jobb 👟"
+    }
+  },
+  {
+    "series": {
+      "en": "Main Character Energy",
+      "tr": "Ana Karakter Enerjisi",
+      "de": "Hauptfigur-Energie",
+      "fr": "Énergie De Personnage Principal",
+      "hu": "Főszereplő Energia"
+    },
+    "question": {
+      "en": "Enter a room...",
+      "tr": "Odaya girince...",
+      "de": "Betrittst du den Raum...",
+      "fr": "Tu entres, tout le monde...",
+      "hu": "Amikor belépsz..."
+    },
+    "option_a": {
+      "en": "Everyone claps 👏",
+      "tr": "Herkes alkışlar 👏",
+      "de": "Alle klatschen 👏",
+      "fr": "Applaudit 👏",
+      "hu": "Mindenki tapsol 👏"
+    },
+    "option_b": {
+      "en": "Everyone waves 👋",
+      "tr": "Herkes el sallar 👋",
+      "de": "Alle winken 👋",
+      "fr": "Fait signe 👋",
+      "hu": "Mindenki int 👋"
+    }
+  },
+  {
+    "series": {
+      "en": "Main Character Energy",
+      "tr": "Ana Karakter Enerjisi",
+      "de": "Hauptfigur-Energie",
+      "fr": "Énergie De Personnage Principal",
+      "hu": "Főszereplő Energia"
+    },
+    "question": {
+      "en": "Walk by, people...",
+      "tr": "Yanından geçince insanlar...",
+      "de": "Gehst du vorbei, Leute...",
+      "fr": "Tu passes, les gens...",
+      "hu": "Amikor elmész mellettük..."
+    },
+    "option_a": {
+      "en": "Whisper",
+      "tr": "Fısıldar",
+      "de": "Flüstern",
+      "fr": "Chuchotent",
+      "hu": "Suttognak"
+    },
+    "option_b": {
+      "en": "Hum along 🎵",
+      "tr": "Mırıldanır 🎵",
+      "de": "Summen mit 🎵",
+      "fr": "Fredonnent 🎵",
+      "hu": "Dúdolnak 🎵"
+    }
+  },
+  {
+    "series": {
+      "en": "Main Character Energy",
+      "tr": "Ana Karakter Enerjisi",
+      "de": "Hauptfigur-Energie",
+      "fr": "Énergie De Personnage Principal",
+      "hu": "Főszereplő Energia"
+    },
+    "question": {
+      "en": "Your name is...",
+      "tr": "Adın...",
+      "de": "Dein Name ist...",
+      "fr": "Ton nom est...",
+      "hu": "A neved..."
+    },
+    "option_a": {
+      "en": "A color 🎨",
+      "tr": "Bir renk 🎨",
+      "de": "Eine Farbe 🎨",
+      "fr": "Une couleur 🎨",
+      "hu": "Egy szín 🎨"
+    },
+    "option_b": {
+      "en": "A sound 🔊",
+      "tr": "Bir ses 🔊",
+      "de": "Ein Geräusch 🔊",
+      "fr": "Un son 🔊",
+      "hu": "Egy hang 🔊"
+    }
+  },
+  {
+    "series": {
+      "en": "Main Character Energy",
+      "tr": "Ana Karakter Enerjisi",
+      "de": "Hauptfigur-Energie",
+      "fr": "Énergie De Personnage Principal",
+      "hu": "Főszereplő Energia"
+    },
+    "question": {
+      "en": "Handshake turns into...",
+      "tr": "Tokalaşma dönüşür...",
+      "de": "Handschlag wird zu...",
+      "fr": "La poignée de main devient...",
+      "hu": "A kézfogásból..."
+    },
+    "option_a": {
+      "en": "High five ✋",
+      "tr": "Çakışmaya ✋",
+      "de": "High Five ✋",
+      "fr": "Un high five ✋",
+      "hu": "Pacsi lesz ✋"
+    },
+    "option_b": {
+      "en": "Hug 🤗",
+      "tr": "Sarılmaya 🤗",
+      "de": "Umarmung 🤗",
+      "fr": "Un câlin 🤗",
+      "hu": "Ölelés lesz 🤗"
+    }
+  },
+  {
+    "series": {
+      "en": "Main Character Energy",
+      "tr": "Ana Karakter Enerjisi",
+      "de": "Hauptfigur-Energie",
+      "fr": "Énergie De Personnage Principal",
+      "hu": "Főszereplő Energia"
+    },
+    "question": {
+      "en": "Your laugh...",
+      "tr": "Kahkahan...",
+      "de": "Dein Lachen...",
+      "fr": "Ton rire...",
+      "hu": "A nevetésed..."
+    },
+    "option_a": {
+      "en": "Echoes for miles 📢",
+      "tr": "Kilometrelerce yankılanır 📢",
+      "de": "Hallt kilometerweit 📢",
+      "fr": "Résonne au loin 📢",
+      "hu": "Kilométerekre visszhangzik 📢"
+    },
+    "option_b": {
+      "en": "Is contagious 😂",
+      "tr": "Bulaşıcıdır 😂",
+      "de": "Ist ansteckend 😂",
+      "fr": "Est contagieux 😂",
+      "hu": "Ragályos 😂"
+    }
+  },
+  {
+    "series": {
+      "en": "Main Character Energy",
+      "tr": "Ana Karakter Enerjisi",
+      "de": "Hauptfigur-Energie",
+      "fr": "Énergie De Personnage Principal",
+      "hu": "Főszereplő Energia"
+    },
+    "question": {
+      "en": "Your yawn...",
+      "tr": "Esnemen...",
+      "de": "Dein Gähnen...",
+      "fr": "Ton bâillement...",
+      "hu": "Az ásításod..."
+    },
+    "option_a": {
+      "en": "Spreads instantly 🥱",
+      "tr": "Anında yayılır 🥱",
+      "de": "Verbreitet sich sofort 🥱",
+      "fr": "Se propage aussitôt 🥱",
+      "hu": "Azonnal terjed 🥱"
+    },
+    "option_b": {
+      "en": "Nobody notices",
+      "tr": "Kimse fark etmez",
+      "de": "Bemerkt niemand",
+      "fr": "Personne ne le remarque",
+      "hu": "Senki nem veszi észre"
+    }
   }
 ];
