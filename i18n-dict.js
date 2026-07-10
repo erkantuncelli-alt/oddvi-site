@@ -9,7 +9,7 @@
 export const dict = {
   en:{
     'nav.meet':"Meet Oddvi",'nav.story':"The Story",'nav.gallery':"Gallery",'nav.journal':"Journal",'nav.wallpapers':"Wallpapers",'nav.test':"What's your Odd?",
-    "pollhist.kicker":"Past Odd Polls","pollhist.title":"Every Odd Poll,<br>ranked by chaos.","pollhist.sub":"The daily question changes every day — here's what everyone picked, day by day.","pollhist.more":"Load more","pollhist.empty":"No results yet — check back tomorrow.",
+    "pollhist.kicker":"Past Odd Polls","pollhist.title":"Every Odd Poll,<br>ranked by chaos.","pollhist.sub":"The daily question changes every day — here's what everyone picked, day by day.","pollhist.more":"Load more","pollhist.empty":"No results yet — check back tomorrow.","pollhist.backToPoll":"← Back to today's poll","pollhist.backToPollShort":"← Today's poll",
     'poll.kicker':"Today's Odd Poll",'poll.hint':"Tap one. See what everyone picked.",'poll.share':"Share your pick","poll.historyLink":"See past results →",
     'hero.eyebrow':"Coming soon · @theoddvi",
     'hero.btnPrimary':"Take the Odd test →",'hero.btnGhost':"See Oddvi in action ↓",
@@ -63,7 +63,7 @@ export const dict = {
   },
   tr:{
     'nav.meet':"Oddvi'yle tanış",'nav.story':"Hikâye",'nav.gallery':"Galeri",'nav.journal':"Günlük",'nav.wallpapers':"Duvar Kağıtları",'nav.test':"What's your Odd?",
-    "pollhist.kicker":"Geçmiş Anketler","pollhist.title":"Her Garip Anket,<br>kaosa göre sıralı.","pollhist.sub":"Günlük soru her gün değişiyor — işte herkesin gün gün ne seçtiği.","pollhist.more":"Daha fazla yükle","pollhist.empty":"Henüz sonuç yok — yarın tekrar bak.",
+    "pollhist.kicker":"Geçmiş Anketler","pollhist.title":"Her Garip Anket,<br>kaosa göre sıralı.","pollhist.sub":"Günlük soru her gün değişiyor — işte herkesin gün gün ne seçtiği.","pollhist.more":"Daha fazla yükle","pollhist.empty":"Henüz sonuç yok — yarın tekrar bak.","pollhist.backToPoll":"← Bugünün anketine dön","pollhist.backToPollShort":"← Bugünün anketi",
     'poll.kicker':"Günün Garip Anketi",'poll.hint':"Birine dokun. Herkes ne seçmiş gör.",'poll.share':"Seçimini paylaş","poll.historyLink":"Geçmiş sonuçlara bak →",
     'hero.eyebrow':"Çok yakında · @theoddvi",
     'hero.btnPrimary':"Odd testini çöz →",'hero.btnGhost':"Oddvi'yi Keşfet ↓",
@@ -117,7 +117,7 @@ export const dict = {
   },
   de:{
     'nav.meet':"Oddvi entdecken",'nav.story':"Die Geschichte",'nav.gallery':"Galerie",'nav.journal':"Journal",'nav.wallpapers':"Wallpaper",'nav.test':"What's your Odd?",
-    "pollhist.kicker":"Frühere Umfragen","pollhist.title":"Jede Seltsame Umfrage,<br>nach Chaos sortiert.","pollhist.sub":"Die tägliche Frage ändert sich jeden Tag — hier siehst du, was alle Tag für Tag gewählt haben.","pollhist.more":"Mehr laden","pollhist.empty":"Noch keine Ergebnisse — schau morgen wieder vorbei.",
+    "pollhist.kicker":"Frühere Umfragen","pollhist.title":"Jede Seltsame Umfrage,<br>nach Chaos sortiert.","pollhist.sub":"Die tägliche Frage ändert sich jeden Tag — hier siehst du, was alle Tag für Tag gewählt haben.","pollhist.more":"Mehr laden","pollhist.empty":"Noch keine Ergebnisse — schau morgen wieder vorbei.","pollhist.backToPoll":"← Zurück zur heutigen Umfrage","pollhist.backToPollShort":"← Heutige Umfrage",
     'poll.kicker':"Die Heutige Seltsame Umfrage",'poll.hint':"Tipp eins an. Sieh, was alle gewählt haben.",'poll.share':"Teile deine Wahl","poll.historyLink":"Frühere Ergebnisse ansehen →",
     'hero.eyebrow':"Bald verfügbar · @theoddvi",
     'hero.btnPrimary':"Mach den Odd-Test →",'hero.btnGhost':"Oddvi in Aktion sehen ↓",
@@ -171,7 +171,7 @@ export const dict = {
   },
   fr:{
     'nav.meet':"Rencontrer Oddvi",'nav.story':"L'histoire",'nav.gallery':"Galerie",'nav.journal':"Journal",'nav.wallpapers':"Fonds D'écran",'nav.test':"What's your Odd?",
-    "pollhist.kicker":"Sondages Précédents","pollhist.title":"Chaque Sondage Bizarre,<br>classé par chaos.","pollhist.sub":"La question du jour change chaque jour — voici ce que tout le monde a choisi, jour après jour.","pollhist.more":"Charger plus","pollhist.empty":"Pas encore de résultats — reviens demain.",
+    "pollhist.kicker":"Sondages Précédents","pollhist.title":"Chaque Sondage Bizarre,<br>classé par chaos.","pollhist.sub":"La question du jour change chaque jour — voici ce que tout le monde a choisi, jour après jour.","pollhist.more":"Charger plus","pollhist.empty":"Pas encore de résultats — reviens demain.","pollhist.backToPoll":"← Retour au sondage du jour","pollhist.backToPollShort":"← Sondage du jour",
     'poll.kicker':"Le Sondage Bizarre Du Jour",'poll.hint':"Touche une option. Regarde ce que tout le monde a choisi.",'poll.share':"Partage ton choix","poll.historyLink":"Voir les résultats précédents →",
     'hero.eyebrow':"Bientôt disponible · @theoddvi",
     'hero.btnPrimary':"Faire le test Odd →",'hero.btnGhost':"Voir Oddvi en action ↓",
@@ -225,7 +225,7 @@ export const dict = {
   },
   hu:{
     'nav.meet':"Ismerd meg Oddvit",'nav.story':"A történet",'nav.gallery':"Galéria",'nav.journal':"Napló",'nav.wallpapers':"Háttérképek",'nav.test':"What's your Odd?",
-    "pollhist.kicker":"Korábbi Szavazások","pollhist.title":"Minden Fura Szavazás,<br>káosz szerint rendezve.","pollhist.sub":"A napi kérdés minden nap változik — itt látod, mit választottak mások, napról napra.","pollhist.more":"Több betöltése","pollhist.empty":"Még nincs eredmény — nézz vissza holnap.",
+    "pollhist.kicker":"Korábbi Szavazások","pollhist.title":"Minden Fura Szavazás,<br>káosz szerint rendezve.","pollhist.sub":"A napi kérdés minden nap változik — itt látod, mit választottak mások, napról napra.","pollhist.more":"Több betöltése","pollhist.empty":"Még nincs eredmény — nézz vissza holnap.","pollhist.backToPoll":"← Vissza a mai szavazáshoz","pollhist.backToPollShort":"← Mai szavazás",
     'poll.kicker':"A Mai Fura Szavazás",'poll.hint':"Koppints egyre. Nézd meg, mit választottak mások.",'poll.share':"Oszd meg a választásod","poll.historyLink":"Korábbi eredmények →",
     'hero.eyebrow':"Hamarosan · @theoddvi",
     'hero.btnPrimary':"Csináld meg az Odd-tesztet →",'hero.btnGhost':"Nézd Oddvit akcióban ↓",

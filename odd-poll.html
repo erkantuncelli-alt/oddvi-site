@@ -77,6 +77,8 @@
   .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);border:2.5px solid var(--ink);border-radius:999px;padding:6px 14px;transform:rotate(-2deg)}
   h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(32px,5.4vw,52px);line-height:1.05;letter-spacing:-.02em;margin:16px 0 12px}
   .sub{font-size:17px;opacity:.72;max-width:600px}
+  .backlink{display:inline-block;margin-top:18px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none;background:var(--yellow);border:2.5px solid var(--ink);border-radius:10px;padding:8px 14px;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+  .backlink:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
 
   .poll-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:10px 0 100px}
   @media(max-width:860px){.poll-list{grid-template-columns:repeat(2,1fr)}}
@@ -101,6 +103,10 @@
   .loadmore-wrap{text-align:center;padding:10px 0 60px}
 
   footer{border-top:3px solid var(--ink);padding:40px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:500}
+
+  .float-back{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:60;background:var(--red);color:#fff;font-weight:700;font-size:14px;text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;padding:11px 20px;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+  .float-back:hover{transform:translateX(-50%) translateY(2px);box-shadow:1px 1px 0 var(--ink)}
+  @media(min-width:761px){.float-back{display:none}}
 </style>
 </head>
 <body>
@@ -129,6 +135,7 @@
       <span class="kicker" id="t-kicker" data-i18n="pollhist.kicker">Past Odd Polls</span>
       <h1 id="t-title" data-i18n-html="pollhist.title">Every Odd Poll,<br>ranked by chaos.</h1>
       <p class="sub" id="t-sub" data-i18n="pollhist.sub">The daily question changes every day — here's what everyone picked, day by day.</p>
+      <a href="/index.html#poll" class="backlink" data-i18n="pollhist.backToPoll">← Back to today's poll</a>
     </div>
 
     <div class="poll-list" id="pollList"></div>
@@ -142,6 +149,8 @@
     <span>© Pardon My Odd</span>
     <span>Follow the blob: <a href="https://instagram.com/theoddvi" style="color:var(--red-deep)">@theoddvi</a> <span style="opacity:.55;font-size:13px">· 🏗️ <a href="https://instagram.com/pardonmyodd" style="color:inherit" title="Our upcoming brand — coming soon">@pardonmyodd</a></span></span>
   </footer>
+
+  <a href="/index.html#poll" class="float-back" id="floatBack" data-i18n="pollhist.backToPollShort">← Today's poll</a>
 
   <script src="/i18n.js"></script>
   <script>
