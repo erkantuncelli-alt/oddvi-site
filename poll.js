@@ -262,6 +262,9 @@
     if (els.btnB) els.btnB.addEventListener('click', function () { vote('b'); });
     if (els.shareBtn) els.shareBtn.addEventListener('click', shareResult);
 
+    var mascotEl = q('pollMascot');
+    if (mascotEl && window.OddviPollMascot) mascotEl.src = window.OddviPollMascot.get();
+
     window.addEventListener('oddvi:lang', renderPoll);
 
     load();

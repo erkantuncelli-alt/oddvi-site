@@ -75,6 +75,8 @@
 
   .hero{padding:54px 0 30px}
   .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);border:2.5px solid var(--ink);border-radius:999px;padding:6px 14px;transform:rotate(-2deg)}
+  .poll-kicker-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .poll-mascot{width:60px;height:74px;object-fit:cover;object-position:top center;border-radius:12px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(5deg)}
   h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(32px,5.4vw,52px);line-height:1.05;letter-spacing:-.02em;margin:16px 0 12px}
   .sub{font-size:17px;opacity:.72;max-width:600px}
   .backlink{display:inline-block;margin-top:18px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none;background:var(--yellow);border:2.5px solid var(--ink);border-radius:10px;padding:8px 14px;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
@@ -132,7 +134,10 @@
 
   <main class="wrap">
     <div class="hero">
-      <span class="kicker" id="t-kicker" data-i18n="pollhist.kicker">Past Odd Polls</span>
+      <div class="poll-kicker-row">
+        <span class="kicker" id="t-kicker" data-i18n="pollhist.kicker">Past Odd Polls</span>
+        <img class="poll-mascot" id="histMascot" alt="" />
+      </div>
       <h1 id="t-title" data-i18n-html="pollhist.title">Every Odd Poll,<br>ranked by chaos.</h1>
       <p class="sub" id="t-sub" data-i18n="pollhist.sub">The daily question changes every day — here's what everyone picked, day by day.</p>
       <a href="/index.html#poll" class="backlink" data-i18n="pollhist.backToPoll">← Back to today's poll</a>
@@ -160,6 +165,7 @@
       t.addEventListener('click',function(){var o=nl.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
     })();
   </script>
+  <script src="/poll-mascot.js"></script>
   <script src="/odd-poll-history.js"></script>
 </body>
 </html>

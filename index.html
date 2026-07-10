@@ -300,6 +300,8 @@
   /* ---- Daily Odd Poll ---- */
   .poll-section{padding:54px 0;background:var(--paper-2);border-bottom:3px solid var(--ink)}
   .poll-wrap{text-align:center;max-width:640px}
+  .poll-kicker-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .poll-mascot{width:60px;height:74px;object-fit:cover;object-position:top center;border-radius:12px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(5deg)}
   .poll-card{margin-top:18px;background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:7px 7px 0 var(--ink);padding:32px 28px}
   @media(max-width:520px){.poll-card{padding:24px 18px;box-shadow:5px 5px 0 var(--ink)}}
   .poll-series{font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);min-height:16px}
@@ -425,7 +427,10 @@
 
 <section id="poll" class="poll-section">
   <div class="wrap poll-wrap">
-    <span class="kicker" data-i18n="poll.kicker">Today's Odd Poll</span>
+    <div class="poll-kicker-row">
+      <span class="kicker" data-i18n="poll.kicker">Today's Odd Poll</span>
+      <img class="poll-mascot" id="pollMascot" alt="" />
+    </div>
     <div class="poll-card" id="pollCard">
       <div class="poll-series" id="pollSeries">&nbsp;</div>
       <h3 class="poll-question" id="pollQuestion">&nbsp;</h3>
@@ -549,6 +554,7 @@
 <script src="/streak.js"></script>
 <script src="/share.js"></script>
 <script src="/likes-widget.js"></script>
+<script src="/poll-mascot.js"></script>
 <script src="/poll.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();

@@ -83,6 +83,9 @@
 
     window.addEventListener('oddvi:lang', render);
 
+    var mascotEl = document.getElementById('histMascot');
+    if (mascotEl && window.OddviPollMascot) mascotEl.src = window.OddviPollMascot.get();
+
     load(currentDays);
   }
 
