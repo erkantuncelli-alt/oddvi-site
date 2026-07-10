@@ -5,8 +5,6 @@
   var MAX_DAYS = 120;
   var STEP = 30;
 
-  var VOTES_LABEL = { en: 'votes', tr: 'oy', de: 'Stimmen', fr: 'votes', hu: 'szavazat' };
-
   function currentLang() {
     var l = document.documentElement.lang;
     return (l && ['en','tr','de','fr','hu'].indexOf(l) !== -1) ? l : 'en';
@@ -52,7 +50,6 @@
           '<div class="question">' + question + '</div>' +
           '<div class="opt-row' + (aWins ? ' winner' : '') + '"><div class="top"><span>' + optA + '</span><span>' + percentages[0] + '%</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + percentages[0] + '%"></div></div></div>' +
           '<div class="opt-row' + (bWins ? ' winner' : '') + '"><div class="top"><span>' + optB + '</span><span>' + percentages[1] + '%</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + percentages[1] + '%"></div></div></div>' +
-          '<div class="total">' + p.total.toLocaleString(lang === 'tr' ? 'tr-TR' : lang) + ' ' + (VOTES_LABEL[lang] || VOTES_LABEL.en) + '</div>' +
         '</div>'
       );
     }).join('');
