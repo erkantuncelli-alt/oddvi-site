@@ -2298,6 +2298,101 @@
           "social-life"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/austria-alpine-oddvi.jpg",
+      "en": "Alpine Oddvi",
+      "tr": "Avusturyalı Oddvi",
+      "de": "Alpen-Oddvi",
+      "fr": "Oddvi Alpin",
+      "hu": "Alpesi Oddvi",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/hungary-folk-boxers.jpg",
+      "en": "Proudly Hungarian",
+      "tr": "Gururla Macar",
+      "de": "Stolz Ungarisch",
+      "fr": "Fièrement Hongrois",
+      "hu": "Büszkén Magyar",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/turkey-fez-boxers.jpg",
+      "en": "Proudly Turkish",
+      "tr": "Gururla Türk",
+      "de": "Stolz Türkisch",
+      "fr": "Fièrement Turc",
+      "hu": "Büszkén Török",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/budapest-chain-bridge.jpg",
+      "en": "A Little Odd, A Little Genius",
+      "tr": "Biraz Garip, Biraz Dahi",
+      "de": "Ein Bisschen Odd, Ein Bisschen Genie",
+      "fr": "Un Peu Bizarre, Un Peu Génial",
+      "hu": "Kicsit Fura, Kicsit Zseni",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/istanbul-galata-tower.jpg",
+      "en": "Being Odd Is A Tradition Here",
+      "tr": "Garip Olmak Bizde Gelenek",
+      "de": "Hier Ist Odd-Sein Tradition",
+      "fr": "Ici, Être Bizarre Est Une Tradition",
+      "hu": "Nálunk Hagyomány A Furcsaság",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     }
   ]
 }
