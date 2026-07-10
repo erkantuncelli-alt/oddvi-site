@@ -2818,5 +2818,1715 @@ export const pollPool = [
       "fr": "Personne ne le remarque",
       "hu": "Senki nem veszi észre"
     }
+  },
+  {
+    "series": {
+      "en": "Superpowers & Abilities",
+      "tr": "Süper Güçler",
+      "de": "Superkräfte & Fähigkeiten",
+      "fr": "Super-Pouvoirs",
+      "hu": "Szuperképességek"
+    },
+    "question": {
+      "en": "Pick your power.",
+      "tr": "Gücünü seç.",
+      "de": "Wähl deine Kraft.",
+      "fr": "Choisis ton pouvoir.",
+      "hu": "Válaszd az erőd."
+    },
+    "option_a": {
+      "en": "Read minds 🧠",
+      "tr": "Zihin oku 🧠",
+      "de": "Gedanken lesen 🧠",
+      "fr": "Lire les pensées 🧠",
+      "hu": "Gondolatolvasás 🧠"
+    },
+    "option_b": {
+      "en": "Be invisible 👻",
+      "tr": "Görünmez ol 👻",
+      "de": "Unsichtbar sein 👻",
+      "fr": "Être invisible 👻",
+      "hu": "Láthatatlanná válni 👻"
+    }
+  },
+  {
+    "series": {
+      "en": "Superpowers & Abilities",
+      "tr": "Süper Güçler",
+      "de": "Superkräfte & Fähigkeiten",
+      "fr": "Super-Pouvoirs",
+      "hu": "Szuperképességek"
+    },
+    "question": {
+      "en": "Pick your power.",
+      "tr": "Gücünü seç.",
+      "de": "Wähl deine Kraft.",
+      "fr": "Choisis ton pouvoir.",
+      "hu": "Válaszd az erőd."
+    },
+    "option_a": {
+      "en": "Speak every language 🌍",
+      "tr": "Her dili konuş 🌍",
+      "de": "Jede Sprache sprechen 🌍",
+      "fr": "Parler toutes les langues 🌍",
+      "hu": "Minden nyelvet beszélsz 🌍"
+    },
+    "option_b": {
+      "en": "Talk to animals 🐾",
+      "tr": "Hayvanlarla konuş 🐾",
+      "de": "Mit Tieren reden 🐾",
+      "fr": "Parler aux animaux 🐾",
+      "hu": "Állatokkal beszélsz 🐾"
+    }
+  },
+  {
+    "series": {
+      "en": "Superpowers & Abilities",
+      "tr": "Süper Güçler",
+      "de": "Superkräfte & Fähigkeiten",
+      "fr": "Super-Pouvoirs",
+      "hu": "Szuperképességek"
+    },
+    "question": {
+      "en": "Pick your power.",
+      "tr": "Gücünü seç.",
+      "de": "Wähl deine Kraft.",
+      "fr": "Choisis ton pouvoir.",
+      "hu": "Válaszd az erőd."
+    },
+    "option_a": {
+      "en": "Fly 🦅",
+      "tr": "Uç 🦅",
+      "de": "Fliegen 🦅",
+      "fr": "Voler 🦅",
+      "hu": "Repülsz 🦅"
+    },
+    "option_b": {
+      "en": "Teleport ✨",
+      "tr": "Işınlan ✨",
+      "de": "Teleportieren ✨",
+      "fr": "Se téléporter ✨",
+      "hu": "Teleportálsz ✨"
+    }
+  },
+  {
+    "series": {
+      "en": "Superpowers & Abilities",
+      "tr": "Süper Güçler",
+      "de": "Superkräfte & Fähigkeiten",
+      "fr": "Super-Pouvoirs",
+      "hu": "Szuperképességek"
+    },
+    "question": {
+      "en": "Pick your power.",
+      "tr": "Gücünü seç.",
+      "de": "Wähl deine Kraft.",
+      "fr": "Choisis ton pouvoir.",
+      "hu": "Válaszd az erőd."
+    },
+    "option_a": {
+      "en": "See the future 🔮",
+      "tr": "Geleceği gör 🔮",
+      "de": "Die Zukunft sehen 🔮",
+      "fr": "Voir le futur 🔮",
+      "hu": "Látod a jövőt 🔮"
+    },
+    "option_b": {
+      "en": "Change the past ⏳",
+      "tr": "Geçmişi değiştir ⏳",
+      "de": "Die Vergangenheit ändern ⏳",
+      "fr": "Changer le passé ⏳",
+      "hu": "Megváltoztatod a múltat ⏳"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Life Annoyances",
+      "tr": "Günlük Can Sıkıcılar",
+      "de": "Alltägliche Nervereien",
+      "fr": "Petits Tracas Du Quotidien",
+      "hu": "Napi Bosszúságok"
+    },
+    "question": {
+      "en": "Pick your curse.",
+      "tr": "Lanetini seç.",
+      "de": "Wähl deinen Fluch.",
+      "fr": "Choisis ta malédiction.",
+      "hu": "Válaszd az átkod."
+    },
+    "option_a": {
+      "en": "20 min early ⌚",
+      "tr": "20 dk erken ⌚",
+      "de": "20 Min zu früh ⌚",
+      "fr": "20 min en avance ⌚",
+      "hu": "20 perccel korábban ⌚"
+    },
+    "option_b": {
+      "en": "10 min late 🐢",
+      "tr": "10 dk geç 🐢",
+      "de": "10 Min zu spät 🐢",
+      "fr": "10 min en retard 🐢",
+      "hu": "10 perccel később 🐢"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Life Annoyances",
+      "tr": "Günlük Can Sıkıcılar",
+      "de": "Alltägliche Nervereien",
+      "fr": "Petits Tracas Du Quotidien",
+      "hu": "Napi Bosszúságok"
+    },
+    "question": {
+      "en": "Pick your curse.",
+      "tr": "Lanetini seç.",
+      "de": "Wähl deinen Fluch.",
+      "fr": "Choisis ta malédiction.",
+      "hu": "Válaszd az átkod."
+    },
+    "option_a": {
+      "en": "Always about to sneeze 🤧",
+      "tr": "Sürekli hapşıracakmış gibi 🤧",
+      "de": "Ständig niesreif 🤧",
+      "fr": "Toujours prêt à éternuer 🤧",
+      "hu": "Mindig tüsszentenél 🤧"
+    },
+    "option_b": {
+      "en": "Itch you can't reach 🐜",
+      "tr": "Ulaşamadığın kaşıntı 🐜",
+      "de": "Unerreichbarer Juckreiz 🐜",
+      "fr": "Démangeaison inaccessible 🐜",
+      "hu": "Elérhetetlen viszketés 🐜"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Life Annoyances",
+      "tr": "Günlük Can Sıkıcılar",
+      "de": "Alltägliche Nervereien",
+      "fr": "Petits Tracas Du Quotidien",
+      "hu": "Napi Bosszúságok"
+    },
+    "question": {
+      "en": "Pick your curse.",
+      "tr": "Lanetini seç.",
+      "de": "Wähl deinen Fluch.",
+      "fr": "Choisis ta malédiction.",
+      "hu": "Válaszd az átkod."
+    },
+    "option_a": {
+      "en": "Only emojis 💬",
+      "tr": "Sadece emoji 💬",
+      "de": "Nur Emojis 💬",
+      "fr": "Que des emojis 💬",
+      "hu": "Csak emoji 💬"
+    },
+    "option_b": {
+      "en": "No emojis ever 🚫",
+      "tr": "Asla emoji yok 🚫",
+      "de": "Nie wieder Emojis 🚫",
+      "fr": "Plus jamais d'emojis 🚫",
+      "hu": "Soha többé emoji 🚫"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Life Annoyances",
+      "tr": "Günlük Can Sıkıcılar",
+      "de": "Alltägliche Nervereien",
+      "fr": "Petits Tracas Du Quotidien",
+      "hu": "Napi Bosszúságok"
+    },
+    "question": {
+      "en": "Pick your curse.",
+      "tr": "Lanetini seç.",
+      "de": "Wähl deinen Fluch.",
+      "fr": "Choisis ta malédiction.",
+      "hu": "Válaszd az átkod."
+    },
+    "option_a": {
+      "en": "Never sweat 🧊",
+      "tr": "Asla terleme 🧊",
+      "de": "Nie schwitzen 🧊",
+      "fr": "Ne jamais transpirer 🧊",
+      "hu": "Soha nem izzadsz 🧊"
+    },
+    "option_b": {
+      "en": "Never feel cold 🔥",
+      "tr": "Asla üşüme 🔥",
+      "de": "Nie frieren 🔥",
+      "fr": "Ne jamais avoir froid 🔥",
+      "hu": "Soha nem fázol 🔥"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Lifestyle",
+      "tr": "Yemek Ve Yaşam Tarzı",
+      "de": "Essen & Lebensstil",
+      "fr": "Nourriture Et Style De Vie",
+      "hu": "Étel És Életmód"
+    },
+    "question": {
+      "en": "Choose forever.",
+      "tr": "Sonsuza dek seç.",
+      "de": "Für immer wählen.",
+      "fr": "Choisis pour toujours.",
+      "hu": "Válassz örökre."
+    },
+    "option_a": {
+      "en": "Same meal forever 🍲",
+      "tr": "Ömür boyu aynı yemek 🍲",
+      "de": "Für immer dasselbe Essen 🍲",
+      "fr": "Même repas à vie 🍲",
+      "hu": "Örökre ugyanaz az étel 🍲"
+    },
+    "option_b": {
+      "en": "Lose favorite food 💔",
+      "tr": "Favori yemeğini kaybet 💔",
+      "de": "Lieblingsessen verlieren 💔",
+      "fr": "Perdre ton plat préféré 💔",
+      "hu": "Elveszted a kedvenc ételed 💔"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Lifestyle",
+      "tr": "Yemek Ve Yaşam Tarzı",
+      "de": "Essen & Lebensstil",
+      "fr": "Nourriture Et Style De Vie",
+      "hu": "Étel És Életmód"
+    },
+    "question": {
+      "en": "Choose forever.",
+      "tr": "Sonsuza dek seç.",
+      "de": "Für immer wählen.",
+      "fr": "Choisis pour toujours.",
+      "hu": "Válassz örökre."
+    },
+    "option_a": {
+      "en": "Ice-cold showers 🚿",
+      "tr": "Buz gibi duş 🚿",
+      "de": "Eiskalt duschen 🚿",
+      "fr": "Douches glacées 🚿",
+      "hu": "Jéghideg zuhany 🚿"
+    },
+    "option_b": {
+      "en": "Scalding showers 🌋",
+      "tr": "Kaynar duş 🌋",
+      "de": "Kochend heiß duschen 🌋",
+      "fr": "Douches brûlantes 🌋",
+      "hu": "Forró zuhany 🌋"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Lifestyle",
+      "tr": "Yemek Ve Yaşam Tarzı",
+      "de": "Essen & Lebensstil",
+      "fr": "Nourriture Et Style De Vie",
+      "hu": "Étel És Életmód"
+    },
+    "question": {
+      "en": "Choose forever.",
+      "tr": "Sonsuza dek seç.",
+      "de": "Für immer wählen.",
+      "fr": "Choisis pour toujours.",
+      "hu": "Válassz örökre."
+    },
+    "option_a": {
+      "en": "Infinite money 💰",
+      "tr": "Sonsuz para 💰",
+      "de": "Unendlich Geld 💰",
+      "fr": "Argent infini 💰",
+      "hu": "Végtelen pénz 💰"
+    },
+    "option_b": {
+      "en": "Infinite time 🕰️",
+      "tr": "Sonsuz zaman 🕰️",
+      "de": "Unendlich Zeit 🕰️",
+      "fr": "Temps infini 🕰️",
+      "hu": "Végtelen idő 🕰️"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Lifestyle",
+      "tr": "Yemek Ve Yaşam Tarzı",
+      "de": "Essen & Lebensstil",
+      "fr": "Nourriture Et Style De Vie",
+      "hu": "Étel És Életmód"
+    },
+    "question": {
+      "en": "Choose forever.",
+      "tr": "Sonsuza dek seç.",
+      "de": "Für immer wählen.",
+      "fr": "Choisis pour toujours.",
+      "hu": "Válassz örökre."
+    },
+    "option_a": {
+      "en": "Freezing drink 🧊",
+      "tr": "Buz gibi içecek 🧊",
+      "de": "Eiskaltes Getränk 🧊",
+      "fr": "Boisson glacée 🧊",
+      "hu": "Jéghideg ital 🧊"
+    },
+    "option_b": {
+      "en": "Tongue-burning drink 🔥",
+      "tr": "Dil yakan içecek 🔥",
+      "de": "Zungenverbrennend heiß 🔥",
+      "fr": "Boisson brûlante 🔥",
+      "hu": "Nyelvperzselő forró 🔥"
+    }
+  },
+  {
+    "series": {
+      "en": "Tech & Environment",
+      "tr": "Teknoloji Ve Çevre",
+      "de": "Technik & Umgebung",
+      "fr": "Technologie Et Environnement",
+      "hu": "Technológia És Környezet"
+    },
+    "question": {
+      "en": "Pick your world.",
+      "tr": "Dünyanı seç.",
+      "de": "Wähl deine Welt.",
+      "fr": "Choisis ton monde.",
+      "hu": "Válaszd a világod."
+    },
+    "option_a": {
+      "en": "No internet ever 📶",
+      "tr": "Asla internet yok 📶",
+      "de": "Nie wieder Internet 📶",
+      "fr": "Plus jamais d'internet 📶",
+      "hu": "Soha többé internet 📶"
+    },
+    "option_b": {
+      "en": "No smartphone ever 📵",
+      "tr": "Asla akıllı telefon yok 📵",
+      "de": "Nie wieder Smartphone 📵",
+      "fr": "Plus jamais de smartphone 📵",
+      "hu": "Soha többé okostelefon 📵"
+    }
+  },
+  {
+    "series": {
+      "en": "Tech & Environment",
+      "tr": "Teknoloji Ve Çevre",
+      "de": "Technik & Umgebung",
+      "fr": "Technologie Et Environnement",
+      "hu": "Technológia És Környezet"
+    },
+    "question": {
+      "en": "Pick your world.",
+      "tr": "Dünyanı seç.",
+      "de": "Wähl deine Welt.",
+      "fr": "Choisis ton monde.",
+      "hu": "Válaszd a világod."
+    },
+    "option_a": {
+      "en": "Deep space 🌌",
+      "tr": "Derin uzay 🌌",
+      "de": "Tiefes All 🌌",
+      "fr": "Espace profond 🌌",
+      "hu": "Mélyűr 🌌"
+    },
+    "option_b": {
+      "en": "Ocean floor 🌊",
+      "tr": "Okyanus dibi 🌊",
+      "de": "Meeresgrund 🌊",
+      "fr": "Fond de l'océan 🌊",
+      "hu": "Óceán mélye 🌊"
+    }
+  },
+  {
+    "series": {
+      "en": "Tech & Environment",
+      "tr": "Teknoloji Ve Çevre",
+      "de": "Technik & Umgebung",
+      "fr": "Technologie Et Environnement",
+      "hu": "Technológia És Környezet"
+    },
+    "question": {
+      "en": "Pick your world.",
+      "tr": "Dünyanı seç.",
+      "de": "Wähl deine Welt.",
+      "fr": "Choisis ton monde.",
+      "hu": "Válaszd a világod."
+    },
+    "option_a": {
+      "en": "Always spotlighted 🌟",
+      "tr": "Hep reflektörde 🌟",
+      "de": "Immer im Rampenlicht 🌟",
+      "fr": "Toujours sous les projecteurs 🌟",
+      "hu": "Mindig reflektorfényben 🌟"
+    },
+    "option_b": {
+      "en": "Always unnoticed 🌫️",
+      "tr": "Hep fark edilmez 🌫️",
+      "de": "Immer unbemerkt 🌫️",
+      "fr": "Toujours invisible 🌫️",
+      "hu": "Mindig észrevétlen 🌫️"
+    }
+  },
+  {
+    "series": {
+      "en": "Social & Interactions",
+      "tr": "Sosyal Etkileşimler",
+      "de": "Soziale Interaktionen",
+      "fr": "Interactions Sociales",
+      "hu": "Társas Interakciók"
+    },
+    "question": {
+      "en": "Pick your fate.",
+      "tr": "Kaderini seç.",
+      "de": "Wähl dein Schicksal.",
+      "fr": "Choisis ton destin.",
+      "hu": "Válaszd a sorsod."
+    },
+    "option_a": {
+      "en": "Always blunt 🗣️",
+      "tr": "Hep dürüst konuş 🗣️",
+      "de": "Immer ehrlich sagen 🗣️",
+      "fr": "Toujours tout dire 🗣️",
+      "hu": "Mindig kimondod 🗣️"
+    },
+    "option_b": {
+      "en": "Never speak again 🤐",
+      "tr": "Asla konuşamama 🤐",
+      "de": "Nie wieder sprechen 🤐",
+      "fr": "Ne plus jamais parler 🤐",
+      "hu": "Soha többé nem beszélsz 🤐"
+    }
+  },
+  {
+    "series": {
+      "en": "Social & Interactions",
+      "tr": "Sosyal Etkileşimler",
+      "de": "Soziale Interaktionen",
+      "fr": "Interactions Sociales",
+      "hu": "Társas Interakciók"
+    },
+    "question": {
+      "en": "Pick your fate.",
+      "tr": "Kaderini seç.",
+      "de": "Wähl dein Schicksal.",
+      "fr": "Choisis ton destin.",
+      "hu": "Válaszd a sorsod."
+    },
+    "option_a": {
+      "en": "Laugh at tears 😂",
+      "tr": "Ağlayana gül 😂",
+      "de": "Bei Tränen lachen 😂",
+      "fr": "Rire aux larmes des autres 😂",
+      "hu": "Nevetsz a síráson 😂"
+    },
+    "option_b": {
+      "en": "Cry at laughter 😭",
+      "tr": "Gülene ağla 😭",
+      "de": "Beim Lachen weinen 😭",
+      "fr": "Pleurer à leurs rires 😭",
+      "hu": "Sírsz a nevetésen 😭"
+    }
+  },
+  {
+    "series": {
+      "en": "Social & Interactions",
+      "tr": "Sosyal Etkileşimler",
+      "de": "Soziale Interaktionen",
+      "fr": "Interactions Sociales",
+      "hu": "Társas Interakciók"
+    },
+    "question": {
+      "en": "Pick your fate.",
+      "tr": "Kaderini seç.",
+      "de": "Wähl dein Schicksal.",
+      "fr": "Choisis ton destin.",
+      "hu": "Válaszd a sorsod."
+    },
+    "option_a": {
+      "en": "Pause button ⏸️",
+      "tr": "Duraklat düğmesi ⏸️",
+      "de": "Pause-Taste ⏸️",
+      "fr": "Bouton pause ⏸️",
+      "hu": "Szünet gomb ⏸️"
+    },
+    "option_b": {
+      "en": "Rewind button ⏪",
+      "tr": "Geri sar düğmesi ⏪",
+      "de": "Rücklauf-Taste ⏪",
+      "fr": "Bouton retour ⏪",
+      "hu": "Visszatekerés gomb ⏪"
+    }
+  },
+  {
+    "series": {
+      "en": "Social & Interactions",
+      "tr": "Sosyal Etkileşimler",
+      "de": "Soziale Interaktionen",
+      "fr": "Interactions Sociales",
+      "hu": "Társas Interakciók"
+    },
+    "question": {
+      "en": "Pick your fate.",
+      "tr": "Kaderini seç.",
+      "de": "Wähl dein Schicksal.",
+      "fr": "Choisis ton destin.",
+      "hu": "Válaszd a sorsod."
+    },
+    "option_a": {
+      "en": "Know when 🗓️",
+      "tr": "Ne zaman bil 🗓️",
+      "de": "Wissen wann 🗓️",
+      "fr": "Savoir quand 🗓️",
+      "hu": "Tudod mikor 🗓️"
+    },
+    "option_b": {
+      "en": "Know how ⚠️",
+      "tr": "Nasıl bil ⚠️",
+      "de": "Wissen wie ⚠️",
+      "fr": "Savoir comment ⚠️",
+      "hu": "Tudod hogyan ⚠️"
+    }
+  },
+  {
+    "series": {
+      "en": "Physical Quirks & Torments",
+      "tr": "Bedensel Tuhaflıklar",
+      "de": "Körperliche Macken & Qualen",
+      "fr": "Bizarreries Et Tourments Physiques",
+      "hu": "Testi Furcsaságok"
+    },
+    "question": {
+      "en": "Endure forever.",
+      "tr": "Sonsuza dek katlan.",
+      "de": "Für immer ertragen.",
+      "fr": "Supporte pour toujours.",
+      "hu": "Viseld örökre."
+    },
+    "option_a": {
+      "en": "Wet socks forever 🧦",
+      "tr": "Sonsuza dek ıslak çorap 🧦",
+      "de": "Für immer nasse Socken 🧦",
+      "fr": "Chaussettes mouillées à vie 🧦",
+      "hu": "Örökre vizes zokni 🧦"
+    },
+    "option_b": {
+      "en": "Pebble in shoe 🪨",
+      "tr": "Ayakkabıda taş 🪨",
+      "de": "Kiesel im Schuh 🪨",
+      "fr": "Caillou dans la chaussure 🪨",
+      "hu": "Kavics a cipőben 🪨"
+    }
+  },
+  {
+    "series": {
+      "en": "Physical Quirks & Torments",
+      "tr": "Bedensel Tuhaflıklar",
+      "de": "Körperliche Macken & Qualen",
+      "fr": "Bizarreries Et Tourments Physiques",
+      "hu": "Testi Furcsaságok"
+    },
+    "question": {
+      "en": "Endure forever.",
+      "tr": "Sonsuza dek katlan.",
+      "de": "Für immer ertragen.",
+      "fr": "Supporte pour toujours.",
+      "hu": "Viseld örökre."
+    },
+    "option_a": {
+      "en": "Fingers like legs 🖐️",
+      "tr": "Bacak boyu parmaklar 🖐️",
+      "de": "Finger wie Beine 🖐️",
+      "fr": "Doigts géants 🖐️",
+      "hu": "Lábhosszú ujjak 🖐️"
+    },
+    "option_b": {
+      "en": "Legs like fingers 🦵",
+      "tr": "Parmak boyu bacaklar 🦵",
+      "de": "Beine wie Finger 🦵",
+      "fr": "Jambes minuscules 🦵",
+      "hu": "Ujjnyi lábak 🦵"
+    }
+  },
+  {
+    "series": {
+      "en": "Physical Quirks & Torments",
+      "tr": "Bedensel Tuhaflıklar",
+      "de": "Körperliche Macken & Qualen",
+      "fr": "Bizarreries Et Tourments Physiques",
+      "hu": "Testi Furcsaságok"
+    },
+    "question": {
+      "en": "Endure forever.",
+      "tr": "Sonsuza dek katlan.",
+      "de": "Für immer ertragen.",
+      "fr": "Supporte pour toujours.",
+      "hu": "Viseld örökre."
+    },
+    "option_a": {
+      "en": "Always skip 🐇",
+      "tr": "Hep zıplayarak git 🐇",
+      "de": "Immer hüpfen 🐇",
+      "fr": "Toujours sautiller 🐇",
+      "hu": "Mindig szökdelsz 🐇"
+    },
+    "option_b": {
+      "en": "Always crawl 🐛",
+      "tr": "Hep sürünerek git 🐛",
+      "de": "Immer krabbeln 🐛",
+      "fr": "Toujours ramper 🐛",
+      "hu": "Mindig kúszol 🐛"
+    }
+  },
+  {
+    "series": {
+      "en": "Physical Quirks & Torments",
+      "tr": "Bedensel Tuhaflıklar",
+      "de": "Körperliche Macken & Qualen",
+      "fr": "Bizarreries Et Tourments Physiques",
+      "hu": "Testi Furcsaságok"
+    },
+    "question": {
+      "en": "Endure forever.",
+      "tr": "Sonsuza dek katlan.",
+      "de": "Für immer ertragen.",
+      "fr": "Supporte pour toujours.",
+      "hu": "Viseld örökre."
+    },
+    "option_a": {
+      "en": "Hair grows daily 💇",
+      "tr": "Saç her gün uzar 💇",
+      "de": "Haare wachsen täglich 💇",
+      "fr": "Cheveux qui poussent vite 💇",
+      "hu": "A haj naponta nő 💇"
+    },
+    "option_b": {
+      "en": "No hair ever 🥚",
+      "tr": "Hiç saç yok 🥚",
+      "de": "Nie wieder Haare 🥚",
+      "fr": "Plus aucun poil 🥚",
+      "hu": "Sosincs szőrzet 🥚"
+    }
+  },
+  {
+    "series": {
+      "en": "Travel & Time",
+      "tr": "Seyahat Ve Zaman",
+      "de": "Reisen & Zeit",
+      "fr": "Voyage Et Temps",
+      "hu": "Utazás És Idő"
+    },
+    "question": {
+      "en": "Choose your journey.",
+      "tr": "Yolculuğunu seç.",
+      "de": "Wähl deine Reise.",
+      "fr": "Choisis ton voyage.",
+      "hu": "Válaszd az utad."
+    },
+    "option_a": {
+      "en": "Never leave home 🏡",
+      "tr": "Ülkeni asla terk etme 🏡",
+      "de": "Heimat nie verlassen 🏡",
+      "fr": "Ne jamais quitter ton pays 🏡",
+      "hu": "Soha nem hagyod el a hazád 🏡"
+    },
+    "option_b": {
+      "en": "Never return home ✈️",
+      "tr": "Terk et, asla dönme ✈️",
+      "de": "Heimat verlassen, nie zurückkehren ✈️",
+      "fr": "Partir sans jamais revenir ✈️",
+      "hu": "Elhagyod, és nem térsz vissza ✈️"
+    }
+  },
+  {
+    "series": {
+      "en": "Travel & Time",
+      "tr": "Seyahat Ve Zaman",
+      "de": "Reisen & Zeit",
+      "fr": "Voyage Et Temps",
+      "hu": "Utazás És Idő"
+    },
+    "question": {
+      "en": "Choose your journey.",
+      "tr": "Yolculuğunu seç.",
+      "de": "Wähl deine Reise.",
+      "fr": "Choisis ton voyage.",
+      "hu": "Válaszd az utad."
+    },
+    "option_a": {
+      "en": "100 years back 🕰️",
+      "tr": "100 yıl geriye 🕰️",
+      "de": "100 Jahre zurück 🕰️",
+      "fr": "100 ans en arrière 🕰️",
+      "hu": "100 évvel vissza 🕰️"
+    },
+    "option_b": {
+      "en": "100 years forward 🚀",
+      "tr": "100 yıl ileriye 🚀",
+      "de": "100 Jahre vor 🚀",
+      "fr": "100 ans en avant 🚀",
+      "hu": "100 évvel előre 🚀"
+    }
+  },
+  {
+    "series": {
+      "en": "Travel & Time",
+      "tr": "Seyahat Ve Zaman",
+      "de": "Reisen & Zeit",
+      "fr": "Voyage Et Temps",
+      "hu": "Utazás És Idő"
+    },
+    "question": {
+      "en": "Choose your journey.",
+      "tr": "Yolculuğunu seç.",
+      "de": "Wähl deine Reise.",
+      "fr": "Choisis ton voyage.",
+      "hu": "Válaszd az utad."
+    },
+    "option_a": {
+      "en": "Stranded in desert 🐪",
+      "tr": "Çölde mahsur kal 🐪",
+      "de": "Gestrandet in der Wüste 🐪",
+      "fr": "Coincé dans le désert 🐪",
+      "hu": "Elakadsz a sivatagban 🐪"
+    },
+    "option_b": {
+      "en": "Stranded in jungle 🌴",
+      "tr": "Ormanda mahsur kal 🌴",
+      "de": "Gestrandet im Dschungel 🌴",
+      "fr": "Coincé dans la jungle 🌴",
+      "hu": "Elakadsz a dzsungelben 🌴"
+    }
+  },
+  {
+    "series": {
+      "en": "Travel & Time",
+      "tr": "Seyahat Ve Zaman",
+      "de": "Reisen & Zeit",
+      "fr": "Voyage Et Temps",
+      "hu": "Utazás És Idő"
+    },
+    "question": {
+      "en": "Choose your journey.",
+      "tr": "Yolculuğunu seç.",
+      "de": "Wähl deine Reise.",
+      "fr": "Choisis ton voyage.",
+      "hu": "Válaszd az utad."
+    },
+    "option_a": {
+      "en": "Personal spaceship 🛸",
+      "tr": "Kişisel uzay gemisi 🛸",
+      "de": "Eigenes Raumschiff 🛸",
+      "fr": "Vaisseau spatial perso 🛸",
+      "hu": "Saját űrhajó 🛸"
+    },
+    "option_b": {
+      "en": "Personal time machine ⏳",
+      "tr": "Kişisel zaman makinesi ⏳",
+      "de": "Eigene Zeitmaschine ⏳",
+      "fr": "Machine à voyager perso ⏳",
+      "hu": "Saját időgép ⏳"
+    }
+  },
+  {
+    "series": {
+      "en": "Fantasy & Alternate Lives",
+      "tr": "Fantezi Ve Alternatif Hayatlar",
+      "de": "Fantasie & Andere Leben",
+      "fr": "Fantaisie Et Vies Alternatives",
+      "hu": "Fantázia És Alternatív Életek"
+    },
+    "question": {
+      "en": "Live this forever.",
+      "tr": "Bunu sonsuza dek yaşa.",
+      "de": "Lebe das für immer.",
+      "fr": "Vis ça pour toujours.",
+      "hu": "Éld ezt örökre."
+    },
+    "option_a": {
+      "en": "Rom-com life 💖",
+      "tr": "Romantik komedi hayatı 💖",
+      "de": "Liebeskomödien-Leben 💖",
+      "fr": "Vie en comédie romantique 💖",
+      "hu": "Romantikus vígjáték élet 💖"
+    },
+    "option_b": {
+      "en": "Apocalypse life 🧟",
+      "tr": "Kıyamet sonrası hayat 🧟",
+      "de": "Endzeit-Leben 🧟",
+      "fr": "Vie post-apocalyptique 🧟",
+      "hu": "Apokalipszis utáni élet 🧟"
+    }
+  },
+  {
+    "series": {
+      "en": "Fantasy & Alternate Lives",
+      "tr": "Fantezi Ve Alternatif Hayatlar",
+      "de": "Fantasie & Andere Leben",
+      "fr": "Fantaisie Et Vies Alternatives",
+      "hu": "Fantázia És Alternatív Életek"
+    },
+    "question": {
+      "en": "Live this forever.",
+      "tr": "Bunu sonsuza dek yaşa.",
+      "de": "Lebe das für immer.",
+      "fr": "Vis ça pour toujours.",
+      "hu": "Éld ezt örökre."
+    },
+    "option_a": {
+      "en": "Movie star 🎬",
+      "tr": "Film yıldızı 🎬",
+      "de": "Filmstar 🎬",
+      "fr": "Star de cinéma 🎬",
+      "hu": "Filmsztár 🎬"
+    },
+    "option_b": {
+      "en": "Rock star 🎸",
+      "tr": "Rock yıldızı 🎸",
+      "de": "Rockstar 🎸",
+      "fr": "Rockstar 🎸",
+      "hu": "Rocksztár 🎸"
+    }
+  },
+  {
+    "series": {
+      "en": "Fantasy & Alternate Lives",
+      "tr": "Fantezi Ve Alternatif Hayatlar",
+      "de": "Fantasie & Andere Leben",
+      "fr": "Fantaisie Et Vies Alternatives",
+      "hu": "Fantázia És Alternatív Életek"
+    },
+    "question": {
+      "en": "Live this forever.",
+      "tr": "Bunu sonsuza dek yaşa.",
+      "de": "Lebe das für immer.",
+      "fr": "Vis ça pour toujours.",
+      "hu": "Éld ezt örökre."
+    },
+    "option_a": {
+      "en": "One horse-duck 🦆",
+      "tr": "At boyu bir ördek 🦆",
+      "de": "Eine pferdegroße Ente 🦆",
+      "fr": "Un canard géant 🦆",
+      "hu": "Egy lóméretű kacsa 🦆"
+    },
+    "option_b": {
+      "en": "100 duck-horses 🐎",
+      "tr": "100 ördek boyu at 🐎",
+      "de": "100 entengroße Pferde 🐎",
+      "fr": "100 chevaux minuscules 🐎",
+      "hu": "100 kacsaméretű ló 🐎"
+    }
+  },
+  {
+    "series": {
+      "en": "Fantasy & Alternate Lives",
+      "tr": "Fantezi Ve Alternatif Hayatlar",
+      "de": "Fantasie & Andere Leben",
+      "fr": "Fantaisie Et Vies Alternatives",
+      "hu": "Fantázia És Alternatív Életek"
+    },
+    "question": {
+      "en": "Live this forever.",
+      "tr": "Bunu sonsuza dek yaşa.",
+      "de": "Lebe das für immer.",
+      "fr": "Vis ça pour toujours.",
+      "hu": "Éld ezt örökre."
+    },
+    "option_a": {
+      "en": "Breathe underwater 🐟",
+      "tr": "Su altında nefes al 🐟",
+      "de": "Unter Wasser atmen 🐟",
+      "fr": "Respirer sous l'eau 🐟",
+      "hu": "Víz alatt lélegzel 🐟"
+    },
+    "option_b": {
+      "en": "Walk through walls 🧱",
+      "tr": "Duvarlardan geç 🧱",
+      "de": "Durch Wände gehen 🧱",
+      "fr": "Traverser les murs 🧱",
+      "hu": "Falakon átsétálsz 🧱"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Pancakes 🥞",
+      "tr": "Pankek 🥞",
+      "de": "Pancakes 🥞",
+      "fr": "Pancakes 🥞",
+      "hu": "Palacsinta 🥞"
+    },
+    "option_b": {
+      "en": "Waffles 🧇",
+      "tr": "Waffle 🧇",
+      "de": "Waffeln 🧇",
+      "fr": "Gaufres 🧇",
+      "hu": "Gofri 🧇"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Cold Pizza 🍕🥶",
+      "tr": "Soğuk pizza 🍕🥶",
+      "de": "Kalte Pizza 🍕🥶",
+      "fr": "Pizza froide 🍕🥶",
+      "hu": "Hideg pizza 🍕🥶"
+    },
+    "option_b": {
+      "en": "Hot Pizza 🍕🔥",
+      "tr": "Sıcak pizza 🍕🔥",
+      "de": "Heiße Pizza 🍕🔥",
+      "fr": "Pizza chaude 🍕🔥",
+      "hu": "Forró pizza 🍕🔥"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Soft Cookies 🍪",
+      "tr": "Yumuşak kurabiye 🍪",
+      "de": "Weiche Kekse 🍪",
+      "fr": "Cookies moelleux 🍪",
+      "hu": "Puha keksz 🍪"
+    },
+    "option_b": {
+      "en": "Crunchy Cookies 🥨",
+      "tr": "Çıtır kurabiye 🥨",
+      "de": "Knusprige Kekse 🥨",
+      "fr": "Cookies croquants 🥨",
+      "hu": "Ropogós keksz 🥨"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Bite Ice Cream 🦷",
+      "tr": "Dondurmayı ısır 🦷",
+      "de": "Eis abbeißen 🦷",
+      "fr": "Croquer la glace 🦷",
+      "hu": "Beleharapsz a fagyiba 🦷"
+    },
+    "option_b": {
+      "en": "Lick Ice Cream 👅",
+      "tr": "Dondurmayı yala 👅",
+      "de": "Eis lecken 👅",
+      "fr": "Lécher la glace 👅",
+      "hu": "Megnyalod a fagyit 👅"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Coffee ☕",
+      "tr": "Kahve ☕",
+      "de": "Kaffee ☕",
+      "fr": "Café ☕",
+      "hu": "Kávé ☕"
+    },
+    "option_b": {
+      "en": "Tea 🍵",
+      "tr": "Çay 🍵",
+      "de": "Tee 🍵",
+      "fr": "Thé 🍵",
+      "hu": "Tea 🍵"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Sparkling Water ✨💧",
+      "tr": "Maden suyu ✨💧",
+      "de": "Sprudelwasser ✨💧",
+      "fr": "Eau pétillante ✨💧",
+      "hu": "Szénsavas víz ✨💧"
+    },
+    "option_b": {
+      "en": "Still Water 💧",
+      "tr": "Sade su 💧",
+      "de": "Stilles Wasser 💧",
+      "fr": "Eau plate 💧",
+      "hu": "Sima víz 💧"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Ketchup on Side 🍅",
+      "tr": "Ketçap kenarda 🍅",
+      "de": "Ketchup daneben 🍅",
+      "fr": "Ketchup à côté 🍅",
+      "hu": "Ketchup mellette 🍅"
+    },
+    "option_b": {
+      "en": "Ketchup All Over 🍟",
+      "tr": "Ketçap her yerde 🍟",
+      "de": "Ketchup überall 🍟",
+      "fr": "Ketchup partout 🍟",
+      "hu": "Ketchup mindenhol 🍟"
+    }
+  },
+  {
+    "series": {
+      "en": "Food & Drink Debates",
+      "tr": "Yemek Ve İçecek Tartışmaları",
+      "de": "Essens- & Getränkedebatten",
+      "fr": "Débats Nourriture Et Boissons",
+      "hu": "Étel És Ital Viták"
+    },
+    "question": {
+      "en": "Pick a side.",
+      "tr": "Bir taraf seç.",
+      "de": "Wähl eine Seite.",
+      "fr": "Choisis un camp.",
+      "hu": "Válassz oldalt."
+    },
+    "option_a": {
+      "en": "Flat Water 🫗",
+      "tr": "Oda sıcaklığında su 🫗",
+      "de": "Zimmerwarmes Wasser 🫗",
+      "fr": "Eau à température ambiante 🫗",
+      "hu": "Szobahőmérsékletű víz 🫗"
+    },
+    "option_b": {
+      "en": "Ice Water 🧊",
+      "tr": "Buzlu su 🧊",
+      "de": "Eiswasser 🧊",
+      "fr": "Eau glacée 🧊",
+      "hu": "Jeges víz 🧊"
+    }
+  },
+  {
+    "series": {
+      "en": "Digital & Tech Habits",
+      "tr": "Dijital Alışkanlıklar",
+      "de": "Digitale Gewohnheiten",
+      "fr": "Habitudes Numériques",
+      "hu": "Digitális Szokások"
+    },
+    "question": {
+      "en": "Your habit?",
+      "tr": "Alışkanlığın?",
+      "de": "Deine Gewohnheit?",
+      "fr": "Ton habitude?",
+      "hu": "A szokásod?"
+    },
+    "option_a": {
+      "en": "Texting 📱",
+      "tr": "Mesaj 📱",
+      "de": "Texten 📱",
+      "fr": "Textos 📱",
+      "hu": "Üzenet 📱"
+    },
+    "option_b": {
+      "en": "Calling 📞",
+      "tr": "Arama 📞",
+      "de": "Anrufen 📞",
+      "fr": "Appels 📞",
+      "hu": "Hívás 📞"
+    }
+  },
+  {
+    "series": {
+      "en": "Digital & Tech Habits",
+      "tr": "Dijital Alışkanlıklar",
+      "de": "Digitale Gewohnheiten",
+      "fr": "Habitudes Numériques",
+      "hu": "Digitális Szokások"
+    },
+    "question": {
+      "en": "Your habit?",
+      "tr": "Alışkanlığın?",
+      "de": "Deine Gewohnheit?",
+      "fr": "Ton habitude?",
+      "hu": "A szokásod?"
+    },
+    "option_a": {
+      "en": "Dark Mode 🌙",
+      "tr": "Koyu mod 🌙",
+      "de": "Dark Mode 🌙",
+      "fr": "Mode sombre 🌙",
+      "hu": "Sötét mód 🌙"
+    },
+    "option_b": {
+      "en": "Light Mode ☀️",
+      "tr": "Açık mod ☀️",
+      "de": "Light Mode ☀️",
+      "fr": "Mode clair ☀️",
+      "hu": "Világos mód ☀️"
+    }
+  },
+  {
+    "series": {
+      "en": "Digital & Tech Habits",
+      "tr": "Dijital Alışkanlıklar",
+      "de": "Digitale Gewohnheiten",
+      "fr": "Habitudes Numériques",
+      "hu": "Digitális Szokások"
+    },
+    "question": {
+      "en": "Your habit?",
+      "tr": "Alışkanlığın?",
+      "de": "Deine Gewohnheit?",
+      "fr": "Ton habitude?",
+      "hu": "A szokásod?"
+    },
+    "option_a": {
+      "en": "Subtitles On 📺",
+      "tr": "Altyazı açık 📺",
+      "de": "Untertitel an 📺",
+      "fr": "Sous-titres activés 📺",
+      "hu": "Felirat be 📺"
+    },
+    "option_b": {
+      "en": "Subtitles Off 🚫",
+      "tr": "Altyazı kapalı 🚫",
+      "de": "Untertitel aus 🚫",
+      "fr": "Sous-titres désactivés 🚫",
+      "hu": "Felirat ki 🚫"
+    }
+  },
+  {
+    "series": {
+      "en": "Digital & Tech Habits",
+      "tr": "Dijital Alışkanlıklar",
+      "de": "Digitale Gewohnheiten",
+      "fr": "Habitudes Numériques",
+      "hu": "Digitális Szokások"
+    },
+    "question": {
+      "en": "Your habit?",
+      "tr": "Alışkanlığın?",
+      "de": "Deine Gewohnheit?",
+      "fr": "Ton habitude?",
+      "hu": "A szokásod?"
+    },
+    "option_a": {
+      "en": "Apple 🍏",
+      "tr": "Apple 🍏",
+      "de": "Apple 🍏",
+      "fr": "Apple 🍏",
+      "hu": "Apple 🍏"
+    },
+    "option_b": {
+      "en": "Android 🤖",
+      "tr": "Android 🤖",
+      "de": "Android 🤖",
+      "fr": "Android 🤖",
+      "hu": "Android 🤖"
+    }
+  },
+  {
+    "series": {
+      "en": "Digital & Tech Habits",
+      "tr": "Dijital Alışkanlıklar",
+      "de": "Digitale Gewohnheiten",
+      "fr": "Habitudes Numériques",
+      "hu": "Digitális Szokások"
+    },
+    "question": {
+      "en": "Your habit?",
+      "tr": "Alışkanlığın?",
+      "de": "Deine Gewohnheit?",
+      "fr": "Ton habitude?",
+      "hu": "A szokásod?"
+    },
+    "option_a": {
+      "en": "100 Tabs Open 💻",
+      "tr": "100 sekme açık 💻",
+      "de": "100 Tabs offen 💻",
+      "fr": "100 onglets ouverts 💻",
+      "hu": "100 nyitott fül 💻"
+    },
+    "option_b": {
+      "en": "Close Every Tab ❌",
+      "tr": "Her sekmeyi kapat ❌",
+      "de": "Jeden Tab schließen ❌",
+      "fr": "Fermer chaque onglet ❌",
+      "hu": "Minden fület bezársz ❌"
+    }
+  },
+  {
+    "series": {
+      "en": "Digital & Tech Habits",
+      "tr": "Dijital Alışkanlıklar",
+      "de": "Digitale Gewohnheiten",
+      "fr": "Habitudes Numériques",
+      "hu": "Digitális Szokások"
+    },
+    "question": {
+      "en": "Your habit?",
+      "tr": "Alışkanlığın?",
+      "de": "Deine Gewohnheit?",
+      "fr": "Ton habitude?",
+      "hu": "A szokásod?"
+    },
+    "option_a": {
+      "en": "Read Receipts On 👀",
+      "tr": "Okundu bilgisi açık 👀",
+      "de": "Lesebestätigung an 👀",
+      "fr": "Accusés de lecture activés 👀",
+      "hu": "Olvasási visszaigazolás be 👀"
+    },
+    "option_b": {
+      "en": "Read Receipts Off 👻",
+      "tr": "Okundu bilgisi kapalı 👻",
+      "de": "Lesebestätigung aus 👻",
+      "fr": "Accusés de lecture désactivés 👻",
+      "hu": "Olvasási visszaigazolás ki 👻"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Routines & Quirks",
+      "tr": "Günlük Rutinler Ve Tuhaflıklar",
+      "de": "Alltagsroutinen & Macken",
+      "fr": "Routines Et Bizarreries Du Quotidien",
+      "hu": "Napi Rutinok És Furcsaságok"
+    },
+    "question": {
+      "en": "Your ritual?",
+      "tr": "Ritüelin?",
+      "de": "Dein Ritual?",
+      "fr": "Ton rituel?",
+      "hu": "A rituálád?"
+    },
+    "option_a": {
+      "en": "Toilet Paper Over 🧻",
+      "tr": "Tuvalet kağıdı üstten 🧻",
+      "de": "Klopapier über 🧻",
+      "fr": "Papier toilette par-dessus 🧻",
+      "hu": "WC-papír felülről 🧻"
+    },
+    "option_b": {
+      "en": "Toilet Paper Under 🙃",
+      "tr": "Tuvalet kağıdı alttan 🙃",
+      "de": "Klopapier unter 🙃",
+      "fr": "Papier toilette par-dessous 🙃",
+      "hu": "WC-papír alulról 🙃"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Routines & Quirks",
+      "tr": "Günlük Rutinler Ve Tuhaflıklar",
+      "de": "Alltagsroutinen & Macken",
+      "fr": "Routines Et Bizarreries Du Quotidien",
+      "hu": "Napi Rutinok És Furcsaságok"
+    },
+    "question": {
+      "en": "Your ritual?",
+      "tr": "Ritüelin?",
+      "de": "Dein Ritual?",
+      "fr": "Ton rituel?",
+      "hu": "A rituálád?"
+    },
+    "option_a": {
+      "en": "Hit Snooze ⏰",
+      "tr": "Ertele düğmesi ⏰",
+      "de": "Snooze drücken ⏰",
+      "fr": "Appuyer sur snooze ⏰",
+      "hu": "Szundi gomb ⏰"
+    },
+    "option_b": {
+      "en": "Up Immediately 🚀",
+      "tr": "Hemen kalk 🚀",
+      "de": "Sofort aufstehen 🚀",
+      "fr": "Se lever direct 🚀",
+      "hu": "Azonnal felkelsz 🚀"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Routines & Quirks",
+      "tr": "Günlük Rutinler Ve Tuhaflıklar",
+      "de": "Alltagsroutinen & Macken",
+      "fr": "Routines Et Bizarreries Du Quotidien",
+      "hu": "Napi Rutinok És Furcsaságok"
+    },
+    "question": {
+      "en": "Your ritual?",
+      "tr": "Ritüelin?",
+      "de": "Dein Ritual?",
+      "fr": "Ton rituel?",
+      "hu": "A rituálád?"
+    },
+    "option_a": {
+      "en": "Eat at the Table 🪑",
+      "tr": "Masada ye 🪑",
+      "de": "Am Tisch essen 🪑",
+      "fr": "Manger à table 🪑",
+      "hu": "Az asztalnál eszel 🪑"
+    },
+    "option_b": {
+      "en": "Eat on the Couch 🛋️",
+      "tr": "Koltukta ye 🛋️",
+      "de": "Auf dem Sofa essen 🛋️",
+      "fr": "Manger sur le canapé 🛋️",
+      "hu": "A kanapén eszel 🛋️"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Routines & Quirks",
+      "tr": "Günlük Rutinler Ve Tuhaflıklar",
+      "de": "Alltagsroutinen & Macken",
+      "fr": "Routines Et Bizarreries Du Quotidien",
+      "hu": "Napi Rutinok És Furcsaságok"
+    },
+    "question": {
+      "en": "Your ritual?",
+      "tr": "Ritüelin?",
+      "de": "Dein Ritual?",
+      "fr": "Ton rituel?",
+      "hu": "A rituálád?"
+    },
+    "option_a": {
+      "en": "Fold Clothes 👕",
+      "tr": "Kıyafeti katla 👕",
+      "de": "Kleidung falten 👕",
+      "fr": "Plier les vêtements 👕",
+      "hu": "Összehajtod a ruhát 👕"
+    },
+    "option_b": {
+      "en": "Hang Clothes 🧥",
+      "tr": "Kıyafeti as 🧥",
+      "de": "Kleidung aufhängen 🧥",
+      "fr": "Suspendre les vêtements 🧥",
+      "hu": "Felakasztod a ruhát 🧥"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Routines & Quirks",
+      "tr": "Günlük Rutinler Ve Tuhaflıklar",
+      "de": "Alltagsroutinen & Macken",
+      "fr": "Routines Et Bizarreries Du Quotidien",
+      "hu": "Napi Rutinok És Furcsaságok"
+    },
+    "question": {
+      "en": "Your ritual?",
+      "tr": "Ritüelin?",
+      "de": "Dein Ritual?",
+      "fr": "Ton rituel?",
+      "hu": "A rituálád?"
+    },
+    "option_a": {
+      "en": "Wash Legs in Shower 🧼",
+      "tr": "Bacakları yıka 🧼",
+      "de": "Beine extra waschen 🧼",
+      "fr": "Laver les jambes 🧼",
+      "hu": "Lemosod a lábad 🧼"
+    },
+    "option_b": {
+      "en": "Let the Soap Run Down 🚿",
+      "tr": "Sabunun akmasına bırak 🚿",
+      "de": "Seife einfach runterlaufen lassen 🚿",
+      "fr": "Laisser couler le savon 🚿",
+      "hu": "Hagyod lefolyni a szappant 🚿"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Routines & Quirks",
+      "tr": "Günlük Rutinler Ve Tuhaflıklar",
+      "de": "Alltagsroutinen & Macken",
+      "fr": "Routines Et Bizarreries Du Quotidien",
+      "hu": "Napi Rutinok És Furcsaságok"
+    },
+    "question": {
+      "en": "Your ritual?",
+      "tr": "Ritüelin?",
+      "de": "Dein Ritual?",
+      "fr": "Ton rituel?",
+      "hu": "A rituálád?"
+    },
+    "option_a": {
+      "en": "Brush Teeth Before Breakfast 🪥",
+      "tr": "Kahvaltıdan önce fırçala 🪥",
+      "de": "Vor dem Frühstück putzen 🪥",
+      "fr": "Se brosser avant le petit-déj 🪥",
+      "hu": "Reggeli előtt fogat mosol 🪥"
+    },
+    "option_b": {
+      "en": "After Breakfast 🥞",
+      "tr": "Kahvaltıdan sonra 🥞",
+      "de": "Nach dem Frühstück 🥞",
+      "fr": "Après le petit-déj 🥞",
+      "hu": "Reggeli után 🥞"
+    }
+  },
+  {
+    "series": {
+      "en": "Daily Routines & Quirks",
+      "tr": "Günlük Rutinler Ve Tuhaflıklar",
+      "de": "Alltagsroutinen & Macken",
+      "fr": "Routines Et Bizarreries Du Quotidien",
+      "hu": "Napi Rutinok És Furcsaságok"
+    },
+    "question": {
+      "en": "Your ritual?",
+      "tr": "Ritüelin?",
+      "de": "Dein Ritual?",
+      "fr": "Ton rituel?",
+      "hu": "A rituálád?"
+    },
+    "option_a": {
+      "en": "Make the Bed 🛏️",
+      "tr": "Yatağı topla 🛏️",
+      "de": "Bett machen 🛏️",
+      "fr": "Faire le lit 🛏️",
+      "hu": "Beágyazol 🛏️"
+    },
+    "option_b": {
+      "en": "Leave it Messy 🌪️",
+      "tr": "Dağınık bırak 🌪️",
+      "de": "Chaos lassen 🌪️",
+      "fr": "Le laisser en bazar 🌪️",
+      "hu": "Hagyod kupinak 🌪️"
+    }
+  },
+  {
+    "series": {
+      "en": "Out & About",
+      "tr": "Dışarıda",
+      "de": "Unterwegs",
+      "fr": "En Sortie",
+      "hu": "Kint A Világban"
+    },
+    "question": {
+      "en": "Your pick?",
+      "tr": "Seçimin?",
+      "de": "Deine Wahl?",
+      "fr": "Ton choix?",
+      "hu": "A választásod?"
+    },
+    "option_a": {
+      "en": "Dog Person 🐶",
+      "tr": "Köpek insanı 🐶",
+      "de": "Hundemensch 🐶",
+      "fr": "Team chien 🐶",
+      "hu": "Kutyás ember 🐶"
+    },
+    "option_b": {
+      "en": "Cat Person 🐱",
+      "tr": "Kedi insanı 🐱",
+      "de": "Katzenmensch 🐱",
+      "fr": "Team chat 🐱",
+      "hu": "Macskás ember 🐱"
+    }
+  },
+  {
+    "series": {
+      "en": "Out & About",
+      "tr": "Dışarıda",
+      "de": "Unterwegs",
+      "fr": "En Sortie",
+      "hu": "Kint A Világban"
+    },
+    "question": {
+      "en": "Your pick?",
+      "tr": "Seçimin?",
+      "de": "Deine Wahl?",
+      "fr": "Ton choix?",
+      "hu": "A választásod?"
+    },
+    "option_a": {
+      "en": "Backpack 🎒",
+      "tr": "Sırt çantası 🎒",
+      "de": "Rucksack 🎒",
+      "fr": "Sac à dos 🎒",
+      "hu": "Hátizsák 🎒"
+    },
+    "option_b": {
+      "en": "Tote Bag 🛍️",
+      "tr": "Bez çanta 🛍️",
+      "de": "Stoffbeutel 🛍️",
+      "fr": "Tote bag 🛍️",
+      "hu": "Vászontáska 🛍️"
+    }
+  },
+  {
+    "series": {
+      "en": "Out & About",
+      "tr": "Dışarıda",
+      "de": "Unterwegs",
+      "fr": "En Sortie",
+      "hu": "Kint A Világban"
+    },
+    "question": {
+      "en": "Your pick?",
+      "tr": "Seçimin?",
+      "de": "Deine Wahl?",
+      "fr": "Ton choix?",
+      "hu": "A választásod?"
+    },
+    "option_a": {
+      "en": "Take the Stairs 🚶",
+      "tr": "Merdiven 🚶",
+      "de": "Treppe 🚶",
+      "fr": "Escaliers 🚶",
+      "hu": "Lépcső 🚶"
+    },
+    "option_b": {
+      "en": "Take the Elevator 🛗",
+      "tr": "Asansör 🛗",
+      "de": "Aufzug 🛗",
+      "fr": "Ascenseur 🛗",
+      "hu": "Lift 🛗"
+    }
+  },
+  {
+    "series": {
+      "en": "Out & About",
+      "tr": "Dışarıda",
+      "de": "Unterwegs",
+      "fr": "En Sortie",
+      "hu": "Kint A Világban"
+    },
+    "question": {
+      "en": "Your pick?",
+      "tr": "Seçimin?",
+      "de": "Deine Wahl?",
+      "fr": "Ton choix?",
+      "hu": "A választásod?"
+    },
+    "option_a": {
+      "en": "Arrive Early ⏳",
+      "tr": "Erken var ⏳",
+      "de": "Früh da sein ⏳",
+      "fr": "Arriver en avance ⏳",
+      "hu": "Korán érkezel ⏳"
+    },
+    "option_b": {
+      "en": "Right on Time 🎯",
+      "tr": "Tam zamanında 🎯",
+      "de": "Pünktlich da sein 🎯",
+      "fr": "Arriver pile à l'heure 🎯",
+      "hu": "Pontosan érkezel 🎯"
+    }
+  },
+  {
+    "series": {
+      "en": "Out & About",
+      "tr": "Dışarıda",
+      "de": "Unterwegs",
+      "fr": "En Sortie",
+      "hu": "Kint A Világban"
+    },
+    "question": {
+      "en": "Your pick?",
+      "tr": "Seçimin?",
+      "de": "Deine Wahl?",
+      "fr": "Ton choix?",
+      "hu": "A választásod?"
+    },
+    "option_a": {
+      "en": "Pay with Cash 💵",
+      "tr": "Nakit öde 💵",
+      "de": "Bar zahlen 💵",
+      "fr": "Payer en espèces 💵",
+      "hu": "Készpénzzel fizetsz 💵"
+    },
+    "option_b": {
+      "en": "Pay with Card 💳",
+      "tr": "Kartla öde 💳",
+      "de": "Karte zahlen 💳",
+      "fr": "Payer par carte 💳",
+      "hu": "Kártyával fizetsz 💳"
+    }
   }
 ];
