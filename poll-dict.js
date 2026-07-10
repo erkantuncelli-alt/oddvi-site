@@ -1438,5 +1438,665 @@ export const pollPool = [
       "fr": "J'y travaille encore",
       "hu": "Még dolgozom rajta"
     }
+  },
+  {
+    "series": {
+      "en": "Snack Wars",
+      "tr": "Atıştırmalık Savaşları",
+      "de": "Snack-Kriege",
+      "fr": "Guerre Des Snacks",
+      "hu": "Nassolnivaló Háború"
+    },
+    "question": {
+      "en": "Dip your fries in...",
+      "tr": "Patatesi neye batır?",
+      "de": "Pommes tunkst du in...",
+      "fr": "Tu trempes tes frites dans...",
+      "hu": "Mibe mártod a hasábburgonyát?"
+    },
+    "option_a": {
+      "en": "Ice cream 🍟🍦",
+      "tr": "Dondurmaya 🍟🍦",
+      "de": "Eis 🍟🍦",
+      "fr": "De la glace 🍟🍦",
+      "hu": "Fagyiba 🍟🍦"
+    },
+    "option_b": {
+      "en": "Never 🚫",
+      "tr": "Asla 🚫",
+      "de": "Niemals 🚫",
+      "fr": "Jamais 🚫",
+      "hu": "Soha 🚫"
+    }
+  },
+  {
+    "series": {
+      "en": "Snack Wars",
+      "tr": "Atıştırmalık Savaşları",
+      "de": "Snack-Kriege",
+      "fr": "Guerre Des Snacks",
+      "hu": "Nassolnivaló Háború"
+    },
+    "question": {
+      "en": "Pineapple on pizza?",
+      "tr": "Pizzada ananas?",
+      "de": "Ananas auf Pizza?",
+      "fr": "Ananas sur la pizza?",
+      "hu": "Ananász a pizzán?"
+    },
+    "option_a": {
+      "en": "Always 🍍🍕",
+      "tr": "Her zaman 🍍🍕",
+      "de": "Immer 🍍🍕",
+      "fr": "Toujours 🍍🍕",
+      "hu": "Mindig 🍍🍕"
+    },
+    "option_b": {
+      "en": "Never",
+      "tr": "Asla",
+      "de": "Niemals",
+      "fr": "Jamais",
+      "hu": "Soha"
+    }
+  },
+  {
+    "series": {
+      "en": "Snack Wars",
+      "tr": "Atıştırmalık Savaşları",
+      "de": "Snack-Kriege",
+      "fr": "Guerre Des Snacks",
+      "hu": "Nassolnivaló Háború"
+    },
+    "question": {
+      "en": "Popcorn style?",
+      "tr": "Patlamış mısır?",
+      "de": "Popcorn-Stil?",
+      "fr": "Style de popcorn?",
+      "hu": "Popcorn stílus?"
+    },
+    "option_a": {
+      "en": "Sweet 🍿",
+      "tr": "Tatlı 🍿",
+      "de": "Süß 🍿",
+      "fr": "Sucré 🍿",
+      "hu": "Édes 🍿"
+    },
+    "option_b": {
+      "en": "Salty 🍿",
+      "tr": "Tuzlu 🍿",
+      "de": "Salzig 🍿",
+      "fr": "Salé 🍿",
+      "hu": "Sós 🍿"
+    }
+  },
+  {
+    "series": {
+      "en": "Snack Wars",
+      "tr": "Atıştırmalık Savaşları",
+      "de": "Snack-Kriege",
+      "fr": "Guerre Des Snacks",
+      "hu": "Nassolnivaló Háború"
+    },
+    "question": {
+      "en": "Fries deserve...",
+      "tr": "Patatesin hakkı?",
+      "de": "Pommes verdienen...",
+      "fr": "Les frites méritent...",
+      "hu": "A hasábburgonya megérdemli..."
+    },
+    "option_a": {
+      "en": "Ketchup 🍅",
+      "tr": "Ketçap 🍅",
+      "de": "Ketchup 🍅",
+      "fr": "Ketchup 🍅",
+      "hu": "Ketchupot 🍅"
+    },
+    "option_b": {
+      "en": "Mayo",
+      "tr": "Mayonez",
+      "de": "Mayo",
+      "fr": "Mayo",
+      "hu": "Majonézt"
+    }
+  },
+  {
+    "series": {
+      "en": "Snack Wars",
+      "tr": "Atıştırmalık Savaşları",
+      "de": "Snack-Kriege",
+      "fr": "Guerre Des Snacks",
+      "hu": "Nassolnivaló Háború"
+    },
+    "question": {
+      "en": "Cola loyalty?",
+      "tr": "Kola sadakati?",
+      "de": "Cola-Treue?",
+      "fr": "Fidélité cola?",
+      "hu": "Kóla hűség?"
+    },
+    "option_a": {
+      "en": "Coke 🥤",
+      "tr": "Coca-Cola 🥤",
+      "de": "Coke 🥤",
+      "fr": "Coca 🥤",
+      "hu": "Coca-Cola 🥤"
+    },
+    "option_b": {
+      "en": "Pepsi",
+      "tr": "Pepsi",
+      "de": "Pepsi",
+      "fr": "Pepsi",
+      "hu": "Pepsi"
+    }
+  },
+  {
+    "series": {
+      "en": "Snack Wars",
+      "tr": "Atıştırmalık Savaşları",
+      "de": "Snack-Kriege",
+      "fr": "Guerre Des Snacks",
+      "hu": "Nassolnivaló Háború"
+    },
+    "question": {
+      "en": "Forever craving?",
+      "tr": "Sonsuza dek canın?",
+      "de": "Für immer Lust auf?",
+      "fr": "Envie pour toujours?",
+      "hu": "Örök sóvárgás?"
+    },
+    "option_a": {
+      "en": "Only sweet 🍬",
+      "tr": "Hep tatlı 🍬",
+      "de": "Nur süß 🍬",
+      "fr": "Que du sucré 🍬",
+      "hu": "Csak édes 🍬"
+    },
+    "option_b": {
+      "en": "Only salty 🥨",
+      "tr": "Hep tuzlu 🥨",
+      "de": "Nur salzig 🥨",
+      "fr": "Que du salé 🥨",
+      "hu": "Csak sós 🥨"
+    }
+  },
+  {
+    "series": {
+      "en": "Snack Wars",
+      "tr": "Atıştırmalık Savaşları",
+      "de": "Snack-Kriege",
+      "fr": "Guerre Des Snacks",
+      "hu": "Nassolnivaló Háború"
+    },
+    "question": {
+      "en": "Cereal ritual?",
+      "tr": "Mısır gevreği ritüeli?",
+      "de": "Müsli-Ritual?",
+      "fr": "Rituel céréales?",
+      "hu": "Gabonapehely rituálé?"
+    },
+    "option_a": {
+      "en": "Cereal first 🥣",
+      "tr": "Önce gevrek 🥣",
+      "de": "Erst Müsli 🥣",
+      "fr": "D'abord les céréales 🥣",
+      "hu": "Előbb a pehely 🥣"
+    },
+    "option_b": {
+      "en": "Milk first",
+      "tr": "Önce süt",
+      "de": "Erst Milch",
+      "fr": "D'abord le lait",
+      "hu": "Előbb a tej"
+    }
+  },
+  {
+    "series": {
+      "en": "Tiny Rituals",
+      "tr": "Küçük Ritüeller",
+      "de": "Kleine Rituale",
+      "fr": "Petits Rituels",
+      "hu": "Apró Rituálék"
+    },
+    "question": {
+      "en": "Sock ritual?",
+      "tr": "Çorap ritüeli?",
+      "de": "Socken-Ritual?",
+      "fr": "Rituel chaussettes?",
+      "hu": "Zokni rituálé?"
+    },
+    "option_a": {
+      "en": "Left first 🧦",
+      "tr": "Önce sol 🧦",
+      "de": "Erst links 🧦",
+      "fr": "Gauche d'abord 🧦",
+      "hu": "Előbb a bal 🧦"
+    },
+    "option_b": {
+      "en": "Right first",
+      "tr": "Önce sağ",
+      "de": "Erst rechts",
+      "fr": "Droite d'abord",
+      "hu": "Előbb a jobb"
+    }
+  },
+  {
+    "series": {
+      "en": "Tiny Rituals",
+      "tr": "Küçük Ritüeller",
+      "de": "Kleine Rituale",
+      "fr": "Petits Rituels",
+      "hu": "Apró Rituálék"
+    },
+    "question": {
+      "en": "Flight seat?",
+      "tr": "Uçak koltuğu?",
+      "de": "Flugzeugsitz?",
+      "fr": "Place en avion?",
+      "hu": "Repülő ülés?"
+    },
+    "option_a": {
+      "en": "Window ✈️",
+      "tr": "Pencere kenarı ✈️",
+      "de": "Fenster ✈️",
+      "fr": "Hublot ✈️",
+      "hu": "Ablak mellett ✈️"
+    },
+    "option_b": {
+      "en": "Aisle",
+      "tr": "Koridor",
+      "de": "Gang",
+      "fr": "Couloir",
+      "hu": "Folyosó"
+    }
+  },
+  {
+    "series": {
+      "en": "Tiny Rituals",
+      "tr": "Küçük Ritüeller",
+      "de": "Kleine Rituale",
+      "fr": "Petits Rituels",
+      "hu": "Apró Rituálék"
+    },
+    "question": {
+      "en": "Shower time?",
+      "tr": "Duş vakti?",
+      "de": "Duschzeit?",
+      "fr": "Heure de douche?",
+      "hu": "Zuhanyidő?"
+    },
+    "option_a": {
+      "en": "Morning 🚿",
+      "tr": "Sabah 🚿",
+      "de": "Morgens 🚿",
+      "fr": "Matin 🚿",
+      "hu": "Reggel 🚿"
+    },
+    "option_b": {
+      "en": "Night 🌙",
+      "tr": "Gece 🌙",
+      "de": "Abends 🌙",
+      "fr": "Soir 🌙",
+      "hu": "Este 🌙"
+    }
+  },
+  {
+    "series": {
+      "en": "Tiny Rituals",
+      "tr": "Küçük Ritüeller",
+      "de": "Kleine Rituale",
+      "fr": "Petits Rituels",
+      "hu": "Apró Rituálék"
+    },
+    "question": {
+      "en": "Pizza crust?",
+      "tr": "Pizza kenarı?",
+      "de": "Pizzarand?",
+      "fr": "Croûte de pizza?",
+      "hu": "Pizza széle?"
+    },
+    "option_a": {
+      "en": "Eat it 🍕",
+      "tr": "Yerim 🍕",
+      "de": "Aufessen 🍕",
+      "fr": "Je la mange 🍕",
+      "hu": "Megeszem 🍕"
+    },
+    "option_b": {
+      "en": "Leave it",
+      "tr": "Bırakırım",
+      "de": "Liegen lassen",
+      "fr": "Je la laisse",
+      "hu": "Otthagyom"
+    }
+  },
+  {
+    "series": {
+      "en": "Tiny Rituals",
+      "tr": "Küçük Ritüeller",
+      "de": "Kleine Rituale",
+      "fr": "Petits Rituels",
+      "hu": "Apró Rituálék"
+    },
+    "question": {
+      "en": "House footwear?",
+      "tr": "Evde ayakkabı?",
+      "de": "Hausschuhwerk?",
+      "fr": "Chaussures à la maison?",
+      "hu": "Otthoni lábbeli?"
+    },
+    "option_a": {
+      "en": "Crocs",
+      "tr": "Crocs",
+      "de": "Crocs",
+      "fr": "Crocs",
+      "hu": "Crocs"
+    },
+    "option_b": {
+      "en": "Barefoot",
+      "tr": "Yalınayak",
+      "de": "Barfuß",
+      "fr": "Pieds nus",
+      "hu": "Mezítláb"
+    }
+  },
+  {
+    "series": {
+      "en": "Tiny Rituals",
+      "tr": "Küçük Ritüeller",
+      "de": "Kleine Rituale",
+      "fr": "Petits Rituels",
+      "hu": "Apró Rituálék"
+    },
+    "question": {
+      "en": "Forever pick?",
+      "tr": "Sonsuza dek seç?",
+      "de": "Für immer wählen?",
+      "fr": "Choix pour toujours?",
+      "hu": "Örök választás?"
+    },
+    "option_a": {
+      "en": "Never sleep in 😴",
+      "tr": "Asla geç kalkma 😴",
+      "de": "Nie ausschlafen 😴",
+      "fr": "Jamais la grasse matinée 😴",
+      "hu": "Soha nem alszol sokáig 😴"
+    },
+    "option_b": {
+      "en": "Never stay up late 🌙",
+      "tr": "Asla geç yatma 🌙",
+      "de": "Nie lang wach bleiben 🌙",
+      "fr": "Jamais se coucher tard 🌙",
+      "hu": "Soha nem maradsz fent 🌙"
+    }
+  },
+  {
+    "series": {
+      "en": "Weather Or Not",
+      "tr": "Hava Nasıl Olursa Olsun",
+      "de": "Wetter Oder Nicht",
+      "fr": "Beau Temps, Mauvais Temps",
+      "hu": "Időjárás Vagy Sem"
+    },
+    "question": {
+      "en": "Pick your sky.",
+      "tr": "Gökyüzünü seç.",
+      "de": "Wähl deinen Himmel.",
+      "fr": "Choisis ton ciel.",
+      "hu": "Válaszd az eged."
+    },
+    "option_a": {
+      "en": "Rain 🌧️",
+      "tr": "Yağmur 🌧️",
+      "de": "Regen 🌧️",
+      "fr": "Pluie 🌧️",
+      "hu": "Eső 🌧️"
+    },
+    "option_b": {
+      "en": "Snow ❄️",
+      "tr": "Kar ❄️",
+      "de": "Schnee ❄️",
+      "fr": "Neige ❄️",
+      "hu": "Hó ❄️"
+    }
+  },
+  {
+    "series": {
+      "en": "Weather Or Not",
+      "tr": "Hava Nasıl Olursa Olsun",
+      "de": "Wetter Oder Nicht",
+      "fr": "Beau Temps, Mauvais Temps",
+      "hu": "Időjárás Vagy Sem"
+    },
+    "question": {
+      "en": "Cooling method?",
+      "tr": "Serinleme yöntemi?",
+      "de": "Abkühlmethode?",
+      "fr": "Méthode pour se rafraîchir?",
+      "hu": "Hűsölési módszer?"
+    },
+    "option_a": {
+      "en": "Window open 🪟",
+      "tr": "Pencere açık 🪟",
+      "de": "Fenster offen 🪟",
+      "fr": "Fenêtre ouverte 🪟",
+      "hu": "Nyitott ablak 🪟"
+    },
+    "option_b": {
+      "en": "AC ❄️",
+      "tr": "Klima ❄️",
+      "de": "Klimaanlage ❄️",
+      "fr": "Clim ❄️",
+      "hu": "Légkondi ❄️"
+    }
+  },
+  {
+    "series": {
+      "en": "Weather Or Not",
+      "tr": "Hava Nasıl Olursa Olsun",
+      "de": "Wetter Oder Nicht",
+      "fr": "Beau Temps, Mauvais Temps",
+      "hu": "Időjárás Vagy Sem"
+    },
+    "question": {
+      "en": "Forever feeling?",
+      "tr": "Sonsuza dek his?",
+      "de": "Für immer fühlen?",
+      "fr": "Sensation pour toujours?",
+      "hu": "Örök érzés?"
+    },
+    "option_a": {
+      "en": "Too hot 🥵",
+      "tr": "Hep sıcak 🥵",
+      "de": "Immer zu heiß 🥵",
+      "fr": "Toujours trop chaud 🥵",
+      "hu": "Mindig meleged van 🥵"
+    },
+    "option_b": {
+      "en": "Too cold 🥶",
+      "tr": "Hep soğuk 🥶",
+      "de": "Immer zu kalt 🥶",
+      "fr": "Toujours trop froid 🥶",
+      "hu": "Mindig fázol 🥶"
+    }
+  },
+  {
+    "series": {
+      "en": "Weather Or Not",
+      "tr": "Hava Nasıl Olursa Olsun",
+      "de": "Wetter Oder Nicht",
+      "fr": "Beau Temps, Mauvais Temps",
+      "hu": "Időjárás Vagy Sem"
+    },
+    "question": {
+      "en": "Weird layering?",
+      "tr": "Garip katman?",
+      "de": "Seltsames Layering?",
+      "fr": "Superposition bizarre?",
+      "hu": "Fura rétegezés?"
+    },
+    "option_a": {
+      "en": "Hoodie in summer",
+      "tr": "Yazın kapüşonlu",
+      "de": "Hoodie im Sommer",
+      "fr": "Sweat en été",
+      "hu": "Pulóver nyáron"
+    },
+    "option_b": {
+      "en": "Jacket in winter",
+      "tr": "Kışın ceket",
+      "de": "Jacke im Winter",
+      "fr": "Veste en hiver",
+      "hu": "Kabát télen"
+    }
+  },
+  {
+    "series": {
+      "en": "Weather Or Not",
+      "tr": "Hava Nasıl Olursa Olsun",
+      "de": "Wetter Oder Nicht",
+      "fr": "Beau Temps, Mauvais Temps",
+      "hu": "Időjárás Vagy Sem"
+    },
+    "question": {
+      "en": "Forever weekday?",
+      "tr": "Sonsuza dek gün?",
+      "de": "Für immer Wochentag?",
+      "fr": "Jour pour toujours?",
+      "hu": "Örök hétköznap?"
+    },
+    "option_a": {
+      "en": "Every day Monday 📅",
+      "tr": "Her gün Pazartesi 📅",
+      "de": "Jeden Tag Montag 📅",
+      "fr": "Tous les jours lundi 📅",
+      "hu": "Minden nap hétfő 📅"
+    },
+    "option_b": {
+      "en": "Every day Sunday ☀️",
+      "tr": "Her gün Pazar ☀️",
+      "de": "Jeden Tag Sonntag ☀️",
+      "fr": "Tous les jours dimanche ☀️",
+      "hu": "Minden nap vasárnap ☀️"
+    }
+  },
+  {
+    "series": {
+      "en": "Sound Check",
+      "tr": "Ses Kontrolü",
+      "de": "Soundcheck",
+      "fr": "Test De Son",
+      "hu": "Hangpróba"
+    },
+    "question": {
+      "en": "Background vibe?",
+      "tr": "Arka plan?",
+      "de": "Hintergrund-Vibe?",
+      "fr": "Ambiance sonore?",
+      "hu": "Háttérhangulat?"
+    },
+    "option_a": {
+      "en": "Loud music 🔊",
+      "tr": "Yüksek müzik 🔊",
+      "de": "Laute Musik 🔊",
+      "fr": "Musique forte 🔊",
+      "hu": "Hangos zene 🔊"
+    },
+    "option_b": {
+      "en": "Silence 🤫",
+      "tr": "Sessizlik 🤫",
+      "de": "Stille 🤫",
+      "fr": "Silence 🤫",
+      "hu": "Csend 🤫"
+    }
+  },
+  {
+    "series": {
+      "en": "Sound Check",
+      "tr": "Ses Kontrolü",
+      "de": "Soundcheck",
+      "fr": "Test De Son",
+      "hu": "Hangpróba"
+    },
+    "question": {
+      "en": "Forever volume?",
+      "tr": "Sonsuza dek ses?",
+      "de": "Für immer Lautstärke?",
+      "fr": "Volume pour toujours?",
+      "hu": "Örök hangerő?"
+    },
+    "option_a": {
+      "en": "Only whisper 🤫",
+      "tr": "Hep fısılda 🤫",
+      "de": "Nur flüstern 🤫",
+      "fr": "Que chuchoter 🤫",
+      "hu": "Csak suttogsz 🤫"
+    },
+    "option_b": {
+      "en": "Only shout 📢",
+      "tr": "Hep bağır 📢",
+      "de": "Nur schreien 📢",
+      "fr": "Que crier 📢",
+      "hu": "Csak kiabálsz 📢"
+    }
+  },
+  {
+    "series": {
+      "en": "Sound Check",
+      "tr": "Ses Kontrolü",
+      "de": "Soundcheck",
+      "fr": "Test De Son",
+      "hu": "Hangpróba"
+    },
+    "question": {
+      "en": "Forever movement?",
+      "tr": "Sonsuza dek hareket?",
+      "de": "Für immer Bewegung?",
+      "fr": "Mouvement pour toujours?",
+      "hu": "Örök mozgás?"
+    },
+    "option_a": {
+      "en": "Walk backwards 🚶",
+      "tr": "Geri geri yürü 🚶",
+      "de": "Rückwärts gehen 🚶",
+      "fr": "Marcher à reculons 🚶",
+      "hu": "Hátrafelé sétálsz 🚶"
+    },
+    "option_b": {
+      "en": "Run everywhere 🏃",
+      "tr": "Her yere koş 🏃",
+      "de": "Überall rennen 🏃",
+      "fr": "Courir partout 🏃",
+      "hu": "Mindenhova futsz 🏃"
+    }
+  },
+  {
+    "series": {
+      "en": "Sound Check",
+      "tr": "Ses Kontrolü",
+      "de": "Soundcheck",
+      "fr": "Test De Son",
+      "hu": "Hangpróba"
+    },
+    "question": {
+      "en": "Give up forever?",
+      "tr": "Sonsuza dek vazgeç?",
+      "de": "Für immer verzichten?",
+      "fr": "Renoncer pour toujours?",
+      "hu": "Örökre lemondasz?"
+    },
+    "option_a": {
+      "en": "No music 🎵",
+      "tr": "Müzik yok 🎵",
+      "de": "Keine Musik 🎵",
+      "fr": "Pas de musique 🎵",
+      "hu": "Nincs zene 🎵"
+    },
+    "option_b": {
+      "en": "No movies 🎬",
+      "tr": "Film yok 🎬",
+      "de": "Keine Filme 🎬",
+      "fr": "Pas de films 🎬",
+      "hu": "Nincs film 🎬"
+    }
   }
 ];
