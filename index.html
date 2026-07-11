@@ -605,16 +605,39 @@
   var btn = document.getElementById('storyEyeBtn');
   if(!btn) return;
   var pupil = btn.querySelector('.pupil');
-  if(!pupil) return;
-  btn.addEventListener('mousemove', function(e){
-    var r = btn.getBoundingClientRect();
-    var cx = r.left + r.width/2, cy = r.top + r.height*0.42;
-    var dx = e.clientX - cx, dy = e.clientY - cy;
-    var d = Math.min(9, Math.hypot(dx,dy)/9);
-    var a = Math.atan2(dy,dx);
-    pupil.style.transform = 'translate(' + (Math.cos(a)*d) + 'px,' + (Math.sin(a)*d) + 'px)';
-  });
-  btn.addEventListener('mouseleave', function(){ pupil.style.transform = ''; });
+  if(pupil){
+    btn.addEventListener('mousemove', function(e){
+      var r = btn.getBoundingClientRect();
+      var cx = r.left + r.width/2, cy = r.top + r.height*0.42;
+      var dx = e.clientX - cx, dy = e.clientY - cy;
+      var d = Math.min(9, Math.hypot(dx,dy)/9);
+      var a = Math.atan2(dy,dx);
+      pupil.style.transform = 'translate(' + (Math.cos(a)*d) + 'px,' + (Math.sin(a)*d) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function(){ pupil.style.transform = ''; });
+  }
+
+  var ringText = btn.querySelector('.ring-text');
+  var ringPath = document.getElementById('storyRing');
+  var tp = ringText && ringText.querySelector('textPath');
+  var MAX_FONT = 13, MIN_FONT = 7, BASE_SPACING = 2.4;
+  function fitRingText(){
+    if(!ringText || !ringPath || !tp) return;
+    ringText.style.fontSize = MAX_FONT + 'px';
+    ringText.style.letterSpacing = BASE_SPACING + 'px';
+    var pathLen = ringPath.getTotalLength();
+    var budget = pathLen * 0.92;
+    var textLen = tp.getComputedTextLength();
+    if(textLen > budget && textLen > 0){
+      var scale = budget / textLen;
+      var newFont = Math.max(MIN_FONT, MAX_FONT * scale);
+      ringText.style.fontSize = newFont + 'px';
+      ringText.style.letterSpacing = Math.max(0.3, BASE_SPACING * scale) + 'px';
+    }
+  }
+  fitRingText();
+  window.addEventListener('oddvi:lang', fitRingText);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fitRingText); }
 })();
 </script>
 <script src="/share.js"></script>
