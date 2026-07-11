@@ -99,6 +99,20 @@
   .result .traits{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 8px}
   .result .traits span{background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:500}
 
+  .breakdown{margin:44px 0 10px}
+  .breakdown h3{font-family:var(--font-disp);font-weight:800;font-size:26px;margin-bottom:6px}
+  .breakdown .hint{opacity:.6;font-size:15px;margin-bottom:24px}
+  .bd-list{display:flex;flex-direction:column;gap:16px;max-width:480px;margin-inline:auto}
+  .bd-row{display:flex;align-items:center;gap:13px}
+  .bd-row .bd-icon{width:38px;height:38px;flex:none;object-fit:contain}
+  .bd-row .bd-meta{flex:1;text-align:left;min-width:0}
+  .bd-row .bd-top{display:flex;justify-content:space-between;gap:8px;font-size:14px;font-weight:700;margin-bottom:6px}
+  .bd-row .bd-top span:last-child{font-family:var(--font-disp);color:var(--red-deep)}
+  .bd-row .bd-bar{height:10px;background:var(--paper-2);border-radius:999px;overflow:hidden}
+  .bd-row .bd-bar span{display:block;height:100%;background:var(--red);border-radius:999px;transition:width .7s cubic-bezier(.2,.8,.2,1);width:0%}
+  .bd-row.is-top .bd-bar span{background:var(--yellow-deep)}
+  .bd-row.is-top .bd-top span:last-child{color:var(--yellow-deep)}
+
   .downloads{margin:40px 0 10px}
   .downloads h3{font-family:var(--font-disp);font-weight:800;font-size:26px;margin-bottom:6px}
   .downloads .hint{opacity:.6;font-size:15px;margin-bottom:22px}
@@ -155,6 +169,11 @@
     <div class="hero-img"><img id="rImg" alt="Your Odd"></div>
     <p class="blurb" id="rBlurb"></p>
     <div class="traits" id="rTraits"></div>
+    <div class="breakdown" id="breakdown">
+      <h3 id="bdTitle">Your Odd Breakdown</h3>
+      <div class="hint" id="bdHint"></div>
+      <div class="bd-list" id="bdList"></div>
+    </div>
     <div class="downloads">
       <h3 id="dlTitle">Take your Odd with you</h3>
       <div class="hint" id="dlHint"></div>
@@ -193,6 +212,14 @@ function pickImg(key){
   return IMG[key];
 }
 const PRIORITY=["explorer","creative","nightowl","zen","rebel","dreamer"];
+const ICONS={
+  explorer:"uploads/archetype-icons/archetype-icon-explorer.png",
+  creative:"uploads/archetype-icons/archetype-icon-creative.png",
+  nightowl:"uploads/archetype-icons/archetype-icon-nightowl.png",
+  zen:"uploads/archetype-icons/archetype-icon-zen.png",
+  rebel:"uploads/archetype-icons/archetype-icon-rebel.png",
+  dreamer:"uploads/archetype-icons/archetype-icon-dreamer.png"
+};
 
 const $=s=>document.querySelector(s);
 let LANG=(window.I18N&&window.I18N.pick())||"en";
@@ -217,6 +244,8 @@ function renderStatic(){
   $("#homeLink").textContent=u.home||"← Home";
   $("#backBtn").textContent=u.back||"← Back";
   $("#youAre").textContent=u.youAre||"";
+  $("#bdTitle").textContent=u.breakdownTitle||"";
+  $("#bdHint").textContent=u.breakdownHint||"";
   $("#dlTitle").textContent=u.dlTitle||"";
   $("#dlHint").textContent=u.dlHint||"";
   $("#restartBtn").textContent=u.retake||"↺";
@@ -244,7 +273,7 @@ function renderPreview(){
 function show(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));$("#"+id).classList.add("active");screen=id;window.scrollTo({top:0,behavior:"smooth"});}
 
 $("#startBtn").onclick=()=>{state={i:0,picks:[]};show("quiz");renderQ();};
-$("#restartBtn").onclick=()=>{state={i:0,picks:[]};lastKey=null;Object.keys(IMG).forEach(k=>delete IMG[k]);show("intro");renderPreview();};
+$("#restartBtn").onclick=()=>{state={i:0,picks:[]};lastKey=null;lastTally=null;Object.keys(IMG).forEach(k=>delete IMG[k]);show("intro");renderPreview();};
 $("#backBtn").onclick=()=>{if(state.i>0){state.i--;state.picks.pop();renderQ();}};
 
 function renderQ(){
@@ -268,18 +297,36 @@ function pick(key){
   if(state.i<n-1){state.i++;renderQ();}
   else finish();
 }
+let lastKey=null,lastTally=null;
 function finish(){
   const t={};PRIORITY.forEach(k=>t[k]=0);
   state.picks.forEach(k=>{if(t[k]!=null)t[k]++;});
   let best=PRIORITY[0];PRIORITY.forEach(k=>{if(t[k]>t[best])best=k;});
+  lastTally=t;
   fetch('/api/stat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name:'test_completed'})})
     .then(r=>r.ok?r.json():null)
     .then(d=>{ if(d && typeof d.count==='number'){ testStatCount=d.count; } })
     .catch(()=>{});
   showResult(best);
 }
-
-let lastKey=null;
+function renderBreakdown(tally){
+  if(!tally) return;
+  const total=PRIORITY.reduce((s,k)=>s+(tally[k]||0),0)||1;
+  const r=QZ().r;
+  const rows=PRIORITY.map(k=>({key:k,name:(r[k]&&r[k].n)||k,pct:Math.round((tally[k]||0)/total*100)}))
+    .sort((a,b)=>b.pct-a.pct);
+  $("#bdList").innerHTML=rows.map((row,i)=>`
+    <div class="bd-row${i===0?' is-top':''}">
+      <img class="bd-icon" src="${ICONS[row.key]||''}" alt="" loading="lazy">
+      <div class="bd-meta">
+        <div class="bd-top"><span>${row.name.replace(/ Odd$/,'')}</span><span>${row.pct}%</span></div>
+        <div class="bd-bar"><span data-w="${row.pct}%"></span></div>
+      </div>
+    </div>`).join("");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll("#bdList .bd-bar span").forEach(el=>{el.style.width=el.dataset.w;});
+  }));
+}
 async function showResult(key){
   lastKey=key;
   const R=QZ().r[key]||{}, u=QZ().ui;
@@ -287,19 +334,26 @@ async function showResult(key){
   $("#rImg").src=pickImg(key);$("#rImg").alt=R.n||"";
   $("#rBlurb").textContent=R.bl||"";
   $("#rTraits").innerHTML=(R.tr||[]).map(t=>`<span>${t}</span>`).join("");
+  renderBreakdown(lastTally);
   $("#bar").style.width="100%";
   show("result");
 
   const grid=$("#dlGrid");
-  grid.innerHTML=`<div class="dl"><div class="thumb"><span>${u.building||"…"}</span></div></div>`.repeat(3);
+  grid.innerHTML=`<div class="dl"><div class="thumb"><span>${u.building||"…"}</span></div></div>`.repeat(4);
 
   let img; try{await document.fonts.ready;}catch(e){}
   try{img=await loadImg(pickImg(key));}catch(e){img=null;}
+  let icons={};
+  try{
+    const entries=await Promise.all(PRIORITY.map(k=>loadImg(ICONS[k]).then(im=>[k,im]).catch(()=>[k,null])));
+    entries.forEach(([k,im])=>{icons[k]=im;});
+  }catch(e){}
 
   const formats=[
     {label:u.dlWallpaper,file:`oddvi-${key}-wallpaper.png`,draw:c=>wallpaper(c,img,R)},
     {label:u.dlProfile,  file:`oddvi-${key}-profile.png`,  draw:c=>profile(c,img,R)},
     {label:u.dlCard,     file:`oddvi-${key}-card.png`,      draw:c=>card(c,img,R,key)},
+    {label:u.dlBreakdown,file:`oddvi-${key}-breakdown.png`, draw:c=>breakdownCard(c,lastTally,icons,u)},
   ];
   grid.innerHTML="";
   for(const f of formats){
@@ -380,6 +434,35 @@ function card(cv,img,R,key){
   (R.tr||[]).forEach(t=>{const tw=c.measureText(t).width,pad=24,w=tw+pad*2,h=58;if(cx+w>1020){cx=60;cyy+=72;}c.strokeStyle="rgba(255,255,255,.3)";c.lineWidth=2;rr(c,cx,cyy,w,h,29);c.stroke();c.fillStyle="#fff";c.textBaseline="middle";c.fillText(t,cx+pad,cyy+h/2+2);c.textBaseline="alphabetic";cx+=w+14;});
   const id=key.slice(0,3).toUpperCase()+"-"+(1000+Math.floor(Math.random()*9000));
   c.fillStyle="rgba(255,255,255,.45)";c.font=BODY("500 24px");c.textAlign="left";c.fillText("ODD-ID · "+id,60,1300);
+  c.fillStyle=RED;c.textAlign="right";c.fillText("@theoddvi",1020,1300);
+}
+
+function breakdownCard(cv,tally,icons,u){
+  cv.width=1080;cv.height=1350;const c=cv.getContext("2d");
+  c.fillStyle=INK;c.fillRect(0,0,1080,1350);
+  c.textAlign="left";c.fillStyle="#fff";c.font=DISP("800 46px");c.fillText("ODDVI",60,86);
+  c.textAlign="right";c.fillStyle=RED;c.font=BODY("700 22px");
+  c.fillText((u&&u.breakdownTitle?u.breakdownTitle:"YOUR ODD BREAKDOWN").toUpperCase(),1020,82);
+
+  const t=tally||{};
+  const total=PRIORITY.reduce((s,k)=>s+(t[k]||0),0)||1;
+  const r=QZ().r;
+  const rows=PRIORITY.map(k=>({key:k,name:((r[k]&&r[k].n)||k).replace(/ Odd$/,""),pct:Math.round((t[k]||0)/total*100)}))
+    .sort((a,b)=>b.pct-a.pct);
+
+  let y=210;
+  rows.forEach((row,i)=>{
+    const top=i===0, accent=top?"#f5b400":RED;
+    const im=icons&&icons[row.key];
+    if(im) c.drawImage(im,60,y-46,84,84);
+    c.textAlign="left";c.fillStyle="#fff";c.font=BODY("700 32px");c.fillText(row.name,166,y-2);
+    c.textAlign="right";c.fillStyle=accent;c.font=DISP("800 38px");c.fillText(row.pct+"%",1020,y);
+    const barY=y+22,barW=854,barH=16,barX=166;
+    c.fillStyle="rgba(255,255,255,.12)";rr(c,barX,barY,barW,barH,8);c.fill();
+    c.fillStyle=accent;rr(c,barX,barY,Math.max(14,barW*row.pct/100),barH,8);c.fill();
+    y+=178;
+  });
+  c.textAlign="left";c.fillStyle="rgba(255,255,255,.45)";c.font=BODY("500 24px");c.fillText("theoddvi.com",60,1300);
   c.fillStyle=RED;c.textAlign="right";c.fillText("@theoddvi",1020,1300);
 }
 
