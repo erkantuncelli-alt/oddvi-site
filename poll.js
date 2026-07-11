@@ -106,6 +106,10 @@
     }
   }
 
+  function stripEmoji(str) {
+    return String(str).replace(/[\u{1F1E6}-\u{1FAFF}\u{2300}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}]/gu, '').replace(/\s+/g, ' ').trim();
+  }
+
   // ---------- result card (canvas) ----------
   function buildResultCardBlob() {
     return new Promise(function (resolve) {
@@ -113,7 +117,7 @@
       var p = state.poll;
       var votes = p.votes || { a: 0, b: 0 };
       var percentages = pct(votes.a || 0, votes.b || 0);
-      var pickedLabel = state.choice === 'a' ? (p.option_a[l] || p.option_a.en) : (p.option_b[l] || p.option_b.en);
+      var pickedLabel = stripEmoji(state.choice === 'a' ? (p.option_a[l] || p.option_a.en) : (p.option_b[l] || p.option_b.en));
       var pickedPct = state.choice === 'a' ? percentages[0] : percentages[1];
 
       var W = 1080, H = 1920;
