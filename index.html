@@ -244,10 +244,24 @@
   .mq-row span{font-family:var(--font-disp);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;padding-inline:52px;flex:none;font-size:clamp(70px,16vw,230px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.09)}
   @keyframes mqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(max-width:680px){.mq-row span{font-size:clamp(40px,17vw,90px);padding-inline:30px}}
-  .manifesto .big-o{font-family:var(--font-disp);font-weight:800;font-size:clamp(130px,27vw,320px);line-height:.8;color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.12);margin-bottom:-34px}
+  .manifesto .peek-wrap{width:clamp(130px,19vw,220px);margin:0 auto 0;overflow:hidden;position:relative}
+  .manifesto .peek-wrap::after{content:"";display:block;padding-top:60%}
+  .manifesto .peek-mascot{position:absolute;top:0;left:0;display:block;width:100%;height:auto}
   .manifesto blockquote{font-family:var(--font-disp);font-weight:800;font-size:clamp(30px,5vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:20ch;margin:0 auto;position:relative;z-index:1}
   .manifesto blockquote em{font-family:var(--font-spray);font-style:normal;color:var(--yellow);font-weight:400;font-size:1.08em;text-shadow:3px 3px 0 var(--red);display:inline-block;transform:rotate(-2deg)}
   .manifesto .sub{opacity:.85;margin-top:26px;font-size:16px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;position:relative;z-index:1}
+
+  .eye-cta{position:relative;display:inline-block;width:168px;height:168px;margin-top:28px;border-radius:50%;cursor:pointer;text-decoration:none}
+  .eye-cta svg{position:absolute;inset:0;pointer-events:none;transition:transform .2s ease}
+  .eye-cta:hover svg{transform:scale(1.04)}
+  .eye-cta .ring-text{fill:#fff;font-family:var(--font-disp);font-weight:800;letter-spacing:2.4px;font-size:12.5px}
+  .eye-cta .ring-arrow{fill:var(--red);font-family:var(--font-disp);font-weight:800;font-size:17px}
+  .eye-cta .eyehole{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:60px;height:80px;background:#fff;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:eyeBlink 4.5s infinite}
+  .eye-cta .pupil{width:24px;height:24px;background:var(--ink);border-radius:50%;transition:transform .08s linear}
+  .eye-cta .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @keyframes eyeBlink{0%,92%,100%{transform:translate(-50%,-50%) scaleY(1)}96%{transform:translate(-50%,-50%) scaleY(.08)}}
+  @media(max-width:520px){.eye-cta{width:140px;height:140px}.eye-cta .eyehole{width:50px;height:66px}.eye-cta .pupil{width:20px;height:20px}}
 
   /* CONNECT — social + share + signup merged into one 3-col row */
   .connect-grid{background:var(--paper-2);padding:70px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
@@ -482,11 +496,22 @@
     <div class="mq-row"><span>NORMAL IS EVERYWHERE · ODD IS REMEMBERED · STAY ODD · PARDON MY ODD · WHAT'S YOUR ODD? · </span><span>NORMAL IS EVERYWHERE · ODD IS REMEMBERED · STAY ODD · PARDON MY ODD · WHAT'S YOUR ODD? · </span></div>
   </div>
   <div class="wrap">
-    <div class="big-o">O</div>
+    <div class="peek-wrap"><img class="peek-mascot" src="/uploads/oddvi-logo-icon-noborder.png" alt="" aria-hidden="true" loading="lazy" width="240" height="319" /></div>
     <blockquote data-i18n-html="man.quote">Normal is everywhere.<br>Odd is <em>remembered</em>.</blockquote>
     <p class="sub" data-i18n="man.sub">Stay Odd. — The Oddvi Manifesto</p>
     <p style="margin-top:30px;font-weight:600;opacity:.9" data-i18n="home.story.hook">Curious who Oddvi actually is?</p>
-    <a href="/story.html" class="btn btn-ghost" style="margin-top:16px;background:#fff" data-i18n="home.story.cta">Read the full story →</a>
+    <a href="/story.html" class="eye-cta" id="storyEyeBtn">
+      <span class="sr-only" data-i18n="home.story.cta">Read the full story →</span>
+      <svg viewBox="0 0 168 168" aria-hidden="true">
+        <defs><path id="storyRing" d="M14,90 a70,70 0 1,1 140,0" /></defs>
+        <circle cx="84" cy="84" r="82" fill="var(--ink)" />
+        <text class="ring-text">
+          <textPath href="#storyRing" startOffset="50%" text-anchor="middle" data-i18n="home.story.cta.txt">Read the full story</textPath>
+        </text>
+        <text x="84" y="150" text-anchor="middle" class="ring-arrow">→</text>
+      </svg>
+      <span class="eyehole" aria-hidden="true"><span class="pupil"></span></span>
+    </a>
   </div>
 </section>
 
@@ -575,6 +600,23 @@
 <script src="/jelly.js"></script>
 <script src="/i18n.js"></script>
 <script src="/streak.js"></script>
+<script>
+(function(){
+  var btn = document.getElementById('storyEyeBtn');
+  if(!btn) return;
+  var pupil = btn.querySelector('.pupil');
+  if(!pupil) return;
+  btn.addEventListener('mousemove', function(e){
+    var r = btn.getBoundingClientRect();
+    var cx = r.left + r.width/2, cy = r.top + r.height*0.42;
+    var dx = e.clientX - cx, dy = e.clientY - cy;
+    var d = Math.min(9, Math.hypot(dx,dy)/9);
+    var a = Math.atan2(dy,dx);
+    pupil.style.transform = 'translate(' + (Math.cos(a)*d) + 'px,' + (Math.sin(a)*d) + 'px)';
+  });
+  btn.addEventListener('mouseleave', function(){ pupil.style.transform = ''; });
+})();
+</script>
 <script src="/share.js"></script>
 <script src="/likes-widget.js"></script>
 <script src="/poll-mascot.js"></script>
