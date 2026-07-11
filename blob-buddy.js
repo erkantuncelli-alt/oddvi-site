@@ -7,7 +7,26 @@
    To remove: delete this file and its <script> tag from pages.
    ============================================================ */
 (function () {
-  var PHRASES = ['Hi!', 'Boop!', 'Odd?', 'Hey!', 'Yo!', 'Hm?', 'Eek!', ':)'];
+  var EXCLAMATIONS = ['Hi!', 'Boop!', 'Odd?', 'Hey!', 'Yo!', 'Hm?', 'Eek!', ':)'];
+
+  var SLOGANS = {
+    en: ['Stay odd.', 'Normal is a rumor.', 'Blend in, disappear.', "The mouth lies. The eyes don't.", "You don't need permission to be yourself."],
+    tr: ['Kendin Gibi Kal.', 'Normal diye bir şey yok.', 'Uyarsan görünmez olursun.', 'Sözler şaşar. Gözler şaşmaz.', 'Kendin olmak için kimseden izin alma.'],
+    de: ['Bleib seltsam.', 'Normal ist ein Gerücht.', 'Passt du dich an, verschwindest du.', 'Der Mund lügt. Die Augen nicht.', 'Du brauchst keine Erlaubnis, du selbst zu sein.'],
+    fr: ['Reste bizarre.', "Le normal n'est qu'une rumeur.", 'Se fondre dans la masse, c\u2019est disparaître.', 'La bouche ment. Les yeux, jamais.', "Tu n'as pas besoin de permission pour être toi-même."],
+    hu: ['Maradj fura.', 'A normális csak pletyka.', 'Ha beolvadsz, eltűnsz.', 'A száj hazudik. A szem nem.', 'Nem kell engedély ahhoz, hogy önmagad legyél.']
+  };
+
+  function currentLang() {
+    var l = document.documentElement.lang;
+    return (l && SLOGANS[l]) ? l : 'en';
+  }
+
+  function pickPhrase() {
+    var pool = EXCLAMATIONS.concat(SLOGANS[currentLang()]);
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var css =
@@ -26,9 +45,9 @@
       '100%{transform:scale(1) rotate(0deg)}' +
     '}' +
     '#oddviBuddy.buddy-pop{animation:oddvi-buddy-pop .55s cubic-bezier(.36,1.4,.4,1) both}' +
-    '#oddviBuddyBubble{position:absolute;bottom:64px;left:0;background:var(--ink,#141414);color:#fff;font-family:var(--font-disp,inherit);font-weight:800;font-size:13px;padding:6px 12px;border-radius:10px;white-space:nowrap;opacity:0;transform:translateY(6px) scale(.9);transition:opacity .18s,transform .18s;pointer-events:none}' +
-    '#oddviBuddyBubble::after{content:"";position:absolute;left:16px;bottom:-6px;border:6px solid transparent;border-top-color:var(--ink,#141414)}' +
-    '#oddviBuddyBubble.show{opacity:1;transform:translateY(0) scale(1)}' +
+    '#oddviBuddyBubble{position:absolute;bottom:64px;left:50%;transform:translateX(calc(-50% + var(--bx,0px))) translateY(6px) scale(.9);max-width:190px;width:max-content;background:var(--ink,#141414);color:#fff;font-family:var(--font-disp,inherit);font-weight:800;font-size:12.5px;line-height:1.35;text-align:center;padding:8px 13px;border-radius:12px;white-space:normal;opacity:0;transition:opacity .18s,transform .18s;pointer-events:none}' +
+    '#oddviBuddyBubble::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-top-color:var(--ink,#141414)}' +
+    '#oddviBuddyBubble.show{opacity:1;transform:translateX(calc(-50% + var(--bx,0px))) translateY(0) scale(1)}' +
     '.oddvi-buddy-spark{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--yellow,#ffc93c);pointer-events:none;opacity:0}' +
     '@keyframes oddvi-buddy-spark{' +
       '0%{opacity:1;transform:translate(0,0) scale(1)}' +
@@ -197,6 +216,16 @@
 
     var bubbleTimer = null;
 
+    function positionBubble() {
+      bubble.style.setProperty('--bx', '0px');
+      var rect = bubble.getBoundingClientRect();
+      var shift = 0;
+      var margin = 8;
+      if (rect.left < margin) shift = margin - rect.left;
+      else if (rect.right > window.innerWidth - margin) shift = (window.innerWidth - margin) - rect.right;
+      bubble.style.setProperty('--bx', shift + 'px');
+    }
+
     function react() {
       playBoop();
 
@@ -207,11 +236,13 @@
         spawnSparks(wrap);
       }
 
-      var phrase = PHRASES[Math.floor(Math.random() * PHRASES.length)];
+      var phrase = pickPhrase();
       bubble.textContent = phrase;
       bubble.classList.add('show');
+      requestAnimationFrame(positionBubble);
       clearTimeout(bubbleTimer);
-      bubbleTimer = setTimeout(function () { bubble.classList.remove('show'); }, 1200);
+      var showTime = Math.min(3200, 1100 + phrase.length * 35);
+      bubbleTimer = setTimeout(function () { bubble.classList.remove('show'); }, showTime);
     }
 
     makeDraggable(wrap, btn, react);
