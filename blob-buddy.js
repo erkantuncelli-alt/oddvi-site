@@ -12,8 +12,10 @@
 
   var css =
     '#oddviBuddyWrap{position:fixed;left:14px;bottom:14px;z-index:59;-webkit-tap-highlight-color:transparent}' +
+    '#oddviBuddyWrap.dragging{transition:none!important}' +
     '@media(max-width:680px){#oddviBuddyWrap{left:10px;bottom:10px}}' +
-    '#oddviBuddy{width:52px;height:52px;border-radius:999px;background:var(--card,#fff);border:2.5px solid var(--ink,#141414);box-shadow:3px 3px 0 var(--ink,#141414);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0}' +
+    '#oddviBuddy{width:52px;height:52px;border-radius:999px;background:var(--card,#fff);border:2.5px solid var(--ink,#141414);box-shadow:3px 3px 0 var(--ink,#141414);cursor:grab;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0;touch-action:none}' +
+    '#oddviBuddy:active{cursor:grabbing}' +
     '#oddviBuddy img{width:76%;height:76%;object-fit:contain;pointer-events:none;user-select:none}' +
     '#oddviBuddy:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink,#141414)}' +
     '@keyframes oddvi-buddy-pop{' +
@@ -84,6 +86,94 @@
     }
   }
 
+  var POS_KEY = 'oddvi-buddy-pos';
+  var DRAG_THRESHOLD = 6; // px of movement before a press counts as a drag, not a tap
+
+  function clamp(val, min, max) { return Math.max(min, Math.min(max, val)); }
+
+  function applySavedPosition(wrap) {
+    var saved = null;
+    try { saved = JSON.parse(localStorage.getItem(POS_KEY) || 'null'); } catch (e) { saved = null; }
+    if (!saved || typeof saved.left !== 'number' || typeof saved.top !== 'number') return;
+
+    var rect = wrap.getBoundingClientRect();
+    var maxLeft = window.innerWidth - rect.width - 4;
+    var maxTop = window.innerHeight - rect.height - 4;
+    var left = clamp(saved.left, 4, Math.max(4, maxLeft));
+    var top = clamp(saved.top, 4, Math.max(4, maxTop));
+
+    wrap.style.left = left + 'px';
+    wrap.style.top = top + 'px';
+    wrap.style.bottom = 'auto';
+  }
+
+  function savePosition(wrap) {
+    var rect = wrap.getBoundingClientRect();
+    try {
+      localStorage.setItem(POS_KEY, JSON.stringify({ left: rect.left, top: rect.top }));
+    } catch (e) { /* ignore */ }
+  }
+
+  function makeDraggable(wrap, btn, onTap) {
+    var dragging = false;
+    var moved = false;
+    var startX, startY, startLeft, startTop;
+
+    btn.addEventListener('pointerdown', function (e) {
+      if (e.button !== undefined && e.button !== 0) return; // left click / primary touch only
+      var rect = wrap.getBoundingClientRect();
+      startX = e.clientX;
+      startY = e.clientY;
+      startLeft = rect.left;
+      startTop = rect.top;
+      moved = false;
+      dragging = true;
+      wrap.style.left = startLeft + 'px';
+      wrap.style.top = startTop + 'px';
+      wrap.style.bottom = 'auto';
+      try { btn.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+    });
+
+    btn.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      if (!moved && Math.hypot(dx, dy) > DRAG_THRESHOLD) {
+        moved = true;
+        wrap.classList.add('dragging');
+      }
+      if (moved) {
+        var rect = wrap.getBoundingClientRect();
+        var newLeft = clamp(startLeft + dx, 4, window.innerWidth - rect.width - 4);
+        var newTop = clamp(startTop + dy, 4, window.innerHeight - rect.height - 4);
+        wrap.style.left = newLeft + 'px';
+        wrap.style.top = newTop + 'px';
+      }
+    });
+
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      wrap.classList.remove('dragging');
+      if (moved) {
+        savePosition(wrap);
+      } else {
+        onTap();
+      }
+      moved = false;
+    }
+
+    btn.addEventListener('pointerup', endDrag);
+    btn.addEventListener('pointercancel', endDrag);
+
+    window.addEventListener('resize', function () {
+      var saved = null;
+      try { saved = JSON.parse(localStorage.getItem(POS_KEY) || 'null'); } catch (err) { saved = null; }
+      if (!saved) return;
+      applySavedPosition(wrap);
+    });
+  }
+
   function build() {
     if (document.getElementById('oddviBuddyWrap')) return;
 
@@ -96,16 +186,18 @@
     var btn = document.createElement('button');
     btn.id = 'oddviBuddy';
     btn.type = 'button';
-    btn.setAttribute('aria-label', 'Say hi to Oddvi');
+    btn.setAttribute('aria-label', 'Say hi to Oddvi — drag to move');
     btn.innerHTML = '<img src="/uploads/oddvi-logo-icon.png" alt="" />';
 
     wrap.appendChild(bubble);
     wrap.appendChild(btn);
     document.body.appendChild(wrap);
 
+    applySavedPosition(wrap);
+
     var bubbleTimer = null;
 
-    btn.addEventListener('click', function () {
+    function react() {
       playBoop();
 
       if (!reduceMotion) {
@@ -120,7 +212,9 @@
       bubble.classList.add('show');
       clearTimeout(bubbleTimer);
       bubbleTimer = setTimeout(function () { bubble.classList.remove('show'); }, 1200);
-    });
+    }
+
+    makeDraggable(wrap, btn, react);
 
     btn.addEventListener('animationend', function (e) {
       if (e.animationName === 'oddvi-buddy-pop') btn.classList.remove('buddy-pop');
