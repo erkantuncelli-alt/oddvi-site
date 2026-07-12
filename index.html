@@ -502,11 +502,12 @@
     <p style="margin-top:30px;font-weight:600;opacity:.9" data-i18n="home.story.hook">Curious who Oddvi actually is?</p>
     <a href="/story.html" class="eye-cta" id="storyEyeBtn">
       <span class="sr-only" data-i18n="home.story.cta">Read the full story →</span>
+      <span class="sr-only cta-src" data-i18n="home.story.cta.txt">Read the full story</span>
       <svg viewBox="0 0 168 168" aria-hidden="true">
         <defs><path id="storyRing" d="M14,90 a70,70 0 1,1 140,0" /></defs>
         <circle cx="84" cy="84" r="82" fill="var(--ink)" />
         <text class="ring-text">
-          <textPath href="#storyRing" startOffset="50%" text-anchor="middle" data-i18n="home.story.cta.txt">Read the full story</textPath>
+          <textPath href="#storyRing" startOffset="50%" text-anchor="middle">Read the full story</textPath>
         </text>
         <text x="84" y="150" text-anchor="middle" class="ring-arrow">→</text>
       </svg>
@@ -620,9 +621,11 @@
   var ringText = btn.querySelector('.ring-text');
   var ringPath = document.getElementById('storyRing');
   var tp = ringText && ringText.querySelector('textPath');
+  var ctaSrc = btn.querySelector('.cta-src');
   var MAX_FONT = 13, MIN_FONT = 7, BASE_SPACING = 2.4;
   function fitRingText(){
     if(!ringText || !ringPath || !tp) return;
+    if(ctaSrc && ctaSrc.textContent) tp.textContent = ctaSrc.textContent;
     ringText.style.fontSize = MAX_FONT + 'px';
     ringText.style.letterSpacing = BASE_SPACING + 'px';
     var pathLen = ringPath.getTotalLength();
