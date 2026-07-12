@@ -68,10 +68,10 @@ function localizedUrl(page, lang) {
   return lang === 'en' ? `${SITE_ORIGIN}/${slug}` : `${SITE_ORIGIN}/${lang}/${slug}`;
 }
 
-function buildHreflangHtml(page) {
+function buildHreflangHtml(page, lang) {
   const links = ALL_LANGS.map(l => `<link rel="alternate" hreflang="${l === 'en' ? 'en' : l}" href="${localizedUrl(page, l)}" />`).join('\n');
   const xdefault = `<link rel="alternate" hreflang="x-default" href="${localizedUrl(page, 'en')}" />`;
-  const canonical = `<link rel="canonical" href="${localizedUrl(page, 'en')}" />`;
+  const canonical = `<link rel="canonical" href="${localizedUrl(page, lang || 'en')}" />`;
   return `\n${canonical}\n${links}\n${xdefault}\n`;
 }
 
@@ -155,7 +155,7 @@ async function handleLocalizedPage(request, env, ctx, lang, page, url) {
       .on('[data-i18n-html]', new I18nAttrSetter('data-i18n-html', langDict, fallback, 'html'))
       .on('[data-i18n-ph]', new I18nAttrSetter('data-i18n-ph', langDict, fallback, 'placeholder'))
       .on('html', new HtmlLangSetter(lang))
-      .on('head', new SeoHeadInjector(buildHreflangHtml(page)))
+      .on('head', new SeoHeadInjector(buildHreflangHtml(page, lang)))
       .on('head', new GeoLangInjector(lang));
 
     if (meta && meta.title) rewriter = rewriter.on('title', new TitleSetter(meta.title));
@@ -248,7 +248,7 @@ export default {
 
     let rewriter = new HTMLRewriter().on('head', new GeoLangInjector(lang));
     if (isLocalizableDefault) {
-      rewriter = rewriter.on('head', new SeoHeadInjector(buildHreflangHtml(defaultPage)));
+      rewriter = rewriter.on('head', new SeoHeadInjector(buildHreflangHtml(defaultPage, 'en')));
     }
 
     const transformed = rewriter.transform(response);
