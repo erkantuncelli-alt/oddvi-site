@@ -125,6 +125,13 @@
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--yellow);color:var(--ink);padding:7px 15px;border-radius:999px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg)}
   h1{font-family:var(--font-fun);color:#fff;font-weight:800;font-size:clamp(46px,8vw,96px);line-height:1;letter-spacing:-.01em;margin:24px 0 20px}
   .hl{display:inline-block;font-family:var(--font-spray);color:var(--yellow);font-weight:400;padding:0 .1em;transform:rotate(-3deg);text-shadow:3px 3px 0 var(--red);position:relative;top:.05em}
+  .paint{position:relative;display:inline-block;font-weight:800;padding:.04em .36em;white-space:nowrap;z-index:1}
+  .paint::before{content:"";position:absolute;inset:-14% -6% -22% -6%;z-index:-1;border-radius:255px 15px 225px 15px/15px 225px 15px 255px;background:var(--paint-c);transform:rotate(var(--paint-r,-2deg))}
+  .paint::after{content:"";position:absolute;left:18%;bottom:-13px;width:7px;height:17px;border-radius:0 0 8px 8px;background:var(--paint-c);z-index:-1}
+  .paint-red{--paint-c:var(--red);--paint-r:-2.5deg;color:#fff}
+  .paint-tang{--paint-c:var(--tang);--paint-r:2deg;color:#fff}
+  .paint-yellow{--paint-c:var(--yellow-deep);--paint-r:-1.5deg;color:var(--ink)}
+  .paint-teal{--paint-c:var(--teal);--paint-r:1.5deg;color:#fff}
   .lead{font-size:clamp(16px,2vw,19px);max-width:440px;color:#9aa0b4;font-weight:500}
   @media(max-width:900px){.lead{margin-inline:auto}}
   .hero-actions{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
@@ -523,7 +530,7 @@
         <span class="kicker" data-i18n="gal.kicker">A day in the life</span>
         <h2 class="h2" data-i18n-html="gal.h2">Ordinary days.<br>Oddly lived.</h2>
       </div>
-      <p data-i18n="gal.intro">Oddvi does everything you do — just a little bit weirder.</p>
+      <p data-i18n-html="gal.intro">Oddvi does everything you do — just a little bit weirder.</p>
     </div>
     <div class="carousel-wrap"><div class="grid carousel" id="galGrid"></div></div>
     <div class="gal-more"><a href="/odd-gallery.html" class="btn btn-primary" data-i18n="gal.cta">See the full gallery →</a></div>
