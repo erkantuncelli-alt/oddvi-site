@@ -48,7 +48,13 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
   header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;flex-wrap:wrap;row-gap:8px;padding-block:10px}
+  @media(max-width:680px){
+    .nav{min-height:56px}
+    .back{font-size:12px}
+    .lang-switch{gap:4px}
+    .lang-btn{font-size:10px;padding:5px 8px}
+  }
   .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;text-decoration:none;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px;transform:rotate(-3deg)}
   .logo-icon{flex:0 0 auto;display:block}
   .nav-links{display:flex;align-items:center;gap:20px;font-weight:600;font-size:15px}

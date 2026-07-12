@@ -40,7 +40,13 @@
   a{color:inherit}
 
   header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;flex-wrap:wrap;row-gap:8px;padding-block:10px}
+  @media(max-width:680px){
+    .nav{min-height:56px}
+    .back{font-size:12px}
+    .lang-switch{gap:4px}
+    .lang-btn{font-size:10px;padding:5px 8px}
+  }
   .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;letter-spacing:-.01em;text-decoration:none;display:inline-block;transform:rotate(-3deg)}
   .back{font-weight:700;font-size:14px;text-decoration:none;opacity:.75;display:inline-flex;align-items:center;gap:6px}
   .back:hover{opacity:1}
