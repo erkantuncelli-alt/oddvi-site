@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oddvi'nin Doğuşu — Oddvi</title>
+<meta name="description" content="Oddvi nasıl doğdu? Kaydırarak izle." />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#141414;--font-disp:"Bricolage Grotesque",system-ui,sans-serif;--font-body:"Inter",system-ui,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#cfcfcf;font-family:var(--font-body);transition:background-color 1s ease}
+
+  .intro{height:70vh;height:70dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--ink);padding:24px}
+  .intro h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(28px,6vw,50px)}
+  .intro p{opacity:.6;margin-top:14px;font-size:15px}
+  .intro .arrow{margin-top:40px;font-size:22px;animation:bounce 1.8s ease-in-out infinite;opacity:.5}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+  .track{position:relative;height:1000vh}
+  @media(max-width:600px){.track{height:700vh}}
+  .stage-viewport{position:sticky;top:0;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+  .nature-bg{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1.4s ease}
+  .nature-bg.show{opacity:1}
+  .nature-bg svg{width:100%;height:100%}
+  .stage-viewport svg.char{width:min(52vw,290px);height:auto;overflow:visible;position:relative;z-index:1}
+  .caption{position:relative;z-index:1;margin-top:26px;color:var(--ink);font-family:var(--font-disp);font-weight:800;font-size:clamp(20px,4vw,30px);text-align:center;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;max-width:20ch;padding:0 24px}
+  .caption.show{opacity:1;transform:translateY(0)}
+
+  .progress{position:fixed;left:0;top:0;height:3px;background:var(--ink);z-index:5;width:0%;opacity:.5}
+
+  .part{opacity:0;transform:scale(.6);transform-origin:center;transition:opacity .5s ease,transform .5s cubic-bezier(.3,1.4,.4,1)}
+  .part.on{opacity:1;transform:scale(1)}
+
+  .sound-btn{position:fixed;right:18px;bottom:18px;z-index:6;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:12px 18px;font-family:var(--font-disp);font-weight:800;font-size:13px;cursor:pointer;box-shadow:3px 3px 0 rgba(0,0,0,.25)}
+  .home-link{position:fixed;left:18px;top:18px;z-index:6;background:rgba(255,255,255,.85);color:var(--ink);text-decoration:none;font-weight:700;font-size:13px;padding:9px 14px;border-radius:999px;box-shadow:2px 2px 0 rgba(0,0,0,.15)}
+
+  .outro{height:60vh;height:60dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--ink)}
+  .outro h2{font-family:var(--font-disp);font-weight:800;font-size:clamp(24px,5vw,40px)}
+</style>
+</head>
+<body id="bod">
+
+<div class="progress" id="progress"></div>
+<a href="/index.html" class="home-link">← Ana sayfaya dön</a>
+<button class="sound-btn" id="soundBtn">Sesi aç ♪</button>
+
+<div class="intro">
+  <h1>Oddvi'nin Doğuşu</h1>
+  <p>Aşağı kaydır, izle.</p>
+  <div class="arrow">↓</div>
+</div>
+
+<div class="track" id="track">
+  <div class="stage-viewport">
+    <div class="nature-bg" id="natureBg">
+      <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+        <rect width="800" height="600" fill="#a9e6f7"/>
+        <circle cx="660" cy="95" r="50" fill="#ffd166"/>
+        <g stroke="#ffd166" stroke-width="7" stroke-linecap="round">
+          <line x1="660" y1="18" x2="660" y2="2"/>
+          <line x1="720" y1="40" x2="732" y2="28"/>
+          <line x1="740" y1="95" x2="758" y2="95"/>
+          <line x1="720" y1="150" x2="732" y2="162"/>
+          <line x1="600" y1="40" x2="588" y2="28"/>
+        </g>
+        <path d="M0 90 Q30 78 60 90 Q90 78 120 90 L120 105 L0 105 Z" fill="#fff" opacity=".9"/>
+        <path d="M480 60 Q515 45 550 60 Q585 45 620 60 L620 78 L480 78 Z" fill="#fff" opacity=".85"/>
+        <ellipse cx="140" cy="440" rx="280" ry="150" fill="#8fd694"/>
+        <ellipse cx="640" cy="460" rx="320" ry="160" fill="#7bcf82"/>
+        <g fill="#4f9e56">
+          <path d="M60 380 L90 320 L120 380 Z"/>
+          <path d="M100 390 L130 315 L160 390 Z"/>
+          <path d="M150 385 L180 325 L210 385 Z"/>
+          <path d="M580 400 L610 335 L640 400 Z"/>
+          <path d="M630 395 L660 330 L690 395 Z"/>
+          <path d="M680 405 L710 340 L740 405 Z"/>
+        </g>
+        <path d="M535 130 Q545 250 555 400 Q560 420 540 425 Q515 425 520 400 Q525 260 515 135 Z" fill="#eaf7fb" opacity=".92"/>
+        <ellipse cx="535" cy="420" rx="55" ry="22" fill="#bfe9f2"/>
+        <path d="M0 470 Q120 430 260 470 Q400 510 560 460 Q680 430 800 465 L800 600 L0 600 Z" fill="#6fc26a"/>
+        <path d="M0 480 Q120 450 260 480 Q400 512 560 470 Q680 445 800 472" stroke="#8fdcee" stroke-width="34" fill="none" opacity=".92"/>
+        <g>
+          <circle cx="90" cy="520" r="7" fill="#ff6fa3"/>
+          <circle cx="104" cy="512" r="7" fill="#ffd166"/>
+          <circle cx="75" cy="512" r="7" fill="#ff9e4a"/>
+          <circle cx="250" cy="545" r="7" fill="#ffd166"/>
+          <circle cx="264" cy="538" r="7" fill="#ff6fa3"/>
+          <circle cx="600" cy="535" r="7" fill="#ff6fa3"/>
+          <circle cx="614" cy="528" r="7" fill="#a5e8c0"/>
+          <circle cx="720" cy="555" r="7" fill="#ffd166"/>
+          <circle cx="734" cy="548" r="7" fill="#ff9e4a"/>
+        </g>
+        <g stroke="#3a3a3a" stroke-width="3" fill="none" stroke-linecap="round">
+          <path d="M120 130 Q130 118 140 130 Q150 118 160 130"/>
+          <path d="M220 90 Q230 78 240 90 Q250 78 260 90"/>
+          <path d="M340 150 Q350 138 360 150 Q370 138 380 150"/>
+        </g>
+      </svg>
+    </div>
+    <svg class="char" viewBox="0 0 400 620">
+      <ellipse class="part" id="p-body" cx="200" cy="235" rx="140" ry="195" fill="#141414"/>
+
+      <circle class="part" id="p-eye1" cx="152" cy="185" r="27" fill="#fff" stroke="#141414" stroke-width="3"/>
+      <circle class="part" id="p-pupil1" cx="152" cy="188" r="10" fill="#141414"/>
+      <circle class="part" id="p-eye2" cx="248" cy="185" r="27" fill="#fff" stroke="#141414" stroke-width="3"/>
+      <circle class="part" id="p-pupil2" cx="252" cy="188" r="10" fill="#141414"/>
+      <path class="part" id="p-brow1" d="M120 138 Q142 116 168 132" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path class="part" id="p-brow2" d="M280 138 Q258 116 232 132" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <ellipse class="part" id="p-mouth" cx="200" cy="288" rx="46" ry="62" fill="#fff" stroke="#141414" stroke-width="3"/>
+
+      <g class="part" id="p-arm1">
+        <path d="M85 235 Q30 255 30 195 Q30 165 42 150" stroke="#141414" stroke-width="27" fill="none" stroke-linecap="round"/>
+        <circle cx="40" cy="148" r="25" fill="#141414"/>
+        <path d="M52 130 Q62 108 60 92" stroke="#141414" stroke-width="18" fill="none" stroke-linecap="round"/>
+      </g>
+      <g class="part" id="p-arm2">
+        <path d="M315 235 Q370 255 370 195 Q370 165 358 150" stroke="#141414" stroke-width="27" fill="none" stroke-linecap="round"/>
+        <circle cx="360" cy="148" r="25" fill="#141414"/>
+        <path d="M348 130 Q338 108 340 92" stroke="#141414" stroke-width="18" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <g class="part" id="p-legs">
+        <path d="M172 400 L166 500" stroke="#141414" stroke-width="24" fill="none" stroke-linecap="round"/>
+        <path d="M228 400 L234 500" stroke="#141414" stroke-width="24" fill="none" stroke-linecap="round"/>
+        <rect x="152" y="488" width="30" height="26" rx="7" fill="#fff" stroke="#141414" stroke-width="3"/>
+        <rect x="218" y="488" width="30" height="26" rx="7" fill="#fff" stroke="#141414" stroke-width="3"/>
+        <path d="M138 508 Q138 496 152 496 L188 496 Q198 500 196 514 L194 528 Q192 538 180 538 L146 538 Q134 538 133 526 Z" fill="#141414"/>
+        <path d="M133 524 L196 522 L197 530 Q197 536 190 537 L140 537 Q133 536 133 528 Z" fill="#fff" stroke="#141414" stroke-width="3"/>
+        <path d="M148 502 L162 512" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M158 500 L172 511" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M204 508 Q204 496 218 496 L254 496 Q266 500 264 514 L262 528 Q260 538 248 538 L214 538 Q202 538 201 526 Z" fill="#141414"/>
+        <path d="M201 524 L264 522 L265 530 Q265 536 258 537 L208 537 Q201 536 201 528 Z" fill="#fff" stroke="#141414" stroke-width="3"/>
+        <path d="M216 502 L230 512" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M226 500 L240 511" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <g class="part" id="p-shorts">
+        <path d="M128 385 Q200 400 272 385 L280 430 Q280 448 260 450 L140 450 Q120 448 120 430 Z" fill="#ff2f6e" stroke="#141414" stroke-width="4"/>
+        <path d="M128 385 Q200 400 272 385 L275 405 L125 405 Z" fill="#141414"/>
+        <path d="M197 405 L192 448" stroke="#141414" stroke-width="3"/>
+        <path d="M203 405 L208 448" stroke="#141414" stroke-width="3"/>
+        <text x="200" y="399" font-family="var(--font-disp)" font-weight="800" font-size="14.5" fill="#fff" text-anchor="middle" letter-spacing="0.5">PARDON MY ODD</text>
+      </g>
+    </svg>
+    <div class="caption" id="caption"></div>
+  </div>
+</div>
+
+<div class="outro">
+  <h2>Rengarenk bir dünyaya hoş geldin, Oddvi.</h2>
+</div>
+
+<script>
+  var STAGES = [
+    {parts:["p-body"], text:"Başlangıçta sadece bir şekil vardı.", bg:"#cfcfcf"},
+    {parts:["p-eye1"], text:"Sonra, bir göz açıldı.", bg:"#cdeae5"},
+    {parts:["p-pupil1"], text:"Ve bir bakış oluştu.", bg:"#f7e3c0"},
+    {parts:["p-eye2","p-pupil2"], text:"İkinci göz de katıldı.", bg:"#f9d0d8"},
+    {parts:["p-brow1","p-brow2"], text:"Bir ifade belirdi.", bg:"#dcd0f2"},
+    {parts:["p-mouth"], text:"Bir ağız, konuşmaya hazır.", bg:"#c9f0d9"},
+    {parts:["p-arm1"], text:"Bir başparmak havaya kalktı.", bg:"#ffd166"},
+    {parts:["p-arm2"], text:"İki elle, tam onaylı.", bg:"#ff8fa3"},
+    {parts:["p-legs"], text:"Bacaklar, ayakkabılar, hazır.", bg:"#6ee7d8"},
+    {parts:["p-shorts"], text:"Ve işte... Oddvi doğdu.", bg:"#fff8f0"}
+  ];
+
+  var track = document.getElementById('track');
+  var caption = document.getElementById('caption');
+  var progressBar = document.getElementById('progress');
+  var bod = document.getElementById('bod');
+  var shownParts = new Set();
+  var currentStage = -1;
+
+  function update(){
+    var rect = track.getBoundingClientRect();
+    var total = rect.height - window.innerHeight;
+    var scrolled = Math.min(Math.max(-rect.top, 0), total);
+    var pct = total > 0 ? scrolled / total : 0;
+    progressBar.style.width = (pct*100) + '%';
+
+    var stageIdx = Math.min(STAGES.length - 1, Math.floor(pct * STAGES.length));
+    if (stageIdx !== currentStage && stageIdx >= 0) {
+      currentStage = stageIdx;
+      caption.textContent = STAGES[stageIdx].text;
+      caption.classList.add('show');
+      bod.style.backgroundColor = STAGES[stageIdx].bg;
+      if (stageIdx === STAGES.length - 1) {
+        document.getElementById('natureBg').classList.add('show');
+      }
+      STAGES[stageIdx].parts.forEach(function(id){
+        if (!shownParts.has(id)) {
+          shownParts.add(id);
+          document.getElementById(id).classList.add('on');
+        }
+      });
+      playChime(stageIdx);
+    }
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+
+  var ctx = null, soundOn = false;
+  var soundBtn = document.getElementById('soundBtn');
+  var SCALE = [261.63,293.66,329.63,349.23,392.00,440.00,523.25,587.33,659.25,783.99];
+
+  function initAudio(){
+    if (ctx) return;
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  function playNote(freq, t0, dur, gainPeak, type){
+    var osc = ctx.createOscillator();
+    var g = ctx.createGain();
+    osc.type = type || "triangle";
+    osc.frequency.value = freq;
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(gainPeak, t0 + 0.015);
+    g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+    osc.connect(g);
+    g.connect(ctx.destination);
+    osc.start(t0);
+    osc.stop(t0 + dur + 0.05);
+  }
+
+  function playChime(stageIdx){
+    if (!soundOn || !ctx) return;
+    var now = ctx.currentTime;
+    var freq = SCALE[stageIdx % SCALE.length];
+    playNote(freq, now, 0.5, 0.18, "triangle");
+    playNote(freq*2, now, 0.3, 0.06, "sine");
+
+    if (stageIdx === STAGES.length - 1) {
+      var chord = [freq, freq*1.26, freq*1.5, freq*2];
+      chord.forEach(function(f, i){
+        playNote(f, now + 0.05, 1.4, 0.14, "triangle");
+      });
+      [freq*2, freq*2.5, freq*3, freq*4].forEach(function(f, i){
+        playNote(f, now + 0.12 + i*0.06, 0.5, 0.05, "sine");
+      });
+    }
+  }
+
+  soundBtn.addEventListener('click', function(){
+    initAudio();
+    if (ctx.state === 'suspended') ctx.resume();
+    soundOn = !soundOn;
+    soundBtn.textContent = soundOn ? 'Sesi kapat ×' : 'Sesi aç ♪';
+    if (soundOn) playChime(currentStage);
+  });
+</script>
+
+</body>
+</html>
