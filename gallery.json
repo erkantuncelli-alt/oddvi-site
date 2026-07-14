@@ -2735,6 +2735,386 @@
           "nature"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-heatwave-temps-rising.jpg",
+      "en": "38°C, 40°C, 43°C... Nope.",
+      "tr": "38°C, 40°C, 43°C... Yok Artık.",
+      "de": "38°C, 40°C, 43°C... Nein Danke.",
+      "fr": "38°C, 40°C, 43°C... Non Merci.",
+      "hu": "38°C, 40°C, 43°C... Na Ne.",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-heatwave-survival-kit.jpg",
+      "en": "Oddvi's Heatwave Survival Kit",
+      "tr": "Oddvi'nin Sıcak Hava Kiti",
+      "de": "Oddvis Hitzewellen-Kit",
+      "fr": "Le Kit De Survie Canicule D'oddvi",
+      "hu": "Oddvi Hőhullám-Túlélőkészlete",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-screen-time-problem-solved.jpg",
+      "en": "Problem Solved (Not Really)",
+      "tr": "Sorun Çözüldü (Aslında Çözülmedi)",
+      "de": "Problem Gelöst (Nicht Wirklich)",
+      "fr": "Problème Résolu (Pas Vraiment)",
+      "hu": "Probléma Megoldva (Nem Igazán)",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-wildfires-mission-complete.jpg",
+      "en": "Mission Complete",
+      "tr": "Görev Tamamlandı",
+      "de": "Mission Erfüllt",
+      "fr": "Mission Accomplie",
+      "hu": "Küldetés Teljesítve",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-stay-cool-fridge.jpg",
+      "en": "My Summer Office",
+      "tr": "Yazlık Ofisim",
+      "de": "Mein Sommerbüro",
+      "fr": "Mon Bureau D'été",
+      "hu": "A Nyári Irodám",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-french-rivers-soup.jpg",
+      "en": "So... That's Soup",
+      "tr": "Demek Bu Bir Çorba",
+      "de": "Also... Das Ist Suppe",
+      "fr": "Donc... C'est De La Soupe",
+      "hu": "Szóval... Ez Leves",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-europe-melting.jpg",
+      "en": "Enough.",
+      "tr": "Yeter.",
+      "de": "Genug.",
+      "fr": "Ça Suffit.",
+      "hu": "Elég Volt.",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-todays-battery-mood.jpg",
+      "en": "Today's Battery",
+      "tr": "Bugünün Bataryası",
+      "de": "Heutiger Akkustand",
+      "fr": "La Batterie Du Jour",
+      "hu": "A Mai Akkumulátor",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-weird-internet-loaf-cat.jpg",
+      "en": "Today's Weird Internet",
+      "tr": "Bugünün Garip İnterneti",
+      "de": "Heutiges Internet-Kuriosum",
+      "fr": "L'internet Bizarre Du Jour",
+      "hu": "A Mai Fura Internet",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-021-sneeze.jpg",
+      "en": "Sneezed So Hard, Even His Plant Died",
+      "tr": "O Kadar Sert Hapşırdı Ki Bitkisi Bile Öldü",
+      "de": "So Fest Geniest, Sogar Die Pflanze Starb",
+      "fr": "Il A Tellement Éternué Que Sa Plante En Est Morte",
+      "hu": "Olyan Nagyot Tüsszentett, Hogy A Növénye Is Meghalt",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-battery-coffee-hope-chaos.jpg",
+      "en": "Coffee: 120%. Hope: 3%.",
+      "tr": "Kahve: %120. Umut: %3.",
+      "de": "Kaffee: 120%. Hoffnung: 3%.",
+      "fr": "Café : 120 %. Espoir : 3 %.",
+      "hu": "Kávé: 120%. Remény: 3%.",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-survived-monday.jpg",
+      "en": "You Survived Monday",
+      "tr": "Pazartesiyi Atlattın",
+      "de": "Du Hast Den Montag Überlebt",
+      "fr": "Tu As Survécu Au Lundi",
+      "hu": "Túlélted A Hétfőt",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-three-people-normal-a.jpg",
+      "en": "Three People Acted Normal Today",
+      "tr": "Bugün Üç Kişi Normal Davrandı",
+      "de": "Heute Haben Sich Drei Leute Normal Verhalten",
+      "fr": "Trois Personnes Ont Agi Normalement Aujourd'hui",
+      "hu": "Ma Három Ember Normálisan Viselkedett",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-three-people-normal-b.jpg",
+      "en": "Breaking: Normal Happened",
+      "tr": "Son Dakika: Normal Yaşandı",
+      "de": "Eilmeldung: Normal Ist Passiert",
+      "fr": "Flash Info : Du Normal S'est Produit",
+      "hu": "Rendkívüli Hír: Normalitás Történt",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-reports-banana.jpg",
+      "en": "$18,000 On A Banana",
+      "tr": "Bir Muza 18.000 Dolar",
+      "de": "18.000 $ Für Eine Banane",
+      "fr": "18 000 $ Pour Une Banane",
+      "hu": "18 000 Dollár Egy Banánért",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-delulu-main-character.jpg",
+      "en": "Delulu? Maybe. Happy? Definitely.",
+      "tr": "Hayalperest mi? Belki. Mutlu mu? Kesinlikle.",
+      "de": "Verpeilt? Vielleicht. Glücklich? Definitiv.",
+      "fr": "Délirant ? Peut-être. Heureux ? Certainement.",
+      "hu": "Delulu? Talán. Boldog? Egyértelműen.",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-touched-grass.jpg",
+      "en": "Achievement Unlocked: Touched Grass",
+      "tr": "Başarı Kazanıldı: Çimlere Dokundu",
+      "de": "Erfolg Freigeschaltet: Gras Berührt",
+      "fr": "Succès Débloqué : A Touché De L'herbe",
+      "hu": "Eredmény Feloldva: Megérintette A Füvet",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-ai-declined.jpg",
+      "en": "AI Asked Me To Be Normal. I Declined.",
+      "tr": "Yapay Zeka Normal Olmamı İstedi. Reddettim.",
+      "de": "Die KI Bat Mich, Normal Zu Sein. Ich Habe Abgelehnt.",
+      "fr": "L'IA M'a Demandé D'être Normal. J'ai Refusé.",
+      "hu": "Az MI Arra Kért, Legyek Normális. Visszautasítottam.",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-meaning-of-life-loading.jpg",
+      "en": "Processing... Forever",
+      "tr": "İşleniyor... Sonsuza Dek",
+      "de": "Verarbeitung... Für Immer",
+      "fr": "Traitement En Cours... Pour Toujours",
+      "hu": "Feldolgozás... Örökre",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-social-battery-recharge.jpg",
+      "en": "Recharge Completed",
+      "tr": "Şarj Tamamlandı",
+      "de": "Aufladen Abgeschlossen",
+      "fr": "Recharge Terminée",
+      "hu": "Feltöltés Kész",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
     }
   ]
 }
