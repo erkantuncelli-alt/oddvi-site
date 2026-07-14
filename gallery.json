@@ -2393,6 +2393,348 @@
           "travel"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-001-octopus-hearts-pink.jpg",
+      "en": "Still Less Dramatic Than Mondays",
+      "tr": "Pazartesilerden Bile Daha Sakin",
+      "de": "Immer Noch Weniger Dramatisch Als Montage",
+      "fr": "Toujours Moins Dramatique Qu'un Lundi",
+      "hu": "Még A Hétfőnél Is Kevésbé Drámai",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-003-giraffe-sleep.jpg",
+      "en": "Nine Hours To Exist",
+      "tr": "Var Olmak İçin 9 Saat Şart",
+      "de": "Neun Stunden, Um Zu Existieren",
+      "fr": "Neuf Heures Pour Exister",
+      "hu": "Kilenc Óra Kell A Léthez",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-005-sea-otters-hold-hands.jpg",
+      "en": "Unnecessarily Adorable",
+      "tr": "Gereksiz Yere Şirin",
+      "de": "Unnötig Niedlich",
+      "fr": "Mignon Sans Raison",
+      "hu": "Feleslegesen Cuki",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-006-honey-never-spoils.jpg",
+      "en": "My Leftovers Could Never",
+      "tr": "Benim Yemeğim Asla Dayanamaz",
+      "de": "Meine Reste Könnten Das Nie",
+      "fr": "Mes Restes N'en Sont Pas Capables",
+      "hu": "Az Én Maradékom Sose Bírná",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-007-octopus-hearts-green.jpg",
+      "en": "Extra Is Normal",
+      "tr": "Fazlası Normaldir",
+      "de": "Extra Ist Normal",
+      "fr": "L'excès, C'est Normal",
+      "hu": "A Plusz A Normális",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-008-wombat-cube-poo.jpg",
+      "en": "Nature Has A Sense Of Humor",
+      "tr": "Doğanın Bir Mizah Anlayışı Var",
+      "de": "Die Natur Hat Humor",
+      "fr": "La Nature A De L'humour",
+      "hu": "A Természetnek Van Humorérzéke",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-009-sloth-slow.jpg",
+      "en": "Slower Than Your Sunday Plans",
+      "tr": "Pazar Planlarından Bile Yavaş",
+      "de": "Langsamer Als Deine Sonntagspläne",
+      "fr": "Plus Lent Que Tes Plans Du Dimanche",
+      "hu": "Lassabb, Mint A Vasárnapi Terveid",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-010-cactus-hugs.jpg",
+      "en": "Less Drama, More Prickles",
+      "tr": "Daha Az Drama, Daha Çok Diken",
+      "de": "Weniger Drama, Mehr Stacheln",
+      "fr": "Moins De Drame, Plus De Piquants",
+      "hu": "Kevesebb Dráma, Több Tüske",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-011-flamingo-flamboyance.jpg",
+      "en": "A Group Of Flamingos Is A Flamboyance",
+      "tr": "Flamingo Sürüsüne Flamboyance Denir",
+      "de": "Eine Gruppe Flamingos Heißt Flamboyance",
+      "fr": "Un Groupe De Flamants S'appelle Flamboyance",
+      "hu": "A Flamingócsapat Neve Flamboyance",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-012-earth-not-god.jpg",
+      "en": "We're The Original. Others Copied",
+      "tr": "Orijinal Biziz. Diğerleri Kopyaladı",
+      "de": "Wir Sind Das Original. Andere Haben Kopiert",
+      "fr": "On Est L'original. Les Autres Ont Copié",
+      "hu": "Mi Vagyunk Az Eredeti. A Többiek Másolták",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-013-space-alcohol-cloud.jpg",
+      "en": "A Giant Cloud Of Alcohol In Space",
+      "tr": "Uzayda Dev Bir Alkol Bulutu",
+      "de": "Eine Riesige Alkoholwolke Im All",
+      "fr": "Un Nuage D'alcool Géant Dans L'espace",
+      "hu": "Egy Óriási Alkoholfelhő Az Űrben",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-014-stomach-lining.jpg",
+      "en": "Built-In Renewal System",
+      "tr": "Yerleşik Yenilenme Sistemi",
+      "de": "Eingebautes Erneuerungssystem",
+      "fr": "Système De Renouvellement Intégré",
+      "hu": "Beépített Megújulási Rendszer",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-015-pizza-healthy.jpg",
+      "en": "Pizza Used To Be A Health Food",
+      "tr": "Pizza Bir Zamanlar Sağlıklıydı",
+      "de": "Pizza War Mal Gesund",
+      "fr": "La Pizza, Autrefois Un Aliment Santé",
+      "hu": "A Pizza Régen Egészséges Volt",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-016-first-video-game.jpg",
+      "en": "Made With Love (And Code)",
+      "tr": "Sevgiyle (Ve Kodla) Yapıldı",
+      "de": "Mit Liebe (Und Code) Gemacht",
+      "fr": "Fait Avec Amour (Et Du Code)",
+      "hu": "Szeretettel (És Kóddal) Készült",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "tech"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-017-cleopatra-iphone.jpg",
+      "en": "Closer To The iPhone Than The Pyramids",
+      "tr": "Piramitlerden Çok iPhone'a Yakın",
+      "de": "Näher Am iPhone Als An Den Pyramiden",
+      "fr": "Plus Proche De L'iPhone Que Des Pyramides",
+      "hu": "Közelebb Az iPhone-hoz, Mint A Piramisokhoz",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "mystery-brand"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-018-brain-bulb.jpg",
+      "en": "Tiny Bulb, Huge Ideas",
+      "tr": "Küçük Ampul, Büyük Fikirler",
+      "de": "Kleine Glühbirne, Große Ideen",
+      "fr": "Petite Ampoule, Grandes Idées",
+      "hu": "Kicsi Izzó, Nagy Ötletek",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-019-octopus-hearts.jpg",
+      "en": "Three Hearts, Blue Blood",
+      "tr": "Üç Kalp, Mavi Kan",
+      "de": "Drei Herzen, Blaues Blut",
+      "fr": "Trois Cœurs, Sang Bleu",
+      "hu": "Három Szív, Kék Vér",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-archive-020-planet-rains-glass.jpg",
+      "en": "It Rains Glass Sideways",
+      "tr": "Yan Yan Cam Yağıyor",
+      "de": "Hier Regnet Es Glas — Seitwärts",
+      "fr": "Ici, Il Pleut Du Verre... De Travers",
+      "hu": "Itt Oldalra Esik Az Üvegeső",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
     }
   ]
 }

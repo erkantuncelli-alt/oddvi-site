@@ -223,6 +223,14 @@
   (function(){
     function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
     function slugOf(imgPath){ var m = imgPath.match(/([^\/]+)\.[a-zA-Z0-9]+$/); return m ? m[1] : ''; }
+    function shuffle(arr){
+      var a = arr.slice();
+      for(var i=a.length-1;i>0;i--){
+        var j = Math.floor(Math.random()*(i+1));
+        var tmp = a[i]; a[i]=a[j]; a[j]=tmp;
+      }
+      return a;
+    }
     var grid = document.getElementById('fullGrid');
     var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap'), lbClose = document.getElementById('lbClose'), lbShare = document.getElementById('lbShare');
     var currentItem = null;
@@ -254,7 +262,7 @@
     fetch('/gallery.json?t='+Date.now())
       .then(function(r){return r.ok?r.json():{items:[]};})
       .then(function(d){
-        var items = (d && d.items) ? d.items : [];
+        var items = shuffle((d && d.items) ? d.items : []);
         allItems = items;
         grid.innerHTML = items.map(function(it,i){
           var l = curLang();
