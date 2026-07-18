@@ -132,6 +132,9 @@
   @media(prefers-reduced-motion: reduce){.hero-card.is-night .hero-star{animation:none!important}}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;position:relative}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;text-align:center;gap:32px}}
+  .hero-grid.hero-grid-solo{grid-template-columns:1fr;padding-block:20px 8px}
+  .hero-grid.hero-grid-solo>div{max-width:640px}
+  @media(max-width:900px){.hero-grid.hero-grid-solo{text-align:left}}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--yellow);color:var(--ink);padding:7px 15px;border-radius:999px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg)}
   h1{font-family:var(--font-fun);color:#fff;font-weight:800;font-size:clamp(46px,8vw,96px);line-height:1;letter-spacing:-.01em;margin:24px 0 20px}
   .hl{display:inline-block;font-family:var(--font-spray);color:var(--yellow);font-weight:400;padding:0 .1em;transform:rotate(-3deg);text-shadow:3px 3px 0 var(--red);position:relative;top:.05em}
@@ -478,7 +481,7 @@
       <svg class="doodle doodle-x" viewBox="0 0 100 100" fill="none" stroke="var(--yellow)" stroke-width="7" stroke-linecap="round" aria-hidden="true"><path d="M20 20 L80 80 M80 20 L20 80"/></svg>
       <svg class="doodle doodle-bolt" viewBox="0 0 60 100" fill="var(--red)" aria-hidden="true"><path d="M35 0 L10 55 L28 55 L18 100 L55 40 L35 40 Z"/></svg>
   <div class="wrap">
-    <div class="hero-grid">
+    <div class="hero-grid hero-grid-solo">
         <div>
           <span class="eyebrow"><a class="social-icon sm" href="https://instagram.com/theoddvi" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a>&nbsp;<span data-i18n="hero.eyebrow">Coming soon · @theoddvi</span></span>
           <h1>What's your <span class="hl">Odd</span>?</h1>
@@ -488,11 +491,8 @@
             <a href="#life" class="btn btn-hero-ghost" data-i18n="hero.btnGhost">See Oddvi in action ↓</a>
           </div>
         </div>
-        <div class="hero-capsules" id="heroFig">
-          <img id="heroFrame" src="/uploads/oddvi-hero-thumbsup2.png" data-day-src="/uploads/oddvi-hero-thumbsup2.png" data-night-src="/uploads/oddvi-hero-night2.png" alt="Oddvi — What's your Odd?" />
-        </div>
       </div>
-  </div>
+    </div>
 
   <div class="marquee"><span data-i18n-html="marquee.text">NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;NORMAL IS EVERYWHERE&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;ODD IS REMEMBERED&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;STAY ODD&nbsp;&nbsp;<b>●</b>&nbsp;&nbsp;</span></div>
 </section>
@@ -722,35 +722,14 @@
   window.addEventListener('oddvi:lang', e=>{ D = e.detail.dict; });
 
   /* Gündüz/gece teması — ziyaretçinin cihaz saatine göre (07:00-19:00 gündüz).
-     Görsel: hero kartındaki yıldızlar, güneş/ay rozeti ve Oddvi'nin poz görseli değişir.
-     Gece pozu şu an gündüz pozuyla aynı — data-night-src'i gerçek gece görseliyle
-     değiştirince otomatik devreye girer, başka bir yeri değiştirmeye gerek yok. */
+     Görsel: hero kartındaki yıldızlar ve güneş/ay rozeti değişir. */
   (function(){
     var hour = new Date().getHours();
     var isNight = (hour < 7 || hour >= 19);
     var card = document.querySelector('.hero-card');
     var badge = document.getElementById('heroDaytimeBadge');
-    var img = document.getElementById('heroFrame');
     if(card) card.classList.toggle('is-night', isNight);
     if(badge) badge.textContent = isNight ? '🌙' : '☀️';
-    if(img){
-      var src = isNight ? img.getAttribute('data-night-src') : img.getAttribute('data-day-src');
-      if(src) img.setAttribute('src', src);
-      img.setAttribute('alt', isNight ? "Oddvi, sleepy in a nightcap — What's your Odd?" : "Oddvi — What's your Odd?");
-    }
-  })();
-
-  /* Hero tilt toward cursor */
-  (function(){
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const fig=document.getElementById('heroFig'), frame=document.getElementById('heroFrame');
-    if(!fig) return;
-    fig.addEventListener('mousemove', e=>{
-      const r=fig.getBoundingClientRect();
-      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
-      frame.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg) translateZ(0)`;
-    });
-    fig.addEventListener('mouseleave', ()=>{ frame.style.transform=''; });
   })();
 
   /* Share Your Odd kartı — küçük fotoğraf önizlemeleri (odds.json'dan) */
