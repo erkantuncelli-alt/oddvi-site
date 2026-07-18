@@ -754,3 +754,4 @@ async function handleGetLikes(url, env) {
 
 // Named exports (harmless for the Workers runtime; used by local tests).
 export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage, pollIndexForSlot, handlePollToday, handlePollVote, handlePollHistory, handlePollControversial };
+// deploy webhook test 2026-07-18T16:32:47Z
