@@ -9,15 +9,73 @@
   var API_VOTE = '/api/poll/vote';
 
   var UI = {
-    en: { hint: "Tap one. See what everyone picked.", voted: "Thanks for voting!", share: "Share your pick", download: "Download image", newTomorrow: "New question tomorrow", loading: "Loading today's odd question…" },
-    tr: { hint: "Birine dokun. Herkes ne seçmiş gör.", voted: "Oyun için teşekkürler!", share: "Seçimini paylaş", download: "Görseli indir", newTomorrow: "Yarın yeni soru", loading: "Bugünün garip sorusu yükleniyor…" },
-    de: { hint: "Tipp eins an. Sieh, was alle gewählt haben.", voted: "Danke fürs Abstimmen!", share: "Teile deine Wahl", download: "Bild herunterladen", newTomorrow: "Morgen neue Frage", loading: "Die heutige Frage wird geladen…" },
-    fr: { hint: "Touche une option. Regarde ce que tout le monde a choisi.", voted: "Merci d'avoir voté !", share: "Partage ton choix", download: "Télécharger l'image", newTomorrow: "Nouvelle question demain", loading: "Chargement de la question du jour…" },
-    hu: { hint: "Koppints egyre. Nézd meg, mit választottak mások.", voted: "Köszönjük a szavazatot!", share: "Oszd meg a választásod", download: "Kép letöltése", newTomorrow: "Holnap új kérdés", loading: "A mai kérdés betöltése…" }
+    en: { hint: "Tap one. See what everyone picked.", voted: "Thanks for voting!", share: "Share your pick", download: "Download image", newTomorrow: "New question tomorrow", loading: "Loading today's odd question…", counter: "{n} odds have voted" },
+    tr: { hint: "Birine dokun. Herkes ne seçmiş gör.", voted: "Oyun için teşekkürler!", share: "Seçimini paylaş", download: "Görseli indir", newTomorrow: "Yarın yeni soru", loading: "Bugünün garip sorusu yükleniyor…", counter: "{n} kişi oy verdi" },
+    de: { hint: "Tipp eins an. Sieh, was alle gewählt haben.", voted: "Danke fürs Abstimmen!", share: "Teile deine Wahl", download: "Bild herunterladen", newTomorrow: "Morgen neue Frage", loading: "Die heutige Frage wird geladen…", counter: "{n} Leute haben abgestimmt" },
+    fr: { hint: "Touche une option. Regarde ce que tout le monde a choisi.", voted: "Merci d'avoir voté !", share: "Partage ton choix", download: "Télécharger l'image", newTomorrow: "Nouvelle question demain", loading: "Chargement de la question du jour…", counter: "{n} personnes ont voté" },
+    hu: { hint: "Koppints egyre. Nézd meg, mit választottak mások.", voted: "Köszönjük a szavazatot!", share: "Oszd meg a választásod", download: "Kép letöltése", newTomorrow: "Holnap új kérdés", loading: "A mai kérdés betöltése…", counter: "{n} ember szavazott" }
+  };
+
+  var ODDVI_COMMENTS = {
+    en: {
+      majority: ["Went with the crowd? Bold… ly normal.", "You're in the majority. Oddvi respects it, doesn't get it.", "Same pick as everyone else. Safe choice.", "Winning side. Predictable, but fine."],
+      minority: ["Everyone else picked the other one. You or them — who's odd here?", "You're in the minority. Oddvi's favorite kind of people.", "Didn't follow the crowd. Very on-brand.", "Standing alone, but at least you're interesting."]
+    },
+    tr: {
+      majority: ["Sürüyle mi gittin? Cesurca... normal.", "Çoğunluktasın. Oddvi saygı duyuyor ama anlamıyor.", "Herkesle aynı şeyi seçtin. Güvenli tercih.", "Kazanan taraftasın. Tahmin edilir ama olsun."],
+      minority: ["Herkes diğerini seçti. Sen mi haklısın onlar mı? Kimse bilmiyor.", "Azınlıktasın. Oddvi'nin en sevdiği tür insan.", "Kalabalığa uymadın. Tam da Oddvi'lik.", "Yalnız kaldın ama en azından ilginçsin."]
+    },
+    de: {
+      majority: ["Mit der Masse gegangen? Mutig… auf normale Art.", "Du bist in der Mehrheit. Oddvi respektiert's, versteht's aber nicht.", "Gleiche Wahl wie alle. Sichere Bank.", "Gewinnerseite. Vorhersehbar, aber okay."],
+      minority: ["Alle anderen wählten das andere. Du oder sie — wer ist hier odd?", "Du bist in der Minderheit. Oddvis Lieblingsmenschen.", "Nicht der Masse gefolgt. Sehr Oddvi-like.", "Allein, aber wenigstens interessant."]
+    },
+    fr: {
+      majority: ["Suivre la foule ? Audacieusement… normal.", "Tu es dans la majorité. Oddvi respecte, sans comprendre.", "Même choix que tout le monde. Sûr, mais bon.", "Camp gagnant. Prévisible, mais ça va."],
+      minority: ["Tout le monde a choisi l'autre. Toi ou eux — qui est bizarre ici ?", "Tu es dans la minorité. Le genre préféré d'Oddvi.", "Pas suivi la foule. Très Oddvi.", "Seul, mais au moins intéressant."]
+    },
+    hu: {
+      majority: ["A tömeggel tartottál? Bátran… normális.", "Többségben vagy. Oddvi tiszteli, de nem érti.", "Ugyanazt választottad, mint mindenki. Biztos, de oké.", "Nyerő oldal. Kiszámítható, de rendben."],
+      minority: ["Mindenki más a másikat választotta. Te vagy ők — ki a fura itt?", "Kisebbségben vagy. Oddvi kedvenc fajtája.", "Nem követted a tömeget. Nagyon Oddvi-s.", "Egyedül maradtál, de legalább érdekes vagy."]
+    }
   };
 
   function currentLang() {
     return (document.documentElement.lang && UI[document.documentElement.lang]) ? document.documentElement.lang : 'en';
+  }
+
+  function dayHash(str) {
+    var h = 0;
+    for (var i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
+    return h;
+  }
+
+  function todayStr() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  var CONFETTI_COLORS = ['#ff3366', '#ffc93c', '#1ec8c8', '#845ec2', '#ff7a45'];
+
+  function fireConfetti() {
+    var host = q('pollConfetti');
+    if (!host) return;
+    host.innerHTML = '';
+    var n = 22;
+    for (var i = 0; i < n; i++) {
+      var el = document.createElement('span');
+      el.className = 'confetti-piece';
+      var angle = Math.random() * Math.PI * 2;
+      var dist = 70 + Math.random() * 110;
+      var tx = Math.cos(angle) * dist;
+      var ty = Math.sin(angle) * dist - 30;
+      el.style.setProperty('--tx', tx.toFixed(0) + 'px');
+      el.style.setProperty('--ty', ty.toFixed(0) + 'px');
+      el.style.setProperty('--rot', (Math.random() * 480 - 240).toFixed(0) + 'deg');
+      el.style.background = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+      el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      el.style.animationDelay = (Math.random() * 0.12).toFixed(2) + 's';
+      host.appendChild(el);
+    }
+    setTimeout(function () { host.innerHTML = ''; }, 1100);
   }
 
   var state = { poll: null, voted: false, choice: null };
@@ -44,6 +102,7 @@
   function renderPoll() {
     if (!state.poll) return;
     var l = currentLang();
+    var t = UI[l];
     var p = state.poll;
 
     if (els.series) els.series.textContent = p.series[l] || p.series.en;
@@ -53,6 +112,7 @@
 
     var votes = p.votes || { a: 0, b: 0 };
     var percentages = pct(votes.a || 0, votes.b || 0);
+    var total = (votes.a || 0) + (votes.b || 0);
 
     if (state.voted) {
       els.card.classList.add('voted');
@@ -63,9 +123,30 @@
       if (els.btnA) els.btnA.classList.toggle('picked', state.choice === 'a');
       if (els.btnB) els.btnB.classList.toggle('picked', state.choice === 'b');
       if (els.share) els.share.style.display = '';
+
+      var winner = percentages[0] === percentages[1] ? null : (percentages[0] > percentages[1] ? 'a' : 'b');
+      if (els.btnA) els.btnA.classList.toggle('winner', winner === 'a');
+      if (els.btnB) els.btnB.classList.toggle('winner', winner === 'b');
+
+      if (els.counter) {
+        var countTxt = total > 0 ? t.counter.replace('{n}', total.toLocaleString(l === 'tr' ? 'tr-TR' : l)) : '';
+        els.counter.textContent = countTxt;
+      }
+
+      if (els.comment && els.commentText) {
+        var seed = dayHash(todayStr() + '|' + (p.question[l] || p.question.en));
+        var bucket = (winner && state.choice === winner) ? 'majority' : 'minority';
+        var pool = (ODDVI_COMMENTS[l] || ODDVI_COMMENTS.en)[bucket];
+        var idx = seed % pool.length;
+        els.commentText.textContent = pool[idx];
+        els.comment.classList.add('show');
+      }
     } else {
       els.card.classList.remove('voted');
       if (els.share) els.share.style.display = 'none';
+      if (els.btnA) els.btnA.classList.remove('winner');
+      if (els.btnB) els.btnB.classList.remove('winner');
+      if (els.comment) els.comment.classList.remove('show');
     }
     renderStatic();
   }
@@ -78,6 +159,7 @@
     state.poll.votes = state.poll.votes || { a: 0, b: 0 };
     state.poll.votes[choice] = (state.poll.votes[choice] || 0) + 1;
     renderPoll();
+    fireConfetti();
     try {
       var res = await fetch(API_VOTE, {
         method: 'POST',
@@ -261,6 +343,9 @@
     els.share = q('pollShare');
     els.shareBtn = q('pollShareBtn');
     els.downloadBtn = q('pollDownloadBtn');
+    els.counter = q('pollCounter');
+    els.comment = q('pollOddviComment');
+    els.commentText = q('pollOddviCommentText');
 
     if (els.btnA) els.btnA.addEventListener('click', function () { vote('a'); });
     if (els.btnB) els.btnB.addEventListener('click', function () { vote('b'); });

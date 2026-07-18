@@ -364,14 +364,14 @@
   .poll-wrap{text-align:center;max-width:640px}
   .poll-kicker-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
   .poll-mascot{width:60px;height:74px;object-fit:cover;object-position:top center;border-radius:12px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(5deg)}
-  .poll-card{margin-top:18px;background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:7px 7px 0 var(--ink);padding:32px 28px}
+  .poll-card{position:relative;margin-top:18px;background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:7px 7px 0 var(--ink);padding:32px 28px}
   @media(max-width:520px){.poll-card{padding:24px 18px;box-shadow:5px 5px 0 var(--ink)}}
   .poll-series{font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);min-height:16px}
   .poll-question{font-family:var(--font-disp);font-weight:800;font-size:clamp(24px,4.4vw,34px);line-height:1.12;margin:8px 0 24px;min-height:1.2em}
   .poll-options{display:flex;align-items:center;gap:14px}
   @media(max-width:560px){.poll-options{flex-direction:column}}
-  .poll-vs{font-family:var(--font-disp);font-weight:800;font-size:14px;opacity:.4;flex:none}
-  .poll-opt{flex:1;width:100%;text-align:left;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;padding:16px 18px;cursor:pointer;font-family:inherit;color:inherit;transition:transform .15s,box-shadow .15s;box-shadow:4px 4px 0 var(--ink)}
+  .poll-vs{font-family:var(--font-disp);font-weight:800;font-size:17px;color:var(--red);opacity:.9;flex:none;transform:rotate(-6deg);text-shadow:1.5px 1.5px 0 var(--ink)}
+  .poll-opt{position:relative;flex:1;width:100%;text-align:left;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;padding:16px 18px;cursor:pointer;font-family:inherit;color:inherit;transition:transform .15s,box-shadow .15s;box-shadow:4px 4px 0 var(--ink)}
   @keyframes poll-wiggle{
     0%,100%{transform:rotate(0deg)}
     15%{transform:rotate(-2.5deg)}
@@ -395,6 +395,22 @@
   .poll-opt-fill{display:block;height:100%;width:0%;background:var(--red);border-radius:999px;transition:width .6s cubic-bezier(.16,1,.3,1)}
   #pollBtnB .poll-opt-fill{background:var(--yellow-deep)}
   .poll-opt.picked{border-color:var(--red);box-shadow:4px 4px 0 var(--red)}
+  .poll-crown{display:none;position:absolute;top:-16px;right:-8px;font-size:24px;transform:rotate(14deg);filter:drop-shadow(2px 2px 0 var(--ink));animation:crownPop .5s cubic-bezier(.34,1.56,.64,1) both}
+  .poll-card.voted .poll-opt.winner .poll-crown{display:block}
+  .poll-card.voted .poll-opt.winner{border-color:var(--red-deep)}
+  @keyframes crownPop{0%{transform:rotate(14deg) scale(0)}70%{transform:rotate(14deg) scale(1.15)}100%{transform:rotate(14deg) scale(1)}}
+  .poll-counter{margin-top:16px;font-size:12.5px;font-weight:700;opacity:0;transition:opacity .4s;letter-spacing:.02em}
+  .poll-card.voted .poll-counter{opacity:.55}
+  .poll-oddvi-comment{display:none;align-items:flex-start;gap:10px;margin-top:16px;background:var(--paper-2);border:2px solid var(--ink);border-radius:14px;padding:12px 14px;text-align:left}
+  .poll-card.voted .poll-oddvi-comment.show{display:flex}
+  .poll-oddvi-comment img{width:32px;height:42px;object-fit:cover;object-position:top center;border-radius:8px;border:2px solid var(--ink);flex:none;transform:rotate(-3deg)}
+  .poll-oddvi-comment p{margin:0;font-size:13px;font-weight:600;line-height:1.35}
+  .poll-confetti{position:absolute;inset:0;overflow:visible;pointer-events:none;z-index:6}
+  .confetti-piece{position:absolute;top:38%;left:50%;width:7px;height:7px;opacity:0;will-change:transform,opacity;animation:confettiPop .9s ease-out forwards}
+  @keyframes confettiPop{
+    0%{opacity:1;transform:translate(-50%,-50%) translate(0,0) rotate(0deg) scale(1)}
+    100%{opacity:0;transform:translate(-50%,-50%) translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.5)}
+  }
   .poll-hint{margin-top:20px;font-size:14px;opacity:.6;font-weight:500}
   .poll-history-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--red-deep);text-decoration:none}
   .poll-history-link:hover{text-decoration:underline}
@@ -505,10 +521,12 @@
       <img class="poll-mascot" id="pollMascot" alt="" />
     </div>
     <div class="poll-card" id="pollCard">
+      <div class="poll-confetti" id="pollConfetti" aria-hidden="true"></div>
       <div class="poll-series" id="pollSeries">&nbsp;</div>
       <h3 class="poll-question" id="pollQuestion">&nbsp;</h3>
       <div class="poll-options">
         <button type="button" class="poll-opt" id="pollBtnA">
+          <span class="poll-crown" aria-hidden="true">👑</span>
           <span class="poll-opt-top">
             <span class="poll-opt-label" id="pollOptA"></span>
             <span class="poll-opt-pct" id="pollPctA"></span>
@@ -517,12 +535,18 @@
         </button>
         <div class="poll-vs">VS</div>
         <button type="button" class="poll-opt" id="pollBtnB">
+          <span class="poll-crown" aria-hidden="true">👑</span>
           <span class="poll-opt-top">
             <span class="poll-opt-label" id="pollOptB"></span>
             <span class="poll-opt-pct" id="pollPctB"></span>
           </span>
           <span class="poll-opt-bar"><span class="poll-opt-fill" id="pollFillB"></span></span>
         </button>
+      </div>
+      <p class="poll-counter" id="pollCounter">&nbsp;</p>
+      <div class="poll-oddvi-comment" id="pollOddviComment">
+        <img src="/uploads/oddvi-logo-icon.png" alt="" aria-hidden="true" />
+        <p id="pollOddviCommentText"></p>
       </div>
       <p class="poll-hint" id="pollHint" data-i18n="poll.hint">Tap one. See what everyone picked.</p>
       <a href="/odd-poll.html" class="poll-history-link" data-i18n="poll.historyLink">See past results →</a>
