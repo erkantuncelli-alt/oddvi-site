@@ -76,13 +76,24 @@
   .manifesto p.sub{margin-top:20px;font-weight:700;opacity:.9}
 
   .meet{background:var(--teal);color:var(--ink);border-bottom:3px solid var(--ink)}
-  .meet-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
-  @media(max-width:900px){.meet-grid{grid-template-columns:1fr}}
-  .meet-img{border-radius:var(--radius);overflow:hidden;background:var(--card);border:4px solid var(--ink);box-shadow:12px 12px 0 var(--ink);transform:rotate(2deg)}
-  .meet-img img{width:100%;aspect-ratio:1031/1280;object-fit:cover}
+  #meet{position:relative;color:#fff;overflow:hidden;min-height:640px;display:flex;align-items:center}
+  #meet::before{content:"";position:absolute;inset:0;background-image:url('/uploads/story-meet-subway.jpg');background-size:cover;background-position:center 38%}
+  #meet::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,0) 45%,rgba(6,10,12,.55) 68%,rgba(6,10,12,.62) 100%)}
+  #meet .wrap{position:relative;z-index:1;width:100%}
+  .meet-panel{margin-left:auto;width:100%;max-width:480px;background:rgba(10,14,15,.78);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border:2px solid rgba(255,255,255,.18);border-radius:18px;padding:34px 32px;box-shadow:10px 10px 0 rgba(0,0,0,.25)}
+  .meet-panel .kicker{background:var(--red);color:#fff}
+  .meet-panel .h2{color:#fff}
+  .meet-panel p{color:rgba(255,255,255,.88)}
   .meet p{font-size:18px;margin-top:18px;max-width:46ch;font-weight:500}
-  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .chips li{background:var(--card);border:2.5px solid var(--ink);padding:8px 15px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:3px 3px 0 var(--ink)}
+  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chips li{font-family:var(--font-disp);background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.5);color:#fff;padding:7px 14px;border-radius:999px;font-weight:700;font-size:13px}
+  #odd2 .chips li{background:var(--card);border:2.5px solid var(--ink);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+  @media(max-width:900px){
+    #meet{min-height:560px;padding-block:48px}
+    #meet::before{background-position:center 30%}
+    #meet::after{background:linear-gradient(180deg,rgba(6,10,12,.25) 0%,rgba(6,10,12,.72) 55%,rgba(6,10,12,.82) 100%)}
+    .meet-panel{max-width:100%;margin-left:0}
+  }
 
   .story{background:var(--yellow);color:var(--ink);border-bottom:3px solid var(--ink)}
   .story-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
@@ -131,11 +142,8 @@
 </section>
 
 <section id="meet" class="meet">
-  <div class="wrap meet-grid">
-    <div class="meet-img">
-      <img id="imgMeet" src="/uploads/oddvi09logo-selam_yaramaz.png" alt="Meet Oddvi" loading="lazy" />
-    </div>
-    <div>
+  <div class="wrap">
+    <div class="meet-panel">
       <span class="kicker" data-i18n="meet.kicker">Chapter One · Philosophy</span>
       <h2 class="h2" data-i18n="meet.h2">This Is How Oddvi Sees The World.</h2>
       <p data-i18n="meet.p1">Nobody knows where Oddvi came from. But everyone knows what it believes: normal was never a rule — just a habit nobody questioned.</p>
