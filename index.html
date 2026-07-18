@@ -862,9 +862,16 @@
     t.addEventListener('click', function(){
       var open=nl.classList.toggle('open');
       t.setAttribute('aria-expanded', open?'true':'false');
+      t.innerHTML = open ? '&#10005;' : '&#9776;';
+      t.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menü');
     });
     nl.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ nl.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+      a.addEventListener('click', function(){
+        nl.classList.remove('open');
+        t.setAttribute('aria-expanded','false');
+        t.innerHTML = '&#9776;';
+        t.setAttribute('aria-label','Menü');
+      });
     });
   })();
 
