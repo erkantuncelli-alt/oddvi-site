@@ -80,6 +80,7 @@
   #meet::before{content:"";position:absolute;inset:0;background-image:url('/uploads/story-meet-subway.jpg');background-size:cover;background-position:center 38%}
   #meet::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,0) 45%,rgba(6,10,12,.55) 68%,rgba(6,10,12,.62) 100%)}
   #meet .wrap{position:relative;z-index:1;width:100%}
+  .meet-mobile-img{display:none}
   .meet-panel{margin-left:auto;width:100%;max-width:480px;background:rgba(10,14,15,.78);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border:2px solid rgba(255,255,255,.18);border-radius:18px;padding:34px 32px;box-shadow:10px 10px 0 rgba(0,0,0,.25)}
   .meet-panel .kicker{background:var(--red);color:#fff}
   .meet-panel .h2{color:#fff}
@@ -89,10 +90,11 @@
   .chips li{font-family:var(--font-disp);background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.5);color:#fff;padding:7px 14px;border-radius:999px;font-weight:700;font-size:13px}
   #odd2 .chips li{background:var(--card);border:2.5px solid var(--ink);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
   @media(max-width:900px){
-    #meet{min-height:560px;padding-block:48px}
-    #meet::before{background-position:center 30%}
-    #meet::after{background:linear-gradient(180deg,rgba(6,10,12,.25) 0%,rgba(6,10,12,.72) 55%,rgba(6,10,12,.82) 100%)}
-    .meet-panel{max-width:100%;margin-left:0}
+    #meet{display:block;min-height:0;padding:0}
+    #meet::before,#meet::after{display:none}
+    #meet .wrap{padding-inline:0}
+    .meet-mobile-img{display:block;width:100%;height:280px;object-fit:cover;object-position:44% 30%;border-bottom:3px solid var(--ink)}
+    .meet-panel{max-width:100%;margin:0;background:#0a0e0f;border:none;border-radius:0;box-shadow:none;padding:32px 24px}
   }
 
   .story{background:var(--yellow);color:var(--ink);border-bottom:3px solid var(--ink)}
@@ -143,6 +145,7 @@
 
 <section id="meet" class="meet">
   <div class="wrap">
+    <img class="meet-mobile-img" src="/uploads/story-meet-subway-mobile.jpg" alt="" aria-hidden="true" loading="lazy" />
     <div class="meet-panel">
       <span class="kicker" data-i18n="meet.kicker">Chapter One · Philosophy</span>
       <h2 class="h2" data-i18n="meet.h2">This Is How Oddvi Sees The World.</h2>
