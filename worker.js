@@ -430,35 +430,37 @@ async function handleAdminStats(url, env) {
     const downloadsTotal = downloadsRaw.reduce((sum, [, v]) => sum + v, 0);
     const submitsTotal = submitsRaw.reduce((sum, [, v]) => sum + v, 0);
 
-    // ---- daily odd poll summary (slot 0 shown as representative; totals sum all 3 slots) ----
+    // ---- daily odd poll summary (all 3 slots per day) ----
     const pollByDay = {};
     for (const { day, data: v } of pollBlobs) pollByDay[day] = v;
 
-    function pollForDay(day) {
+    function slotsForDay(day) {
       const record = normalizeVotesRecord(pollByDay[day] ? JSON.stringify(pollByDay[day]) : null);
-      const idx = pollIndexForSlot(day, 0, pollPool.length);
-      const p = pollPool[idx];
-      const votes = record.slots[0];
-      const dayTotal = record.slots.reduce((sum, s) => sum + (s.a || 0) + (s.b || 0), 0);
-      return {
-        day,
-        series: p.series.en,
-        question: p.question.en,
-        option_a: p.option_a.en,
-        option_b: p.option_b.en,
-        votes_a: votes.a || 0,
-        votes_b: votes.b || 0,
-        total: dayTotal
-      };
+      return record.slots.map((votes, slot) => {
+        const idx = pollIndexForSlot(day, slot, pollPool.length);
+        const p = pollPool[idx];
+        const total = (votes.a || 0) + (votes.b || 0);
+        return {
+          day,
+          slot,
+          series: p.series.en,
+          question: p.question.en,
+          option_a: p.option_a.en,
+          option_b: p.option_b.en,
+          votes_a: votes.a || 0,
+          votes_b: votes.b || 0,
+          total
+        };
+      });
     }
 
     const todayStr = new Date().toISOString().slice(0, 10);
-    const pollToday = pollForDay(todayStr);
+    const pollToday = slotsForDay(todayStr);
 
     const pollHistoryDays = Object.keys(pollByDay).sort().reverse().slice(0, 14);
     // Always include today even if it has zero votes yet (not in pollByDay until first vote).
     if (!pollHistoryDays.includes(todayStr)) pollHistoryDays.unshift(todayStr);
-    const pollHistory = pollHistoryDays.map(pollForDay);
+    const pollHistory = pollHistoryDays.flatMap(slotsForDay).filter(p => p.total > 0 || p.day === todayStr);
     const pollVotesAllTime = Object.values(pollByDay).reduce((sum, v) => {
       const rec = normalizeVotesRecord(JSON.stringify(v));
       return sum + rec.slots.reduce((s2, sl) => s2 + (sl.a || 0) + (sl.b || 0), 0);

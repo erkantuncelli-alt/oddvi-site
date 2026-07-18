@@ -186,19 +186,22 @@
     }).join('');
   }
 
-  function renderPollToday(el, p){
-    if(!p){ el.innerHTML = '<p style="opacity:.5;font-size:14px">Henüz veri yok</p>'; return; }
-    var total = p.total || 0;
-    var pctA = total ? Math.round((p.votes_a/total)*100) : 50;
-    var pctB = total ? 100 - pctA : 50;
-    el.innerHTML =
-      '<div class="poll-card">' +
-        '<div class="poll-q-series">' + p.series + '</div>' +
-        '<div class="poll-q-question">' + p.question + '</div>' +
-        '<div class="poll-opt-row a"><div class="top"><span>' + p.option_a + '</span><span>' + pctA + '% · ' + p.votes_a + '</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + pctA + '%"></div></div></div>' +
-        '<div class="poll-opt-row b"><div class="top"><span>' + p.option_b + '</span><span>' + pctB + '% · ' + p.votes_b + '</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + pctB + '%"></div></div></div>' +
-        '<div class="poll-total">' + total.toLocaleString('tr-TR') + ' oy · ' + p.day + '</div>' +
-      '</div>';
+  function renderPollToday(el, polls){
+    if(!polls || !polls.length){ el.innerHTML = '<p style="opacity:.5;font-size:14px">Henüz veri yok</p>'; return; }
+    el.innerHTML = polls.map(function(p){
+      var total = p.total || 0;
+      var pctA = total ? Math.round((p.votes_a/total)*100) : 50;
+      var pctB = total ? 100 - pctA : 50;
+      return (
+        '<div class="poll-card" style="margin-bottom:12px">' +
+          '<div class="poll-q-series">' + (p.slot+1) + '/3 · ' + p.series + '</div>' +
+          '<div class="poll-q-question">' + p.question + '</div>' +
+          '<div class="poll-opt-row a"><div class="top"><span>' + p.option_a + '</span><span>' + pctA + '% · ' + p.votes_a + '</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + pctA + '%"></div></div></div>' +
+          '<div class="poll-opt-row b"><div class="top"><span>' + p.option_b + '</span><span>' + pctB + '% · ' + p.votes_b + '</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + pctB + '%"></div></div></div>' +
+          '<div class="poll-total">' + total.toLocaleString('tr-TR') + ' oy · ' + p.day + '</div>' +
+        '</div>'
+      );
+    }).join('');
   }
 
   function renderPollHistory(el, history){
@@ -206,7 +209,7 @@
     el.innerHTML = history.map(function(p){
       var total = p.total || 0;
       var pctA = total ? Math.round((p.votes_a/total)*100) : 0;
-      return '<tr><td>' + p.day + ' — <b>' + p.question + '</b><br><span style="opacity:.6;font-size:12px">' + p.option_a + ' ' + pctA + '% vs ' + p.option_b + ' ' + (100-pctA) + '%</span></td><td class="n">' + total.toLocaleString('tr-TR') + '</td></tr>';
+      return '<tr><td>' + p.day + ' · ' + (p.slot+1) + '/3 — <b>' + p.question + '</b><br><span style="opacity:.6;font-size:12px">' + p.option_a + ' ' + pctA + '% vs ' + p.option_b + ' ' + (100-pctA) + '%</span></td><td class="n">' + total.toLocaleString('tr-TR') + '</td></tr>';
     }).join('');
   }
 
