@@ -253,6 +253,11 @@ export default {
     let rewriter = new HTMLRewriter().on('head', new GeoLangInjector(lang));
     if (isLocalizableDefault) {
       rewriter = rewriter.on('head', new SeoHeadInjector(buildHreflangHtml(defaultPage, 'en')));
+    } else if (contentType.includes('text/html')) {
+      // No translated siblings for this page, but it still needs a canonical tag pointing at
+      // itself so Google doesn't treat query-param/trailing-slash variants as duplicate content.
+      const selfUrl = `https://theoddvi.com/${defaultPage === 'index.html' ? '' : defaultPage}`;
+      rewriter = rewriter.on('head', new SeoHeadInjector(`\n<link rel="canonical" href="${selfUrl}" />\n`));
     }
 
     const transformed = rewriter.transform(response);
