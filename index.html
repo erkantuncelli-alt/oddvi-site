@@ -301,6 +301,19 @@
 
   /* CONNECT — social + share + signup merged into one 3-col row */
   .connect-grid{background:#53f507;padding:70px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+
+  /* ---- FAQ (GEO) ---- */
+  .faq-section{padding:70px 0;background:var(--paper)}
+  .faq-encourage{text-align:center;margin-bottom:32px}
+  .faq-encourage h3{font-family:var(--font-disp);font-weight:800;font-size:clamp(24px,4.2vw,36px);color:var(--ink)}
+  .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink);overflow:hidden}
+  .faq-q{width:100%;text-align:left;padding:18px 20px;background:none;border:none;font-family:var(--font-disp);font-weight:800;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--ink);font:inherit}
+  .faq-q .plus{flex:none;font-size:20px;line-height:1;transition:transform .2s;color:var(--red-deep)}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-item.open .faq-a{max-height:320px}
+  .faq-a p{padding:0 20px 18px;font-size:14.5px;line-height:1.55;opacity:.78;margin:0}
   .connect-encourage{text-align:center;margin-bottom:36px}
   .connect-encourage h3{font-family:var(--font-disp);font-weight:800;font-size:clamp(24px,4.2vw,36px);color:var(--ink)}
   .connect-encourage .mk{font-family:var(--font-spray);font-weight:400;color:#fff;text-shadow:2px 2px 0 var(--ink);display:inline-block;transform:rotate(-3deg);position:relative;top:.05em;padding:0 .06em}
@@ -486,6 +499,37 @@
       "url": "https://theoddvi.com",
       "inLanguage": ["en", "tr", "de", "fr", "hu"],
       "publisher": { "@id": "https://theoddvi.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://theoddvi.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Oddvi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oddvi is a black, rounded mascot character with one white oval for a mouth and two eyes that never blink. Nobody knows where it came from — its whole philosophy is that normal is everywhere, but odd is what gets remembered." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Pardon My Odd?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pardon My Odd (PMO) is the streetwear and lifestyle brand built around Oddvi — colorful, playful gift-box underwear and apparel. It's coming soon; leave your email on the site and you'll be the first to know when it launches." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does \"Normal is everywhere, Odd is remembered\" mean?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It's the core of the Oddvi manifesto: fitting in is the easy, forgettable choice. Being yourself — quirks and all — is what people actually remember you for." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between Normal Mode and Odd Mode on this site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Odd Mode is the site as designed — full color, motion, personality. Normal Mode drains it all to grayscale and kills the animations, as a joke about what conformity actually looks like. It can be toggled from the site menu." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I follow Oddvi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oddvi posts on Instagram at @theoddvi. Tag a post, send a DM, or just say hi — every message gets a reply from Oddvi, not a bot." }
+        }
+      ]
     }
   ]
 }
@@ -728,6 +772,13 @@
   </div>
 </section>
 
+<section id="faq" class="faq-section">
+  <div class="wrap">
+    <div class="faq-encourage"><h3 id="faqHeading">Questions, Answered</h3></div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap foot">
     <a href="#" class="logo" style="font-size:18px">ODDVI</a>
@@ -792,6 +843,7 @@
 <script src="/likes-widget.js"></script>
 <script src="/poll-mascot.js"></script>
 <script src="/poll.js"></script>
+<script src="/faq.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 

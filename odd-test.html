@@ -67,6 +67,18 @@
   .screen.active{display:block;animation:fade .35s ease}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
+  .test-faq{padding:60px 0 70px;border-top:3px solid var(--ink)}
+  .test-faq .wrap{max-width:720px}
+  .test-faq h2{font-family:var(--font-disp,inherit);font-weight:800;font-size:clamp(22px,3.8vw,30px);text-align:center;margin-bottom:28px}
+  .faq-list{display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:var(--card,#fff);border:2.5px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink);overflow:hidden}
+  .faq-q{width:100%;text-align:left;padding:18px 20px;background:none;border:none;font-family:inherit;font-weight:800;font-size:15.5px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--ink)}
+  .faq-q .plus{flex:none;font-size:20px;line-height:1;transition:transform .2s;color:var(--red-deep)}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-item.open .faq-a{max-height:320px}
+  .faq-a p{padding:0 20px 18px;font-size:14px;line-height:1.55;opacity:.78;margin:0}
+
   .intro{text-align:center;padding-top:40px}
   .eyebrow{display:inline-flex;gap:8px;align-items:center;background:var(--red);color:#fff;font-weight:600;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
   .intro h1{font-family:var(--font-disp);font-weight:800;font-size:clamp(46px,11vw,86px);line-height:.92;letter-spacing:-.03em;margin:20px 0 16px}
@@ -131,6 +143,39 @@
   :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:8px}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Odd Test?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A short quiz that turns your quirks into a result: which flavor of odd you are, based on how you answer ten quick questions." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many questions are there?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ten. Each one is a two-option pick — no typing, no overthinking. Most people finish in under two minutes." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is my result calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every answer nudges you toward one of several Odd archetypes. After the last question, whichever archetype you leaned toward the most becomes your result, with a full breakdown of how close the others were." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retake the test?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — hit \"Retake\" on the result screen and go again. Your answers aren't saved anywhere, so nothing carries over." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download or share my result?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your result screen gives you a matching wallpaper, profile picture, and Odd card you can save and post — tag @theoddvi if you do." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>
@@ -187,12 +232,20 @@
   </section>
 </main>
 
+<section id="testFaq" class="test-faq">
+  <div class="wrap">
+    <h2 id="testFaqHeading">How It Works</h2>
+    <div class="faq-list" id="testFaqList"></div>
+  </div>
+</section>
+
 <footer>Pardon My Odd · @theoddvi · Stay Odd.</footer>
 
 <script src="/blob-buddy.js"></script>
 <script src="/normal-odd-mode.js"></script>
 <script src="/jelly.js"></script>
 <script src="/i18n.js"></script>
+<script src="/odd-test-faq.js"></script>
 <script>
 /* image pools per archetype — one is picked at random each time a result is shown */
 const IMG_POOL={
