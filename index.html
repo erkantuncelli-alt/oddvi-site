@@ -97,6 +97,11 @@
   .hero{position:relative;padding:0 0 30px}
   .hero-card{background:var(--night);padding:46px 0 30px;position:relative;overflow:hidden;border-bottom:3px solid var(--ink)}
   @media(max-width:680px){.hero-card{padding:32px 0 20px}}
+  .hero-photo{position:absolute;inset:0;background-size:cover;background-position:58% 45%;background-image:url('/uploads/hero-office-scene.jpg')}
+  .hero-scrim{position:absolute;inset:0;background:
+      linear-gradient(100deg, rgba(7,7,9,.94) 0%, rgba(7,7,9,.82) 28%, rgba(7,7,9,.35) 52%, rgba(7,7,9,.12) 68%, rgba(7,7,9,.35) 100%),
+      linear-gradient(0deg, rgba(7,7,9,.75) 0%, rgba(7,7,9,0) 30%)}
+  @media(max-width:680px){.hero-photo{background-position:70% 40%}.hero-scrim{background:linear-gradient(180deg, rgba(7,7,9,.5) 0%, rgba(7,7,9,.55) 40%, rgba(7,7,9,.93) 78%, rgba(7,7,9,.98) 100%)}}
   .hero-card::before{content:"";position:absolute;inset:0;background:
       radial-gradient(circle at 15% 20%, rgba(255,47,110,.12) 0, transparent 40%),
       radial-gradient(circle at 85% 75%, rgba(30,200,200,.10) 0, transparent 40%);
@@ -190,7 +195,15 @@
   .pullquote{font-family:var(--font-disp);font-weight:800;font-size:clamp(28px,4.6vw,48px);line-height:1.1;letter-spacing:-.02em;text-align:center;max-width:20ch;margin:64px auto 0;color:var(--ink);background:var(--card);border:3px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:24px 30px;transform:rotate(-1.5deg)}
 
   /* GALLERY */
-  #life{background:var(--mint);border-bottom:3px solid var(--ink)}
+  #life{position:relative;overflow:hidden;color:#fff;border-bottom:3px solid var(--ink)}
+  .life-photo{position:absolute;inset:0;background-size:cover;background-position:60% 40%;background-image:url('/uploads/hero-life-cafe.jpg')}
+  .life-scrim{position:absolute;inset:0;background:
+      linear-gradient(100deg, rgba(7,20,15,.92) 0%, rgba(7,20,15,.7) 30%, rgba(7,20,15,.25) 55%, rgba(7,20,15,.55) 100%),
+      linear-gradient(0deg, rgba(7,20,15,.7) 0%, rgba(7,20,15,0) 35%)}
+  @media(max-width:680px){.life-photo{background-position:70% 40%}.life-scrim{background:linear-gradient(180deg, rgba(7,20,15,.45) 0%, rgba(7,20,15,.55) 40%, rgba(7,20,15,.93) 78%, rgba(7,20,15,.98) 100%)}}
+  #life .wrap{position:relative;z-index:1}
+  #life .gal-head h2{color:#fff}
+  #life .gal-head p{color:#fff;opacity:.9}
   .gal-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
   .gal-head p{opacity:.78;max-width:42ch;margin-top:14px;font-weight:500}
   .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
@@ -231,7 +244,15 @@
   @media(hover:none){.card figcaption{opacity:1;transform:none}}
 
   /* MOTION / REELS */
-  #motion{background:var(--tang);color:var(--ink);border-bottom:3px solid var(--ink)}
+  #motion{position:relative;overflow:hidden;color:#fff;border-bottom:3px solid var(--ink)}
+  .motion-photo{position:absolute;inset:0;background-size:cover;background-position:50% 42%;background-image:url('/uploads/hero-motion-skatepark.jpg')}
+  .motion-scrim{position:absolute;inset:0;background:
+      linear-gradient(100deg, rgba(30,10,5,.92) 0%, rgba(30,10,5,.68) 30%, rgba(30,10,5,.2) 55%, rgba(30,10,5,.5) 100%),
+      linear-gradient(0deg, rgba(30,10,5,.7) 0%, rgba(30,10,5,0) 35%)}
+  @media(max-width:680px){.motion-photo{background-position-x:70%}.motion-scrim{background:linear-gradient(180deg, rgba(30,10,5,.45) 0%, rgba(30,10,5,.55) 40%, rgba(30,10,5,.93) 78%, rgba(30,10,5,.98) 100%)}}
+  #motion .wrap{position:relative;z-index:1}
+  #motion .mot-head h2{color:#fff}
+  #motion .mot-head p{color:#fff;opacity:.92}
   .mot-head{margin:16px 0 34px;max-width:60ch}
   .mot-head p{font-size:18px;margin-top:12px;font-weight:500}
   .reels{display:flex;gap:22px}
@@ -276,7 +297,10 @@
   @media(max-width:520px){.eye-cta{width:140px;height:140px}.eye-cta .eyehole{width:50px;height:66px}.eye-cta .pupil{width:20px;height:20px}}
 
   /* CONNECT — social + share + signup merged into one 3-col row */
-  .connect-grid{background:var(--paper-2);padding:70px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+  .connect-grid{background:#53f507;padding:70px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+  .connect-encourage{text-align:center;margin-bottom:36px}
+  .connect-encourage h3{font-family:var(--font-disp);font-weight:800;font-size:clamp(24px,4.2vw,36px);color:var(--ink)}
+  .connect-encourage .mk{font-family:var(--font-spray);font-weight:400;color:#fff;text-shadow:2px 2px 0 var(--ink);display:inline-block;transform:rotate(-3deg);position:relative;top:.05em;padding:0 .06em}
   .connect-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
   @media(max-width:900px){.connect-cols{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
   .connect-card{border:3px solid var(--ink);border-radius:20px;padding:30px 26px;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;text-align:left;color:#fff}
@@ -330,7 +354,10 @@
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
   /* ---- Daily Odd Poll ---- */
-  .poll-section{padding:54px 0;background:var(--paper-2);border-bottom:3px solid var(--ink)}
+  .poll-section{padding:54px 0;background:#fcf912;border-bottom:3px solid var(--ink)}
+  .poll-encourage{text-align:center;margin-bottom:22px}
+  .poll-encourage h3{font-family:var(--font-disp);font-weight:800;font-size:clamp(24px,4.2vw,36px);color:var(--ink)}
+  .poll-encourage .mk{font-family:var(--font-spray);font-weight:400;color:var(--red);display:inline-block;transform:rotate(-3deg);position:relative;top:.05em;padding:0 .06em}
   .poll-wrap{text-align:center;max-width:640px}
   .poll-kicker-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
   .poll-mascot{width:60px;height:74px;object-fit:cover;object-position:top center;border-radius:12px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(5deg)}
@@ -429,6 +456,8 @@
 
 <!-- HERO -->
 <section class="hero hero-card">
+  <div class="hero-photo"></div>
+  <div class="hero-scrim"></div>
   <span class="hero-star" style="width:3px;height:3px;top:24px;left:60px"></span>
       <span class="hero-star" style="width:2px;height:2px;top:64px;left:130px"></span>
       <span class="hero-star" style="width:3px;height:3px;top:34px;right:90px"></span>
@@ -470,6 +499,7 @@
 
 <section id="poll" class="poll-section">
   <div class="wrap poll-wrap">
+    <div class="poll-encourage"><h3 data-i18n-html="poll.encourage">Your <span class="mk">Turn</span>!</h3></div>
     <div class="poll-kicker-row">
       <span class="kicker" data-i18n="poll.kicker">Today's Odd Poll</span>
       <img class="poll-mascot" id="pollMascot" alt="" />
@@ -538,6 +568,8 @@
 </section>
 
 <section id="life">
+  <div class="life-photo"></div>
+  <div class="life-scrim"></div>
   <div class="wrap">
     <div class="gal-head">
       <div>
@@ -553,6 +585,8 @@
 
 <!-- MOTION / REELS (teaser) -->
 <section id="motion">
+  <div class="motion-photo"></div>
+  <div class="motion-scrim"></div>
   <div class="wrap">
     <span class="kicker" data-i18n="mot.kicker">Oddvi in motion</span>
     <div class="mot-head">
@@ -567,6 +601,7 @@
 
 <section id="connect" class="connect-grid">
   <div class="wrap">
+    <div class="connect-encourage"><h3 data-i18n-html="connect.encourage">Make Some <span class="mk">Noise</span>!</h3></div>
     <div class="connect-cols">
 
       <div class="connect-card">
