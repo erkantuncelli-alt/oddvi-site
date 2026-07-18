@@ -11,7 +11,7 @@
   var SLOT_COUNT = 3;
 
   var UI = {
-    en: { hint: "Tap one. See what everyone picked.", voted: "Thanks for voting!", share: "Share your pick", download: "Download image", challenge: "Copy challenge", challengeCopied: "Copied! Paste it anywhere.", newTomorrow: "New question tomorrow", loading: "Loading today's odd question…", counter: "{n} odds have voted", next: "Next question →", allDone: "That's all 3! New ones tomorrow.", progress: "Question {n} of 3", challengeText: "I picked \"{pick}\" ({pct}% agreed). Your turn — theoddvi.com/#poll" },
+    en: { hint: "Tap one. See what everyone picked.", voted: "Thanks for voting!", share: "Share your pick", download: "Download image", challenge: "Challenge a friend", challengeCopied: "Copied! Paste it anywhere.", newTomorrow: "New question tomorrow", loading: "Loading today's odd question…", counter: "{n} odds have voted", next: "Next question →", allDone: "That's all 3! New ones tomorrow.", progress: "Question {n} of 3", challengeText: "I picked \"{pick}\" ({pct}% agreed). Your turn — theoddvi.com/#poll" },
     tr: { hint: "Birine dokun. Herkes ne seçmiş gör.", voted: "Oyun için teşekkürler!", share: "Seçimini paylaş", download: "Görseli indir", challenge: "Meydan oku", challengeCopied: "Kopyalandı! İstediğin yere yapıştır.", newTomorrow: "Yarın yeni soru", loading: "Bugünün garip sorusu yükleniyor…", counter: "{n} kişi oy verdi", next: "Sıradaki soru →", allDone: "3'ü de bitti! Yarın yenileri var.", progress: "{n}. soru / 3", challengeText: "Ben \"{pick}\" dedim (%{pct} aynı fikirde). Sıra sende — theoddvi.com/#poll" },
     de: { hint: "Tipp eins an. Sieh, was alle gewählt haben.", voted: "Danke fürs Abstimmen!", share: "Teile deine Wahl", download: "Bild herunterladen", challenge: "Herausfordern", challengeCopied: "Kopiert! Füg es überall ein.", newTomorrow: "Morgen neue Frage", loading: "Die heutige Frage wird geladen…", counter: "{n} Leute haben abgestimmt", next: "Nächste Frage →", allDone: "Alle 3 geschafft! Morgen neue.", progress: "Frage {n} von 3", challengeText: "Ich habe \"{pick}\" gewählt ({pct}% stimmten zu). Du bist dran — theoddvi.com/#poll" },
     fr: { hint: "Touche une option. Regarde ce que tout le monde a choisi.", voted: "Merci d'avoir voté !", share: "Partage ton choix", download: "Télécharger l'image", challenge: "Défier", challengeCopied: "Copié ! Colle-le où tu veux.", newTomorrow: "Nouvelle question demain", loading: "Chargement de la question du jour…", counter: "{n} personnes ont voté", next: "Question suivante →", allDone: "Les 3 sont faites ! Demain, nouvelles questions.", progress: "Question {n} sur 3", challengeText: "J'ai choisi \"{pick}\" ({pct}% d'accord). À toi — theoddvi.com/#poll" },
@@ -406,7 +406,41 @@
     toastTimer = setTimeout(function () { els.toast.classList.remove('show'); }, 2200);
   }
 
-  async function copyChallenge() {
+  var challengeImgFilePromise = null;
+  function getChallengeImageFile() {
+    if (!challengeImgFilePromise) {
+      challengeImgFilePromise = fetch('/uploads/oddvi-logo-icon-noborder.png')
+        .then(function (r) { return r.blob(); })
+        .then(function (blob) { return new File([blob], 'oddvi.png', { type: blob.type || 'image/png' }); })
+        .catch(function () { return null; });
+    }
+    return challengeImgFilePromise;
+  }
+
+  function copyTextFallback(msg, doneMsg) {
+    var done = function () { showToast(doneMsg); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(msg).then(done).catch(function () { legacyCopy(msg, done); });
+    } else {
+      legacyCopy(msg, done);
+    }
+  }
+
+  function legacyCopy(msg, done) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = msg;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      done();
+    } catch (e2) { /* silent */ }
+  }
+
+  async function shareChallenge() {
     var p = activePoll();
     if (!p || !p.yourVote) return;
     var l = currentLang();
@@ -416,23 +450,23 @@
     var pickedLabel = stripEmoji(p.yourVote === 'a' ? (p.option_a[l] || p.option_a.en) : (p.option_b[l] || p.option_b.en));
     var pickedPct = p.yourVote === 'a' ? percentages[0] : percentages[1];
     var msg = t.challengeText.replace('{pick}', pickedLabel).replace('{pct}', pickedPct);
+    var deepUrl = 'https://theoddvi.com/#poll';
+
+    var file = await getChallengeImageFile();
+
     try {
-      await navigator.clipboard.writeText(msg);
-      showToast(t.challengeCopied);
-    } catch (e) {
-      // fallback: legacy textarea copy
-      try {
-        var ta = document.createElement('textarea');
-        ta.value = msg;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        showToast(t.challengeCopied);
-      } catch (e2) { /* silent */ }
-    }
+      if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], text: msg, url: deepUrl });
+        return;
+      }
+      if (navigator.share) {
+        await navigator.share({ text: msg, url: deepUrl });
+        return;
+      }
+    } catch (e) { return; /* user cancelled — stay silent, no forced fallback */ }
+
+    // desktop / unsupported browsers: copy the message instead
+    copyTextFallback(msg, t.challengeCopied);
   }
 
   async function load() {
@@ -481,7 +515,7 @@
     if (els.btnA) els.btnA.addEventListener('click', function () { vote('a'); });
     if (els.btnB) els.btnB.addEventListener('click', function () { vote('b'); });
     if (els.shareBtn) els.shareBtn.addEventListener('click', shareResult);
-    if (els.challengeBtn) els.challengeBtn.addEventListener('click', copyChallenge);
+    if (els.challengeBtn) els.challengeBtn.addEventListener('click', shareChallenge);
     if (els.prevBtn) els.prevBtn.addEventListener('click', function () { goTo(state.current - 1); });
     if (els.nextBtn) els.nextBtn.addEventListener('click', function () { goTo(state.current + 1); });
     if (els.nextQBtn) els.nextQBtn.addEventListener('click', function () { goTo(state.current + 1); });
