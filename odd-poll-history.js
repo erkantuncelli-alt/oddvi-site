@@ -46,7 +46,7 @@
 
       return (
         '<div class="poll-entry">' +
-          '<div class="top-row"><span class="series">' + series + '</span><span class="date">' + formatDate(p.day, lang) + '</span></div>' +
+          '<div class="top-row"><span class="series">' + series + '</span><span class="date">' + formatDate(p.day, lang) + (typeof p.slot === 'number' ? ' · ' + (p.slot + 1) + '/3' : '') + '</span></div>' +
           '<div class="question">' + question + '</div>' +
           '<div class="opt-row' + (aWins ? ' winner' : '') + '"><div class="top"><span>' + optA + '</span><span>' + percentages[0] + '%</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + percentages[0] + '%"></div></div></div>' +
           '<div class="opt-row' + (bWins ? ' winner' : '') + '"><div class="top"><span>' + optB + '</span><span>' + percentages[1] + '%</span></div><div class="bar-bg"><div class="bar-fill" style="width:' + percentages[1] + '%"></div></div></div>' +

@@ -212,6 +212,10 @@ export default {
       return handlePollHistory(url, env);
     }
 
+    if (url.pathname === '/api/poll/controversial' && request.method === 'GET') {
+      return handlePollControversial(url, env);
+    }
+
     if (url.pathname === '/api/poll/today' && request.method === 'GET') {
       return handlePollToday(request, env);
     }
@@ -426,15 +430,16 @@ async function handleAdminStats(url, env) {
     const downloadsTotal = downloadsRaw.reduce((sum, [, v]) => sum + v, 0);
     const submitsTotal = submitsRaw.reduce((sum, [, v]) => sum + v, 0);
 
-    // ---- daily odd poll summary ----
+    // ---- daily odd poll summary (slot 0 shown as representative; totals sum all 3 slots) ----
     const pollByDay = {};
     for (const { day, data: v } of pollBlobs) pollByDay[day] = v;
 
     function pollForDay(day) {
-      const idx = pollIndexForDay(day, pollPool.length);
+      const record = normalizeVotesRecord(pollByDay[day] ? JSON.stringify(pollByDay[day]) : null);
+      const idx = pollIndexForSlot(day, 0, pollPool.length);
       const p = pollPool[idx];
-      const votes = pollByDay[day] || { a: 0, b: 0 };
-      const total = (votes.a || 0) + (votes.b || 0);
+      const votes = record.slots[0];
+      const dayTotal = record.slots.reduce((sum, s) => sum + (s.a || 0) + (s.b || 0), 0);
       return {
         day,
         series: p.series.en,
@@ -443,7 +448,7 @@ async function handleAdminStats(url, env) {
         option_b: p.option_b.en,
         votes_a: votes.a || 0,
         votes_b: votes.b || 0,
-        total
+        total: dayTotal
       };
     }
 
@@ -454,7 +459,10 @@ async function handleAdminStats(url, env) {
     // Always include today even if it has zero votes yet (not in pollByDay until first vote).
     if (!pollHistoryDays.includes(todayStr)) pollHistoryDays.unshift(todayStr);
     const pollHistory = pollHistoryDays.map(pollForDay);
-    const pollVotesAllTime = Object.values(pollByDay).reduce((sum, v) => sum + (v.a || 0) + (v.b || 0), 0);
+    const pollVotesAllTime = Object.values(pollByDay).reduce((sum, v) => {
+      const rec = normalizeVotesRecord(JSON.stringify(v));
+      return sum + rec.slots.reduce((s2, sl) => s2 + (sl.a || 0) + (sl.b || 0), 0);
+    }, 0);
 
     const data = {
       total_pageviews: totalPageviews,
@@ -483,15 +491,18 @@ async function handleAdminStats(url, env) {
   }
 }
 
-// ---------- daily odd poll (2-choice, deterministic no-repeat rotation) ----------
+// ---------- odd poll (2-choice, 3 slots/day, deterministic no-repeat rotation) ----------
 
-// Deterministic seeded shuffle (mulberry32) so the daily pick is reproducible across requests
+const POLL_SLOTS = 3;
+
+// Deterministic seeded shuffle (mulberry32) so each day+slot pick is reproducible across requests
 // without needing to store/read a shuffle order from KV. Cycles through the whole pool with no
-// repeats, then reshuffles (differently) for the next cycle.
-function pollIndexForDay(dayStr, poolLen) {
+// repeats (now 3x faster since 3 slots consume 3 pool entries per day), then reshuffles for the next cycle.
+function pollIndexForSlot(dayStr, slot, poolLen) {
   const epochDay = Math.floor(Date.parse(dayStr + 'T00:00:00Z') / 86400000);
-  const cycle = Math.floor(epochDay / poolLen);
-  const posInCycle = ((epochDay % poolLen) + poolLen) % poolLen;
+  const virtualIndex = epochDay * POLL_SLOTS + slot;
+  const cycle = Math.floor(virtualIndex / poolLen);
+  const posInCycle = ((virtualIndex % poolLen) + poolLen) % poolLen;
 
   let seed = (cycle * 2654435761) >>> 0;
   function rng() {
@@ -508,10 +519,27 @@ function pollIndexForDay(dayStr, poolLen) {
   return arr[posInCycle];
 }
 
-async function pollVisitorHash(request, day) {
+// Normalizes a votes KV record to the current { slots: [{a,b},{a,b},{a,b}] } shape.
+// Handles legacy pre-multi-slot records that were a bare {a,b} for a single daily poll.
+function normalizeVotesRecord(raw) {
+  let data = null;
+  try { data = raw ? JSON.parse(raw) : null; } catch (e) { data = null; }
+  if (data && Array.isArray(data.slots)) {
+    const slots = [];
+    for (let i = 0; i < POLL_SLOTS; i++) slots.push(data.slots[i] || { a: 0, b: 0 });
+    return { slots };
+  }
+  if (data && (typeof data.a === 'number' || typeof data.b === 'number')) {
+    // legacy single-poll-per-day record — becomes slot 0, other slots start fresh
+    return { slots: [{ a: data.a || 0, b: data.b || 0 }, { a: 0, b: 0 }, { a: 0, b: 0 }] };
+  }
+  return { slots: [{ a: 0, b: 0 }, { a: 0, b: 0 }, { a: 0, b: 0 }] };
+}
+
+async function pollVisitorHash(request, day, slot) {
   const ip = request.headers.get('CF-Connecting-IP') || '';
   const ua = request.headers.get('User-Agent') || '';
-  return (await sha256Hex('poll:' + ip + '|' + ua + '|' + day)).slice(0, 24);
+  return (await sha256Hex('poll:' + ip + '|' + ua + '|' + day + '|' + slot)).slice(0, 24);
 }
 
 async function handlePollHistory(url, env) {
@@ -528,56 +556,104 @@ async function handlePollHistory(url, env) {
 
   const results = [];
   dayList.forEach((dayStr, i) => {
-    let votes;
-    try { votes = rawVotes[i] ? JSON.parse(rawVotes[i]) : null; } catch (e) { votes = null; }
-    if (!votes) votes = { a: 0, b: 0 };
-    const total = (votes.a || 0) + (votes.b || 0);
-    if (total === 0) return; // nobody voted that day (e.g. before launch) — skip, not a real result
+    const record = normalizeVotesRecord(rawVotes[i]);
+    for (let slot = 0; slot < POLL_SLOTS; slot++) {
+      const votes = record.slots[slot] || { a: 0, b: 0 };
+      const total = (votes.a || 0) + (votes.b || 0);
+      if (total === 0) continue; // nobody voted this slot that day — skip, not a real result
 
-    const idx = pollIndexForDay(dayStr, pollPool.length);
-    const p = pollPool[idx];
-    results.push({
-      day: dayStr,
-      series: p.series,
-      question: p.question,
-      option_a: p.option_a,
-      option_b: p.option_b,
-      votes,
-      total
-    });
+      const idx = pollIndexForSlot(dayStr, slot, pollPool.length);
+      const p = pollPool[idx];
+      results.push({
+        day: dayStr,
+        slot,
+        series: p.series,
+        question: p.question,
+        option_a: p.option_a,
+        option_b: p.option_b,
+        votes,
+        total
+      });
+    }
   });
 
   return json({ days: results });
 }
 
+// Ranks past polls (min. MIN_VOTES turnout) by closeness to a 50/50 split — the ones
+// that split the room hardest. Requires at least MIN_VOTES so a 1-vs-1 tie doesn't rank #1.
+async function handlePollControversial(url, env) {
+  const daysParam = parseInt(url.searchParams.get('days') || '60', 10);
+  const days = Math.max(1, Math.min(isNaN(daysParam) ? 60 : daysParam, 180));
+  const limitParam = parseInt(url.searchParams.get('limit') || '12', 10);
+  const limit = Math.max(1, Math.min(isNaN(limitParam) ? 12 : limitParam, 50));
+  const MIN_VOTES = 8;
+
+  const today = new Date();
+  const dayList = [];
+  for (let i = 1; i <= days; i++) {
+    dayList.push(new Date(today.getTime() - i * 86400000).toISOString().slice(0, 10));
+  }
+
+  const rawVotes = await Promise.all(dayList.map(d => env.LIKES.get('poll:votes:' + d)));
+
+  const candidates = [];
+  dayList.forEach((dayStr, i) => {
+    const record = normalizeVotesRecord(rawVotes[i]);
+    for (let slot = 0; slot < POLL_SLOTS; slot++) {
+      const votes = record.slots[slot] || { a: 0, b: 0 };
+      const total = (votes.a || 0) + (votes.b || 0);
+      if (total < MIN_VOTES) continue;
+
+      const idx = pollIndexForSlot(dayStr, slot, pollPool.length);
+      const p = pollPool[idx];
+      const pctA = (votes.a || 0) / total;
+      const splitScore = 1 - Math.abs(pctA - 0.5) * 2; // 1 = perfect 50/50, 0 = unanimous
+
+      candidates.push({
+        day: dayStr,
+        slot,
+        series: p.series,
+        question: p.question,
+        option_a: p.option_a,
+        option_b: p.option_b,
+        votes,
+        total,
+        splitScore
+      });
+    }
+  });
+
+  candidates.sort((a, b) => b.splitScore - a.splitScore || b.total - a.total);
+
+  return json({ polls: candidates.slice(0, limit) });
+}
+
 async function handlePollToday(request, env) {
   try {
     const day = new Date().toISOString().slice(0, 10);
-    const idx = pollIndexForDay(day, pollPool.length);
-    const poll = pollPool[idx];
-
     const votesKey = 'poll:votes:' + day;
-    const visitorHash = await pollVisitorHash(request, day);
-    const seenKey = 'poll:seen:' + day + ':' + visitorHash;
+    const rawVotes = await env.LIKES.get(votesKey);
+    const record = normalizeVotesRecord(rawVotes);
 
-    const [rawVotes, yourVote] = await Promise.all([
-      env.LIKES.get(votesKey),
-      env.LIKES.get(seenKey)
-    ]);
+    const polls = await Promise.all(Array.from({ length: POLL_SLOTS }, async (_, slot) => {
+      const idx = pollIndexForSlot(day, slot, pollPool.length);
+      const poll = pollPool[idx];
+      const visitorHash = await pollVisitorHash(request, day, slot);
+      const seenKey = 'poll:seen:' + day + ':' + slot + ':' + visitorHash;
+      const yourVote = await env.LIKES.get(seenKey);
+      return {
+        slot,
+        series: poll.series,
+        question: poll.question,
+        option_a: poll.option_a,
+        option_b: poll.option_b,
+        votes: record.slots[slot] || { a: 0, b: 0 },
+        yourVote: yourVote || null
+      };
+    }));
 
-    let votes;
-    try { votes = rawVotes ? JSON.parse(rawVotes) : null; } catch (e) { votes = null; }
-    if (!votes) votes = { a: 0, b: 0 };
-
-    return json({
-      date: day,
-      series: poll.series,
-      question: poll.question,
-      option_a: poll.option_a,
-      option_b: poll.option_b,
-      votes,
-      yourVote: yourVote || null
-    });
+    return json({ date: day, polls });
   } catch (err) {
     return json({ error: 'internal', message: String(err && err.stack || err) }, 500);
   }
@@ -591,31 +667,31 @@ async function handlePollVote(request, env) {
     return json({ error: 'bad json' }, 400);
   }
   const choice = body && body.choice;
+  const slot = Number.isInteger(body && body.slot) ? body.slot : 0;
   if (choice !== 'a' && choice !== 'b') return json({ error: 'invalid choice' }, 400);
+  if (slot < 0 || slot >= POLL_SLOTS) return json({ error: 'invalid slot' }, 400);
 
   const day = new Date().toISOString().slice(0, 10);
   const votesKey = 'poll:votes:' + day;
-  const visitorHash = await pollVisitorHash(request, day);
-  const seenKey = 'poll:seen:' + day + ':' + visitorHash;
+  const visitorHash = await pollVisitorHash(request, day, slot);
+  const seenKey = 'poll:seen:' + day + ':' + slot + ':' + visitorHash;
 
   const existing = await env.LIKES.get(seenKey);
   const rawVotes = await env.LIKES.get(votesKey);
-  let votes;
-  try { votes = rawVotes ? JSON.parse(rawVotes) : null; } catch (e) { votes = null; }
-  if (!votes) votes = { a: 0, b: 0 };
+  const record = normalizeVotesRecord(rawVotes);
 
   if (existing) {
-    // Already voted today — return current tallies untouched, idempotent.
-    return json({ votes, yourVote: existing });
+    // Already voted this slot today — return current tallies untouched, idempotent.
+    return json({ votes: record.slots[slot], yourVote: existing });
   }
 
-  votes[choice] = (votes[choice] || 0) + 1;
+  record.slots[slot][choice] = (record.slots[slot][choice] || 0) + 1;
   await Promise.all([
-    env.LIKES.put(votesKey, JSON.stringify(votes)),
+    env.LIKES.put(votesKey, JSON.stringify(record)),
     env.LIKES.put(seenKey, choice, { expirationTtl: 60 * 60 * 30 })
   ]);
 
-  return json({ votes, yourVote: choice });
+  return json({ votes: record.slots[slot], yourVote: choice });
 }
 
 // ---------- existing named counters & like system (unchanged) ----------
@@ -677,4 +753,4 @@ async function handleGetLikes(url, env) {
 }
 
 // Named exports (harmless for the Workers runtime; used by local tests).
-export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage, pollIndexForDay, handlePollToday, handlePollVote, handlePollHistory };
+export { listCounts, listDailyBlobs, handleAdminStats, trackVisit, referrerBucket, sha256Hex, bump, handleStat, matchLocalizedPath, buildHreflangHtml, localizedUrl, handleLocalizedPage, pollIndexForSlot, handlePollToday, handlePollVote, handlePollHistory, handlePollControversial };

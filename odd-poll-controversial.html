@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Past Odd Polls — Oddvi</title>
+<title>Most Controversial Odd Polls — Oddvi</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<meta name="description" content="Every past Odd Poll result — see what everyone chose." />
+<meta name="description" content="The Odd Polls that split the room hardest — closest to 50/50." />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Past Odd Polls — Oddvi" />
-<meta property="og:description" content="Every past Odd Poll result — see what everyone chose." />
+<meta property="og:title" content="Most Controversial Odd Polls — Oddvi" />
+<meta property="og:description" content="The Odd Polls that split the room hardest — closest to 50/50." />
 <meta property="og:image" content="https://theoddvi.com/uploads/og-share.png" />
-<meta property="og:url" content="https://theoddvi.com/odd-poll.html" />
+<meta property="og:url" content="https://theoddvi.com/odd-poll-controversial.html" />
 <meta property="og:site_name" content="Oddvi" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Past Odd Polls — Oddvi" />
-<meta name="twitter:description" content="Every past Odd Poll result — see what everyone chose." />
+<meta name="twitter:title" content="Most Controversial Odd Polls — Oddvi" />
+<meta name="twitter:description" content="The Odd Polls that split the room hardest — closest to 50/50." />
 <meta name="twitter:image" content="https://theoddvi.com/uploads/og-share.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -105,6 +105,8 @@
   .opt-row .bar-fill{height:100%;background:var(--yellow-deep)}
   .opt-row.winner .bar-fill{background:var(--red)}
 
+  .poll-entry .split-badge{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;background:var(--red);color:#fff;padding:3px 8px;border-radius:999px;margin-bottom:8px}
+
   .empty{padding:60px 0;text-align:center;opacity:.6;font-size:16px}
   .loadmore{display:block;margin:0 auto;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:12px 26px;font-weight:700;font-size:14px;cursor:pointer}
   .loadmore:hover{opacity:.85}
@@ -141,19 +143,19 @@
   <main class="wrap">
     <div class="hero">
       <div class="poll-kicker-row">
-        <span class="kicker" id="t-kicker" data-i18n="pollhist.kicker">Past Odd Polls</span>
+        <span class="kicker" id="t-kicker">Most Controversial</span>
         <img class="poll-mascot" id="histMascot" alt="" />
       </div>
-      <h1 id="t-title" data-i18n-html="pollhist.title">Every Odd Poll,<br>ranked by chaos.</h1>
-      <p class="sub" id="t-sub" data-i18n="pollhist.sub">The daily question changes every day — here's what everyone picked, day by day.</p>
-      <a href="/index.html#poll" class="backlink" data-i18n="pollhist.backToPoll">← Back to today's poll</a>
-      <a href="/odd-poll-controversial.html" class="backlink" style="margin-left:10px;background:var(--red);color:#fff">🔥 Most controversial →</a>
+      <h1 id="t-title">The polls that split<br>the room in half.</h1>
+      <p class="sub" id="t-sub">Ranked by how close the vote was to 50/50 — the ones nobody could agree on.</p>
+      <a href="/index.html#poll" class="backlink" id="t-backToPoll">← Back to today's poll</a>
+      <a href="/odd-poll.html" class="backlink" style="margin-left:10px">See every poll →</a>
     </div>
 
     <div class="poll-list" id="pollList"></div>
     <p class="empty" id="emptyMsg" hidden></p>
     <div class="loadmore-wrap" id="loadMoreWrap" hidden>
-      <button class="loadmore" id="loadMoreBtn" data-i18n="pollhist.more">Load more</button>
+      <button class="loadmore" id="loadMoreBtn">Load more</button>
     </div>
   </main>
 
@@ -162,7 +164,7 @@
     <span>Follow the blob: <a href="https://instagram.com/theoddvi" style="color:var(--red-deep)">@theoddvi</a> <span style="opacity:.55;font-size:13px">· 🏗️ <a href="https://instagram.com/pardonmyodd" style="color:inherit" title="Our upcoming brand — coming soon">@pardonmyodd</a></span></span>
   </footer>
 
-  <a href="/index.html#poll" class="float-back" id="floatBack" data-i18n="pollhist.backToPollShort">← Today's poll</a>
+  <a href="/index.html#poll" class="float-back" id="floatBack">← Today's poll</a>
 
   <script src="/blob-buddy.js"></script>
   <script src="/normal-odd-mode.js"></script>
@@ -176,6 +178,6 @@
     })();
   </script>
   <script src="/poll-mascot.js"></script>
-  <script src="/odd-poll-history.js"></script>
+  <script src="/odd-poll-controversial.js"></script>
 </body>
 </html>
