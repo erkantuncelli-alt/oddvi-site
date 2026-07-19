@@ -4529,4 +4529,1259 @@ export const pollPool = [
       "hu": "Kártyával fizetsz 💳"
     }
   }
+,
+  {
+    "category": "office",
+    "series": {
+      "en": "Office Life",
+      "tr": "Ofis Hayatı",
+      "de": "Bürowahnsinn",
+      "fr": "Vie De Bureau",
+      "hu": "Irodai Élet"
+    },
+    "question": {
+      "en": "Camera's off in the meeting. Real reason?",
+      "tr": "Toplantıda kamera kapalı. Gerçek sebep ne?",
+      "de": "Kamera aus im Meeting. Der wahre Grund?",
+      "fr": "Caméra éteinte en réunion. La vraie raison ?",
+      "hu": "Kikapcsolt kamera a megbeszélésen. Mi az igazi ok?"
+    },
+    "option_a": {
+      "en": "Still in pajamas",
+      "tr": "Pijamalıyım",
+      "de": "Noch im Schlafanzug",
+      "fr": "Encore en pyjama",
+      "hu": "Még pizsamában vagyok"
+    },
+    "option_b": {
+      "en": "Not actually listening",
+      "tr": "Aslında dinlemiyorum",
+      "de": "Höre eigentlich gar nicht zu",
+      "fr": "Je n'écoute pas vraiment",
+      "hu": "Igazából nem is figyelek"
+    },
+    "comment": {
+      "en": "With the camera off, everyone feels unstoppable.",
+      "tr": "Kamera kapalıyken herkes yenilmez hisseder.",
+      "de": "Mit ausgeschalteter Kamera fühlt sich jeder unbesiegbar.",
+      "fr": "Caméra éteinte, tout le monde se sent invincible.",
+      "hu": "Kikapcsolt kamerával mindenki legyőzhetetlennek érzi magát."
+    }
+  },
+  {
+    "category": "office",
+    "series": {
+      "en": "Office Life",
+      "tr": "Ofis Hayatı",
+      "de": "Bürowahnsinn",
+      "fr": "Vie De Bureau",
+      "hu": "Irodai Élet"
+    },
+    "question": {
+      "en": "\"Can we talk?\" from your boss. Your state?",
+      "tr": "Patrondan \"Bir konuşalım\" mesajı geldi. Halin?",
+      "de": "\"Können wir reden?\" vom Chef. Dein Zustand?",
+      "fr": "\"On peut parler ?\" de ton patron. Ton état ?",
+      "hu": "\"Beszélhetnénk?\" a főnöktől. Milyen állapotban vagy?"
+    },
+    "option_a": {
+      "en": "Calm, probably nothing",
+      "tr": "Sakinim, muhtemelen önemsiz",
+      "de": "Ruhig, wahrscheinlich nichts",
+      "fr": "Calme, sûrement rien de grave",
+      "hu": "Nyugodt vagyok, valószínűleg semmiség"
+    },
+    "option_b": {
+      "en": "Already wrote my resignation speech",
+      "tr": "İstifa konuşmamı zihnimde çoktan yazdım",
+      "de": "Kündigungsrede im Kopf schon fertig",
+      "fr": "J'ai déjà écrit ma lettre de démission dans ma tête",
+      "hu": "A fejemben már megírtam a felmondólevelet"
+    },
+    "comment": {
+      "en": "Two words, one full-body panic response.",
+      "tr": "İki kelime, bir tam vücut panik tepkisi.",
+      "de": "Zwei Wörter, eine Ganzkörper-Panikreaktion.",
+      "fr": "Deux mots, une panique corporelle totale.",
+      "hu": "Két szó, egy teljes testet érintő pánikreakció."
+    }
+  },
+  {
+    "category": "office",
+    "series": {
+      "en": "Office Life",
+      "tr": "Ofis Hayatı",
+      "de": "Bürowahnsinn",
+      "fr": "Vie De Bureau",
+      "hu": "Irodai Élet"
+    },
+    "question": {
+      "en": "Meeting ran an hour over. You're:",
+      "tr": "Toplantı 1 saat uzadı. Sen:",
+      "de": "Meeting läuft eine Stunde über. Du bist:",
+      "fr": "La réunion a duré une heure de plus. Tu es :",
+      "hu": "A megbeszélés egy órával elhúzódott. Te:"
+    },
+    "option_a": {
+      "en": "Still listening",
+      "tr": "Hâlâ dinliyorum",
+      "de": "Höre immer noch zu",
+      "fr": "Toujours à l'écoute",
+      "hu": "Még mindig figyelek"
+    },
+    "option_b": {
+      "en": "Body present, soul left an hour ago",
+      "tr": "Bedenim burada, ruhum bir saat önce çıktı",
+      "de": "Körper hier, Seele schon vor einer Stunde weg",
+      "fr": "Corps présent, âme partie il y a une heure",
+      "hu": "A testem itt van, a lelkem egy órája elment"
+    },
+    "comment": {
+      "en": "At least one person in every meeting is on a different plane of existence.",
+      "tr": "Her toplantıda en az bir kişi farklı bir boyuttadır.",
+      "de": "In jedem Meeting ist mindestens eine Person auf einer anderen Existenzebene.",
+      "fr": "Dans chaque réunion, au moins une personne est sur un autre plan d'existence.",
+      "hu": "Minden megbeszélésen legalább egy ember egy másik létsíkon van."
+    }
+  },
+  {
+    "category": "office",
+    "series": {
+      "en": "Office Life",
+      "tr": "Ofis Hayatı",
+      "de": "Bürowahnsinn",
+      "fr": "Vie De Bureau",
+      "hu": "Irodai Élet"
+    },
+    "question": {
+      "en": "First day at a new job:",
+      "tr": "Yeni işte ilk gün:",
+      "de": "Erster Tag im neuen Job:",
+      "fr": "Premier jour au nouveau travail :",
+      "hu": "Első nap az új munkahelyen:"
+    },
+    "option_a": {
+      "en": "Early, notebook ready",
+      "tr": "Erken gelirim, not defterim hazır",
+      "de": "Früh da, Notizbuch bereit",
+      "fr": "J'arrive tôt, carnet prêt",
+      "hu": "Korán érkezem, jegyzetfüzet kéznél"
+    },
+    "option_b": {
+      "en": "\"Fake it till you make it\" mode: on",
+      "tr": "\"Bilmiyormuş gibi bilirim\" moduna geçerim",
+      "de": "\"Fake it till you make it\"-Modus: an",
+      "fr": "Mode \"je fais semblant jusqu'à ce que ça marche\" activé",
+      "hu": "\"Addig színlelem, amíg sikerül\" mód: bekapcsolva"
+    },
+    "comment": {
+      "en": "Both roads lead to the same place: lost in a spreadsheet.",
+      "tr": "İkisi de aynı yere çıkıyor: Excel'in içinde kaybolmak.",
+      "de": "Beide Wege führen zum gleichen Ziel: verloren in einer Tabelle.",
+      "fr": "Les deux chemins mènent au même endroit : perdu dans un tableur.",
+      "hu": "Mindkét út ugyanoda vezet: elveszve egy táblázatban."
+    }
+  },
+  {
+    "category": "office",
+    "series": {
+      "en": "Office Life",
+      "tr": "Ofis Hayatı",
+      "de": "Bürowahnsinn",
+      "fr": "Vie De Bureau",
+      "hu": "Irodai Élet"
+    },
+    "question": {
+      "en": "Boss says \"great idea!\" Your reaction:",
+      "tr": "Patron \"harika fikir!\" dedi. Tepkin:",
+      "de": "Chef sagt \"tolle Idee!\" Deine Reaktion:",
+      "fr": "Le patron dit \"super idée !\" Ta réaction :",
+      "hu": "A főnök azt mondja: \"remek ötlet!\" A reakciód:"
+    },
+    "option_a": {
+      "en": "Proud",
+      "tr": "Gurur duyarım",
+      "de": "Stolz",
+      "fr": "Fier",
+      "hu": "Büszke vagyok"
+    },
+    "option_b": {
+      "en": "Suspicious — there's a catch somewhere",
+      "tr": "Şüphelenirim, bir bit yeniği var",
+      "de": "Misstrauisch — irgendwo steckt ein Haken",
+      "fr": "Méfiant — il y a forcément un piège",
+      "hu": "Gyanakszom — valahol biztos van egy csapda"
+    },
+    "comment": {
+      "en": "Praise is sometimes just next week's invoice in disguise.",
+      "tr": "Övgü bazen bir sonraki toplantının faturasıdır.",
+      "de": "Lob ist manchmal nur die getarnte Rechnung der nächsten Woche.",
+      "fr": "Un compliment est parfois juste la facture de la semaine prochaine, déguisée.",
+      "hu": "A dicséret néha csak a jövő heti számla álruhában."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "A text comes in. Do you reply right away?",
+      "tr": "Mesaj geldi. Hemen mi cevap veriyorsun?",
+      "de": "Eine Nachricht kommt rein. Antwortest du sofort?",
+      "fr": "Un message arrive. Tu réponds tout de suite ?",
+      "hu": "Bejön egy üzenet. Rögtön válaszolsz?"
+    },
+    "option_a": {
+      "en": "Instantly",
+      "tr": "Anında",
+      "de": "Sofort",
+      "fr": "Instantanément",
+      "hu": "Azonnal"
+    },
+    "option_b": {
+      "en": "Seen, then three hours of strategic silence",
+      "tr": "Görüldü yaparım, sonra 3 saat stratejik sessizlik",
+      "de": "Gelesen, dann drei Stunden strategisches Schweigen",
+      "fr": "Lu, puis trois heures de silence stratégique",
+      "hu": "Elolvasva, majd három óra stratégiai csend"
+    },
+    "comment": {
+      "en": "A delayed reply is just a quiet power move.",
+      "tr": "Geciken cevap, sessiz bir güç gösterisidir.",
+      "de": "Eine verzögerte Antwort ist nur ein leiser Machtzug.",
+      "fr": "Une réponse tardive, c'est juste un coup de pouvoir silencieux.",
+      "hu": "A késleltetett válasz csendes hatalmi húzás."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "Phone hits 1%. Your response:",
+      "tr": "Telefon %1'de kaldı. Tepkin:",
+      "de": "Handy bei 1%. Deine Reaktion:",
+      "fr": "Téléphone à 1%. Ta réaction :",
+      "hu": "A telefon 1%-on van. A reakciód:"
+    },
+    "option_a": {
+      "en": "No big deal",
+      "tr": "Sorun değil",
+      "de": "Kein Problem",
+      "fr": "Pas grave",
+      "hu": "Semmi gond"
+    },
+    "option_b": {
+      "en": "Full existential crisis",
+      "tr": "Tam bir varoluşsal kriz",
+      "de": "Ausgewachsene Sinnkrise",
+      "fr": "Crise existentielle complète",
+      "hu": "Teljes egzisztenciális válság"
+    },
+    "comment": {
+      "en": "No charger, no civilization.",
+      "tr": "Şarj kablosu yoksa medeniyet de yok.",
+      "de": "Kein Ladekabel, keine Zivilisation.",
+      "fr": "Pas de chargeur, pas de civilisation.",
+      "hu": "Nincs töltő, nincs civilizáció."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "\"...\" (typing) shows up in a chat. You:",
+      "tr": "Sohbette \"yazıyor...\" göründü. Sen:",
+      "de": "\"...\" (schreibt) erscheint im Chat. Du:",
+      "fr": "\"...\" (en train d'écrire) apparaît. Toi :",
+      "hu": "\"...\" (gépel) jelenik meg a chatben. Te:"
+    },
+    "option_a": {
+      "en": "Wait patiently",
+      "tr": "Sabırla beklerim",
+      "de": "Warte geduldig",
+      "fr": "J'attends patiemment",
+      "hu": "Türelmesen várok"
+    },
+    "option_b": {
+      "en": "Refresh the screen fifteen times",
+      "tr": "Ekranı on beş kere yenilerim",
+      "de": "Bildschirm fünfzehnmal aktualisieren",
+      "fr": "Je rafraîchis l'écran quinze fois",
+      "hu": "Tizenötször frissítem a képernyőt"
+    },
+    "comment": {
+      "en": "Those three dots are the longest sentence ever written.",
+      "tr": "O üç nokta, yazılmış en uzun cümledir.",
+      "de": "Diese drei Punkte sind der längste Satz, der je geschrieben wurde.",
+      "fr": "Ces trois points sont la phrase la plus longue jamais écrite.",
+      "hu": "Az a három pont a valaha írt leghosszabb mondat."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "47 tabs open in your browser. That's:",
+      "tr": "Tarayıcıda 47 sekme açık. Bu senin için:",
+      "de": "47 Tabs offen im Browser. Das ist:",
+      "fr": "47 onglets ouverts. C'est :",
+      "hu": "47 nyitott fül a böngészőben. Ez neked:"
+    },
+    "option_a": {
+      "en": "Chaos",
+      "tr": "Kaos",
+      "de": "Chaos",
+      "fr": "Le chaos",
+      "hu": "Káosz"
+    },
+    "option_b": {
+      "en": "A normal Tuesday",
+      "tr": "Sıradan bir salı",
+      "de": "Ein normaler Dienstag",
+      "fr": "Un mardi normal",
+      "hu": "Egy hétköznapi kedd"
+    },
+    "comment": {
+      "en": "Every tab is a decision you never finished making.",
+      "tr": "Her sekme, bitirmediğin bir karardır.",
+      "de": "Jeder Tab ist eine Entscheidung, die du nie zu Ende getroffen hast.",
+      "fr": "Chaque onglet est une décision jamais terminée.",
+      "hu": "Minden fül egy döntés, amit sosem hoztál meg végleg."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "Saw someone's story, no reaction sent. Why?",
+      "tr": "Birinin hikayesini izledin, tepki yok. Neden?",
+      "de": "Story angeschaut, keine Reaktion gesendet. Warum?",
+      "fr": "Vu une story, aucune réaction envoyée. Pourquoi ?",
+      "hu": "Megnézted valakinek a sztoriját, nem reagáltál. Miért?"
+    },
+    "option_a": {
+      "en": "Nothing to say",
+      "tr": "Söyleyecek bir şey yok",
+      "de": "Nichts zu sagen",
+      "fr": "Rien à dire",
+      "hu": "Nincs mit mondanom"
+    },
+    "option_b": {
+      "en": "Overthought the reply for ten minutes, gave up",
+      "tr": "On dakika cevabı düşündüm, vazgeçtim",
+      "de": "Zehn Minuten die Antwort überdacht, aufgegeben",
+      "fr": "Réfléchi dix minutes à la réponse, abandonné",
+      "hu": "Tíz percig gondolkodtam a válaszon, feladtam"
+    },
+    "comment": {
+      "en": "Watching a story in silence is the modern version of archaeology.",
+      "tr": "Sessizce hikaye izlemek, modern arkeolojidir.",
+      "de": "Eine Story schweigend anzuschauen ist die moderne Form der Archäologie.",
+      "fr": "Regarder une story en silence, c'est l'archéologie moderne.",
+      "hu": "Csendben megnézni egy sztorit a modern régészet."
+    }
+  },
+  {
+    "category": "dating",
+    "series": {
+      "en": "Dating Life",
+      "tr": "İlişki Hayatı",
+      "de": "Beziehungsleben",
+      "fr": "Vie Amoureuse",
+      "hu": "Kapcsolati Élet"
+    },
+    "question": {
+      "en": "\"When are you free?\" text. Your reply:",
+      "tr": "\"Ne zaman müsaitsin?\" mesajına cevabın:",
+      "de": "\"Wann hast du Zeit?\" Deine Antwort:",
+      "fr": "\"T'es libre quand ?\" Ta réponse :",
+      "hu": "\"Mikor érsz rá?\" üzenet. A válaszod:"
+    },
+    "option_a": {
+      "en": "Give a clear day, right away",
+      "tr": "Hemen net bir gün veririm",
+      "de": "Sofort einen klaren Tag nennen",
+      "fr": "Je donne un jour précis, tout de suite",
+      "hu": "Rögtön mondok egy konkrét napot"
+    },
+    "option_b": {
+      "en": "\"I'll check\" — I will never check",
+      "tr": "\"Bakarım\" derim, hiç bakmam",
+      "de": "\"Ich schau mal\" — ich schau nie",
+      "fr": "\"Je regarde\" — je ne regarderai jamais",
+      "hu": "\"Megnézem\" — sosem nézem meg"
+    },
+    "comment": {
+      "en": "\"I'll check\" is the most permanent word for never.",
+      "tr": "\"Bakarım\" kelimesi, en kalıcı \"asla\"dır.",
+      "de": "\"Ich schau mal\" ist das dauerhafteste Wort für niemals.",
+      "fr": "\"Je regarde\" est le mot le plus définitif pour jamais.",
+      "hu": "A \"megnézem\" a legmaradandóbb szó a sosemre."
+    }
+  },
+  {
+    "category": "dating",
+    "series": {
+      "en": "Dating Life",
+      "tr": "İlişki Hayatı",
+      "de": "Beziehungsleben",
+      "fr": "Vie Amoureuse",
+      "hu": "Kapcsolati Élet"
+    },
+    "question": {
+      "en": "Friend says \"met someone amazing.\" First thought:",
+      "tr": "Arkadaşın \"harika biriyle tanıştım\" dedi. İlk düşüncen:",
+      "de": "Freund sagt \"jemand Tolles getroffen.\" Erster Gedanke:",
+      "fr": "Un ami dit \"j'ai rencontré quelqu'un de génial\". Première pensée :",
+      "hu": "A barátod azt mondja: \"megismertem valaki fantasztikusat\". Első gondolatod:"
+    },
+    "option_a": {
+      "en": "So happy for them",
+      "tr": "Çok mutlu oldum",
+      "de": "So glücklich für sie",
+      "fr": "Tellement content pour eux",
+      "hu": "Nagyon örülök nekik"
+    },
+    "option_b": {
+      "en": "Quietly investigating their Instagram already",
+      "tr": "Sessizce Instagram'ını araştırmaya başlarım",
+      "de": "Schon heimlich das Instagram durchleuchtet",
+      "fr": "Déjà en train d'enquêter discrètement sur son Instagram",
+      "hu": "Már csendben nyomozok az Instagramján"
+    },
+    "comment": {
+      "en": "Joy and detective work can happen at the exact same time.",
+      "tr": "Mutluluk ve dedektiflik aynı anda olabilir.",
+      "de": "Freude und Detektivarbeit können gleichzeitig passieren.",
+      "fr": "La joie et le travail de détective, ça peut cohabiter.",
+      "hu": "Az öröm és a nyomozás egyszerre is történhet."
+    }
+  },
+  {
+    "category": "dating",
+    "series": {
+      "en": "Dating Life",
+      "tr": "İlişki Hayatı",
+      "de": "Beziehungsleben",
+      "fr": "Vie Amoureuse",
+      "hu": "Kapcsolati Élet"
+    },
+    "question": {
+      "en": "\"My phone was on silent, sorry.\" You:",
+      "tr": "\"Telefonum sessizdeydi, kusura bakma.\" Sen:",
+      "de": "\"Handy war lautlos, sorry.\" Du:",
+      "fr": "\"Mon téléphone était sur silencieux, désolé.\" Toi :",
+      "hu": "\"A telefonom néma volt, bocsi.\" Te:"
+    },
+    "option_a": {
+      "en": "Believe it, no questions",
+      "tr": "İnanırım, soru sormam",
+      "de": "Glaub's, keine Fragen",
+      "fr": "J'y crois, sans poser de questions",
+      "hu": "Elhiszem, nem kérdezek"
+    },
+    "option_b": {
+      "en": "Quietly check the timestamp",
+      "tr": "Sessizce zaman damgasını kontrol ederim",
+      "de": "Heimlich den Zeitstempel checken",
+      "fr": "Je vérifie discrètement l'heure d'envoi",
+      "hu": "Csendben megnézem az időbélyeget"
+    },
+    "comment": {
+      "en": "The silent-phone excuse is the oldest confession in the book.",
+      "tr": "Sessiz telefon bahanesi, en eski günah çıkarma yöntemidir.",
+      "de": "Die Handy-war-lautlos-Ausrede ist das älteste Geständnis überhaupt.",
+      "fr": "L'excuse du téléphone silencieux, c'est la plus vieille confession du monde.",
+      "hu": "A néma telefon kifogása a legrégebbi vallomás."
+    }
+  },
+  {
+    "category": "dating",
+    "series": {
+      "en": "Dating Life",
+      "tr": "İlişki Hayatı",
+      "de": "Beziehungsleben",
+      "fr": "Vie Amoureuse",
+      "hu": "Kapcsolati Élet"
+    },
+    "question": {
+      "en": "After an argument, you:",
+      "tr": "Tartışmadan sonra sen:",
+      "de": "Nach einem Streit, du:",
+      "fr": "Après une dispute, toi :",
+      "hu": "Egy veszekedés után te:"
+    },
+    "option_a": {
+      "en": "Talk it through",
+      "tr": "Konuşup çözerim",
+      "de": "Redest es aus",
+      "fr": "Tu en parles",
+      "hu": "Megbeszéled"
+    },
+    "option_b": {
+      "en": "Go quiet, send a passive-aggressive emoji later",
+      "tr": "Sessiz kalırım, sonra pasif agresif bir emoji atarım",
+      "de": "Wirst still, schickst später ein passiv-aggressives Emoji",
+      "fr": "Tu deviens silencieux, tu envoies un emoji passif-agressif plus tard",
+      "hu": "Elhallgatsz, később küldesz egy passzív-agresszív emojit"
+    },
+    "comment": {
+      "en": "One 👍 can carry more weight than a thousand words.",
+      "tr": "Bir 👍 emojisi, bin kelimeden ağır olabilir.",
+      "de": "Ein 👍 kann schwerer wiegen als tausend Worte.",
+      "fr": "Un seul 👍 peut peser plus lourd que mille mots.",
+      "hu": "Egyetlen 👍 többet nyomhat, mint ezer szó."
+    }
+  },
+  {
+    "category": "money",
+    "series": {
+      "en": "Money Habits",
+      "tr": "Para Alışkanlıkları",
+      "de": "Geldgewohnheiten",
+      "fr": "Habitudes D'Argent",
+      "hu": "Pénzügyi Szokások"
+    },
+    "question": {
+      "en": "Payday. First 24 hours:",
+      "tr": "Maaş yattı. İlk 24 saat:",
+      "de": "Zahltag. Erste 24 Stunden:",
+      "fr": "Jour de paie. Les premières 24h :",
+      "hu": "Fizetésnap. Az első 24 óra:"
+    },
+    "option_a": {
+      "en": "Make a budget",
+      "tr": "Bütçe yaparım",
+      "de": "Budget aufstellen",
+      "fr": "Je fais un budget",
+      "hu": "Költségvetést készítek"
+    },
+    "option_b": {
+      "en": "Treat myself, budget starts tomorrow",
+      "tr": "Kendimi ödüllendiririm, bütçe yarından geçerli",
+      "de": "Mich selbst belohnen, Budget gilt ab morgen",
+      "fr": "Je me fais plaisir, le budget commence demain",
+      "hu": "Megjutalmazom magam, a költségvetés holnaptól él"
+    },
+    "comment": {
+      "en": "\"Starting tomorrow\" is the finance version of a diet that never begins.",
+      "tr": "\"Yarından itibaren\" cümlesi, hiç başlamayan diyetin finans versiyonudur.",
+      "de": "\"Ab morgen\" ist die Finanzversion einer Diät, die nie beginnt.",
+      "fr": "\"À partir de demain\", c'est la version financière d'un régime qui ne commence jamais.",
+      "hu": "A \"holnaptól\" a sosem kezdődő diéta pénzügyi verziója."
+    }
+  },
+  {
+    "category": "money",
+    "series": {
+      "en": "Money Habits",
+      "tr": "Para Alışkanlıkları",
+      "de": "Geldgewohnheiten",
+      "fr": "Habitudes D'Argent",
+      "hu": "Pénzügyi Szokások"
+    },
+    "question": {
+      "en": "A sale pops up, you don't need it. You:",
+      "tr": "İndirim çıktı, ihtiyacın yok. Sen:",
+      "de": "Ein Sale poppt auf, du brauchst es nicht. Du:",
+      "fr": "Une promo apparaît, tu n'en as pas besoin. Toi :",
+      "hu": "Feltűnik egy akció, nincs rá szükséged. Te:"
+    },
+    "option_a": {
+      "en": "Skip it, be reasonable",
+      "tr": "Almam, mantıklı davranırım",
+      "de": "Lassen, vernünftig sein",
+      "fr": "Je passe, je reste raisonnable",
+      "hu": "Kihagyom, ésszerű maradok"
+    },
+    "option_b": {
+      "en": "Buy it, \"just in case\"",
+      "tr": "\"Ya lazım olursa\" diye alırım",
+      "de": "Kaufen, \"nur für den Fall\"",
+      "fr": "Je l'achète, \"au cas où\"",
+      "hu": "Megveszem, \"hátha kell\""
+    },
+    "comment": {
+      "en": "The cart is full of things filed under \"maybe someday.\"",
+      "tr": "Sepet, \"belki bir gün\" kategorisindeki ürünlerle dolu.",
+      "de": "Der Warenkorb ist voll mit Dingen unter \"vielleicht irgendwann.\"",
+      "fr": "Le panier est plein de choses classées \"peut-être un jour\".",
+      "hu": "A kosár tele van \"talán egyszer\" kategóriás dolgokkal."
+    }
+  },
+  {
+    "category": "money",
+    "series": {
+      "en": "Money Habits",
+      "tr": "Para Alışkanlıkları",
+      "de": "Geldgewohnheiten",
+      "fr": "Habitudes D'Argent",
+      "hu": "Pénzügyi Szokások"
+    },
+    "question": {
+      "en": "Splitting the bill with friends. You:",
+      "tr": "Arkadaşlarla hesap bölüşülüyor. Sen:",
+      "de": "Rechnung mit Freunden teilen. Du:",
+      "fr": "Partager l'addition entre amis. Toi :",
+      "hu": "Számla megosztása barátokkal. Te:"
+    },
+    "option_a": {
+      "en": "Pay exactly what I ordered",
+      "tr": "Tam ne yediysem onu öderim",
+      "de": "Zahle genau, was ich bestellt hab",
+      "fr": "Je paie exactement ce que j'ai commandé",
+      "hu": "Pontosan azt fizetem, amit ettem"
+    },
+    "option_b": {
+      "en": "Split evenly, no math, no drama",
+      "tr": "Eşit bölerim, hesap sormam",
+      "de": "Gleichmäßig teilen, keine Diskussion",
+      "fr": "On partage équitablement, sans débat",
+      "hu": "Egyenlően osztjuk, semmi vita"
+    },
+    "comment": {
+      "en": "Splitting a bill is the real final exam of any friendship.",
+      "tr": "Hesap bölüşmek, dostluğun gerçek final sınavıdır.",
+      "de": "Die Rechnung teilen ist die eigentliche Abschlussprüfung jeder Freundschaft.",
+      "fr": "Partager l'addition, c'est le véritable examen final de toute amitié.",
+      "hu": "A számla megosztása minden barátság igazi záróvizsgája."
+    }
+  },
+  {
+    "category": "money",
+    "series": {
+      "en": "Money Habits",
+      "tr": "Para Alışkanlıkları",
+      "de": "Geldgewohnheiten",
+      "fr": "Habitudes D'Argent",
+      "hu": "Pénzügyi Szokások"
+    },
+    "question": {
+      "en": "Haven't used that subscription in 8 months. You:",
+      "tr": "8 aydır kullanmadığın bir abonelik var. Sen:",
+      "de": "8 Monate kein Abo genutzt. Du:",
+      "fr": "8 mois sans utiliser cet abonnement. Toi :",
+      "hu": "8 hónapja nem használt előfizetés. Te:"
+    },
+    "option_a": {
+      "en": "Cancel it immediately",
+      "tr": "Hemen iptal ederim",
+      "de": "Sofort kündigen",
+      "fr": "J'annule immédiatement",
+      "hu": "Azonnal lemondom"
+    },
+    "option_b": {
+      "en": "Keep it, \"might need it\"",
+      "tr": "\"Belki kullanırım\" diye tutarım",
+      "de": "Behalten, \"könnte ich brauchen\"",
+      "fr": "Je le garde, \"au cas où\"",
+      "hu": "Megtartom, \"hátha kell még\""
+    },
+    "comment": {
+      "en": "An unused subscription is just monthly guilt with a billing date.",
+      "tr": "Kullanılmayan abonelik, aylık ödemeli bir vicdan azabıdır.",
+      "de": "Ein ungenutztes Abo ist nur monatliches Schuldgefühl mit Zahlungsdatum.",
+      "fr": "Un abonnement inutilisé, c'est juste de la culpabilité mensuelle avec date de facturation.",
+      "hu": "A használatlan előfizetés havi lelkiismeret-furdalás, fizetési határidővel."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Dishwasher's full. You:",
+      "tr": "Bulaşık makinesi doldu. Sen:",
+      "de": "Spülmaschine ist voll. Du:",
+      "fr": "Lave-vaisselle plein. Toi :",
+      "hu": "Tele a mosogatógép. Te:"
+    },
+    "option_a": {
+      "en": "Run it right away",
+      "tr": "Hemen çalıştırırım",
+      "de": "Sofort starten",
+      "fr": "Je le lance tout de suite",
+      "hu": "Azonnal elindítom"
+    },
+    "option_b": {
+      "en": "\"One more plate fits\" for three more days",
+      "tr": "\"Bir tabak daha sığar\" diye üç gün daha doldururum",
+      "de": "\"Ein Teller passt noch\" — für drei weitere Tage",
+      "fr": "\"Une assiette de plus rentre\" pendant trois jours de plus",
+      "hu": "\"Még befér egy tányér\" — még három napig"
+    },
+    "comment": {
+      "en": "Dishwasher Tetris is a real, unrecognized talent.",
+      "tr": "Bulaşık makinesi Tetris'i, tanınmamış bir yetenektir.",
+      "de": "Spülmaschinen-Tetris ist ein echtes, unerkanntes Talent.",
+      "fr": "Le Tetris du lave-vaisselle est un vrai talent méconnu.",
+      "hu": "A mosogatógép-Tetris egy valódi, el nem ismert tehetség."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Clean laundry, out of the dryer. You:",
+      "tr": "Çamaşırlar kurudu. Sen:",
+      "de": "Saubere Wäsche, frisch aus dem Trockner. Du:",
+      "fr": "Linge propre, sorti du sèche-linge. Toi :",
+      "hu": "Tiszta ruha, kijött a szárítógépből. Te:"
+    },
+    "option_a": {
+      "en": "Fold it the same day",
+      "tr": "Aynı gün katlarım",
+      "de": "Noch am selben Tag falten",
+      "fr": "Je le plie le jour même",
+      "hu": "Még aznap összehajtom"
+    },
+    "option_b": {
+      "en": "The \"clean clothes chair\" becomes furniture",
+      "tr": "\"Temiz çamaşır sandalyesi\" bir mobilyaya dönüşür",
+      "de": "Der \"Saubere-Wäsche-Stuhl\" wird zum Möbelstück",
+      "fr": "La \"chaise à linge propre\" devient un meuble",
+      "hu": "A \"tiszta ruhás szék\" bútordarabbá válik"
+    },
+    "comment": {
+      "en": "That chair is no longer furniture — it's a closet with extra steps.",
+      "tr": "O sandalye artık mobilya değil, ekstra adımlı bir dolap.",
+      "de": "Dieser Stuhl ist kein Möbelstück mehr — er ist ein Schrank mit Umweg.",
+      "fr": "Cette chaise n'est plus un meuble, c'est une armoire avec des étapes en plus.",
+      "hu": "Az a szék már nem bútor — az egy plusz lépéssel megspékelt szekrény."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "First alarm goes off. You:",
+      "tr": "İlk alarm çaldı. Sen:",
+      "de": "Erster Wecker klingelt. Du:",
+      "fr": "Premier réveil sonne. Toi :",
+      "hu": "Megszólal az első ébresztő. Te:"
+    },
+    "option_a": {
+      "en": "Get up",
+      "tr": "Kalkarım",
+      "de": "Stehst auf",
+      "fr": "Je me lève",
+      "hu": "Felkelek"
+    },
+    "option_b": {
+      "en": "Negotiate with yourself for \"5 more minutes\"",
+      "tr": "Kendinle \"5 dakika daha\" pazarlığına girerim",
+      "de": "Verhandelst mit dir selbst um \"5 Minuten mehr\"",
+      "fr": "Tu négocies \"5 minutes de plus\" avec toi-même",
+      "hu": "Alkudozol magaddal \"még 5 percért\""
+    },
+    "comment": {
+      "en": "\"Five more minutes\" is humanity's most repeated lie.",
+      "tr": "\"Beş dakika daha\", insanlığın en çok tekrarlanan yalanıdır.",
+      "de": "\"Fünf Minuten mehr\" ist die meistwiederholte Lüge der Menschheit.",
+      "fr": "\"Cinq minutes de plus\", c'est le mensonge le plus répété de l'humanité.",
+      "hu": "Az \"öt perc még\" az emberiség legtöbbet ismételt hazugsága."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Home alone, what do you actually do?",
+      "tr": "Evde tek başınayken gerçekten ne yapıyorsun?",
+      "de": "Allein zu Hause, was machst du wirklich?",
+      "fr": "Seul à la maison, tu fais quoi vraiment ?",
+      "hu": "Egyedül vagy otthon, mit csinálsz igazából?"
+    },
+    "option_a": {
+      "en": "Normal, quiet stuff",
+      "tr": "Normal, sessiz şeyler",
+      "de": "Normale, ruhige Sachen",
+      "fr": "Des trucs normaux et calmes",
+      "hu": "Normális, csendes dolgokat"
+    },
+    "option_b": {
+      "en": "Full concert in the shower, no one's watching",
+      "tr": "Duşta tam konser veririm, kimse görmüyor sanırım",
+      "de": "Volles Konzert unter der Dusche, keiner sieht's ja",
+      "fr": "Concert complet sous la douche, personne ne regarde",
+      "hu": "Teljes koncert a zuhany alatt, senki sem nézi"
+    },
+    "comment": {
+      "en": "Shower performances never win an award, but they always deserve one.",
+      "tr": "Duş performansları hiç ödül almadı ama hep hak etti.",
+      "de": "Duschauftritte gewinnen nie einen Preis, verdienen aber immer einen.",
+      "fr": "Les performances sous la douche ne gagnent jamais de prix, mais le méritent toujours.",
+      "hu": "A zuhanyelőadások sosem nyernek díjat, de mindig megérdemelnék."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Back from vacation, suitcase gets:",
+      "tr": "Tatilden döndün, bavul:",
+      "de": "Zurück vom Urlaub, der Koffer wird:",
+      "fr": "Retour de vacances, la valise :",
+      "hu": "Nyaralásból hazajöttél, a bőrönd:"
+    },
+    "option_a": {
+      "en": "Unpacked right away",
+      "tr": "Hemen boşaltılır",
+      "de": "Sofort ausgepackt",
+      "fr": "Déballée tout de suite",
+      "hu": "Azonnal kipakolva"
+    },
+    "option_b": {
+      "en": "Becomes a permanent second closet",
+      "tr": "Kalıcı bir ikinci dolaba dönüşür",
+      "de": "Wird zum dauerhaften zweiten Schrank",
+      "fr": "Devient une deuxième armoire permanente",
+      "hu": "Állandó második szekrénnyé válik"
+    },
+    "comment": {
+      "en": "That suitcase has paid rent longer than some tenants.",
+      "tr": "O bavul, bazı kiracılardan daha uzun süredir kira ödüyor.",
+      "de": "Dieser Koffer zahlt schon länger Miete als manche Mieter.",
+      "fr": "Cette valise paie un loyer depuis plus longtemps que certains locataires.",
+      "hu": "Az a bőrönd régebben fizet lakbért, mint néhány bérlő."
+    }
+  },
+  {
+    "category": "red-flag",
+    "series": {
+      "en": "Red Flags",
+      "tr": "Kırmızı Bayrak",
+      "de": "Rote Flaggen",
+      "fr": "Signaux D'Alarme",
+      "hu": "Vörös Zászlók"
+    },
+    "question": {
+      "en": "\"I'm not usually like this.\" You:",
+      "tr": "\"Ben normalde böyle biri değilim.\" Sen:",
+      "de": "\"Ich bin sonst nicht so.\" Du:",
+      "fr": "\"Je ne suis pas comme ça d'habitude.\" Toi :",
+      "hu": "\"Én nem szoktam ilyen lenni.\" Te:"
+    },
+    "option_a": {
+      "en": "Believe it",
+      "tr": "İnanırım",
+      "de": "Glaub's",
+      "fr": "J'y crois",
+      "hu": "Elhiszem"
+    },
+    "option_b": {
+      "en": "Take mental notes, quietly",
+      "tr": "Sessizce zihnimde not alırım",
+      "de": "Merk's mir im Stillen",
+      "fr": "Je prends des notes mentales, en silence",
+      "hu": "Csendben jegyzetelek magamban"
+    },
+    "comment": {
+      "en": "That sentence is usually the introduction, not the exception.",
+      "tr": "O cümle genelde istisna değil, itirafın önsözüdür.",
+      "de": "Dieser Satz ist meist die Einleitung, nicht die Ausnahme.",
+      "fr": "Cette phrase est généralement l'intro, pas l'exception.",
+      "hu": "Ez a mondat általában a bevezető, nem a kivétel."
+    }
+  },
+  {
+    "category": "red-flag",
+    "series": {
+      "en": "Red Flags",
+      "tr": "Kırmızı Bayrak",
+      "de": "Rote Flaggen",
+      "fr": "Signaux D'Alarme",
+      "hu": "Vörös Zászlók"
+    },
+    "question": {
+      "en": "Someone keeps checking their phone mid-conversation. You:",
+      "tr": "Biri konuşurken sürekli telefonuna bakıyor. Sen:",
+      "de": "Jemand checkt ständig das Handy im Gespräch. Du:",
+      "fr": "Quelqu'un check son téléphone sans cesse pendant la conversation. Toi :",
+      "hu": "Valaki folyton a telefonját nézi beszélgetés közben. Te:"
+    },
+    "option_a": {
+      "en": "Don't mind it",
+      "tr": "Normal karşılarım",
+      "de": "Stört mich nicht",
+      "fr": "Ça ne me dérange pas",
+      "hu": "Nem zavar"
+    },
+    "option_b": {
+      "en": "A quiet alarm goes off inside",
+      "tr": "İçeriden sessiz bir alarm çalar",
+      "de": "Ein leiser Alarm geht in mir los",
+      "fr": "Une alarme silencieuse se déclenche en moi",
+      "hu": "Csendben megszólal bennem egy vészcsengő"
+    },
+    "comment": {
+      "en": "A phone glance mid-sentence is a quiet announcement of boredom.",
+      "tr": "Cümlenin ortasında telefona bakmak, sessiz bir \"sıkıldım\" duyurusudur.",
+      "de": "Ein Handyblick mitten im Satz ist eine leise Langeweile-Ansage.",
+      "fr": "Un coup d'œil au téléphone en pleine phrase, c'est une annonce silencieuse d'ennui.",
+      "hu": "A telefonra pillantás mondat közben csendes unalombejelentés."
+    }
+  },
+  {
+    "category": "self",
+    "series": {
+      "en": "Know Yourself",
+      "tr": "Kendini Tanı",
+      "de": "Kenn Dich Selbst",
+      "fr": "Connais-Toi",
+      "hu": "Ismerd Meg Magad"
+    },
+    "question": {
+      "en": "Your planning style:",
+      "tr": "Plan yapma tarzın:",
+      "de": "Dein Planungsstil:",
+      "fr": "Ton style de planification :",
+      "hu": "A tervezési stílusod:"
+    },
+    "option_a": {
+      "en": "Detailed, minute by minute",
+      "tr": "Detaylı, dakika dakika",
+      "de": "Detailliert, minutengenau",
+      "fr": "Détaillé, minute par minute",
+      "hu": "Részletes, percre pontos"
+    },
+    "option_b": {
+      "en": "A plan with no plan — we'll see what happens",
+      "tr": "Plansız bir plan — ne olacaksa olur",
+      "de": "Ein Plan ohne Plan — mal sehen, was passiert",
+      "fr": "Un plan sans plan — on verra bien",
+      "hu": "Terv terv nélkül — majd meglátjuk, mi lesz"
+    },
+    "comment": {
+      "en": "A \"plan with no plan\" is secretly the riskiest plan of all.",
+      "tr": "\"Plansız plan\" aslında en riskli plan türüdür.",
+      "de": "Ein \"Plan ohne Plan\" ist heimlich der riskanteste Plan von allen.",
+      "fr": "Un \"plan sans plan\", c'est en secret le plan le plus risqué de tous.",
+      "hu": "A \"terv terv nélkül\" titokban a legkockázatosabb terv."
+    }
+  },
+  {
+    "category": "self",
+    "series": {
+      "en": "Know Yourself",
+      "tr": "Kendini Tanı",
+      "de": "Kenn Dich Selbst",
+      "fr": "Connais-Toi",
+      "hu": "Ismerd Meg Magad"
+    },
+    "question": {
+      "en": "After a mistake, your first move:",
+      "tr": "Bir hata yaptığında ilk hareketin:",
+      "de": "Nach einem Fehler, dein erster Move:",
+      "fr": "Après une erreur, ton premier réflexe :",
+      "hu": "Egy hiba után az első lépésed:"
+    },
+    "option_a": {
+      "en": "Own it and fix it",
+      "tr": "Kabul edip düzeltirim",
+      "de": "Zugeben und beheben",
+      "fr": "J'assume et je répare",
+      "hu": "Elismerem és kijavítom"
+    },
+    "option_b": {
+      "en": "Replay it in my head for three straight nights",
+      "tr": "Zihnimde üç gece boyunca tekrar tekrar izlerim",
+      "de": "Drei Nächte am Stück im Kopf abspielen",
+      "fr": "Je le rejoue dans ma tête trois nuits d'affilée",
+      "hu": "Három egymást követő éjjel újra lejátszom a fejemben"
+    },
+    "comment": {
+      "en": "Midnight replay sessions of old conversations are free and unlimited.",
+      "tr": "Gece yarısı eski konuşmaları tekrar izleme seansları ücretsiz ve sınırsızdır.",
+      "de": "Mitternächtliche Wiederholungen alter Gespräche sind kostenlos und unbegrenzt.",
+      "fr": "Les séances de replay nocturne de vieilles conversations sont gratuites et illimitées.",
+      "hu": "Az éjféli visszajátszásai a régi beszélgetéseknek ingyenesek és korlátlanok."
+    }
+  },
+  {
+    "category": "self",
+    "series": {
+      "en": "Know Yourself",
+      "tr": "Kendini Tanı",
+      "de": "Kenn Dich Selbst",
+      "fr": "Connais-Toi",
+      "hu": "Ismerd Meg Magad"
+    },
+    "question": {
+      "en": "Starting a new hobby, you:",
+      "tr": "Yeni bir hobiye başlarken sen:",
+      "de": "Neues Hobby beginnen, du:",
+      "fr": "Nouveau hobby, toi :",
+      "hu": "Új hobbi indul, te:"
+    },
+    "option_a": {
+      "en": "Research first, then start slow",
+      "tr": "Önce araştırırım, sonra yavaş başlarım",
+      "de": "Erst recherchieren, dann langsam anfangen",
+      "fr": "D'abord je me renseigne, puis je commence doucement",
+      "hu": "Előbb kutatok, aztán lassan kezdek"
+    },
+    "option_b": {
+      "en": "Buy all the gear, quit in two weeks",
+      "tr": "Tüm ekipmanı alırım, iki hafta sonra bırakırım",
+      "de": "Alle Ausrüstung kaufen, nach zwei Wochen aufhören",
+      "fr": "J'achète tout le matériel, j'arrête en deux semaines",
+      "hu": "Megveszem az összes felszerelést, két hét után abbahagyom"
+    },
+    "comment": {
+      "en": "Buying the gear is 90% of the hobby. The rest is optional.",
+      "tr": "Ekipmanı almak hobinin %90'ıdır. Gerisi isteğe bağlıdır.",
+      "de": "Die Ausrüstung zu kaufen ist 90% des Hobbys. Der Rest ist optional.",
+      "fr": "Acheter le matériel, c'est 90% du hobby. Le reste est facultatif.",
+      "hu": "A felszerelés megvásárlása a hobbi 90%-a. A többi opcionális."
+    }
+  },
+  {
+    "category": "self",
+    "series": {
+      "en": "Know Yourself",
+      "tr": "Kendini Tanı",
+      "de": "Kenn Dich Selbst",
+      "fr": "Connais-Toi",
+      "hu": "Ismerd Meg Magad"
+    },
+    "question": {
+      "en": "Someone gives unsolicited advice. You:",
+      "tr": "Biri istenmeyen bir tavsiye veriyor. Sen:",
+      "de": "Jemand gibt ungefragten Rat. Du:",
+      "fr": "Quelqu'un donne un conseil non sollicité. Toi :",
+      "hu": "Valaki kéretlen tanácsot ad. Te:"
+    },
+    "option_a": {
+      "en": "Nod, actually consider it",
+      "tr": "Başımı sallarım, gerçekten düşünürüm",
+      "de": "Nicken, wirklich drüber nachdenken",
+      "fr": "J'acquiesce, j'y réfléchis vraiment",
+      "hu": "Bólintok, tényleg átgondolom"
+    },
+    "option_b": {
+      "en": "Nod, immediately do the opposite",
+      "tr": "Başımı sallarım, sonra tam tersini yaparım",
+      "de": "Nicken, dann genau das Gegenteil tun",
+      "fr": "J'acquiesce, puis je fais exactement l'inverse",
+      "hu": "Bólintok, aztán pont az ellenkezőjét csinálom"
+    },
+    "comment": {
+      "en": "A nod doesn't always mean agreement — sometimes it just buys time.",
+      "tr": "Baş sallamak her zaman onay demek değildir, bazen sadece zaman kazandırır.",
+      "de": "Ein Nicken heißt nicht immer Zustimmung — manchmal kauft es nur Zeit.",
+      "fr": "Hocher la tête ne veut pas toujours dire d'accord — parfois ça achète juste du temps.",
+      "hu": "A bólintás nem mindig egyetértést jelent — néha csak időt vásárol."
+    }
+  },
+  {
+    "category": "food",
+    "series": {
+      "en": "Food & Drink",
+      "tr": "Yeme İçme",
+      "de": "Essen & Trinken",
+      "fr": "Boire Et Manger",
+      "hu": "Étel-Ital"
+    },
+    "question": {
+      "en": "Hangover day, food choice:",
+      "tr": "Akşamdan kalma gün, yemek seçimin:",
+      "de": "Kater-Tag, Essenswahl:",
+      "fr": "Lendemain de soirée, ton choix de repas :",
+      "hu": "Macskajajos nap, az étel-választásod:"
+    },
+    "option_a": {
+      "en": "Something healthy, water first",
+      "tr": "Sağlıklı bir şey, önce su",
+      "de": "Was Gesundes, erst Wasser",
+      "fr": "Un truc sain, de l'eau d'abord",
+      "hu": "Valami egészséges, előbb víz"
+    },
+    "option_b": {
+      "en": "Everything fried, no questions asked",
+      "tr": "Her şeyin yağlısı, hiç soru sorulmaz",
+      "de": "Alles frittiert, keine Fragen",
+      "fr": "Tout ce qui est frit, sans questions",
+      "hu": "Minden zsíros, kérdés nélkül"
+    },
+    "comment": {
+      "en": "The body wants water. The soul wants fries.",
+      "tr": "Vücut su ister, gönül patates.",
+      "de": "Der Körper will Wasser. Die Seele will Pommes.",
+      "fr": "Le corps veut de l'eau. L'âme veut des frites.",
+      "hu": "A test vizet akar. A lélek sült krumplit."
+    }
+  },
+  {
+    "category": "food",
+    "series": {
+      "en": "Food & Drink",
+      "tr": "Yeme İçme",
+      "de": "Essen & Trinken",
+      "fr": "Boire Et Manger",
+      "hu": "Étel-Ital"
+    },
+    "question": {
+      "en": "Meal prep on Sunday. Reality by Wednesday:",
+      "tr": "Pazar günü yemek hazırlığı. Çarşambaya gerçeklik:",
+      "de": "Meal Prep am Sonntag. Realität bis Mittwoch:",
+      "fr": "Meal prep le dimanche. La réalité au mercredi :",
+      "hu": "Vasárnapi meal prep. A valóság szerdára:"
+    },
+    "option_a": {
+      "en": "Still eating it as planned",
+      "tr": "Plan gibi yemeye devam ederim",
+      "de": "Esse es noch planmäßig",
+      "fr": "Je le mange encore comme prévu",
+      "hu": "Még mindig a terv szerint eszem"
+    },
+    "option_b": {
+      "en": "Ordered food, containers untouched in the fridge",
+      "tr": "Yemek ısmarladım, kaplar buzdolabında dokunulmamış duruyor",
+      "de": "Essen bestellt, Boxen unberührt im Kühlschrank",
+      "fr": "Nourriture commandée, boîtes intactes au frigo",
+      "hu": "Ételt rendeltem, a dobozok érintetlenül állnak a hűtőben"
+    },
+    "comment": {
+      "en": "Meal prep containers are just future guilt, refrigerated.",
+      "tr": "Meal prep kapları, buzdolabında bekleyen gelecekteki vicdan azabıdır.",
+      "de": "Meal-Prep-Boxen sind einfach gekühltes zukünftiges Schuldgefühl.",
+      "fr": "Les boîtes de meal prep, c'est de la culpabilité future, réfrigérée.",
+      "hu": "A meal prep dobozok csak jövőbeli, behűtött lelkiismeret-furdalás."
+    }
+  },
+  {
+    "category": "travel",
+    "series": {
+      "en": "Travel Mode",
+      "tr": "Seyahat Modu",
+      "de": "Reisemodus",
+      "fr": "Mode Voyage",
+      "hu": "Utazási Mód"
+    },
+    "question": {
+      "en": "Trip planning style:",
+      "tr": "Seyahat planlama tarzın:",
+      "de": "Reiseplanungsstil:",
+      "fr": "Ton style d'organisation de voyage :",
+      "hu": "Az utazástervezési stílusod:"
+    },
+    "option_a": {
+      "en": "Full itinerary, booked in advance",
+      "tr": "Tam bir program, önceden ayarlanmış",
+      "de": "Volles Programm, im Voraus gebucht",
+      "fr": "Itinéraire complet, réservé à l'avance",
+      "hu": "Teljes útiterv, előre lefoglalva"
+    },
+    "option_b": {
+      "en": "Book the flight, figure out the rest there",
+      "tr": "Bileti alırım, gerisini orada çözerim",
+      "de": "Flug buchen, Rest vor Ort klären",
+      "fr": "Je réserve le vol, je gère le reste sur place",
+      "hu": "Lefoglalom a repülőt, a többit majd ott megoldom"
+    },
+    "comment": {
+      "en": "\"I'll figure it out there\" has started more good stories than any spreadsheet.",
+      "tr": "\"Orada çözerim\" cümlesi, herhangi bir Excel'den daha çok iyi hikaye başlatmıştır.",
+      "de": "\"Vor Ort klären\" hat mehr gute Geschichten gestartet als jede Tabelle.",
+      "fr": "\"Je gère sur place\" a lancé plus de bonnes histoires que n'importe quel tableur.",
+      "hu": "A \"majd ott megoldom\" több jó történetet indított el, mint bármelyik táblázat."
+    }
+  },
+  {
+    "category": "travel",
+    "series": {
+      "en": "Travel Mode",
+      "tr": "Seyahat Modu",
+      "de": "Reisemodus",
+      "fr": "Mode Voyage",
+      "hu": "Utazási Mód"
+    },
+    "question": {
+      "en": "At the airport, you show up:",
+      "tr": "Havaalanına gidişin:",
+      "de": "Am Flughafen, du kommst:",
+      "fr": "À l'aéroport, tu arrives :",
+      "hu": "A reptéren, te megjelensz:"
+    },
+    "option_a": {
+      "en": "Three hours early, just in case",
+      "tr": "Ne olur ne olmaz diye üç saat önceden",
+      "de": "Drei Stunden früher, nur für den Fall",
+      "fr": "Trois heures en avance, au cas où",
+      "hu": "Három órával korábban, hátha"
+    },
+    "option_b": {
+      "en": "Running, boarding gate closing in 4 minutes",
+      "tr": "Koşarak, kapı 4 dakikaya kapanıyor",
+      "de": "Rennend, Gate schließt in 4 Minuten",
+      "fr": "En courant, la porte ferme dans 4 minutes",
+      "hu": "Futva, a kapu 4 perc múlva zár"
+    },
+    "comment": {
+      "en": "There is no in-between at the airport — only extremes.",
+      "tr": "Havaalanında ortası yoktur, sadece uçlar vardır.",
+      "de": "Am Flughafen gibt es kein Dazwischen — nur Extreme.",
+      "fr": "À l'aéroport, il n'y a pas de juste milieu — que des extrêmes.",
+      "hu": "A reptéren nincs középút — csak szélsőségek."
+    }
+  }
 ];

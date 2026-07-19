@@ -177,10 +177,14 @@
       }
 
       if (els.comment && els.commentText) {
-        var seed = dayHash(todayStr() + '|' + (p.question[l] || p.question.en));
-        var bucket = (winner && p.yourVote === winner) ? 'majority' : 'minority';
-        var pool = (ODDVI_COMMENTS[l] || ODDVI_COMMENTS.en)[bucket];
-        els.commentText.textContent = pool[seed % pool.length];
+        if (p.comment && (p.comment[l] || p.comment.en)) {
+          els.commentText.textContent = p.comment[l] || p.comment.en;
+        } else {
+          var seed = dayHash(todayStr() + '|' + (p.question[l] || p.question.en));
+          var bucket = (winner && p.yourVote === winner) ? 'majority' : 'minority';
+          var pool = (ODDVI_COMMENTS[l] || ODDVI_COMMENTS.en)[bucket];
+          els.commentText.textContent = pool[seed % pool.length];
+        }
         els.comment.classList.add('show');
       }
 

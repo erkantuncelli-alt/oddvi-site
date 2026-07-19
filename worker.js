@@ -655,6 +655,7 @@ async function handlePollToday(request, env) {
         question: poll.question,
         option_a: poll.option_a,
         option_b: poll.option_b,
+        comment: poll.comment || null,
         votes: record.slots[slot] || { a: 0, b: 0 },
         yourVote: yourVote || null
       };
