@@ -410,10 +410,11 @@
   .poll-opt:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
   .poll-card.voted .poll-opt{cursor:default}
   .poll-card.voted .poll-opt:hover{transform:none;box-shadow:4px 4px 0 var(--ink)}
-  .poll-opt-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .poll-opt-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
   .poll-opt-label{font-weight:700;font-size:17px}
-  .poll-opt-pct{font-family:var(--font-disp);font-weight:800;font-size:17px;opacity:0;transition:opacity .3s}
+  .poll-opt-pct{font-family:var(--font-disp);font-weight:800;font-size:13px;opacity:0;transition:opacity .3s;flex:none;background:rgba(20,20,20,.08);color:var(--ink);padding:4px 10px;border-radius:999px;white-space:nowrap;letter-spacing:.01em}
   .poll-card.voted .poll-opt-pct{opacity:1}
+  .poll-opt.winner .poll-opt-pct{background:var(--poll-accent);color:#fff}
   .poll-opt-bar{display:block;height:8px;border-radius:999px;background:var(--paper-2);margin-top:10px;overflow:hidden;border:1.5px solid var(--line)}
   .poll-opt-fill{display:block;height:100%;width:0%;background:var(--poll-accent);border-radius:999px;transition:width .6s cubic-bezier(.16,1,.3,1)}
   #pollBtnB .poll-opt-fill{background:#3a3a3a}
@@ -424,10 +425,11 @@
   @keyframes crownPop{0%{transform:rotate(14deg) scale(0)}70%{transform:rotate(14deg) scale(1.15)}100%{transform:rotate(14deg) scale(1)}}
   .poll-counter{margin-top:16px;font-size:12.5px;font-weight:700;opacity:0;transition:opacity .4s;letter-spacing:.02em}
   .poll-card.voted .poll-counter{opacity:.55}
-  .poll-oddvi-comment{display:none;align-items:flex-start;gap:10px;margin-top:16px;background:var(--paper-2);border:2px solid var(--ink);border-radius:14px;padding:12px 14px;text-align:left}
+  .poll-oddvi-comment{display:none;align-items:flex-start;gap:0;margin-top:18px;text-align:left}
   .poll-card.voted .poll-oddvi-comment.show{display:flex}
-  .poll-oddvi-comment img{width:32px;height:42px;object-fit:cover;object-position:top center;border-radius:8px;border:2px solid var(--ink);flex:none;transform:rotate(-3deg)}
-  .poll-oddvi-comment p{margin:0;font-size:13px;font-weight:600;line-height:1.35}
+  .poll-oddvi-comment img{width:34px;height:44px;object-fit:cover;object-position:top center;border-radius:8px;border:2px solid var(--ink);flex:none;transform:rotate(-4deg);margin-top:10px;position:relative;z-index:1}
+  .poll-oddvi-comment .bubble{position:relative;background:var(--paper-2);border:2px solid var(--ink);border-radius:16px 16px 16px 4px;padding:12px 14px;margin-left:10px}
+  .poll-oddvi-comment p{margin:0;font-size:13px;font-weight:600;line-height:1.4}
   .poll-confetti{position:absolute;inset:0;overflow:visible;pointer-events:none;z-index:6}
   .confetti-piece{position:absolute;top:38%;left:50%;width:7px;height:7px;opacity:0;will-change:transform,opacity;animation:confettiPop .9s ease-out forwards}
   @keyframes confettiPop{
@@ -646,7 +648,7 @@
         <p class="poll-counter" id="pollCounter">&nbsp;</p>
         <div class="poll-oddvi-comment" id="pollOddviComment">
           <img src="/uploads/oddvi-logo-icon.png" alt="" aria-hidden="true" />
-          <p id="pollOddviCommentText"></p>
+          <div class="bubble"><p id="pollOddviCommentText"></p></div>
         </div>
         <p class="poll-hint" id="pollHint" data-i18n="poll.hint">Tap one. See what everyone picked.</p>
         <div class="poll-next-wrap" id="pollNextQWrap" style="display:none">
@@ -654,7 +656,7 @@
         </div>
         <p class="poll-all-done" id="pollAllDone" style="display:none"></p>
         <a href="/odd-poll.html" class="poll-history-link" data-i18n="poll.historyLink">See past results →</a>
-        <a href="/odd-poll-controversial.html" class="poll-history-link" style="margin-left:12px">🔥 Most controversial →</a>
+        <a href="/odd-poll-controversial.html" class="poll-history-link" id="pollControversialLink" style="margin-left:12px">🔥 Most controversial →</a>
         <div class="poll-share" id="pollShare" style="display:none">
           <button type="button" class="btn btn-primary" id="pollShareBtn" data-i18n="poll.share">Share your pick</button>
           <button type="button" class="btn-secondary-sm" id="pollChallengeBtn">Challenge a friend</button>

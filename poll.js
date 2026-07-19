@@ -11,11 +11,11 @@
   var SLOT_COUNT = 3;
 
   var UI = {
-    en: { hint: "Tap one. See what everyone picked.", voted: "Thanks for voting!", share: "Share your pick", download: "Download image", challenge: "Challenge a friend", challengeCopied: "Copied! Paste it anywhere.", newTomorrow: "New question tomorrow", loading: "Loading today's odd question…", counter: "{n} odds have voted", next: "Next question →", allDone: "That's all 3! New ones tomorrow.", progress: "Question {n} of 3", challengeText: "I picked \"{pick}\" ({pct}% agreed). What would you pick? Vote here → theoddvi.com/#poll" },
-    tr: { hint: "Birine dokun. Herkes ne seçmiş gör.", voted: "Oyun için teşekkürler!", share: "Seçimini paylaş", download: "Görseli indir", challenge: "Meydan oku", challengeCopied: "Kopyalandı! İstediğin yere yapıştır.", newTomorrow: "Yarın yeni soru", loading: "Bugünün garip sorusu yükleniyor…", counter: "{n} kişi oy verdi", next: "Sıradaki soru →", allDone: "3'ü de bitti! Yarın yenileri var.", progress: "{n}. soru / 3", challengeText: "Ben \"{pick}\" dedim (%{pct} aynı fikirde). Sen ne seçerdin? Gel oy ver → theoddvi.com/#poll" },
-    de: { hint: "Tipp eins an. Sieh, was alle gewählt haben.", voted: "Danke fürs Abstimmen!", share: "Teile deine Wahl", download: "Bild herunterladen", challenge: "Herausfordern", challengeCopied: "Kopiert! Füg es überall ein.", newTomorrow: "Morgen neue Frage", loading: "Die heutige Frage wird geladen…", counter: "{n} Leute haben abgestimmt", next: "Nächste Frage →", allDone: "Alle 3 geschafft! Morgen neue.", progress: "Frage {n} von 3", challengeText: "Ich habe \"{pick}\" gewählt ({pct}% stimmten zu). Was wählst du? Jetzt abstimmen → theoddvi.com/#poll" },
-    fr: { hint: "Touche une option. Regarde ce que tout le monde a choisi.", voted: "Merci d'avoir voté !", share: "Partage ton choix", download: "Télécharger l'image", challenge: "Défier", challengeCopied: "Copié ! Colle-le où tu veux.", newTomorrow: "Nouvelle question demain", loading: "Chargement de la question du jour…", counter: "{n} personnes ont voté", next: "Question suivante →", allDone: "Les 3 sont faites ! Demain, nouvelles questions.", progress: "Question {n} sur 3", challengeText: "J'ai choisi \"{pick}\" ({pct}% d'accord). Et toi ? Vote ici → theoddvi.com/#poll" },
-    hu: { hint: "Koppints egyre. Nézd meg, mit választottak mások.", voted: "Köszönjük a szavazatot!", share: "Oszd meg a választásod", download: "Kép letöltése", challenge: "Kihívás", challengeCopied: "Másolva! Illeszd be bárhova.", newTomorrow: "Holnap új kérdés", loading: "A mai kérdés betöltése…", counter: "{n} ember szavazott", next: "Következő kérdés →", allDone: "Mind a 3 megvan! Holnap újak jönnek.", progress: "{n}. kérdés / 3", challengeText: "Én \"{pick}\"-et választottam ({pct}% értett egyet). Te mit választanál? Szavazz itt → theoddvi.com/#poll" }
+    en: { hint: "Tap one. See what everyone picked.", voted: "Thanks for voting!", share: "Share your pick", download: "Download image", challenge: "Challenge a friend", challengeCopied: "Copied! Paste it anywhere.", newTomorrow: "New question tomorrow", loading: "Loading today's odd question…", counter: "{n} odds have voted", next: "Next question →", allDone: "That's all 3! New ones tomorrow.", progress: "Question {n} of 3", controversial: "🔥 Most controversial →", challengeText: "I picked \"{pick}\" ({pct}% agreed). What would you pick? Vote here → theoddvi.com/#poll" },
+    tr: { hint: "Birine dokun. Herkes ne seçmiş gör.", voted: "Oyun için teşekkürler!", share: "Seçimini paylaş", download: "Görseli indir", challenge: "Meydan oku", challengeCopied: "Kopyalandı! İstediğin yere yapıştır.", newTomorrow: "Yarın yeni soru", loading: "Bugünün garip sorusu yükleniyor…", counter: "{n} kişi oy verdi", next: "Sıradaki soru →", allDone: "3'ü de bitti! Yarın yenileri var.", progress: "{n}. soru / 3", controversial: "🔥 En tartışmalı →", challengeText: "Ben \"{pick}\" dedim (%{pct} aynı fikirde). Sen ne seçerdin? Gel oy ver → theoddvi.com/#poll" },
+    de: { hint: "Tipp eins an. Sieh, was alle gewählt haben.", voted: "Danke fürs Abstimmen!", share: "Teile deine Wahl", download: "Bild herunterladen", challenge: "Herausfordern", challengeCopied: "Kopiert! Füg es überall ein.", newTomorrow: "Morgen neue Frage", loading: "Die heutige Frage wird geladen…", counter: "{n} Leute haben abgestimmt", next: "Nächste Frage →", allDone: "Alle 3 geschafft! Morgen neue.", progress: "Frage {n} von 3", controversial: "🔥 Am umstrittensten →", challengeText: "Ich habe \"{pick}\" gewählt ({pct}% stimmten zu). Was wählst du? Jetzt abstimmen → theoddvi.com/#poll" },
+    fr: { hint: "Touche une option. Regarde ce que tout le monde a choisi.", voted: "Merci d'avoir voté !", share: "Partage ton choix", download: "Télécharger l'image", challenge: "Défier", challengeCopied: "Copié ! Colle-le où tu veux.", newTomorrow: "Nouvelle question demain", loading: "Chargement de la question du jour…", counter: "{n} personnes ont voté", next: "Question suivante →", allDone: "Les 3 sont faites ! Demain, nouvelles questions.", progress: "Question {n} sur 3", controversial: "🔥 Les plus controversés →", challengeText: "J'ai choisi \"{pick}\" ({pct}% d'accord). Et toi ? Vote ici → theoddvi.com/#poll" },
+    hu: { hint: "Koppints egyre. Nézd meg, mit választottak mások.", voted: "Köszönjük a szavazatot!", share: "Oszd meg a választásod", download: "Kép letöltése", challenge: "Kihívás", challengeCopied: "Másolva! Illeszd be bárhova.", newTomorrow: "Holnap új kérdés", loading: "A mai kérdés betöltése…", counter: "{n} ember szavazott", next: "Következő kérdés →", allDone: "Mind a 3 megvan! Holnap újak jönnek.", progress: "{n}. kérdés / 3", controversial: "🔥 Legvitatottabb →", challengeText: "Én \"{pick}\"-et választottam ({pct}% értett egyet). Te mit választanál? Szavazz itt → theoddvi.com/#poll" }
   };
 
   var ODDVI_COMMENTS = {
@@ -138,6 +138,7 @@
     if (els.progress) els.progress.textContent = t.progress.replace('{n}', state.current + 1);
     if (els.nextQBtn) els.nextQBtn.textContent = t.next;
     if (els.allDone) els.allDone.textContent = t.allDone;
+    if (els.controversialLink) els.controversialLink.textContent = t.controversial;
   }
 
   function renderPoll() {
@@ -514,6 +515,7 @@
     els.nextQWrap = q('pollNextQWrap');
     els.nextQBtn = q('pollNextQBtn');
     els.allDone = q('pollAllDone');
+    els.controversialLink = q('pollControversialLink');
     els.toast = q('pollToast');
 
     if (els.btnA) els.btnA.addEventListener('click', function () { vote('a'); });
