@@ -6510,5 +6510,689 @@ export const pollPool = [
       "fr": "Les miroirs ont fait dérailler plus de phrases que n'importe quelle vraie interruption.",
       "hu": "A tükrök több mondatot törtek derékba, mint bármilyen valódi megszakítás."
     }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Exam is tomorrow morning. Tonight you:",
+      "tr": "Sınav yarın sabah. Bu gece sen:",
+      "de": "Prüfung ist morgen früh. Heute Abend du:",
+      "fr": "L'examen est demain matin. Ce soir, toi :",
+      "hu": "Holnap reggel vizsga. Ma este te:"
+    },
+    "option_a": {
+      "en": "Reviewed notes calmly, sleep on time",
+      "tr": "Sakin sakin notlara bakarım, vaktinde uyurum",
+      "de": "Ruhig Notizen durchgeschaut, pünktlich schlafen",
+      "fr": "J'ai révisé calmement, je dors à l'heure",
+      "hu": "Nyugodtan átnéztem a jegyzeteket, időben alszom"
+    },
+    "option_b": {
+      "en": "Learning the entire semester at 2am",
+      "tr": "Gece 2'de tüm dönemi öğreniyorum",
+      "de": "Um 2 Uhr nachts das ganze Semester lernen",
+      "fr": "J'apprends tout le semestre à 2h du matin",
+      "hu": "Hajnali 2-kor tanulom az egész félévet"
+    },
+    "comment": {
+      "en": "The night before an exam is where a whole semester goes to happen at once.",
+      "tr": "Sınavdan önceki gece, tüm bir dönemin aynı anda yaşandığı yerdir.",
+      "de": "Die Nacht vor der Prüfung ist, wo ein ganzes Semester auf einmal passiert.",
+      "fr": "La veille d'un examen, c'est là qu'un semestre entier se passe d'un coup.",
+      "hu": "A vizsga előtti éjszaka az, amikor egy egész félév egyszerre történik meg."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Group project. Your role:",
+      "tr": "Grup ödevi. Senin rolün:",
+      "de": "Gruppenprojekt. Deine Rolle:",
+      "fr": "Projet de groupe. Ton rôle :",
+      "hu": "Csoportos projekt. A szereped:"
+    },
+    "option_a": {
+      "en": "Do my part, chase everyone else too",
+      "tr": "Kendi payımı yaparım, herkesi de peşinden koştururum",
+      "de": "Meinen Teil machen, alle anderen auch antreiben",
+      "fr": "Je fais ma part, je relance tout le monde aussi",
+      "hu": "Elvégzem a saját részem, a többieket is hajtom"
+    },
+    "option_b": {
+      "en": "Somehow end up doing the whole thing",
+      "tr": "Bir şekilde her şeyi ben yapmış oluyorum",
+      "de": "Irgendwie am Ende alles selbst machen",
+      "fr": "D'une manière ou d'une autre, je fais tout",
+      "hu": "Valahogy én csinálom meg az egészet"
+    },
+    "comment": {
+      "en": "Every group project has exactly one person carrying it, and everyone knows who.",
+      "tr": "Her grup ödevinde tam olarak bir kişi taşır, ve herkes kim olduğunu bilir.",
+      "de": "Jedes Gruppenprojekt hat genau eine Person, die es trägt, und alle wissen, wer.",
+      "fr": "Chaque projet de groupe a exactement une personne qui porte tout, et tout le monde sait qui.",
+      "hu": "Minden csoportos projektben pontosan egy ember viszi a hátán, és mindenki tudja, ki."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Professor says \"this won't be on the exam.\" You:",
+      "tr": "Hoca \"bu sınavda çıkmayacak\" diyor. Sen:",
+      "de": "Prof sagt \"kommt nicht in der Prüfung.\" Du:",
+      "fr": "Le prof dit \"ça ne sera pas à l'examen\". Toi :",
+      "hu": "A tanár azt mondja: \"ez nem lesz benne a vizsgán\". Te:"
+    },
+    "option_a": {
+      "en": "Stop writing immediately",
+      "tr": "Anında yazmayı bırakırım",
+      "de": "Sofort aufhören zu schreiben",
+      "fr": "J'arrête d'écrire immédiatement",
+      "hu": "Azonnal abbahagyom az írást"
+    },
+    "option_b": {
+      "en": "Write it down anyway, trust issues",
+      "tr": "Yine de yazarım, güven sorunum var",
+      "de": "Trotzdem aufschreiben, Vertrauensprobleme",
+      "fr": "Je l'écris quand même, problèmes de confiance",
+      "hu": "Mégis leírom, bizalmi problémáim vannak"
+    },
+    "comment": {
+      "en": "That sentence has never once been fully true.",
+      "tr": "O cümle hiçbir zaman tam olarak doğru olmamıştır.",
+      "de": "Dieser Satz war noch nie ganz wahr.",
+      "fr": "Cette phrase n'a jamais été entièrement vraie.",
+      "hu": "Az a mondat még sosem volt teljesen igaz."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Class starts in 5 minutes, you're 15 minutes away. You:",
+      "tr": "Ders 5 dakikaya başlıyor, sen 15 dakika uzaktasın. Sen:",
+      "de": "Vorlesung in 5 Minuten, du bist 15 Minuten weg. Du:",
+      "fr": "Le cours commence dans 5 min, t'es à 15 min. Toi :",
+      "hu": "Az óra 5 perc múlva kezdődik, te 15 percre vagy. Te:"
+    },
+    "option_a": {
+      "en": "Accept it, walk in late calmly",
+      "tr": "Kabullenirim, sakince geç girerim",
+      "de": "Akzeptieren, ruhig zu spät reinkommen",
+      "fr": "J'accepte, j'entre en retard calmement",
+      "hu": "Elfogadom, nyugodtan bemegyek később"
+    },
+    "option_b": {
+      "en": "Run the whole way like it's a final boss battle",
+      "tr": "Bütün yolu final boss savaşıymış gibi koşarım",
+      "de": "Den ganzen Weg rennen wie im Endgegner-Kampf",
+      "fr": "Je cours tout le chemin comme un combat de boss final",
+      "hu": "Végigfutom az utat, mintha végső főellenség-csata lenne"
+    },
+    "comment": {
+      "en": "Sprinting across campus with a backpack is a varsity sport nobody gets credit for.",
+      "tr": "Sırt çantasıyla kampüsü koşarak geçmek, kimsenin kredi almadığı bir spor dalıdır.",
+      "de": "Mit Rucksack über den Campus sprinten ist eine Sportart ohne Anerkennung.",
+      "fr": "Sprinter sur le campus avec un sac à dos, c'est un sport universitaire sans crédit.",
+      "hu": "A hátizsákos campus-sprint egy egyetemi sportág, amiért senki sem kap kreditet."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Wifi dies during an online exam. You:",
+      "tr": "Online sınav sırasında wifi gidiyor. Sen:",
+      "de": "WLAN fällt während Online-Prüfung aus. Du:",
+      "fr": "Le wifi lâche pendant un examen en ligne. Toi :",
+      "hu": "Kiesik a wifi az online vizsga alatt. Te:"
+    },
+    "option_a": {
+      "en": "Stay calm, email the professor right away",
+      "tr": "Sakin kalırım, hemen hocaya mail atarım",
+      "de": "Ruhig bleiben, sofort Prof anmailen",
+      "fr": "Je reste calme, j'écris tout de suite au prof",
+      "hu": "Nyugodt maradok, azonnal írok a tanárnak"
+    },
+    "option_b": {
+      "en": "Full internal meltdown, restart the router four times",
+      "tr": "Tam bir içsel çöküş, modemi dört kere resetlerim",
+      "de": "Volle innere Krise, Router viermal neu starten",
+      "fr": "Effondrement intérieur total, je redémarre le routeur quatre fois",
+      "hu": "Teljes belső összeomlás, négyszer újraindítom a routert"
+    },
+    "comment": {
+      "en": "Every student has a personal relationship with their router, and it's complicated.",
+      "tr": "Her öğrencinin modemiyle kişisel bir ilişkisi vardır, ve bu ilişki karmaşıktır.",
+      "de": "Jeder Student hat eine persönliche Beziehung zu seinem Router, und sie ist kompliziert.",
+      "fr": "Chaque étudiant a une relation personnelle avec son routeur, et c'est compliqué.",
+      "hu": "Minden diáknak személyes kapcsolata van a routerével, és az bonyolult."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Cafeteria food today. You:",
+      "tr": "Bugün kantin yemeği. Sen:",
+      "de": "Mensa-Essen heute. Du:",
+      "fr": "La cantine aujourd'hui. Toi :",
+      "hu": "A menza étele ma. Te:"
+    },
+    "option_a": {
+      "en": "Eat it, it's fine, it's food",
+      "tr": "Yerim, sorun değil, sonuçta yemek",
+      "de": "Essen, passt schon, ist ja Essen",
+      "fr": "Je le mange, ça va, c'est de la nourriture",
+      "hu": "Megeszem, oké, végül is étel"
+    },
+    "option_b": {
+      "en": "Inspect it like a crime scene first",
+      "tr": "Önce bir suç mahalliymiş gibi incelerim",
+      "de": "Erst wie einen Tatort untersuchen",
+      "fr": "Je l'examine d'abord comme une scène de crime",
+      "hu": "Először úgy vizsgálom, mint egy tetthelyet"
+    },
+    "comment": {
+      "en": "Cafeteria food inspires more detective work than most actual mysteries.",
+      "tr": "Kantin yemeği, gerçek gizemlerden daha çok dedektiflik gerektirir.",
+      "de": "Mensa-Essen inspiriert mehr Detektivarbeit als die meisten echten Rätsel.",
+      "fr": "La nourriture de cantine inspire plus d'enquête que la plupart des vrais mystères.",
+      "hu": "A menzakaja több nyomozást ihlet, mint a legtöbb valódi rejtély."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Friday night: library or going out?",
+      "tr": "Cuma gecesi: kütüphane mi dışarı mı?",
+      "de": "Freitagabend: Bibliothek oder ausgehen?",
+      "fr": "Vendredi soir : bibliothèque ou sortir ?",
+      "hu": "Péntek este: könyvtár vagy buli?"
+    },
+    "option_a": {
+      "en": "Library, deadlines don't wait",
+      "tr": "Kütüphane, teslim tarihleri beklemez",
+      "de": "Bibliothek, Deadlines warten nicht",
+      "fr": "Bibliothèque, les deadlines n'attendent pas",
+      "hu": "Könyvtár, a határidők nem várnak"
+    },
+    "option_b": {
+      "en": "Going out, I'll deal with it Sunday, future me's problem",
+      "tr": "Dışarı, pazar günü hallederim, o benim geleceğimin sorunu",
+      "de": "Ausgehen, kümmer ich mich Sonntag drum, Problem des zukünftigen Ichs",
+      "fr": "Je sors, je réglerai ça dimanche, problème du futur moi",
+      "hu": "Buli, majd vasárnap megoldom, a jövőbeli énem baja"
+    },
+    "comment": {
+      "en": "\"Future me\" has been assigned every hard problem since freshman year.",
+      "tr": "\"Gelecekteki ben\", birinci sınıftan beri her zor problemi devralıyor.",
+      "de": "\"Zukünftiges Ich\" bekommt seit dem ersten Semester jedes harte Problem zugeteilt.",
+      "fr": "Le \"futur moi\" hérite de tous les problèmes difficiles depuis la première année.",
+      "hu": "A \"jövőbeli énem\" elsőéves kora óta minden nehéz problémát megkap."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Roommate's alarm goes off, they don't wake up. You:",
+      "tr": "Oda arkadaşının alarmı çalıyor, o uyanmıyor. Sen:",
+      "de": "Mitbewohners Wecker klingelt, er wacht nicht auf. Du:",
+      "fr": "Le réveil du coloc sonne, il ne se lève pas. Toi :",
+      "hu": "A szobatársad ébresztője szól, ő nem ébred fel. Te:"
+    },
+    "option_a": {
+      "en": "Wake them up, be a good roommate",
+      "tr": "Uyandırırım, iyi bir oda arkadaşı olurum",
+      "de": "Weck sie, sei ein guter Mitbewohner",
+      "fr": "Je le réveille, je suis un bon coloc",
+      "hu": "Felkeltem, jó szobatárs vagyok"
+    },
+    "option_b": {
+      "en": "Put a pillow over my head, not my alarm, not my problem",
+      "tr": "Kafama yastık koyarım, alarmım değil, sorunum değil",
+      "de": "Kissen über den Kopf, nicht mein Wecker, nicht mein Problem",
+      "fr": "Un oreiller sur la tête, c'est pas mon réveil, pas mon problème",
+      "hu": "Párnát a fejemre, nem az én ébresztőm, nem az én problémám"
+    },
+    "comment": {
+      "en": "Dorm alarms are technically a shared problem, emotionally a solo one.",
+      "tr": "Yurt alarmları teknik olarak ortak, duygusal olarak bireysel bir sorundur.",
+      "de": "WG-Wecker sind technisch ein gemeinsames, gefühlt aber ein einsames Problem.",
+      "fr": "Les réveils en résidence, c'est techniquement partagé, émotionnellement solo.",
+      "hu": "A koleszos ébresztők technikailag közös, érzelmileg magányos problémák."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Professor emails the whole class at 11pm. You:",
+      "tr": "Hoca gece 11'de tüm sınıfa mail atıyor. Sen:",
+      "de": "Prof mailt die ganze Klasse um 23 Uhr. Du:",
+      "fr": "Le prof envoie un mail à toute la classe à 23h. Toi :",
+      "hu": "A tanár este 11-kor mailt küld az egész osztálynak. Te:"
+    },
+    "option_a": {
+      "en": "Read it tomorrow, it can wait",
+      "tr": "Yarın okurum, bekleyebilir",
+      "de": "Lies es morgen, kann warten",
+      "fr": "Je le lirai demain, ça peut attendre",
+      "hu": "Holnap elolvasom, várhat"
+    },
+    "option_b": {
+      "en": "Open it instantly, heart rate spikes for no reason",
+      "tr": "Anında açarım, sebepsiz yere kalbim hızlanır",
+      "de": "Sofort öffnen, Herzschlag steigt grundlos",
+      "fr": "Je l'ouvre aussitôt, le cœur s'emballe sans raison",
+      "hu": "Azonnal megnyitom, ok nélkül felgyorsul a szívverésem"
+    },
+    "comment": {
+      "en": "A late-night professor email triggers the same alarm as a group chat gone silent.",
+      "tr": "Gece geç saatte gelen hoca maili, sessizleşen bir grup sohbeti kadar alarm verir.",
+      "de": "Eine späte Prof-Mail löst denselben Alarm aus wie ein verstummter Gruppenchat.",
+      "fr": "Un mail tardif du prof déclenche la même alarme qu'un groupe devenu silencieux.",
+      "hu": "A késői tanári email ugyanazt a riasztást váltja ki, mint egy elnémult csoportos chat."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Budget for the month, student edition:",
+      "tr": "Ayın öğrenci bütçesi:",
+      "de": "Monatsbudget, Studenten-Edition:",
+      "fr": "Budget du mois, édition étudiante :",
+      "hu": "A havi büdzsé, diákkiadás:"
+    },
+    "option_a": {
+      "en": "Planned it out, tracking every expense",
+      "tr": "Planladım, her harcamayı takip ediyorum",
+      "de": "Durchgeplant, jede Ausgabe getrackt",
+      "fr": "Planifié, je suis chaque dépense",
+      "hu": "Megterveztem, minden kiadást nyomon követek"
+    },
+    "option_b": {
+      "en": "Ramen for the last week, no explanation needed",
+      "tr": "Son hafta boyunca noodle, açıklama gerekmez",
+      "de": "Letzte Woche nur Instant-Nudeln, keine Erklärung nötig",
+      "fr": "Nouilles instantanées la dernière semaine, pas besoin d'explication",
+      "hu": "Az utolsó héten instant tészta, nem kell magyarázat"
+    },
+    "comment": {
+      "en": "The last week of the month has its own currency: whatever's left in the fridge.",
+      "tr": "Ayın son haftasının kendi para birimi vardır: buzdolabında ne kaldıysa.",
+      "de": "Die letzte Woche des Monats hat ihre eigene Währung: was auch immer im Kühlschrank übrig ist.",
+      "fr": "La dernière semaine du mois a sa propre monnaie : ce qu'il reste dans le frigo.",
+      "hu": "A hónap utolsó hetének megvan a saját valutája: ami maradt a hűtőben."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Lecture hall, front row or back row?",
+      "tr": "Amfi, ön sıra mı arka sıra mı?",
+      "de": "Hörsaal, vorne oder hinten?",
+      "fr": "Amphi, premier rang ou fond de salle ?",
+      "hu": "Előadóterem, első sor vagy hátsó sor?"
+    },
+    "option_a": {
+      "en": "Front row, actually here to learn",
+      "tr": "Ön sıra, gerçekten öğrenmeye geldim",
+      "de": "Vorne, wirklich hier zum Lernen",
+      "fr": "Premier rang, je suis vraiment là pour apprendre",
+      "hu": "Első sor, tényleg tanulni jöttem"
+    },
+    "option_b": {
+      "en": "Back row, strategic escape route required",
+      "tr": "Arka sıra, stratejik kaçış rotası şart",
+      "de": "Hinten, strategische Fluchtroute erforderlich",
+      "fr": "Fond de salle, itinéraire de fuite stratégique requis",
+      "hu": "Hátsó sor, stratégiai menekülési útvonal szükséges"
+    },
+    "comment": {
+      "en": "Back-row seating is really just applied risk management.",
+      "tr": "Arka sırada oturmak, aslında uygulamalı risk yönetimidir.",
+      "de": "Hintere Reihe ist eigentlich nur angewandtes Risikomanagement.",
+      "fr": "S'asseoir au fond, c'est juste de la gestion des risques appliquée.",
+      "hu": "A hátsó sor tulajdonképpen alkalmazott kockázatkezelés."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "You got a B on something you studied hard for. You:",
+      "tr": "Çok çalıştığın bir şeyden B aldın. Sen:",
+      "de": "Note 2 trotz hartem Lernen. Du:",
+      "fr": "Tu as eu une bonne note malgré tes efforts, mais pas la meilleure. Toi :",
+      "hu": "B-t kaptál valamiből, amire keményen tanultál. Te:"
+    },
+    "option_a": {
+      "en": "Happy, a B is a good grade",
+      "tr": "Mutluyum, B iyi bir not",
+      "de": "Zufrieden, eine 2 ist eine gute Note",
+      "fr": "Content, c'est une bonne note",
+      "hu": "Boldog vagyok, a B jó jegy"
+    },
+    "option_b": {
+      "en": "Devastated, mentally reviewing every possible mistake",
+      "tr": "Yıkıldım, zihnimde her olası hatayı tekrar tekrar gözden geçiriyorum",
+      "de": "Am Boden zerstört, gehe im Kopf jeden möglichen Fehler durch",
+      "fr": "Anéanti, je repasse mentalement chaque erreur possible",
+      "hu": "Összetörve, fejben végigveszem az összes lehetséges hibát"
+    },
+    "comment": {
+      "en": "A good grade can still feel like a loss if the bar was set by yourself.",
+      "tr": "İyi bir not bile kayıp gibi hissettirebilir, eğer çıtayı kendin koyduysan.",
+      "de": "Eine gute Note kann sich wie ein Verlust anfühlen, wenn man die Latte selbst gelegt hat.",
+      "fr": "Une bonne note peut ressembler à un échec si c'est toi qui avais fixé la barre.",
+      "hu": "A jó jegy is vereségnek érződhet, ha a mércét te magad állítottad fel."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Part-time job vs. studying, this week:",
+      "tr": "Part-time iş vs. ders çalışmak, bu hafta:",
+      "de": "Nebenjob vs. lernen, diese Woche:",
+      "fr": "Job étudiant vs. étudier, cette semaine :",
+      "hu": "Részmunkaidős állás vs. tanulás, ezen a héten:"
+    },
+    "option_a": {
+      "en": "Balanced both, somehow",
+      "tr": "İkisini de bir şekilde dengeledim",
+      "de": "Beides irgendwie ausbalanciert",
+      "fr": "J'ai réussi à équilibrer les deux",
+      "hu": "Valahogy egyensúlyban tartottam mindkettőt"
+    },
+    "option_b": {
+      "en": "Work ate the week, studying happens tomorrow — always tomorrow",
+      "tr": "İş haftayı yedi, ders çalışmak yarına kaldı, hep yarına",
+      "de": "Arbeit hat die Woche gefressen, Lernen ist morgen — immer morgen",
+      "fr": "Le boulot a bouffé la semaine, réviser c'est pour demain — toujours demain",
+      "hu": "A munka felfalta a hetet, a tanulás holnapra marad — mindig holnapra"
+    },
+    "comment": {
+      "en": "Balancing a job and a degree is a full-time skill nobody grades.",
+      "tr": "İş ve okulu dengelemek, kimsenin not vermediği tam zamanlı bir yetenektir.",
+      "de": "Job und Studium zu jonglieren ist eine Vollzeit-Fähigkeit, die keiner bewertet.",
+      "fr": "Jongler entre job et études, c'est une compétence à temps plein que personne ne note.",
+      "hu": "A munka és a tanulmányok egyensúlyban tartása egy teljes állású készség, amit senki sem osztályoz."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "You see your professor at the grocery store. You:",
+      "tr": "Hocanı markette görüyorsun. Sen:",
+      "de": "Du siehst deinen Prof im Supermarkt. Du:",
+      "fr": "Tu croises ton prof au supermarché. Toi :",
+      "hu": "Meglátod a tanárodat a boltban. Te:"
+    },
+    "option_a": {
+      "en": "Say hi normally, they're a person too",
+      "tr": "Normal şekilde selam veririm, o da insan sonuçta",
+      "de": "Normal grüßen, ist ja auch ein Mensch",
+      "fr": "Je dis bonjour normalement, c'est une personne aussi",
+      "hu": "Normálisan köszönök, ő is csak egy ember"
+    },
+    "option_b": {
+      "en": "Change aisle immediately, this timeline doesn't exist",
+      "tr": "Anında koridor değiştiririm, bu an hiç yaşanmadı",
+      "de": "Sofort Gang wechseln, diese Zeitlinie existiert nicht",
+      "fr": "Je change d'allée aussitôt, cette réalité n'existe pas",
+      "hu": "Azonnal sort váltok, ez az idővonal nem is létezik"
+    },
+    "comment": {
+      "en": "Seeing a professor outside class breaks a very specific part of the brain.",
+      "tr": "Hocayı sınıf dışında görmek, beynin çok özel bir kısmını bozar.",
+      "de": "Einen Prof außerhalb des Unis zu sehen, bricht einen sehr speziellen Teil des Gehirns.",
+      "fr": "Voir un prof hors des cours casse une partie très précise du cerveau.",
+      "hu": "A tanárt az órán kívül látni az agy egy nagyon speciális részét töri meg."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Deadline extended by one day. Your reaction:",
+      "tr": "Teslim tarihi bir gün uzadı. Tepkin:",
+      "de": "Deadline um einen Tag verlängert. Deine Reaktion:",
+      "fr": "Le délai est repoussé d'un jour. Ta réaction :",
+      "hu": "A határidőt egy nappal meghosszabbították. A reakciód:"
+    },
+    "option_a": {
+      "en": "Use the extra time to actually finish early",
+      "tr": "Ekstra zamanı erken bitirmek için kullanırım",
+      "de": "Extra Zeit nutzen, um wirklich früher fertig zu sein",
+      "fr": "J'utilise ce temps pour finir plus tôt",
+      "hu": "A plusz időt arra használom, hogy tényleg hamarabb végezzek"
+    },
+    "option_b": {
+      "en": "Pure relief, immediately do nothing with the extra day",
+      "tr": "Tam bir rahatlama, ekstra günle hiçbir şey yapmam",
+      "de": "Pure Erleichterung, mach sofort nichts mit dem Extra-Tag",
+      "fr": "Pur soulagement, je ne fais rien de ce jour en plus",
+      "hu": "Tiszta megkönnyebbülés, azonnal semmit sem csinálok a plusz nappal"
+    },
+    "comment": {
+      "en": "A deadline extension is never extra time — it's just a delayed version of the same panic.",
+      "tr": "Uzatılan teslim tarihi asla ekstra zaman değildir, aynı paniğin ertelenmiş halidir.",
+      "de": "Eine Fristverlängerung ist nie extra Zeit — es ist nur eine verzögerte Version derselben Panik.",
+      "fr": "Un délai repoussé, ce n'est jamais du temps en plus — c'est juste la même panique, en différé.",
+      "hu": "A meghosszabbított határidő sosem plusz idő — csak ugyanannak a pániknak a késleltetett verziója."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Coffee order during finals week:",
+      "tr": "Final haftasında kahve siparişin:",
+      "de": "Kaffeebestellung in der Prüfungswoche:",
+      "fr": "Commande de café pendant la semaine des partiels :",
+      "hu": "Kávérendelés a vizsgahéten:"
+    },
+    "option_a": {
+      "en": "Same as always, one cup, moderate",
+      "tr": "Her zamanki gibi, tek fincan, ölçülü",
+      "de": "Wie immer, eine Tasse, moderat",
+      "fr": "Comme toujours, une tasse, modéré",
+      "hu": "Mint mindig, egy csésze, mértékkel"
+    },
+    "option_b": {
+      "en": "Triple shot, no memory of ordering it",
+      "tr": "Üç shot, sipariş verdiğimi hatırlamıyorum",
+      "de": "Dreifacher Shot, keine Erinnerung an die Bestellung",
+      "fr": "Triple dose, aucun souvenir de l'avoir commandé",
+      "hu": "Tripla adag, nem emlékszem, hogy rendeltem"
+    },
+    "comment": {
+      "en": "During finals, caffeine stops being a drink and becomes a survival strategy.",
+      "tr": "Final haftasında kafein bir içecek olmaktan çıkar, bir hayatta kalma stratejisine dönüşür.",
+      "de": "In der Prüfungswoche ist Koffein kein Getränk mehr, sondern eine Überlebensstrategie.",
+      "fr": "Pendant les partiels, la caféine cesse d'être une boisson pour devenir une stratégie de survie.",
+      "hu": "A vizsgaidőszakban a koffein már nem ital, hanem túlélési stratégia."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "You bomb a presentation. Next class:",
+      "tr": "Bir sunumu batırdın. Sonraki derste:",
+      "de": "Präsentation vergeigt. Nächste Vorlesung:",
+      "fr": "Ta présentation a été un fiasco. Au prochain cours :",
+      "hu": "Elrontasz egy prezentációt. A következő órán:"
+    },
+    "option_a": {
+      "en": "Shake it off, move on",
+      "tr": "Silkelenirim, devam ederim",
+      "de": "Abschütteln, weitermachen",
+      "fr": "Je passe à autre chose",
+      "hu": "Lerázom, továbblépek"
+    },
+    "option_b": {
+      "en": "Replay every second of it in vivid detail for a week",
+      "tr": "Bir hafta boyunca her saniyesini canlı detaylarla tekrar izlerim",
+      "de": "Jede Sekunde eine Woche lang in lebendigem Detail wiederholen",
+      "fr": "Je rejoue chaque seconde en détail pendant une semaine",
+      "hu": "Egy hétig minden másodpercét élénken újra lejátszom"
+    },
+    "comment": {
+      "en": "A bad presentation lives rent-free in your head long after everyone else forgot it.",
+      "tr": "Kötü bir sunum, herkes unuttuktan çok sonra bile kafanda kirasız yaşamaya devam eder.",
+      "de": "Eine schlechte Präsentation wohnt mietfrei in deinem Kopf, lange nachdem alle anderen sie vergessen haben.",
+      "fr": "Une mauvaise présentation squatte ta tête bien après que tout le monde l'a oubliée.",
+      "hu": "A rossz prezentáció bérmentesen lakik a fejedben, jóval azután is, hogy mindenki más elfelejtette."
+    }
+  },
+  {
+    "category": "campus",
+    "series": {
+      "en": "Campus Life",
+      "tr": "Kampüs Hayatı",
+      "de": "Campus-Leben",
+      "fr": "Vie De Campus",
+      "hu": "Egyetemi Élet"
+    },
+    "question": {
+      "en": "Syllabus week vs. midterm week energy:",
+      "tr": "Ders programı haftası vs. vize haftası enerjisi:",
+      "de": "Erste-Woche- vs. Klausurwoche-Energie:",
+      "fr": "Énergie de la semaine de rentrée vs. semaine de partiels :",
+      "hu": "Első hetes vs. zárthelyi heti energia:"
+    },
+    "option_a": {
+      "en": "Pretty consistent honestly",
+      "tr": "Dürüst olmak gerekirse oldukça tutarlı",
+      "de": "Ehrlich gesagt ziemlich konstant",
+      "fr": "Assez constant honnêtement",
+      "hu": "Elég egyenletes, ha őszinte akarok lenni"
+    },
+    "option_b": {
+      "en": "Completely different people",
+      "tr": "Tamamen farklı insanlar",
+      "de": "Komplett andere Menschen",
+      "fr": "Deux personnes complètement différentes",
+      "hu": "Teljesen más emberek"
+    },
+    "comment": {
+      "en": "Syllabus-week you and midterm-week you have never actually met.",
+      "tr": "Ders programı haftasındaki sen ve vize haftasındaki sen aslında hiç tanışmadı.",
+      "de": "Das Erste-Woche-Ich und das Klausurwoche-Ich haben sich nie wirklich getroffen.",
+      "fr": "Le toi de la semaine de rentrée et celui des partiels ne se sont jamais vraiment rencontrés.",
+      "hu": "Az első heti éned és a zárthelyi heti éned valójában sosem találkozott."
+    }
   }
 ];
