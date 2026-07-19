@@ -3115,6 +3115,386 @@
           "social-life"
         ]
       }
+    },
+    {
+      "image": "/uploads/oddgallery/poll-is-live-poster.jpg",
+      "en": "Poll Is Live",
+      "tr": "Anket Yayında",
+      "de": "Umfrage Live",
+      "fr": "Le Sondage Est En Ligne",
+      "hu": "Az Anket Élő",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/movie-night-picks.jpg",
+      "en": "Oddvi's Movie List",
+      "tr": "Oddvi'nin Film Listesi",
+      "de": "Oddvis Filmliste",
+      "fr": "La Liste De Films D'Oddvi",
+      "hu": "Oddvi Filmlistája",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "home"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/the-odd-club-cinema.jpg",
+      "en": "The Odd Club",
+      "tr": "Odd Kulübü",
+      "de": "Der Odd Club",
+      "fr": "Le Club Odd",
+      "hu": "Az Odd Klub",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-party-disco.jpg",
+      "en": "Odd Party",
+      "tr": "Odd Parti",
+      "de": "Odd Party",
+      "fr": "Odd Party",
+      "hu": "Odd Buli",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "group-chat"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/tennis-barely-trying.jpg",
+      "en": "Tennis, Barely",
+      "tr": "Zar Zor Tenis",
+      "de": "Tennis, Kaum",
+      "fr": "Tennis, À Peine",
+      "hu": "Tenisz, Épphogy",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "fitness"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/late-night-pizza-slice-reversed.jpg",
+      "en": "Pizza Slice Reversed",
+      "tr": "Ters Pizza Dilimi",
+      "de": "Umgekehrtes Pizzastück",
+      "fr": "Part De Pizza Inversée",
+      "hu": "Fordított Pizzaszelet",
+      "tags": {
+        "mood": [
+          "chill"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-comic-weird-wisdom-france.jpg",
+      "en": "Weird Wisdom From France",
+      "tr": "Fransa'dan Garip Bilgelik",
+      "de": "Seltsame Weisheit Aus Frankreich",
+      "fr": "Sagesse Bizarre De France",
+      "hu": "Fura Bölcsesség Franciaországból",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-comic-weird-wisdom-italy.jpg",
+      "en": "Weird Wisdom From Italy",
+      "tr": "İtalya'dan Garip Bilgelik",
+      "de": "Seltsame Weisheit Aus Italien",
+      "fr": "Sagesse Bizarre D'Italie",
+      "hu": "Fura Bölcsesség Olaszországból",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-comic-weird-wisdom-germany.jpg",
+      "en": "Weird Wisdom From Germany",
+      "tr": "Almanya'dan Garip Bilgelik",
+      "de": "Seltsame Weisheit Aus Deutschland",
+      "fr": "Sagesse Bizarre D'Allemagne",
+      "hu": "Fura Bölcsesség Németországból",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/share-the-odd-kitten.jpg",
+      "en": "Share The Odd",
+      "tr": "Odd'u Paylaş",
+      "de": "Teile Das Odd",
+      "fr": "Partage L'Odd",
+      "hu": "Oszd Meg Az Oddot",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "throwback"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/ski-oddly-2.jpg",
+      "en": "Downhill, Oddly",
+      "tr": "Yamaçtan Garip İniş",
+      "de": "Bergab, Seltsam",
+      "fr": "En Descente, Bizarrement",
+      "hu": "Lejtőn, Furán",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "fitness"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/study-hustle-campus.jpg",
+      "en": "Study Hustle",
+      "tr": "Ders Koşturmacası",
+      "de": "Lern-Hustle",
+      "fr": "Le Grind Des Études",
+      "hu": "Tanulási Hajtás",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-comic-weird-wisdom-for-weirdos.jpg",
+      "en": "Weird Wisdom For Weirdos",
+      "tr": "Tuhaflar İçin Garip Bilgelik",
+      "de": "Seltsame Weisheit Für Weirdos",
+      "fr": "Sagesse Bizarre Pour Les Bizarres",
+      "hu": "Fura Bölcsesség Furáknak",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "social-life"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-comic-europe-heatwave-survival.jpg",
+      "en": "Europe Heatwave Survival",
+      "tr": "Avrupa Sıcak Hava Hayatta Kalma",
+      "de": "Europa Hitzewelle Überleben",
+      "fr": "Survivre À La Canicule En Europe",
+      "hu": "Túlélés Az Európai Hőhullámban",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "self-deprecating"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-comic-stay-odd-save-odd-earth.jpg",
+      "en": "Stay Odd, Save Odd",
+      "tr": "Garip Kal, Garibi Kurtar",
+      "de": "Bleib Odd, Rette Odd",
+      "fr": "Reste Odd, Sauve Odd",
+      "hu": "Maradj Fura, Mentsd Meg A Furát",
+      "tags": {
+        "mood": [
+          "wholesome"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "nature"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-in-budapest.jpg",
+      "en": "Oddvi In Budapest",
+      "tr": "Budapeşte'de Oddvi",
+      "de": "Oddvi In Budapest",
+      "fr": "Oddvi À Budapest",
+      "hu": "Oddvi Budapesten",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/fashion-freestyle-runway.jpg",
+      "en": "Fashion Freestyle",
+      "tr": "Moda Serbestisi",
+      "de": "Fashion Freestyle",
+      "fr": "Freestyle Mode",
+      "hu": "Divat Freestyle",
+      "tags": {
+        "mood": [
+          "dramatic"
+        ],
+        "occasion": [
+          "roast-a-friend"
+        ],
+        "domain": [
+          "fashion"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/ceo-of-overthinking.jpg",
+      "en": "CEO Of Overthinking",
+      "tr": "Aşırı Düşünmenin CEO'su",
+      "de": "CEO Des Overthinking",
+      "fr": "PDG De La Surréflexion",
+      "hu": "A Túlgondolás Vezérigazgatója",
+      "tags": {
+        "mood": [
+          "chaotic"
+        ],
+        "occasion": [
+          "work-meeting"
+        ],
+        "domain": [
+          "work-office"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/odd-cooking-show-sock.jpg",
+      "en": "Odd Cooking Show",
+      "tr": "Garip Yemek Programı",
+      "de": "Odd Kochshow",
+      "fr": "L'Émission De Cuisine Odd",
+      "hu": "Fura Főzőműsor",
+      "tags": {
+        "mood": [
+          "sarcastic"
+        ],
+        "occasion": [
+          "roast-a-friend"
+        ],
+        "domain": [
+          "food"
+        ]
+      }
+    },
+    {
+      "image": "/uploads/oddgallery/oddvi-takes-tokyo.jpg",
+      "en": "Oddvi Takes Tokyo",
+      "tr": "Oddvi Tokyo'yu Fethediyor",
+      "de": "Oddvi Erobert Tokio",
+      "fr": "Oddvi Conquiert Tokyo",
+      "hu": "Oddvi Meghódítja Tokiót",
+      "tags": {
+        "mood": [
+          "confident"
+        ],
+        "occasion": [
+          "motivational"
+        ],
+        "domain": [
+          "travel"
+        ]
+      }
     }
   ]
 }
