@@ -50,13 +50,13 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .logo{font-family:var(--font-disp);font-weight:800;font-size:23px;text-decoration:none;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px;transform:rotate(-3deg)}
   .logo-icon{flex:0 0 auto;display:block}
-  .nav-links{display:flex;align-items:center;gap:20px;font-weight:600;font-size:15px}
+  .nav-links{display:flex;align-items:center;gap:14px;font-weight:600;font-size:14px}
   .nav-links a.txt{text-decoration:none;opacity:.75;transition:opacity .2s,transform .2s}
   .nav-links a.txt:hover{opacity:1;transform:rotate(-2deg)}
   .nav-cta{background:var(--red);color:#fff;padding:9px 16px;border-radius:12px;font-weight:700;font-size:14px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s;text-decoration:none}
   .nav-cta:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
   .nav-toggle{display:none;background:var(--ink);color:#fff;border:2.5px solid var(--ink);border-radius:10px;width:44px;height:40px;font-size:20px;cursor:pointer;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink)}
-  @media(max-width:1180px){
+  @media(max-width:1400px){
     .nav-toggle{display:inline-flex}
     .nav-links{position:absolute;top:72px;left:0;right:0;background:var(--paper);border-bottom:3px solid var(--ink);flex-direction:column;align-items:flex-start;gap:18px;padding:22px 24px;display:none}
     .nav-links.open{display:flex}
@@ -65,7 +65,7 @@
   }
 
   .lang-switch{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
-  .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
+  .lang-btn{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:.03em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:5px 8px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
   .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
   .lang-btn:focus-visible{outline:none;opacity:1}
   .lang-btn[aria-pressed="true"]{opacity:1;transform:translateY(-1px) rotate(-2deg);box-shadow:3px 3px 0 var(--ink)}
