@@ -68,11 +68,29 @@
   .nav-links a.txt{text-decoration:none;opacity:.75;transition:opacity .2s,transform .2s}
   .nav-links a.txt:hover{opacity:1;transform:rotate(-2deg)}
   .lang-switch{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
-  .genesis-teaser{background:var(--yellow);border-bottom:3px solid var(--ink);text-align:center;padding:56px 0}
-  .genesis-teaser .kicker{display:inline-block;font-family:var(--font-disp);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:var(--yellow);padding:5px 12px;border-radius:8px;transform:rotate(-2deg)}
-  .genesis-teaser h2{font-family:var(--font-disp);font-weight:800;font-size:clamp(26px,4.5vw,42px);margin-top:16px;color:var(--ink)}
-  .genesis-teaser p{margin-top:12px;font-weight:600;color:var(--ink);opacity:.8;max-width:42ch;margin-inline:auto}
-  .genesis-teaser .btn{margin-top:24px;background:var(--ink);color:#fff;box-shadow:5px 5px 0 rgba(0,0,0,.3)}
+  .oddmachine-section{background:var(--yellow);border-bottom:3px solid var(--ink);text-align:center;padding:64px 0}
+  .oddmachine-section .wrap{max-width:640px}
+  .oddmachine-section p.sub{margin-top:12px;font-weight:600;color:var(--ink);opacity:.8;max-width:42ch;margin-inline:auto}
+  .om-card{margin-top:32px;background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:7px 7px 0 var(--ink);padding:32px 28px}
+  .om-question{font-family:var(--font-disp);font-weight:800;font-size:clamp(19px,3.2vw,25px);line-height:1.25;color:var(--ink)}
+  .om-btn{margin-top:22px;background:var(--ink);color:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:14px 26px;font-family:var(--font-disp);font-weight:800;font-size:15px;cursor:pointer;box-shadow:4px 4px 0 var(--red-deep);transition:transform .12s,box-shadow .12s}
+  .om-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--red-deep)}
+  .om-btn:disabled{opacity:.55;cursor:default}
+  .om-result{margin-top:22px;min-height:1px}
+  .om-thinking{display:none;align-items:center;justify-content:center;gap:10px;font-family:var(--font-disp);font-weight:800;font-size:14px;color:var(--ink);opacity:.7}
+  .om-thinking.show{display:flex}
+  .om-thinking .emoji{display:inline-block;animation:omSpin 1.1s linear infinite}
+  @keyframes omSpin{0%{transform:rotate(0)}50%{transform:rotate(-14deg) scale(1.08)}100%{transform:rotate(0)}}
+  .om-dots span{animation:omDots 1.2s infinite;opacity:.2}
+  .om-dots span:nth-child(2){animation-delay:.2s}
+  .om-dots span:nth-child(3){animation-delay:.4s}
+  @keyframes omDots{0%,60%,100%{opacity:.2}30%{opacity:1}}
+  .om-answer-wrap{display:none;align-items:flex-start;gap:0;text-align:left;margin-top:4px}
+  .om-answer-wrap.show{display:flex;animation:omPop .35s cubic-bezier(.34,1.56,.64,1) both}
+  @keyframes omPop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .om-answer-wrap img{width:34px;height:44px;object-fit:cover;object-position:top center;border-radius:8px;border:2px solid var(--ink);flex:none;transform:rotate(-4deg);margin-top:10px}
+  .om-answer-wrap .bubble{position:relative;background:var(--paper-2);border:2px solid var(--ink);border-radius:16px 16px 16px 4px;padding:14px 16px;margin-left:10px}
+  .om-answer-wrap .bubble p{margin:0;font-weight:700;font-size:15.5px;line-height:1.4;color:var(--ink)}
   .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
   .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
   .lang-btn:focus-visible{outline:none;opacity:1}
@@ -693,12 +711,26 @@
   </div>
 </section>
 
-<section class="genesis-teaser">
+<section class="oddmachine-section">
   <div class="wrap">
-    <span class="kicker" data-i18n="genesis.kicker">İnteraktif</span>
-    <h2 data-i18n="genesis.h2">Oddvi nasıl doğdu?</h2>
-    <p data-i18n="genesis.p">Bir yuvarlaktan başladı. Kaydırarak izle — gözler, kollar, bacaklar, hepsi sırayla katıldı.</p>
-    <a href="/genesis.html" class="btn" data-i18n="genesis.cta">Doğuşunu izle →</a>
+    <span class="kicker" id="omKicker">Interactive</span>
+    <h2 class="h2" id="omHeading" style="margin-top:16px">Ask The Odd Machine</h2>
+    <p class="sub" id="omIntro">Press it. It spins. It tells the truth nobody asked for.</p>
+    <div class="om-card">
+      <div class="om-question" id="omQuestion">If your phone testified in court, who would it rat out first?</div>
+      <button type="button" class="om-btn" id="omRunBtn">🎲 Run The Odd Machine</button>
+      <div class="om-result">
+        <div class="om-thinking" id="omThinking">
+          <span class="emoji">📱</span>
+          <span id="omThinkingLabel">Thinking</span>
+          <span class="om-dots"><span>.</span><span>.</span><span>.</span></span>
+        </div>
+        <div class="om-answer-wrap" id="omAnswerWrap">
+          <img src="/uploads/oddvi-logo-icon.png" alt="" aria-hidden="true" />
+          <div class="bubble"><p id="omAnswerText"></p></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -846,6 +878,7 @@
 <script src="/poll-mascot.js"></script>
 <script src="/poll.js"></script>
 <script src="/faq.js"></script>
+<script src="/odd-machine.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
