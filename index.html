@@ -91,6 +91,16 @@
   .om-answer-wrap img{width:34px;height:44px;object-fit:cover;object-position:top center;border-radius:8px;border:2px solid var(--ink);flex:none;transform:rotate(-4deg);margin-top:10px}
   .om-answer-wrap .bubble{position:relative;background:var(--paper-2);border:2px solid var(--ink);border-radius:16px 16px 16px 4px;padding:14px 16px;margin-left:10px}
   .om-answer-wrap .bubble p{margin:0;font-weight:700;font-size:15.5px;line-height:1.4;color:var(--ink)}
+
+  /* ---- Odd Playlist ---- */
+  .playlist-section{background:var(--grape);border-bottom:3px solid var(--ink);text-align:center;padding:64px 0;color:#fff}
+  .playlist-section .wrap{max-width:640px}
+  .playlist-section .kicker{background:var(--ink);color:var(--grape)}
+  .playlist-section .h2{margin-top:16px}
+  .playlist-section p.sub{margin-top:12px;font-weight:600;opacity:.88;max-width:44ch;margin-inline:auto}
+  .playlist-embed-wrap{margin-top:28px;border-radius:18px;overflow:hidden;border:3px solid var(--ink);box-shadow:7px 7px 0 rgba(0,0,0,.35);line-height:0}
+  .playlist-follow{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;color:#fff;opacity:.85;text-decoration:none}
+  .playlist-follow:hover{opacity:1;text-decoration:underline}
   .lang-btn{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;border:2px solid var(--ink);cursor:pointer;border-radius:999px;padding:6px 10px;color:#fff;opacity:.5;transition:opacity .15s,transform .15s,box-shadow .15s}
   .lang-btn:hover{opacity:.9;transform:translateY(-1px)}
   .lang-btn:focus-visible{outline:none;opacity:1}
@@ -734,6 +744,18 @@
   </div>
 </section>
 
+<section class="playlist-section">
+  <div class="wrap">
+    <span class="kicker" id="oplKicker">Now Playing</span>
+    <h2 class="h2" id="oplHeading">The Odd Playlist</h2>
+    <p class="sub" id="oplIntro">Songs for being loud in a quiet room. Updated whenever Oddvi feels like it.</p>
+    <div class="playlist-embed-wrap">
+      <iframe data-testid="embed-iframe" style="border-radius:12px;display:block" src="https://open.spotify.com/embed/playlist/3gnEreyeNyz2GKnUwJD6k4?utm_source=generator&si=29b0e7befe6b4f7c" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="The Odd Playlist on Spotify"></iframe>
+    </div>
+    <a href="https://open.spotify.com/playlist/3gnEreyeNyz2GKnUwJD6k4" target="_blank" rel="noopener" class="playlist-follow" id="oplFollow">Follow on Spotify →</a>
+  </div>
+</section>
+
 <section id="life">
   <div class="life-photo"></div>
   <div class="life-scrim"></div>
@@ -879,6 +901,7 @@
 <script src="/poll.js"></script>
 <script src="/faq.js"></script>
 <script src="/odd-machine.js"></script>
+<script src="/odd-playlist.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
