@@ -68,36 +68,6 @@ export const pollPool = [
       "hu": "Válaszd A Káoszod"
     },
     "question": {
-      "en": "Choose your chaos.",
-      "tr": "Kaosunu seç.",
-      "de": "Wähl dein Chaos.",
-      "fr": "Choisis ton chaos.",
-      "hu": "Válaszd a káoszod."
-    },
-    "option_a": {
-      "en": "Invisible socks",
-      "tr": "Görünmez çoraplar",
-      "de": "Unsichtbare Socken",
-      "fr": "Chaussettes invisibles",
-      "hu": "Láthatatlan zoknik"
-    },
-    "option_b": {
-      "en": "Transparent hair",
-      "tr": "Şeffaf saçlar",
-      "de": "Durchsichtige Haare",
-      "fr": "Cheveux transparents",
-      "hu": "Átlátszó haj"
-    }
-  },
-  {
-    "series": {
-      "en": "Choose Your Chaos",
-      "tr": "Kaosunu Seç",
-      "de": "Wähle Dein Chaos",
-      "fr": "Choisis Ton Chaos",
-      "hu": "Válaszd A Káoszod"
-    },
-    "question": {
       "en": "Choose wisely.",
       "tr": "Akıllıca seç.",
       "de": "Wähl weise.",
@@ -428,36 +398,6 @@ export const pollPool = [
       "hu": "Csak Fura Döntések"
     },
     "question": {
-      "en": "Pet dragon?",
-      "tr": "Evcil ejderha?",
-      "de": "Haustier-Drache?",
-      "fr": "Dragon de compagnie?",
-      "hu": "Házi sárkány?"
-    },
-    "option_a": {
-      "en": "Tiny one",
-      "tr": "Minicik",
-      "de": "Winzig",
-      "fr": "Minuscule",
-      "hu": "Icike-picike"
-    },
-    "option_b": {
-      "en": "Huge one",
-      "tr": "Devasa",
-      "de": "Riesig",
-      "fr": "Énorme",
-      "hu": "Hatalmas"
-    }
-  },
-  {
-    "series": {
-      "en": "Odd Decisions Only",
-      "tr": "Sadece Garip Kararlar",
-      "de": "Nur Seltsame Entscheidungen",
-      "fr": "Que Des Décisions Bizarres",
-      "hu": "Csak Fura Döntések"
-    },
-    "question": {
       "en": "Vacation?",
       "tr": "Tatil?",
       "de": "Urlaub?",
@@ -608,66 +548,6 @@ export const pollPool = [
       "hu": "Üdv A Fura Oldalon"
     },
     "question": {
-      "en": "Your crown?",
-      "tr": "Tacın?",
-      "de": "Deine Krone?",
-      "fr": "Ta couronne?",
-      "hu": "A koronád?"
-    },
-    "option_a": {
-      "en": "Pizza",
-      "tr": "Pizza",
-      "de": "Pizza",
-      "fr": "Pizza",
-      "hu": "Pizza"
-    },
-    "option_b": {
-      "en": "Rubber duck",
-      "tr": "Lastik ördek",
-      "de": "Quietscheentchen",
-      "fr": "Canard en caoutchouc",
-      "hu": "Gumikacsa"
-    }
-  },
-  {
-    "series": {
-      "en": "Welcome to the Odd Side",
-      "tr": "Garip Tarafa Hoş Geldin",
-      "de": "Willkommen Auf Der Seltsamen Seite",
-      "fr": "Bienvenue Du Côté Bizarre",
-      "hu": "Üdv A Fura Oldalon"
-    },
-    "question": {
-      "en": "Your throne?",
-      "tr": "Tahtın?",
-      "de": "Dein Thron?",
-      "fr": "Ton trône?",
-      "hu": "A trónod?"
-    },
-    "option_a": {
-      "en": "Bean bag",
-      "tr": "Puf koltuk",
-      "de": "Sitzsack",
-      "fr": "Pouf",
-      "hu": "Babzsákfotel"
-    },
-    "option_b": {
-      "en": "Shopping cart",
-      "tr": "Market arabası",
-      "de": "Einkaufswagen",
-      "fr": "Chariot de courses",
-      "hu": "Bevásárlókocsi"
-    }
-  },
-  {
-    "series": {
-      "en": "Welcome to the Odd Side",
-      "tr": "Garip Tarafa Hoş Geldin",
-      "de": "Willkommen Auf Der Seltsamen Seite",
-      "fr": "Bienvenue Du Côté Bizarre",
-      "hu": "Üdv A Fura Oldalon"
-    },
-    "question": {
       "en": "Your welcome gift?",
       "tr": "Hoş geldin hediyen?",
       "de": "Dein Willkommensgeschenk?",
@@ -687,36 +567,6 @@ export const pollPool = [
       "de": "Disco-Helm",
       "fr": "Casque disco",
       "hu": "Diszkósisak"
-    }
-  },
-  {
-    "series": {
-      "en": "Pick Your Weird",
-      "tr": "Tuhaflığını Seç",
-      "de": "Wähle Deine Macke",
-      "fr": "Choisis Ta Bizarrerie",
-      "hu": "Válaszd A Furcsaságod"
-    },
-    "question": {
-      "en": "Your superpower?",
-      "tr": "Süper gücün?",
-      "de": "Deine Superkraft?",
-      "fr": "Ton super-pouvoir?",
-      "hu": "A szupererőd?"
-    },
-    "option_a": {
-      "en": "Talk birds",
-      "tr": "Kuşlarla konuşmak",
-      "de": "Mit Vögeln reden",
-      "fr": "Parler aux oiseaux",
-      "hu": "Madarakkal beszélsz"
-    },
-    "option_b": {
-      "en": "Freeze time",
-      "tr": "Zamanı durdurmak",
-      "de": "Zeit einfrieren",
-      "fr": "Arrêter le temps",
-      "hu": "Megállítod az időt"
     }
   },
   {
@@ -788,36 +638,6 @@ export const pollPool = [
       "hu": "Válaszd A Furcsaságod"
     },
     "question": {
-      "en": "Pet unicorn?",
-      "tr": "Evcil tekboynuz?",
-      "de": "Haustier-Einhorn?",
-      "fr": "Licorne de compagnie?",
-      "hu": "Házi egyszarvú?"
-    },
-    "option_a": {
-      "en": "Black",
-      "tr": "Siyah",
-      "de": "Schwarz",
-      "fr": "Noire",
-      "hu": "Fekete"
-    },
-    "option_b": {
-      "en": "Rainbow",
-      "tr": "Gökkuşağı",
-      "de": "Regenbogen",
-      "fr": "Arc-en-ciel",
-      "hu": "Szivárvány"
-    }
-  },
-  {
-    "series": {
-      "en": "Pick Your Weird",
-      "tr": "Tuhaflığını Seç",
-      "de": "Wähle Deine Macke",
-      "fr": "Choisis Ta Bizarrerie",
-      "hu": "Válaszd A Furcsaságod"
-    },
-    "question": {
       "en": "Odd hobby?",
       "tr": "Garip hobin?",
       "de": "Seltsames Hobby?",
@@ -878,36 +698,6 @@ export const pollPool = [
       "hu": "Csak Fura Válaszok"
     },
     "question": {
-      "en": "Favorite weather?",
-      "tr": "En sevdiğin hava?",
-      "de": "Lieblingswetter?",
-      "fr": "Météo préférée?",
-      "hu": "Kedvenc időjárás?"
-    },
-    "option_a": {
-      "en": "Purple rain",
-      "tr": "Mor yağmur",
-      "de": "Lila Regen",
-      "fr": "Pluie violette",
-      "hu": "Lila eső"
-    },
-    "option_b": {
-      "en": "Glitter snow",
-      "tr": "Simli kar",
-      "de": "Glitzerschnee",
-      "fr": "Neige pailletée",
-      "hu": "Csillámos hó"
-    }
-  },
-  {
-    "series": {
-      "en": "Only Odd Answers",
-      "tr": "Sadece Garip Cevaplar",
-      "de": "Nur Seltsame Antworten",
-      "fr": "Que Des Réponses Bizarres",
-      "hu": "Csak Fura Válaszok"
-    },
-    "question": {
       "en": "Best snack?",
       "tr": "En iyi atıştırmalık?",
       "de": "Bester Snack?",
@@ -927,36 +717,6 @@ export const pollPool = [
       "de": "Mondkekse",
       "fr": "Cookies lunaires",
       "hu": "Holdkeksz"
-    }
-  },
-  {
-    "series": {
-      "en": "Only Odd Answers",
-      "tr": "Sadece Garip Cevaplar",
-      "de": "Nur Seltsame Antworten",
-      "fr": "Que Des Réponses Bizarres",
-      "hu": "Csak Fura Válaszok"
-    },
-    "question": {
-      "en": "Dream office?",
-      "tr": "Hayalindeki ofis?",
-      "de": "Traumbüro?",
-      "fr": "Bureau de rêve?",
-      "hu": "Álomiroda?"
-    },
-    "option_a": {
-      "en": "Treehouse",
-      "tr": "Ağaç ev",
-      "de": "Baumhaus",
-      "fr": "Cabane dans les arbres",
-      "hu": "Faház"
-    },
-    "option_b": {
-      "en": "Spaceship",
-      "tr": "Uzay gemisi",
-      "de": "Raumschiff",
-      "fr": "Vaisseau spatial",
-      "hu": "Űrhajó"
     }
   },
   {
@@ -2348,36 +2108,6 @@ export const pollPool = [
       "hu": "Hiba A Valóságban"
     },
     "question": {
-      "en": "You sneeze...",
-      "tr": "Hapşırınca...",
-      "de": "Du niest...",
-      "fr": "Tu éternues...",
-      "hu": "Tüsszentéskor..."
-    },
-    "option_a": {
-      "en": "Confetti 🎉",
-      "tr": "Konfeti çıkar 🎉",
-      "de": "Konfetti 🎉",
-      "fr": "Des confettis 🎉",
-      "hu": "Konfetti jön 🎉"
-    },
-    "option_b": {
-      "en": "Glitter ✨",
-      "tr": "Simli toz çıkar ✨",
-      "de": "Glitzer ✨",
-      "fr": "Des paillettes ✨",
-      "hu": "Csillám jön ✨"
-    }
-  },
-  {
-    "series": {
-      "en": "Glitch In Reality",
-      "tr": "Gerçeklikte Hata",
-      "de": "Riss In Der Realität",
-      "fr": "Bug Dans La Réalité",
-      "hu": "Hiba A Valóságban"
-    },
-    "question": {
       "en": "Your echo...",
       "tr": "Yankın...",
       "de": "Dein Echo...",
@@ -2517,36 +2247,6 @@ export const pollPool = [
       "de": "Ziegelsteine 🧱",
       "fr": "Briques 🧱",
       "hu": "Téglákkal 🧱"
-    }
-  },
-  {
-    "series": {
-      "en": "Pack Your Weird",
-      "tr": "Tuhaflığını Paketle",
-      "de": "Pack Deine Macke Ein",
-      "fr": "Emballe Ta Bizarrerie",
-      "hu": "Csomagold Be A Furcsaságod"
-    },
-    "question": {
-      "en": "Pockets full of...",
-      "tr": "Cepler dolu...",
-      "de": "Taschen voller...",
-      "fr": "Poches pleines de...",
-      "hu": "A zsebek tele vannak..."
-    },
-    "option_a": {
-      "en": "Pebbles",
-      "tr": "Çakıl taşıyla",
-      "de": "Kieselsteine",
-      "fr": "Cailloux",
-      "hu": "Kaviccsal"
-    },
-    "option_b": {
-      "en": "Glitter ✨",
-      "tr": "Simli tozla ✨",
-      "de": "Glitzer ✨",
-      "fr": "Paillettes ✨",
-      "hu": "Csillámmal ✨"
     }
   },
   {
@@ -2817,126 +2517,6 @@ export const pollPool = [
       "de": "Bemerkt niemand",
       "fr": "Personne ne le remarque",
       "hu": "Senki nem veszi észre"
-    }
-  },
-  {
-    "series": {
-      "en": "Superpowers & Abilities",
-      "tr": "Süper Güçler",
-      "de": "Superkräfte & Fähigkeiten",
-      "fr": "Super-Pouvoirs",
-      "hu": "Szuperképességek"
-    },
-    "question": {
-      "en": "Pick your power.",
-      "tr": "Gücünü seç.",
-      "de": "Wähl deine Kraft.",
-      "fr": "Choisis ton pouvoir.",
-      "hu": "Válaszd az erőd."
-    },
-    "option_a": {
-      "en": "Read minds 🧠",
-      "tr": "Zihin oku 🧠",
-      "de": "Gedanken lesen 🧠",
-      "fr": "Lire les pensées 🧠",
-      "hu": "Gondolatolvasás 🧠"
-    },
-    "option_b": {
-      "en": "Be invisible 👻",
-      "tr": "Görünmez ol 👻",
-      "de": "Unsichtbar sein 👻",
-      "fr": "Être invisible 👻",
-      "hu": "Láthatatlanná válni 👻"
-    }
-  },
-  {
-    "series": {
-      "en": "Superpowers & Abilities",
-      "tr": "Süper Güçler",
-      "de": "Superkräfte & Fähigkeiten",
-      "fr": "Super-Pouvoirs",
-      "hu": "Szuperképességek"
-    },
-    "question": {
-      "en": "Pick your power.",
-      "tr": "Gücünü seç.",
-      "de": "Wähl deine Kraft.",
-      "fr": "Choisis ton pouvoir.",
-      "hu": "Válaszd az erőd."
-    },
-    "option_a": {
-      "en": "Speak every language 🌍",
-      "tr": "Her dili konuş 🌍",
-      "de": "Jede Sprache sprechen 🌍",
-      "fr": "Parler toutes les langues 🌍",
-      "hu": "Minden nyelvet beszélsz 🌍"
-    },
-    "option_b": {
-      "en": "Talk to animals 🐾",
-      "tr": "Hayvanlarla konuş 🐾",
-      "de": "Mit Tieren reden 🐾",
-      "fr": "Parler aux animaux 🐾",
-      "hu": "Állatokkal beszélsz 🐾"
-    }
-  },
-  {
-    "series": {
-      "en": "Superpowers & Abilities",
-      "tr": "Süper Güçler",
-      "de": "Superkräfte & Fähigkeiten",
-      "fr": "Super-Pouvoirs",
-      "hu": "Szuperképességek"
-    },
-    "question": {
-      "en": "Pick your power.",
-      "tr": "Gücünü seç.",
-      "de": "Wähl deine Kraft.",
-      "fr": "Choisis ton pouvoir.",
-      "hu": "Válaszd az erőd."
-    },
-    "option_a": {
-      "en": "Fly 🦅",
-      "tr": "Uç 🦅",
-      "de": "Fliegen 🦅",
-      "fr": "Voler 🦅",
-      "hu": "Repülsz 🦅"
-    },
-    "option_b": {
-      "en": "Teleport ✨",
-      "tr": "Işınlan ✨",
-      "de": "Teleportieren ✨",
-      "fr": "Se téléporter ✨",
-      "hu": "Teleportálsz ✨"
-    }
-  },
-  {
-    "series": {
-      "en": "Superpowers & Abilities",
-      "tr": "Süper Güçler",
-      "de": "Superkräfte & Fähigkeiten",
-      "fr": "Super-Pouvoirs",
-      "hu": "Szuperképességek"
-    },
-    "question": {
-      "en": "Pick your power.",
-      "tr": "Gücünü seç.",
-      "de": "Wähl deine Kraft.",
-      "fr": "Choisis ton pouvoir.",
-      "hu": "Válaszd az erőd."
-    },
-    "option_a": {
-      "en": "See the future 🔮",
-      "tr": "Geleceği gör 🔮",
-      "de": "Die Zukunft sehen 🔮",
-      "fr": "Voir le futur 🔮",
-      "hu": "Látod a jövőt 🔮"
-    },
-    "option_b": {
-      "en": "Change the past ⏳",
-      "tr": "Geçmişi değiştir ⏳",
-      "de": "Die Vergangenheit ändern ⏳",
-      "fr": "Changer le passé ⏳",
-      "hu": "Megváltoztatod a múltat ⏳"
     }
   },
   {
@@ -3597,36 +3177,6 @@ export const pollPool = [
       "de": "Gestrandet im Dschungel 🌴",
       "fr": "Coincé dans la jungle 🌴",
       "hu": "Elakadsz a dzsungelben 🌴"
-    }
-  },
-  {
-    "series": {
-      "en": "Travel & Time",
-      "tr": "Seyahat Ve Zaman",
-      "de": "Reisen & Zeit",
-      "fr": "Voyage Et Temps",
-      "hu": "Utazás És Idő"
-    },
-    "question": {
-      "en": "Choose your journey.",
-      "tr": "Yolculuğunu seç.",
-      "de": "Wähl deine Reise.",
-      "fr": "Choisis ton voyage.",
-      "hu": "Válaszd az utad."
-    },
-    "option_a": {
-      "en": "Personal spaceship 🛸",
-      "tr": "Kişisel uzay gemisi 🛸",
-      "de": "Eigenes Raumschiff 🛸",
-      "fr": "Vaisseau spatial perso 🛸",
-      "hu": "Saját űrhajó 🛸"
-    },
-    "option_b": {
-      "en": "Personal time machine ⏳",
-      "tr": "Kişisel zaman makinesi ⏳",
-      "de": "Eigene Zeitmaschine ⏳",
-      "fr": "Machine à voyager perso ⏳",
-      "hu": "Saját időgép ⏳"
     }
   },
   {
@@ -4528,8 +4078,7 @@ export const pollPool = [
       "fr": "Payer par carte 💳",
       "hu": "Kártyával fizetsz 💳"
     }
-  }
-,
+  },
   {
     "category": "office",
     "series": {
@@ -5782,6 +5331,1184 @@ export const pollPool = [
       "de": "Am Flughafen gibt es kein Dazwischen — nur Extreme.",
       "fr": "À l'aéroport, il n'y a pas de juste milieu — que des extrêmes.",
       "hu": "A reptéren nincs középút — csak szélsőségek."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "Posting a photo. Delete-and-repost count:",
+      "tr": "Fotoğraf paylaşıyorsun. Sil-yeniden yükle sayısı:",
+      "de": "Foto posten. Löschen-und-neu-posten Anzahl:",
+      "fr": "Publier une photo. Nombre de suppressions-republications :",
+      "hu": "Fotó posztolása. Törlés-újraposztolás száma:"
+    },
+    "option_a": {
+      "en": "Zero, post and move on",
+      "tr": "Sıfır, paylaşır geçerim",
+      "de": "Null, posten und weiter",
+      "fr": "Zéro, je poste et je passe à autre chose",
+      "hu": "Nulla, posztolok és megyek tovább"
+    },
+    "option_b": {
+      "en": "Three times, different captions each time",
+      "tr": "Üç kere, her seferinde farklı açıklama",
+      "de": "Dreimal, jedes Mal andere Bildunterschrift",
+      "fr": "Trois fois, avec une légende différente à chaque fois",
+      "hu": "Háromszor, mindig más felirattal"
+    },
+    "comment": {
+      "en": "The caption takes longer to write than the trip that inspired it.",
+      "tr": "Açıklama, ilham veren geziden daha uzun sürede yazılır.",
+      "de": "Die Bildunterschrift dauert länger als die Reise, die sie inspiriert hat.",
+      "fr": "La légende prend plus de temps à écrire que le voyage qui l'a inspirée.",
+      "hu": "A felirat megírása tovább tart, mint az utazás, ami ihlette."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "Someone likes your 3-year-old photo out of nowhere. You:",
+      "tr": "Biri aniden 3 yıl önceki fotoğrafını beğeniyor. Sen:",
+      "de": "Jemand liked plötzlich dein 3 Jahre altes Foto. Du:",
+      "fr": "Quelqu'un like ta photo d'il y a 3 ans, sans raison. Toi :",
+      "hu": "Valaki hirtelen lájkolja a 3 évvel ezelőtti fotódat. Te:"
+    },
+    "option_a": {
+      "en": "Don't think twice",
+      "tr": "İkinci kez düşünmem",
+      "de": "Denkst nicht zweimal drüber nach",
+      "fr": "Je n'y pense pas à deux fois",
+      "hu": "Nem gondolkozom rajta kétszer"
+    },
+    "option_b": {
+      "en": "Immediately investigate why they went that deep",
+      "tr": "Hemen neden o kadar derine indiğini araştırırım",
+      "de": "Sofort untersuchen, warum sie so tief gegraben haben",
+      "fr": "J'enquête immédiatement sur pourquoi ils ont creusé si loin",
+      "hu": "Azonnal kinyomozom, miért ástak ilyen mélyre"
+    },
+    "comment": {
+      "en": "A deep-scroll like is basically a public confession.",
+      "tr": "Derin kaydırma beğenisi, aslında herkese açık bir itiraftır.",
+      "de": "Ein Deep-Scroll-Like ist im Grunde ein öffentliches Geständnis.",
+      "fr": "Un like au fin fond du scroll, c'est presque une confession publique.",
+      "hu": "A mélyről kapott lájk gyakorlatilag egy nyilvános vallomás."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "Group chat goes quiet for a week. You:",
+      "tr": "Grup sohbeti bir hafta sessiz kalıyor. Sen:",
+      "de": "Gruppenchat schweigt eine Woche. Du:",
+      "fr": "Le groupe est silencieux pendant une semaine. Toi :",
+      "hu": "A csoportos chat egy hétig néma. Te:"
+    },
+    "option_a": {
+      "en": "Don't notice, life goes on",
+      "tr": "Fark etmem, hayat devam eder",
+      "de": "Merkst es nicht, das Leben geht weiter",
+      "fr": "Je ne remarque rien, la vie continue",
+      "hu": "Nem tűnik fel, megy tovább az élet"
+    },
+    "option_b": {
+      "en": "Send a meme just to test if anyone's alive",
+      "tr": "Kimsenin hayatta olup olmadığını test etmek için bir meme atarım",
+      "de": "Schickst ein Meme, nur um zu testen, ob noch jemand lebt",
+      "fr": "Tu envoies un mème juste pour tester si quelqu'un est vivant",
+      "hu": "Küldesz egy mémet, csak hogy teszteld, él-e még valaki"
+    },
+    "comment": {
+      "en": "A test meme in a dead group chat is a small act of hope.",
+      "tr": "Ölü bir grup sohbetine atılan test meme'i, küçük bir umut hareketidir.",
+      "de": "Ein Test-Meme in einem toten Gruppenchat ist ein kleiner Akt der Hoffnung.",
+      "fr": "Un mème test dans un groupe mort, c'est un petit acte d'espoir.",
+      "hu": "Egy tesztmém egy halott csoportos chatben egy apró reménysugár."
+    }
+  },
+  {
+    "category": "phone",
+    "series": {
+      "en": "Phone Truths",
+      "tr": "Telefon Gerçekleri",
+      "de": "Handy-Wahrheiten",
+      "fr": "Vérités Du Téléphone",
+      "hu": "Telefonos Igazságok"
+    },
+    "question": {
+      "en": "Notification badge hits 99+. You:",
+      "tr": "Bildirim sayısı 99+'a ulaştı. Sen:",
+      "de": "Benachrichtigungs-Badge erreicht 99+. Du:",
+      "fr": "Le badge de notifications atteint 99+. Toi :",
+      "hu": "Az értesítési jelvény eléri a 99+-t. Te:"
+    },
+    "option_a": {
+      "en": "Clear it immediately, can't stand it",
+      "tr": "Hemen temizlerim, dayanamam",
+      "de": "Sofort löschen, unerträglich",
+      "fr": "Je l'efface tout de suite, insupportable",
+      "hu": "Azonnal törlöm, elviselhetetlen"
+    },
+    "option_b": {
+      "en": "Let it climb, it's basically wallpaper now",
+      "tr": "Yükselmesine izin veririm, artık duvar kağıdı gibi",
+      "de": "Lass es steigen, ist quasi Hintergrundbild jetzt",
+      "fr": "Je le laisse grimper, c'est presque un fond d'écran maintenant",
+      "hu": "Hagyom emelkedni, már-már háttérkép"
+    },
+    "comment": {
+      "en": "A 99+ badge is a small red monument to things left unread.",
+      "tr": "99+ rozeti, okunmamış şeylerin küçük kırmızı bir anıtıdır.",
+      "de": "Ein 99+-Badge ist ein kleines rotes Denkmal für Ungelesenes.",
+      "fr": "Un badge 99+, c'est un petit monument rouge à tout ce qu'on n'a pas lu.",
+      "hu": "A 99+ jelvény egy kis piros emlékmű az olvasatlan dolgoknak."
+    }
+  },
+  {
+    "category": "fitness",
+    "series": {
+      "en": "Health & Fitness",
+      "tr": "Sağlık & Fitness",
+      "de": "Gesundheit & Fitness",
+      "fr": "Santé Et Forme",
+      "hu": "Egészség És Fitnesz"
+    },
+    "question": {
+      "en": "Gym membership, monthly reality:",
+      "tr": "Spor salonu üyeliği, aylık gerçeklik:",
+      "de": "Fitnessstudio-Mitgliedschaft, monatliche Realität:",
+      "fr": "Abonnement à la salle, réalité mensuelle :",
+      "hu": "Edzőtermi tagság, havi valóság:"
+    },
+    "option_a": {
+      "en": "Go regularly, worth every cent",
+      "tr": "Düzenli giderim, her kuruşuna değer",
+      "de": "Regelmäßig hin, jeden Cent wert",
+      "fr": "J'y vais régulièrement, ça vaut chaque centime",
+      "hu": "Rendszeresen járok, minden fillért megér"
+    },
+    "option_b": {
+      "en": "Went twice in January, paying ever since",
+      "tr": "Ocak'ta iki kere gittim, o zamandan beri ödüyorum",
+      "de": "Zweimal im Januar da, zahle seitdem",
+      "fr": "J'y suis allé deux fois en janvier, je paie depuis",
+      "hu": "Januárban kétszer voltam, azóta fizetek"
+    },
+    "comment": {
+      "en": "A gym membership is sometimes just a monthly donation to good intentions.",
+      "tr": "Spor salonu üyeliği bazen sadece iyi niyete yapılan aylık bağıştır.",
+      "de": "Eine Fitnessstudio-Mitgliedschaft ist manchmal nur eine monatliche Spende an gute Vorsätze.",
+      "fr": "Un abonnement en salle, c'est parfois juste un don mensuel aux bonnes intentions.",
+      "hu": "Az edzőtermi tagság néha csak havi adomány a jó szándéknak."
+    }
+  },
+  {
+    "category": "fitness",
+    "series": {
+      "en": "Health & Fitness",
+      "tr": "Sağlık & Fitness",
+      "de": "Gesundheit & Fitness",
+      "fr": "Santé Et Forme",
+      "hu": "Egészség És Fitnesz"
+    },
+    "question": {
+      "en": "\"I'll start Monday.\" Actual Monday:",
+      "tr": "\"Pazartesi başlarım.\" Gerçek Pazartesi:",
+      "de": "\"Ich fang Montag an.\" Der echte Montag:",
+      "fr": "\"Je commence lundi.\" Le lundi réel :",
+      "hu": "\"Hétfőn kezdem.\" A valódi hétfő:"
+    },
+    "option_a": {
+      "en": "Actually started",
+      "tr": "Gerçekten başladım",
+      "de": "Wirklich angefangen",
+      "fr": "J'ai vraiment commencé",
+      "hu": "Tényleg elkezdtem"
+    },
+    "option_b": {
+      "en": "Moved the start date to next Monday",
+      "tr": "Başlangıç tarihini bir sonraki pazartesiye erteledim",
+      "de": "Startdatum auf nächsten Montag verschoben",
+      "fr": "J'ai reporté la date au lundi suivant",
+      "hu": "Elhalasztottam a kezdést a következő hétfőre"
+    },
+    "comment": {
+      "en": "\"Monday\" is a rolling deadline that never actually arrives.",
+      "tr": "\"Pazartesi\", asla gerçekten gelmeyen kayan bir son tarihtir.",
+      "de": "\"Montag\" ist eine wandernde Deadline, die nie wirklich ankommt.",
+      "fr": "\"Lundi\", c'est une échéance glissante qui n'arrive jamais vraiment.",
+      "hu": "A \"hétfő\" egy csúszó határidő, ami sosem érkezik meg valójában."
+    }
+  },
+  {
+    "category": "fitness",
+    "series": {
+      "en": "Health & Fitness",
+      "tr": "Sağlık & Fitness",
+      "de": "Gesundheit & Fitness",
+      "fr": "Santé Et Forme",
+      "hu": "Egészség És Fitnesz"
+    },
+    "question": {
+      "en": "Step count app says 2,000 steps. You:",
+      "tr": "Adım sayar uygulaması 2.000 adım diyor. Sen:",
+      "de": "Schrittzähler sagt 2.000 Schritte. Du:",
+      "fr": "L'appli dit 2000 pas. Toi :",
+      "hu": "A lépésszámláló 2000 lépést mutat. Te:"
+    },
+    "option_a": {
+      "en": "That's fine, not every day needs to be a marathon",
+      "tr": "Sorun değil, her gün maraton olmak zorunda değil",
+      "de": "Passt schon, nicht jeder Tag muss ein Marathon sein",
+      "fr": "C'est bon, chaque jour n'a pas besoin d'être un marathon",
+      "hu": "Ez rendben van, nem kell minden napnak maratonnak lennie"
+    },
+    "option_b": {
+      "en": "Pace around the living room to hit the round number",
+      "tr": "Yuvarlak sayıya ulaşmak için salonda tur atarım",
+      "de": "Im Wohnzimmer auf und ab, um die runde Zahl zu knacken",
+      "fr": "Je fais les cent pas au salon pour atteindre le chiffre rond",
+      "hu": "Körbejárom a nappalit, hogy meglegyen a kerek szám"
+    },
+    "comment": {
+      "en": "Pacing the living room at 11pm for a round number is a real sport.",
+      "tr": "Gece 11'de salonda tur atmak, yuvarlak sayı için gerçek bir spordur.",
+      "de": "Um 23 Uhr im Wohnzimmer für eine runde Zahl zu laufen, ist echter Sport.",
+      "fr": "Faire les cent pas à 23h pour un chiffre rond, c'est un vrai sport.",
+      "hu": "Éjjel 11-kor körbejárni a nappalit egy kerek számért — az valódi sport."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Roommate leaves dishes in the sink. You:",
+      "tr": "Ev arkadaşı bulaşıkları lavaboda bırakıyor. Sen:",
+      "de": "Mitbewohner lässt Geschirr in der Spüle. Du:",
+      "fr": "Le coloc laisse la vaisselle dans l'évier. Toi :",
+      "hu": "A lakótárs az edényeket a mosogatóban hagyja. Te:"
+    },
+    "option_a": {
+      "en": "Say something directly",
+      "tr": "Direkt söylerim",
+      "de": "Direkt ansprechen",
+      "fr": "J'en parle directement",
+      "hu": "Egyenesen szólok"
+    },
+    "option_b": {
+      "en": "Wash it myself, complain to everyone except them",
+      "tr": "Kendim yıkarım, onun dışında herkese şikayet ederim",
+      "de": "Wasch es selbst, beschwer dich bei jedem außer ihnen",
+      "fr": "Je le lave moi-même, je me plains à tout le monde sauf à eux",
+      "hu": "Magam mosom el, mindenkinek panaszkodom, csak neki nem"
+    },
+    "comment": {
+      "en": "Passive-aggressive dish washing is a full contact sport.",
+      "tr": "Pasif agresif bulaşık yıkama, tam temaslı bir spordur.",
+      "de": "Passiv-aggressives Geschirrspülen ist ein Vollkontaktsport.",
+      "fr": "La vaisselle passive-agressive, c'est un sport de contact.",
+      "hu": "A passzív-agresszív mosogatás egy teljes kontaktsport."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Package arrives. When do you open it?",
+      "tr": "Kargo geldi. Ne zaman açıyorsun?",
+      "de": "Paket kommt an. Wann öffnest du es?",
+      "fr": "Le colis arrive. Quand tu l'ouvres ?",
+      "hu": "Megérkezik a csomag. Mikor nyitod ki?"
+    },
+    "option_a": {
+      "en": "Immediately, at the door",
+      "tr": "Hemen, kapıda",
+      "de": "Sofort, an der Tür",
+      "fr": "Immédiatement, à la porte",
+      "hu": "Azonnal, az ajtóban"
+    },
+    "option_b": {
+      "en": "Let it sit for two days, savoring the anticipation",
+      "tr": "İki gün öylece dursun, heyecanın tadını çıkarırım",
+      "de": "Zwei Tage liegen lassen, die Vorfreude genießen",
+      "fr": "Je le laisse deux jours, je savoure l'attente",
+      "hu": "Két napig hagyom állni, élvezem a várakozást"
+    },
+    "comment": {
+      "en": "Some people ordered the item just to enjoy owning an unopened box.",
+      "tr": "Bazı insanlar sadece açılmamış bir kutuya sahip olmanın keyfini yaşamak için sipariş verir.",
+      "de": "Manche haben nur bestellt, um die Freude an einer ungeöffneten Box zu genießen.",
+      "fr": "Certains ont commandé juste pour le plaisir de posséder une boîte non ouverte.",
+      "hu": "Néhányan csak azért rendeltek, hogy élvezzék egy kibontatlan doboz birtoklását."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Doctor's appointment you've been putting off:",
+      "tr": "Ertelediğin doktor randevusu:",
+      "de": "Arzttermin, den du aufschiebst:",
+      "fr": "Le rendez-vous médical que tu remets à plus tard :",
+      "hu": "Az orvosi időpont, amit halogatsz:"
+    },
+    "option_a": {
+      "en": "Booked it, going this week",
+      "tr": "Ayarladım, bu hafta gidiyorum",
+      "de": "Gebucht, gehe diese Woche",
+      "fr": "Réservé, j'y vais cette semaine",
+      "hu": "Lefoglaltam, ezen a héten megyek"
+    },
+    "option_b": {
+      "en": "Still \"meaning to call\" since March",
+      "tr": "Mart'tan beri hâlâ \"arayacağım\" diyorum",
+      "de": "Seit März immer noch \"will anrufen\"",
+      "fr": "Toujours en train de \"vouloir appeler\" depuis mars",
+      "hu": "Márc óta még mindig csak \"hívni akarom\""
+    },
+    "comment": {
+      "en": "\"I'll call them\" has been true and false at the same time since spring.",
+      "tr": "\"Arayacağım\" cümlesi ilkbahardan beri hem doğru hem yalan.",
+      "de": "\"Ich ruf an\" ist seit dem Frühling gleichzeitig wahr und falsch.",
+      "fr": "\"Je vais appeler\" est vrai et faux en même temps depuis le printemps.",
+      "hu": "A \"felhívom\" tavasz óta egyszerre igaz és hamis."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Parent calls out of nowhere. First thought:",
+      "tr": "Ailenden aniden telefon geliyor. İlk düşüncen:",
+      "de": "Elternteil ruft aus dem Nichts an. Erster Gedanke:",
+      "fr": "Un parent appelle sans prévenir. Première pensée :",
+      "hu": "A szülő váratlanul felhív. Első gondolatod:"
+    },
+    "option_a": {
+      "en": "Just saying hi, answer normally",
+      "tr": "Sadece hal hatır soruyordur, normal cevap veririm",
+      "de": "Sagt nur Hallo, antworte normal",
+      "fr": "Juste pour dire bonjour, je réponds normalement",
+      "hu": "Csak köszönni akar, normálisan válaszolok"
+    },
+    "option_b": {
+      "en": "Something's wrong, immediate low-grade panic",
+      "tr": "Bir şey oldu, anında hafif panik",
+      "de": "Etwas stimmt nicht, sofortige leichte Panik",
+      "fr": "Quelque chose ne va pas, léger début de panique",
+      "hu": "Valami baj van, azonnali enyhe pánik"
+    },
+    "comment": {
+      "en": "An unscheduled parent call activates a very specific ancient alarm.",
+      "tr": "Plansız gelen aile telefonu, çok özel ve eski bir alarmı devreye sokar.",
+      "de": "Ein ungeplanter Elternanruf aktiviert einen ganz bestimmten uralten Alarm.",
+      "fr": "Un appel parental non prévu déclenche une alarme ancestrale bien précise.",
+      "hu": "Egy nem várt szülői hívás egy nagyon speciális, ősi vészjelzést indít el."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Family group chat forwards you a questionable article. You:",
+      "tr": "Aile grubu şüpheli bir haber gönderiyor. Sen:",
+      "de": "Familien-Gruppenchat schickt fragwürdigen Artikel. Du:",
+      "fr": "Le groupe familial t'envoie un article douteux. Toi :",
+      "hu": "A családi csoport küld egy kétes cikket. Te:"
+    },
+    "option_a": {
+      "en": "Fact-check it kindly",
+      "tr": "Kibarca doğruluğunu kontrol ederim",
+      "de": "Sanft faktenchecken",
+      "fr": "Je vérifie gentiment les faits",
+      "hu": "Kedvesen tényellenőrzöm"
+    },
+    "option_b": {
+      "en": "Send a thumbs up, move on with life",
+      "tr": "Beğeni atarım, hayatıma devam ederim",
+      "de": "Daumen hoch schicken, weiterleben",
+      "fr": "J'envoie un pouce levé, je passe à autre chose",
+      "hu": "Küldök egy pacsit, élem tovább az életem"
+    },
+    "comment": {
+      "en": "A silent thumbs-up is the diplomatic passport of every family chat.",
+      "tr": "Sessiz bir beğeni, her aile grubunun diplomatik pasaportudur.",
+      "de": "Ein stiller Daumen hoch ist der diplomatische Pass jedes Familienchats.",
+      "fr": "Un pouce levé silencieux, c'est le passeport diplomatique de tout groupe familial.",
+      "hu": "A csendes pacsi minden családi csoport diplomáciai útlevele."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Screen Time",
+      "tr": "Ekran Süresi",
+      "de": "Bildschirmzeit",
+      "fr": "Temps D'Écran",
+      "hu": "Képernyőidő"
+    },
+    "question": {
+      "en": "New show, episode 1 was mediocre. You:",
+      "tr": "Yeni dizi, 1. bölüm vasattı. Sen:",
+      "de": "Neue Serie, Folge 1 war mittelmäßig. Du:",
+      "fr": "Nouvelle série, l'épisode 1 était moyen. Toi :",
+      "hu": "Új sorozat, az 1. rész gyenge volt. Te:"
+    },
+    "option_a": {
+      "en": "Drop it, life's too short",
+      "tr": "Bırakırım, hayat kısa",
+      "de": "Abbrechen, das Leben ist zu kurz",
+      "fr": "J'arrête, la vie est trop courte",
+      "hu": "Abbahagyom, túl rövid az élet"
+    },
+    "option_b": {
+      "en": "Give it 6 more episodes \"just to be sure\"",
+      "tr": "\"Emin olmak için\" 6 bölüm daha veririm",
+      "de": "Gib ihr 6 weitere Folgen, \"um sicherzugehen\"",
+      "fr": "Je lui donne 6 épisodes de plus \"pour être sûr\"",
+      "hu": "Adok neki még 6 részt, \"csak hogy biztos legyek\""
+    },
+    "comment": {
+      "en": "Episode 7 is where most patience quietly goes to die.",
+      "tr": "7. bölüm, çoğu sabrın sessizce öldüğü yerdir.",
+      "de": "Folge 7 ist da, wo die meiste Geduld still stirbt.",
+      "fr": "L'épisode 7, c'est là que la patience meurt en silence.",
+      "hu": "A 7. rész az, ahol a legtöbb türelem csendben elhal."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Screen Time",
+      "tr": "Ekran Süresi",
+      "de": "Bildschirmzeit",
+      "fr": "Temps D'Écran",
+      "hu": "Képernyőidő"
+    },
+    "question": {
+      "en": "\"Are you still watching?\" pops up. You:",
+      "tr": "\"Hâlâ izliyor musunuz?\" mesajı çıkıyor. Sen:",
+      "de": "\"Schaust du noch?\" poppt auf. Du:",
+      "fr": "\"Vous regardez toujours ?\" apparaît. Toi :",
+      "hu": "Felugrik: \"Még nézed?\". Te:"
+    },
+    "option_a": {
+      "en": "Take it as a sign to sleep",
+      "tr": "Uyuma sinyali olarak alırım",
+      "de": "Als Zeichen zum Schlafen nehmen",
+      "fr": "Je le prends comme un signe pour dormir",
+      "hu": "Alvásra való jelnek veszem"
+    },
+    "option_b": {
+      "en": "Take it personally, click yes out of spite",
+      "tr": "Kişisel algılarım, inatla evet'e basarım",
+      "de": "Nimm's persönlich, klick trotzdem auf ja",
+      "fr": "Je le prends personnellement, je clique oui par pur esprit de contradiction",
+      "hu": "Személyeskedésnek veszem, dacból igent nyomok"
+    },
+    "comment": {
+      "en": "That question was never really about the show — it was about your life choices.",
+      "tr": "O soru hiçbir zaman dizi hakkında değildi, hayat tercihlerin hakkındaydı.",
+      "de": "Diese Frage ging nie wirklich um die Serie — sie ging um deine Lebensentscheidungen.",
+      "fr": "Cette question n'a jamais vraiment porté sur la série — mais sur tes choix de vie.",
+      "hu": "Az a kérdés sosem a sorozatról szólt igazán — az életed választásairól szólt."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Getting Ready",
+      "tr": "Hazırlanma",
+      "de": "Sich Fertigmachen",
+      "fr": "Se Préparer",
+      "hu": "Készülődés"
+    },
+    "question": {
+      "en": "Outfit picked the night before, or morning of?",
+      "tr": "Kıyafet bir gece önceden mi, sabah mı seçiliyor?",
+      "de": "Outfit am Abend vorher oder morgens?",
+      "fr": "Tenue choisie la veille ou le matin ?",
+      "hu": "A ruha előző este vagy reggel van kiválasztva?"
+    },
+    "option_a": {
+      "en": "Night before, no stress",
+      "tr": "Bir gece önceden, stressiz",
+      "de": "Abend vorher, keine Panik",
+      "fr": "La veille, sans stress",
+      "hu": "Előző este, stresszmentesen"
+    },
+    "option_b": {
+      "en": "Morning of, whole closet on the bed",
+      "tr": "Sabahtan, tüm dolap yatağın üstünde",
+      "de": "Morgens, ganzer Schrank auf dem Bett",
+      "fr": "Le matin, toute la penderie sur le lit",
+      "hu": "Reggel, az egész szekrény az ágyon"
+    },
+    "comment": {
+      "en": "A bed covered in clothes is just a very honest mood board.",
+      "tr": "Kıyafetlerle kaplı bir yatak, çok dürüst bir ilham panosudur.",
+      "de": "Ein Bett voller Kleidung ist einfach ein sehr ehrliches Moodboard.",
+      "fr": "Un lit couvert de vêtements, c'est juste un moodboard très honnête.",
+      "hu": "A ruhákkal borított ágy csak egy nagyon őszinte hangulattábla."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Getting Ready",
+      "tr": "Hazırlanma",
+      "de": "Sich Fertigmachen",
+      "fr": "Se Préparer",
+      "hu": "Készülődés"
+    },
+    "question": {
+      "en": "Someone compliments your outfit. You:",
+      "tr": "Biri kıyafetini övüyor. Sen:",
+      "de": "Jemand lobt dein Outfit. Du:",
+      "fr": "Quelqu'un complimente ta tenue. Toi :",
+      "hu": "Valaki megdicséri a ruhádat. Te:"
+    },
+    "option_a": {
+      "en": "Say thank you, take the compliment",
+      "tr": "Teşekkür ederim, iltifatı kabul ederim",
+      "de": "Danke sagen, Kompliment annehmen",
+      "fr": "Je dis merci, j'accepte le compliment",
+      "hu": "Megköszönöm, elfogadom a bókot"
+    },
+    "option_b": {
+      "en": "Immediately explain it cost $9 and is three years old",
+      "tr": "Hemen 3 yıllık ve 300 lira olduğunu açıklarım",
+      "de": "Sofort erklären, dass es 9€ kostet und drei Jahre alt ist",
+      "fr": "J'explique aussitôt que ça a coûté 9€ et que c'est vieux de trois ans",
+      "hu": "Rögtön elmagyarázom, hogy 3000 forintba került és három éves"
+    },
+    "comment": {
+      "en": "Deflecting a compliment with a price tag is a national sport.",
+      "tr": "İltifatı fiyat etiketiyle savuşturmak, milli bir spordur.",
+      "de": "Ein Kompliment mit einem Preisschild abzuwehren ist Nationalsport.",
+      "fr": "Détourner un compliment avec une étiquette de prix, c'est un sport national.",
+      "hu": "A bók elhárítása az árcédulával nemzeti sport."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Weekend Mode",
+      "tr": "Hafta Sonu Modu",
+      "de": "Wochenendmodus",
+      "fr": "Mode Week-End",
+      "hu": "Hétvégi Mód"
+    },
+    "question": {
+      "en": "Saturday morning, no plans. You wake up and:",
+      "tr": "Cumartesi sabahı, plan yok. Uyanıyorsun ve:",
+      "de": "Samstagmorgen, keine Pläne. Du wachst auf und:",
+      "fr": "Samedi matin, aucun plan. Tu te réveilles et :",
+      "hu": "Szombat reggel, nincs terv. Felébredsz és:"
+    },
+    "option_a": {
+      "en": "Get up early anyway, use the day",
+      "tr": "Yine de erken kalkarım, günü değerlendiririm",
+      "de": "Trotzdem früh raus, den Tag nutzen",
+      "fr": "Je me lève quand même tôt, j'en profite",
+      "hu": "Mindenképp korán kelek, kihasználom a napot"
+    },
+    "option_b": {
+      "en": "Stay in bed on principle until noon",
+      "tr": "İlke gereği öğlene kadar yatakta kalırım",
+      "de": "Aus Prinzip bis Mittag im Bett bleiben",
+      "fr": "Je reste au lit par principe jusqu'à midi",
+      "hu": "Elvből ágyban maradok délig"
+    },
+    "comment": {
+      "en": "Staying in bed \"on principle\" is the most sacred kind of laziness.",
+      "tr": "\"İlke gereği\" yatakta kalmak, en kutsal tembellik türüdür.",
+      "de": "Aus Prinzip im Bett zu bleiben ist die heiligste Form der Faulheit.",
+      "fr": "Rester au lit \"par principe\", c'est la forme de paresse la plus sacrée.",
+      "hu": "\"Elvből\" ágyban maradni a lustaság legszentebb formája."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Weekend Mode",
+      "tr": "Hafta Sonu Modu",
+      "de": "Wochenendmodus",
+      "fr": "Mode Week-End",
+      "hu": "Hétvégi Mód"
+    },
+    "question": {
+      "en": "Sunday evening, thinking about Monday. You feel:",
+      "tr": "Pazar akşamı, pazartesiyi düşünüyorsun. Hissin:",
+      "de": "Sonntagabend, denkst an Montag. Du fühlst:",
+      "fr": "Dimanche soir, tu penses au lundi. Tu ressens :",
+      "hu": "Vasárnap este, a hétfőre gondolsz. Az érzésed:"
+    },
+    "option_a": {
+      "en": "Fine, ready for the week",
+      "tr": "İyiyim, haftaya hazırım",
+      "de": "Alles gut, bereit für die Woche",
+      "fr": "Ça va, prêt pour la semaine",
+      "hu": "Jól vagyok, kész a hétre"
+    },
+    "option_b": {
+      "en": "A specific dread that has its own name by now",
+      "tr": "Artık kendi adı olan özel bir kaygı",
+      "de": "Eine spezielle Angst, die mittlerweile einen eigenen Namen hat",
+      "fr": "Une angoisse bien précise qui a désormais son propre nom",
+      "hu": "Egy speciális szorongás, aminek már saját neve van"
+    },
+    "comment": {
+      "en": "The Sunday Scaries are the only ghost story that repeats every single week.",
+      "tr": "Pazar korkusu, her hafta tekrarlanan tek hayalet hikayesidir.",
+      "de": "Die Sonntagsangst ist die einzige Gruselgeschichte, die sich jede Woche wiederholt.",
+      "fr": "L'angoisse du dimanche soir, c'est la seule histoire de fantômes qui se répète chaque semaine.",
+      "hu": "A vasárnapi rettegés az egyetlen kísértettörténet, ami minden héten megismétlődik."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Weekend Mode",
+      "tr": "Hafta Sonu Modu",
+      "de": "Wochenendmodus",
+      "fr": "Mode Week-End",
+      "hu": "Hétvégi Mód"
+    },
+    "question": {
+      "en": "Friend cancels plans last minute. You feel:",
+      "tr": "Arkadaşın son anda planı iptal ediyor. Hissin:",
+      "de": "Freund sagt Pläne im letzten Moment ab. Du fühlst:",
+      "fr": "Un ami annule au dernier moment. Tu ressens :",
+      "hu": "A barátod az utolsó pillanatban lemondja a programot. Érzésed:"
+    },
+    "option_a": {
+      "en": "Genuinely disappointed",
+      "tr": "Gerçekten hayal kırıklığına uğrarım",
+      "de": "Wirklich enttäuscht",
+      "fr": "Vraiment déçu",
+      "hu": "Igazán csalódott vagyok"
+    },
+    "option_b": {
+      "en": "Secretly relieved, pajamas were calling",
+      "tr": "Gizlice rahatlarım, pijamalar çağırıyordu",
+      "de": "Heimlich erleichtert, das Sofa hat gerufen",
+      "fr": "Secrètement soulagé, le pyjama m'appelait",
+      "hu": "Titkon megkönnyebbülök, hívott a pizsama"
+    },
+    "comment": {
+      "en": "A canceled plan is sometimes the best plan that was never made.",
+      "tr": "İptal olan bir plan, bazen hiç yapılmamış en iyi plandır.",
+      "de": "Ein abgesagter Plan ist manchmal der beste Plan, der nie gemacht wurde.",
+      "fr": "Un plan annulé, c'est parfois le meilleur plan qui n'ait jamais existé.",
+      "hu": "A lemondott terv néha a legjobb terv, ami sosem valósult meg."
+    }
+  },
+  {
+    "category": "office",
+    "series": {
+      "en": "Office Life",
+      "tr": "Ofis Hayatı",
+      "de": "Bürowahnsinn",
+      "fr": "Vie De Bureau",
+      "hu": "Irodai Élet"
+    },
+    "question": {
+      "en": "Coworker replies-all to a company-wide email. You:",
+      "tr": "Bir çalışan şirket geneline hepsine yanıtla basıyor. Sen:",
+      "de": "Kollege antwortet allen bei einer Firmenmail. Du:",
+      "fr": "Un collègue répond à tous sur un mail groupé. Toi :",
+      "hu": "A kolléga mindenkinek válaszol egy céges körlevélre. Te:"
+    },
+    "option_a": {
+      "en": "Don't care, delete and move on",
+      "tr": "Umursamam, silip geçerim",
+      "de": "Egal, löschen und weiter",
+      "fr": "Je m'en fiche, je supprime et je continue",
+      "hu": "Nem érdekel, törlöm és megyek tovább"
+    },
+    "option_b": {
+      "en": "Watch the reply-all chaos unfold with popcorn energy",
+      "tr": "Hepsine yanıtla kaosunu patlamış mısır keyfiyle izlerim",
+      "de": "Beobachte das Reply-All-Chaos mit Popcorn-Energie",
+      "fr": "Je regarde le chaos du répondre-à-tous avec de l'énergie pop-corn",
+      "hu": "Popcorn-hangulatban nézem a mindenkinek-válasz-káoszt kibontakozni"
+    },
+    "comment": {
+      "en": "A reply-all disaster is the last shared entertainment left at work.",
+      "tr": "Hepsine yanıtla felaketi, iş yerinde kalan son ortak eğlencedir.",
+      "de": "Eine Reply-All-Katastrophe ist die letzte gemeinsame Unterhaltung im Büro.",
+      "fr": "Un fiasco de répondre-à-tous, c'est le dernier divertissement collectif au bureau.",
+      "hu": "A mindenkinek-válasz katasztrófa az utolsó közös szórakozás a munkahelyen."
+    }
+  },
+  {
+    "category": "office",
+    "series": {
+      "en": "Office Life",
+      "tr": "Ofis Hayatı",
+      "de": "Bürowahnsinn",
+      "fr": "Vie De Bureau",
+      "hu": "Irodai Élet"
+    },
+    "question": {
+      "en": "Boss schedules a meeting titled just \"Quick chat.\" You:",
+      "tr": "Patron sadece \"Kısa sohbet\" başlıklı bir toplantı kuruyor. Sen:",
+      "de": "Chef plant Meeting namens nur \"Kurzes Gespräch\". Du:",
+      "fr": "Le patron programme une réunion nommée juste \"Petite discussion\". Toi :",
+      "hu": "A főnök egy \"Gyors beszélgetés\" nevű megbeszélést szervez. Te:"
+    },
+    "option_a": {
+      "en": "Not worried at all",
+      "tr": "Hiç endişelenmem",
+      "de": "Überhaupt nicht besorgt",
+      "fr": "Pas inquiet du tout",
+      "hu": "Egyáltalán nem aggódom"
+    },
+    "option_b": {
+      "en": "Mentally rehearse three different defenses",
+      "tr": "Zihnimde üç farklı savunma hazırlarım",
+      "de": "Übe im Kopf drei verschiedene Verteidigungen",
+      "fr": "Je répète mentalement trois défenses différentes",
+      "hu": "Fejben begyakorlok három különböző védekezést"
+    },
+    "comment": {
+      "en": "\"Quick chat\" has never once, in the history of work, been quick.",
+      "tr": "\"Kısa sohbet\", iş hayatının tarihinde bir kere bile kısa sürmemiştir.",
+      "de": "\"Kurzes Gespräch\" war in der Geschichte der Arbeit noch nie kurz.",
+      "fr": "\"Petite discussion\", ça n'a jamais été petit dans toute l'histoire du travail.",
+      "hu": "A \"gyors beszélgetés\" a munka történetében még sosem volt gyors."
+    }
+  },
+  {
+    "category": "money",
+    "series": {
+      "en": "Money Habits",
+      "tr": "Para Alışkanlıkları",
+      "de": "Geldgewohnheiten",
+      "fr": "Habitudes D'Argent",
+      "hu": "Pénzügyi Szokások"
+    },
+    "question": {
+      "en": "Checking your bank balance. You:",
+      "tr": "Banka bakiyene bakıyorsun. Sen:",
+      "de": "Kontostand checken. Du:",
+      "fr": "Tu vérifies ton solde bancaire. Toi :",
+      "hu": "Ellenőrzöd a bankegyenlegedet. Te:"
+    },
+    "option_a": {
+      "en": "Check it often, stay on top of it",
+      "tr": "Sık bakarım, takipte kalırım",
+      "de": "Oft checken, im Griff behalten",
+      "fr": "Je vérifie souvent, je garde le contrôle",
+      "hu": "Gyakran nézem, kontroll alatt tartom"
+    },
+    "option_b": {
+      "en": "Avoid it for weeks, then open the app with real dread",
+      "tr": "Haftalarca kaçınırım, sonra gerçek bir kaygıyla uygulamayı açarım",
+      "de": "Wochenlang meiden, dann mit echter Angst die App öffnen",
+      "fr": "Je l'évite pendant des semaines, puis j'ouvre l'appli avec une vraie appréhension",
+      "hu": "Hetekig kerülöm, aztán valódi félelemmel nyitom meg az appot"
+    },
+    "comment": {
+      "en": "Not looking at the balance doesn't change the balance. It just delays the flinch.",
+      "tr": "Bakiyeye bakmamak bakiyeyi değiştirmez. Sadece irkilmeyi erteler.",
+      "de": "Den Kontostand nicht anzuschauen ändert ihn nicht. Es verschiebt nur das Zusammenzucken.",
+      "fr": "Ne pas regarder le solde ne le change pas. Ça retarde juste le sursaut.",
+      "hu": "Az egyenleg megnézésének elkerülése nem változtatja meg azt. Csak halasztja az összerezzenést."
+    }
+  },
+  {
+    "category": "money",
+    "series": {
+      "en": "Money Habits",
+      "tr": "Para Alışkanlıkları",
+      "de": "Geldgewohnheiten",
+      "fr": "Habitudes D'Argent",
+      "hu": "Pénzügyi Szokások"
+    },
+    "question": {
+      "en": "Free shipping needs $10 more in the cart. You:",
+      "tr": "Ücretsiz kargo için sepete 100 lira daha lazım. Sen:",
+      "de": "Kostenloser Versand braucht noch 10€ im Warenkorb. Du:",
+      "fr": "La livraison gratuite nécessite 10€ de plus. Toi :",
+      "hu": "Az ingyenes szállításhoz még 3000 forint kell a kosárba. Te:"
+    },
+    "option_a": {
+      "en": "Just pay the shipping fee",
+      "tr": "Kargo ücretini öderim",
+      "de": "Zahl einfach die Versandkosten",
+      "fr": "Je paie juste les frais de port",
+      "hu": "Egyszerűen kifizetem a szállítási díjat"
+    },
+    "option_b": {
+      "en": "Add $15 of random stuff to \"save\" on $5 shipping",
+      "tr": "200 liralık kargo indiriminden \"kazanmak\" için 300 lira gereksiz şey eklerim",
+      "de": "15€ Zufallskram hinzufügen, um bei 5€ Versand zu \"sparen\"",
+      "fr": "J'ajoute 15€ de trucs random pour \"économiser\" 5€ de livraison",
+      "hu": "5000 forintnyi random cuccot adok hozzá, hogy \"spóroljak\" a szállításon"
+    },
+    "comment": {
+      "en": "Free shipping math has never once actually saved anyone money.",
+      "tr": "Ücretsiz kargo matematiği, gerçekte kimseye para kazandırmamıştır.",
+      "de": "Kostenloser-Versand-Mathe hat noch nie wirklich jemandem Geld gespart.",
+      "fr": "Le calcul de la livraison gratuite n'a jamais fait économiser d'argent à personne.",
+      "hu": "Az ingyenes szállítás matekja valójában sosem spórolt meg senkinek pénzt."
+    }
+  },
+  {
+    "category": "red-flag",
+    "series": {
+      "en": "Red Flags",
+      "tr": "Kırmızı Bayrak",
+      "de": "Rote Flaggen",
+      "fr": "Signaux D'Alarme",
+      "hu": "Vörös Zászlók"
+    },
+    "question": {
+      "en": "\"I'm not mad, I'm just disappointed.\" You:",
+      "tr": "\"Kızgın değilim, sadece hayal kırıklığına uğradım.\" Sen:",
+      "de": "\"Ich bin nicht sauer, nur enttäuscht.\" Du:",
+      "fr": "\"Je ne suis pas fâché, juste déçu.\" Toi :",
+      "hu": "\"Nem vagyok mérges, csak csalódott.\" Te:"
+    },
+    "option_a": {
+      "en": "Take it at face value",
+      "tr": "Olduğu gibi kabul ederim",
+      "de": "Nimm es wörtlich",
+      "fr": "Je le prends au pied de la lettre",
+      "hu": "Szó szerint veszem"
+    },
+    "option_b": {
+      "en": "This is somehow worse than actual anger",
+      "tr": "Bu, gerçek öfkeden daha kötü bir şekilde",
+      "de": "Das ist irgendwie schlimmer als echte Wut",
+      "fr": "C'est pire que la vraie colère",
+      "hu": "Ez valahogy rosszabb, mint a tényleges düh"
+    },
+    "comment": {
+      "en": "\"Disappointed\" hits different — it doesn't yell, it just sits there.",
+      "tr": "\"Hayal kırıklığı\" farklı vurur, bağırmaz, sadece orada oturur.",
+      "de": "\"Enttäuscht\" trifft anders — es schreit nicht, es sitzt einfach da.",
+      "fr": "\"Déçu\", ça frappe différemment — ça ne crie pas, ça reste juste là.",
+      "hu": "A \"csalódott\" máshogy talál el — nem kiabál, csak ott ül."
+    }
+  },
+  {
+    "category": "red-flag",
+    "series": {
+      "en": "Red Flags",
+      "tr": "Kırmızı Bayrak",
+      "de": "Rote Flaggen",
+      "fr": "Signaux D'Alarme",
+      "hu": "Vörös Zászlók"
+    },
+    "question": {
+      "en": "They say \"we should hang out sometime\" with no follow-up. You:",
+      "tr": "\"Bir ara buluşalım\" diyor ama takip yok. Sen:",
+      "de": "Sie sagen \"lass uns mal treffen\" ohne Follow-up. Du:",
+      "fr": "Ils disent \"on devrait se voir un jour\" sans suite. Toi :",
+      "hu": "Azt mondják: \"kéne találkozni valamikor\", de nincs folytatás. Te:"
+    },
+    "option_a": {
+      "en": "Take the initiative, suggest a real date",
+      "tr": "İnisiyatifi alırım, gerçek bir tarih öneririm",
+      "de": "Ergreif die Initiative, schlag echtes Datum vor",
+      "fr": "Je prends l'initiative, je propose une vraie date",
+      "hu": "Kezdeményezek, javaslok egy konkrét dátumot"
+    },
+    "option_b": {
+      "en": "File it under things that will never happen",
+      "tr": "Hiç gerçekleşmeyecek şeyler kategorisine koyarım",
+      "de": "Ablegen unter Dinge, die nie passieren werden",
+      "fr": "Je classe ça dans les choses qui n'arriveront jamais",
+      "hu": "A sosem megvalósuló dolgok közé sorolom"
+    },
+    "comment": {
+      "en": "\"Sometime\" is the softest way anyone has ever said \"probably never.\"",
+      "tr": "\"Bir ara\", birinin \"muhtemelen asla\" demesinin en yumuşak yoludur.",
+      "de": "\"Irgendwann mal\" ist die sanfteste Art, \"wahrscheinlich nie\" zu sagen.",
+      "fr": "\"Un jour\", c'est la façon la plus douce de dire \"probablement jamais\".",
+      "hu": "A \"valamikor\" a legfinomabb módja annak, hogy valaki azt mondja: \"valószínűleg soha\"."
+    }
+  },
+  {
+    "category": "self",
+    "series": {
+      "en": "Know Yourself",
+      "tr": "Kendini Tanı",
+      "de": "Kenn Dich Selbst",
+      "fr": "Connais-Toi",
+      "hu": "Ismerd Meg Magad"
+    },
+    "question": {
+      "en": "Someone asks \"how are you?\" in passing. Your answer:",
+      "tr": "Biri geçerken \"nasılsın?\" diye soruyor. Cevabın:",
+      "de": "Jemand fragt beiläufig \"wie geht's?\" Deine Antwort:",
+      "fr": "Quelqu'un demande \"ça va ?\" en passant. Ta réponse :",
+      "hu": "Valaki menet közben megkérdezi: \"hogy vagy?\". A válaszod:"
+    },
+    "option_a": {
+      "en": "Honest, brief answer",
+      "tr": "Dürüst, kısa bir cevap",
+      "de": "Ehrliche, kurze Antwort",
+      "fr": "Une réponse honnête et brève",
+      "hu": "Őszinte, rövid válasz"
+    },
+    "option_b": {
+      "en": "\"Good, you?\" regardless of how the week actually went",
+      "tr": "Hafta gerçekte nasıl geçmiş olursa olsun \"iyiyim, sen?\"",
+      "de": "\"Gut, und du?\" egal wie die Woche wirklich war",
+      "fr": "\"Ça va, et toi ?\" peu importe comment la semaine s'est vraiment passée",
+      "hu": "\"Jól, és te?\" — függetlenül attól, milyen volt tényleg a hét"
+    },
+    "comment": {
+      "en": "\"Good, you?\" is society's most efficient piece of software.",
+      "tr": "\"İyiyim, sen?\" toplumun en verimli yazılım parçasıdır.",
+      "de": "\"Gut, und du?\" ist die effizienteste Software der Gesellschaft.",
+      "fr": "\"Ça va, et toi ?\", c'est le logiciel le plus efficace de la société.",
+      "hu": "A \"jól, és te?\" a társadalom leghatékonyabb szoftvere."
+    }
+  },
+  {
+    "category": "self",
+    "series": {
+      "en": "Know Yourself",
+      "tr": "Kendini Tanı",
+      "de": "Kenn Dich Selbst",
+      "fr": "Connais-Toi",
+      "hu": "Ismerd Meg Magad"
+    },
+    "question": {
+      "en": "You set a goal for the year. By March:",
+      "tr": "Yıl için bir hedef koydun. Mart itibariyle:",
+      "de": "Du setzt ein Jahresziel. Bis März:",
+      "fr": "Tu fixes un objectif pour l'année. En mars :",
+      "hu": "Kitűzöl egy éves célt. Márciusra:"
+    },
+    "option_a": {
+      "en": "Still going strong",
+      "tr": "Hâlâ güçlü şekilde devam ediyorum",
+      "de": "Immer noch voll dabei",
+      "fr": "Toujours à fond dedans",
+      "hu": "Még mindig lendületben vagyok"
+    },
+    "option_b": {
+      "en": "Renamed it a \"long-term aspiration\"",
+      "tr": "Adını \"uzun vadeli bir hayal\" olarak değiştirdim",
+      "de": "In \"langfristige Ambition\" umbenannt",
+      "fr": "Rebaptisé \"aspiration à long terme\"",
+      "hu": "Átneveztem \"hosszú távú törekvésnek\""
+    },
+    "comment": {
+      "en": "By March, most resolutions have quietly become someday-plans.",
+      "tr": "Mart itibariyle çoğu hedef sessizce \"bir gün\" planına dönüşür.",
+      "de": "Bis März sind die meisten Vorsätze still zu Irgendwann-Plänen geworden.",
+      "fr": "En mars, la plupart des résolutions sont devenues des projets \"un jour\".",
+      "hu": "Márciusra a legtöbb fogadalom csendben \"egyszer majd\" tervvé válik."
+    }
+  },
+  {
+    "category": "self",
+    "series": {
+      "en": "Know Yourself",
+      "tr": "Kendini Tanı",
+      "de": "Kenn Dich Selbst",
+      "fr": "Connais-Toi",
+      "hu": "Ismerd Meg Magad"
+    },
+    "question": {
+      "en": "Waiting room, no phone signal. You:",
+      "tr": "Bekleme odası, telefonda çekim yok. Sen:",
+      "de": "Wartezimmer, kein Handysignal. Du:",
+      "fr": "Salle d'attente, pas de réseau. Toi :",
+      "hu": "Váróterem, nincs térerő. Te:"
+    },
+    "option_a": {
+      "en": "People-watch, it's fine",
+      "tr": "İnsanları izlerim, sorun değil",
+      "de": "Leute beobachten, alles gut",
+      "fr": "J'observe les gens, ça va",
+      "hu": "Embereket nézek, teljesen jó"
+    },
+    "option_b": {
+      "en": "Mild low-grade panic, phone becomes a paperweight",
+      "tr": "Hafif bir panik, telefon bir kağıt ağırlığına dönüşür",
+      "de": "Leichte Panik, Handy wird zum Briefbeschwerer",
+      "fr": "Léger début de panique, le téléphone devient un presse-papier",
+      "hu": "Enyhe pánik, a telefon levélnehezékké válik"
+    },
+    "comment": {
+      "en": "A dead phone signal reveals how little we've practiced being bored.",
+      "tr": "Çekim olmayan telefon, sıkılmayı ne kadar az pratik ettiğimizi ortaya koyar.",
+      "de": "Kein Handyempfang zeigt, wie wenig wir das Langweilen geübt haben.",
+      "fr": "Un téléphone sans réseau révèle à quel point on n'a pas pratiqué l'ennui.",
+      "hu": "A térerő nélküli telefon megmutatja, mennyire nem gyakoroltuk az unatkozást."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "Grocery list vs. actual cart:",
+      "tr": "Market listesi vs. gerçek sepet:",
+      "de": "Einkaufsliste vs. echter Wagen:",
+      "fr": "Liste de courses vs. panier réel :",
+      "hu": "Bevásárlólista vs. tényleges kosár:"
+    },
+    "option_a": {
+      "en": "Stuck to the list",
+      "tr": "Listeye sadık kaldım",
+      "de": "An die Liste gehalten",
+      "fr": "J'ai suivi la liste",
+      "hu": "Tartottam magam a listához"
+    },
+    "option_b": {
+      "en": "Bought everything except what was on the list",
+      "tr": "Listedekiler hariç her şeyi aldım",
+      "de": "Alles gekauft außer dem, was drauf stand",
+      "fr": "J'ai tout acheté sauf ce qui était dessus",
+      "hu": "Mindent megvettem, kivéve ami a listán volt"
+    },
+    "comment": {
+      "en": "A grocery list is more of a suggestion once hunger enters the store.",
+      "tr": "Açlık markete girince, liste bir öneriye dönüşür.",
+      "de": "Eine Einkaufsliste ist eher ein Vorschlag, sobald Hunger den Laden betritt.",
+      "fr": "Une liste de courses devient une simple suggestion une fois la faim dans le magasin.",
+      "hu": "A bevásárlólista inkább csak javaslat, amint az éhség belép a boltba."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "A form asks for your \"emergency contact.\" You:",
+      "tr": "Bir form \"acil durum kişisi\" istiyor. Sen:",
+      "de": "Ein Formular fragt nach deinem \"Notfallkontakt\". Du:",
+      "fr": "Un formulaire demande ton \"contact d'urgence\". Toi :",
+      "hu": "Egy űrlap kéri a \"vészhelyzeti kapcsolattartót\". Te:"
+    },
+    "option_a": {
+      "en": "Fill it in instantly, know exactly who",
+      "tr": "Anında doldururum, kimi yazacağımı bilirim",
+      "de": "Sofort ausfüllen, weiß genau wen",
+      "fr": "Je le remplis instantanément, je sais exactement qui",
+      "hu": "Azonnal kitöltöm, pontosan tudom, kit írjak"
+    },
+    "option_b": {
+      "en": "Genuinely pause and think for way too long",
+      "tr": "Gerçekten durup gereğinden fazla düşünürüm",
+      "de": "Wirklich innehalten und viel zu lange überlegen",
+      "fr": "Je m'arrête vraiment et je réfléchis bien trop longtemps",
+      "hu": "Tényleg megállok és túl sokáig gondolkodom"
+    },
+    "comment": {
+      "en": "That one blank field somehow says more about adulthood than the whole form.",
+      "tr": "O tek boş kutu, formun geri kalanından daha çok şey söyler yetişkinlik hakkında.",
+      "de": "Dieses eine leere Feld sagt irgendwie mehr über das Erwachsensein als das ganze Formular.",
+      "fr": "Ce seul champ vide en dit plus sur l'âge adulte que tout le reste du formulaire.",
+      "hu": "Az az egy üres mező valahogy többet mond a felnőttségről, mint az egész űrlap."
+    }
+  },
+  {
+    "category": "adulting",
+    "series": {
+      "en": "Adulting",
+      "tr": "Yetişkinlik",
+      "de": "Erwachsensein",
+      "fr": "Vie D'Adulte",
+      "hu": "Felnőttlét"
+    },
+    "question": {
+      "en": "You catch your reflection mid-conversation. You:",
+      "tr": "Konuşurken aynadaki yansımanı görüyorsun. Sen:",
+      "de": "Du siehst dein Spiegelbild mitten im Gespräch. Du:",
+      "fr": "Tu aperçois ton reflet en pleine conversation. Toi :",
+      "hu": "Beszélgetés közben megpillantod a tükörképed. Te:"
+    },
+    "option_a": {
+      "en": "Don't think twice about it",
+      "tr": "Hiç düşünmem bile",
+      "de": "Denkst nicht weiter drüber nach",
+      "fr": "Je n'y pense même pas",
+      "hu": "Nem is gondolkodom rajta"
+    },
+    "option_b": {
+      "en": "Instantly forget what you were saying",
+      "tr": "Ne söylediğimi anında unuturum",
+      "de": "Vergisst sofort, was du gesagt hast",
+      "fr": "J'oublie instantanément ce que je disais",
+      "hu": "Azonnal elfelejtem, mit mondtam"
+    },
+    "comment": {
+      "en": "Mirrors have derailed more sentences than any actual interruption.",
+      "tr": "Aynalar, gerçek bir sözünü kesmeden daha çok cümleyi yarıda bırakmıştır.",
+      "de": "Spiegel haben mehr Sätze zum Entgleisen gebracht als jede echte Unterbrechung.",
+      "fr": "Les miroirs ont fait dérailler plus de phrases que n'importe quelle vraie interruption.",
+      "hu": "A tükrök több mondatot törtek derékba, mint bármilyen valódi megszakítás."
     }
   }
 ];
